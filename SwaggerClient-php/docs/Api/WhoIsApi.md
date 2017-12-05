@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveHTMLUsingGET**](WhoIsApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
+[**resolveWhoIsEntry**](WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-# **resolveHTMLUsingGET**
-> string resolveHTMLUsingGET($id4n, $authorization, $accept_language)
+# **resolveWhoIsEntry**
+> \Swagger\Client\Model\WhoIsResponse resolveWhoIsEntry($id4n, $authorization, $accept_language)
 
-resolveHTML
+Resolve owner of id4n
 
 ### Example
 ```php
@@ -23,10 +23,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->resolveHTMLUsingGET($id4n, $authorization, $accept_language);
+    $result = $api_instance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WhoIsApi->resolveHTMLUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WhoIsApi->resolveWhoIsEntry: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**\Swagger\Client\Model\WhoIsResponse**](../Model/WhoIsResponse.md)
 
 ### Authorization
 
@@ -50,7 +50,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, text/html, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

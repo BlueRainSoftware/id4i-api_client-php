@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateLogisticCollectionRequest
+ * PaginatedResponseUserRoles_
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CreateLogisticCollectionRequest Class Doc Comment
+ * PaginatedResponseUserRoles_ Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateLogisticCollectionRequest implements ArrayAccess
+class PaginatedResponseUserRoles_ implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,16 +47,17 @@ class CreateLogisticCollectionRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateLogisticCollectionRequest';
+    protected static $swaggerModelName = 'PaginatedResponse«UserRoles»';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'label' => 'string',
-        'length' => 'int',
-        'organization_id' => 'int'
+        'elements' => '\Swagger\Client\Model\UserRoles[]',
+        'limit' => 'int',
+        'offset' => 'int',
+        'total' => 'int'
     ];
 
     /**
@@ -64,9 +65,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'label' => null,
-        'length' => 'int32',
-        'organization_id' => 'int64'
+        'elements' => null,
+        'limit' => 'int32',
+        'offset' => 'int32',
+        'total' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -84,9 +86,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'label' => 'label',
-        'length' => 'length',
-        'organization_id' => 'organizationId'
+        'elements' => 'elements',
+        'limit' => 'limit',
+        'offset' => 'offset',
+        'total' => 'total'
     ];
 
 
@@ -95,9 +98,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'label' => 'setLabel',
-        'length' => 'setLength',
-        'organization_id' => 'setOrganizationId'
+        'elements' => 'setElements',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset',
+        'total' => 'setTotal'
     ];
 
 
@@ -106,9 +110,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'label' => 'getLabel',
-        'length' => 'getLength',
-        'organization_id' => 'getOrganizationId'
+        'elements' => 'getElements',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset',
+        'total' => 'getTotal'
     ];
 
     public static function attributeMap()
@@ -142,9 +147,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['elements'] = isset($data['elements']) ? $data['elements'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -156,11 +162,11 @@ class CreateLogisticCollectionRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['length'] === null) {
-            $invalid_properties[] = "'length' can't be null";
+        if ($this->container['limit'] === null) {
+            $invalid_properties[] = "'limit' can't be null";
         }
-        if ($this->container['organization_id'] === null) {
-            $invalid_properties[] = "'organization_id' can't be null";
+        if ($this->container['offset'] === null) {
+            $invalid_properties[] = "'offset' can't be null";
         }
         return $invalid_properties;
     }
@@ -174,10 +180,10 @@ class CreateLogisticCollectionRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['length'] === null) {
+        if ($this->container['limit'] === null) {
             return false;
         }
-        if ($this->container['organization_id'] === null) {
+        if ($this->container['offset'] === null) {
             return false;
         }
         return true;
@@ -185,64 +191,85 @@ class CreateLogisticCollectionRequest implements ArrayAccess
 
 
     /**
-     * Gets label
-     * @return string
+     * Gets elements
+     * @return \Swagger\Client\Model\UserRoles[]
      */
-    public function getLabel()
+    public function getElements()
     {
-        return $this->container['label'];
+        return $this->container['elements'];
     }
 
     /**
-     * Sets label
-     * @param string $label
+     * Sets elements
+     * @param \Swagger\Client\Model\UserRoles[] $elements
      * @return $this
      */
-    public function setLabel($label)
+    public function setElements($elements)
     {
-        $this->container['label'] = $label;
+        $this->container['elements'] = $elements;
 
         return $this;
     }
 
     /**
-     * Gets length
+     * Gets limit
      * @return int
      */
-    public function getLength()
+    public function getLimit()
     {
-        return $this->container['length'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets length
-     * @param int $length
+     * Sets limit
+     * @param int $limit
      * @return $this
      */
-    public function setLength($length)
+    public function setLimit($limit)
     {
-        $this->container['length'] = $length;
+        $this->container['limit'] = $limit;
 
         return $this;
     }
 
     /**
-     * Gets organization_id
+     * Gets offset
      * @return int
      */
-    public function getOrganizationId()
+    public function getOffset()
     {
-        return $this->container['organization_id'];
+        return $this->container['offset'];
     }
 
     /**
-     * Sets organization_id
-     * @param int $organization_id
+     * Sets offset
+     * @param int $offset
      * @return $this
      */
-    public function setOrganizationId($organization_id)
+    public function setOffset($offset)
     {
-        $this->container['organization_id'] = $organization_id;
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     * @param int $total
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveImageUsingGET**](ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
+[**resolveImageUsingGET**](ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 
 
 # **resolveImageUsingGET**
 > string resolveImageUsingGET($image_id, $authorization, $accept_language)
 
-resolveImage
+Resolve image
 
 ### Example
 ```php
@@ -18,7 +18,7 @@ resolveImage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ImagesApi();
-$image_id = "image_id_example"; // string | imageID
+$image_id = "image_id_example"; // string | The id of the image to be resolved.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
@@ -35,7 +35,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_id** | **string**| imageID |
+ **image_id** | **string**| The id of the image to be resolved. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 

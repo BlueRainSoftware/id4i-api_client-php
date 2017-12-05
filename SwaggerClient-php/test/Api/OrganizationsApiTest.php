@@ -73,202 +73,182 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addMultipleUserRolesUsingPOST
+     * Test case for createOrganization
      *
-     * addMultipleUserRoles.
+     * Create organization.
      *
      */
-    public function testAddMultipleUserRolesUsingPOST()
+    public function testCreateOrganization()
     {
     }
 
     /**
-     * Test case for addUserRolesUsingPOST
+     * Test case for deleteOrganization
      *
-     * addUserRoles.
+     * Delete organization.
      *
      */
-    public function testAddUserRolesUsingPOST()
+    public function testDeleteOrganization()
     {
     }
 
     /**
-     * Test case for createOrganzationUsingPOST
+     * Test case for deleteOrganizationBillingAddress
      *
-     * createOrganzation.
+     * Remove billing address.
      *
      */
-    public function testCreateOrganzationUsingPOST()
+    public function testDeleteOrganizationBillingAddress()
     {
     }
 
     /**
-     * Test case for deleteOrganizationLogoUsingDELETE
+     * Test case for deleteOrganizationLogo
      *
-     * deleteOrganizationLogo.
+     * Delete organization logo.
      *
      */
-    public function testDeleteOrganizationLogoUsingDELETE()
+    public function testDeleteOrganizationLogo()
     {
     }
 
     /**
-     * Test case for deleteOrganizationUsingDELETE
+     * Test case for findOrganization
      *
-     * deleteOrganization.
+     * Find organization by id.
      *
      */
-    public function testDeleteOrganizationUsingDELETE()
+    public function testFindOrganization()
     {
     }
 
     /**
-     * Test case for getAddressUsingGET
+     * Test case for findOrganizationAddress
      *
-     * getAddress.
+     * Retrieve address.
      *
      */
-    public function testGetAddressUsingGET()
+    public function testFindOrganizationAddress()
     {
     }
 
     /**
-     * Test case for getAllUsingGET
+     * Test case for findOrganizationBillingAddress
      *
-     * getAll.
+     * Retrieve billing address.
      *
      */
-    public function testGetAllUsingGET()
+    public function testFindOrganizationBillingAddress()
     {
     }
 
     /**
-     * Test case for getBillingAddressUsingGET
+     * Test case for getAllCollectionsOfOrganization
      *
-     * getBillingAddress.
+     * Get collections of organization.
      *
      */
-    public function testGetBillingAddressUsingGET()
+    public function testGetAllCollectionsOfOrganization()
     {
     }
 
     /**
-     * Test case for getMultipleUserRolesUsingGET
+     * Test case for getAllOrganizationRoles
      *
-     * getMultipleUserRoles.
+     * List users and their roles.
      *
      */
-    public function testGetMultipleUserRolesUsingGET()
+    public function testGetAllOrganizationRoles()
     {
     }
 
     /**
-     * Test case for getOrganizationUsingGET
+     * Test case for getOrganizationsOfUser
      *
-     * getOrganization.
+     * Retrieve organizations of user.
      *
      */
-    public function testGetOrganizationUsingGET()
+    public function testGetOrganizationsOfUser()
     {
     }
 
     /**
-     * Test case for getOrganizationsUsingGET
+     * Test case for getUserRoles
      *
-     * getOrganizations.
+     * Get user roles by username.
      *
      */
-    public function testGetOrganizationsUsingGET()
+    public function testGetUserRoles()
     {
     }
 
     /**
-     * Test case for getUserRolesByUsernameUsingGET
+     * Test case for getUsersOfOrganization
      *
-     * getUserRolesByUsername.
+     * Find users in organization.
      *
      */
-    public function testGetUserRolesByUsernameUsingGET()
+    public function testGetUsersOfOrganization()
     {
     }
 
     /**
-     * Test case for getUsersUsingGET
+     * Test case for removeUserRoles
      *
-     * getUsers.
+     * Remove role(s) from user.
      *
      */
-    public function testGetUsersUsingGET()
+    public function testRemoveUserRoles()
     {
     }
 
     /**
-     * Test case for removeBillingAddressUsingDELETE
+     * Test case for updateOrganization
      *
-     * removeBillingAddress.
+     * Update organization.
      *
      */
-    public function testRemoveBillingAddressUsingDELETE()
+    public function testUpdateOrganization()
     {
     }
 
     /**
-     * Test case for removeMultipleUserRolesUsingDELETE
+     * Test case for updateOrganizationAddress
      *
-     * removeMultipleUserRoles.
+     * Store address.
      *
      */
-    public function testRemoveMultipleUserRolesUsingDELETE()
+    public function testUpdateOrganizationAddress()
     {
     }
 
     /**
-     * Test case for removeUserRolesUsingDELETE
+     * Test case for updateOrganizationBillingAddress
      *
-     * removeUserRoles.
+     * Store billing address.
      *
      */
-    public function testRemoveUserRolesUsingDELETE()
+    public function testUpdateOrganizationBillingAddress()
     {
     }
 
     /**
-     * Test case for setOrganizationLogoUsingPOST
+     * Test case for updateOrganizationLogo
      *
-     * setOrganizationLogo.
+     * Update organization logo.
      *
      */
-    public function testSetOrganizationLogoUsingPOST()
+    public function testUpdateOrganizationLogo()
     {
     }
 
     /**
-     * Test case for storeAddressUsingPOST
+     * Test case for updateUserRoles
      *
-     * storeAddress.
-     *
-     */
-    public function testStoreAddressUsingPOST()
-    {
-    }
-
-    /**
-     * Test case for storeBillingAddressUsingPOST
-     *
-     * storeBillingAddress.
+     * Add role(s) to user.
      *
      */
-    public function testStoreBillingAddressUsingPOST()
-    {
-    }
-
-    /**
-     * Test case for updateOrganizationUsingPUT
-     *
-     * updateOrganization.
-     *
-     */
-    public function testUpdateOrganizationUsingPUT()
+    public function testUpdateUserRoles()
     {
     }
 }

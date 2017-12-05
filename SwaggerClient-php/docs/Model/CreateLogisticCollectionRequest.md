@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**label** | **string** |  | [optional] 
 **length** | **int** |  | 
 **organization_id** | **int** |  | 
 

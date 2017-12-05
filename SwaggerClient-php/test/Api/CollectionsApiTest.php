@@ -73,312 +73,332 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addElementsToCollectionUsingPUT
+     * Test case for addElementToCollection
      *
-     * addElementsToCollection.
+     * Add element to collection.
      *
      */
-    public function testAddElementsToCollectionUsingPUT()
+    public function testAddElementToCollection()
     {
     }
 
     /**
-     * Test case for addElementsToLabelledCollectionUsingPUT
+     * Test case for addElementToLabelledCollection
      *
-     * addElementsToLabelledCollection.
+     * Add element to labelled collection.
      *
      */
-    public function testAddElementsToLabelledCollectionUsingPUT()
+    public function testAddElementToLabelledCollection()
     {
     }
 
     /**
-     * Test case for addElementsToLogisticCollectionUsingPUT
+     * Test case for addElementToLogisticCollection
      *
-     * addElementsToLogisticCollection.
+     * Add element to logistic collection.
      *
      */
-    public function testAddElementsToLogisticCollectionUsingPUT()
+    public function testAddElementToLogisticCollection()
     {
     }
 
     /**
-     * Test case for addElementsToRoutingCollectionUsingPUT
+     * Test case for addElementToRoutingCollection
      *
-     * addElementsToRoutingCollection.
+     * Add element to routing collection.
      *
      */
-    public function testAddElementsToRoutingCollectionUsingPUT()
+    public function testAddElementToRoutingCollection()
     {
     }
 
     /**
-     * Test case for addSingleElementToCollectionUsingPUT
+     * Test case for addElementsToCollection
      *
-     * addSingleElementToCollection.
+     * Add elements to collection.
      *
      */
-    public function testAddSingleElementToCollectionUsingPUT()
+    public function testAddElementsToCollection()
     {
     }
 
     /**
-     * Test case for addSingleElementToLabelledCollectionUsingPUT
+     * Test case for addElementsToLabelledCollection
      *
-     * addSingleElementToLabelledCollection.
+     * Add elements to labelled collection.
      *
      */
-    public function testAddSingleElementToLabelledCollectionUsingPUT()
+    public function testAddElementsToLabelledCollection()
     {
     }
 
     /**
-     * Test case for addSingleElementToLogisticCollectionUsingPUT
+     * Test case for addElementsToLogisticCollection
      *
-     * addSingleElementToLogisticCollection.
+     * Add elements to logistic collection.
      *
      */
-    public function testAddSingleElementToLogisticCollectionUsingPUT()
+    public function testAddElementsToLogisticCollection()
     {
     }
 
     /**
-     * Test case for addSingleElementToRoutingCollectionUsingPUT
+     * Test case for addElementsToRoutingCollection
      *
-     * addSingleElementToRoutingCollection.
+     * Add element to routing collection.
      *
      */
-    public function testAddSingleElementToRoutingCollectionUsingPUT()
+    public function testAddElementsToRoutingCollection()
     {
     }
 
     /**
-     * Test case for createLabelledCollectionUsingPOST
+     * Test case for createLabelledCollection
      *
-     * createLabelledCollection.
+     * Create labelled collection.
      *
      */
-    public function testCreateLabelledCollectionUsingPOST()
+    public function testCreateLabelledCollection()
     {
     }
 
     /**
-     * Test case for createLogisticCollectionUsingPOST
+     * Test case for createLogisticCollection
      *
-     * createLogisticCollection.
+     * Create logistic collection.
      *
      */
-    public function testCreateLogisticCollectionUsingPOST()
+    public function testCreateLogisticCollection()
     {
     }
 
     /**
-     * Test case for createRoutingCollectionUsingPOST
+     * Test case for createRoutingCollection
      *
-     * createRoutingCollection.
+     * Create routing collecton.
      *
      */
-    public function testCreateRoutingCollectionUsingPOST()
+    public function testCreateRoutingCollection()
     {
     }
 
     /**
-     * Test case for deleteCollectionUsingDELETE
+     * Test case for deleteCollection
      *
-     * deleteCollection.
+     * Delete collection.
      *
      */
-    public function testDeleteCollectionUsingDELETE()
+    public function testDeleteCollection()
     {
     }
 
     /**
-     * Test case for deleteLabelledCollectionUsingDELETE
+     * Test case for deleteLabelledCollection
      *
-     * deleteLabelledCollection.
+     * Delete labelled collection.
      *
      */
-    public function testDeleteLabelledCollectionUsingDELETE()
+    public function testDeleteLabelledCollection()
     {
     }
 
     /**
-     * Test case for deleteLogisticCollectionUsingDELETE
+     * Test case for deleteLogisticCollection
      *
-     * deleteLogisticCollection.
+     * Delete logistic collection.
      *
      */
-    public function testDeleteLogisticCollectionUsingDELETE()
+    public function testDeleteLogisticCollection()
     {
     }
 
     /**
-     * Test case for deleteRoutingCollectionUsingDELETE
+     * Test case for deleteRoutingCollection
      *
-     * deleteRoutingCollection.
+     * Delete routing collection.
      *
      */
-    public function testDeleteRoutingCollectionUsingDELETE()
+    public function testDeleteRoutingCollection()
     {
     }
 
     /**
-     * Test case for findById4nUsingGET
+     * Test case for findCollection
      *
-     * findById4n.
+     * Find collection.
      *
      */
-    public function testFindById4nUsingGET()
+    public function testFindCollection()
     {
     }
 
     /**
-     * Test case for findById4nUsingGET1
+     * Test case for findLabelledCollection
      *
-     * findById4n.
+     * Find labelled collection.
      *
      */
-    public function testFindById4nUsingGET1()
+    public function testFindLabelledCollection()
     {
     }
 
     /**
-     * Test case for findById4nUsingGET2
+     * Test case for findLogisticCollection
      *
-     * findById4n.
+     * Find logistic collection.
      *
      */
-    public function testFindById4nUsingGET2()
+    public function testFindLogisticCollection()
     {
     }
 
     /**
-     * Test case for findById4nUsingGET3
+     * Test case for findRoutingCollection
      *
-     * findById4n.
+     * Find routing collection.
      *
      */
-    public function testFindById4nUsingGET3()
+    public function testFindRoutingCollection()
     {
     }
 
     /**
-     * Test case for findByLabelUsingGET
+     * Test case for getAllCollectionsOfOrganization
      *
-     * findByLabel.
+     * Get collections of organization.
      *
      */
-    public function testFindByLabelUsingGET()
+    public function testGetAllCollectionsOfOrganization()
     {
     }
 
     /**
-     * Test case for getAllUsingGET
+     * Test case for listElementsOfCollection
      *
-     * getAll.
+     * List contents of the collection.
      *
      */
-    public function testGetAllUsingGET()
+    public function testListElementsOfCollection()
     {
     }
 
     /**
-     * Test case for listContentsUsingGET
+     * Test case for removeElementFromCollection
      *
-     * listContents.
+     * Remove element from collection.
      *
      */
-    public function testListContentsUsingGET()
+    public function testRemoveElementFromCollection()
     {
     }
 
     /**
-     * Test case for removeElementsFromCollectionUsingDELETE
+     * Test case for removeElementFromLabelledCollection
      *
-     * removeElementsFromCollection.
+     * Remove element from labelled collection.
      *
      */
-    public function testRemoveElementsFromCollectionUsingDELETE()
+    public function testRemoveElementFromLabelledCollection()
     {
     }
 
     /**
-     * Test case for removeElementsFromLabelledCollectionUsingDELETE
+     * Test case for removeElementFromLogisticCollection
      *
-     * removeElementsFromLabelledCollection.
+     * Remove element from logistic collection.
      *
      */
-    public function testRemoveElementsFromLabelledCollectionUsingDELETE()
+    public function testRemoveElementFromLogisticCollection()
     {
     }
 
     /**
-     * Test case for removeElementsFromLogisticCollectionUsingDELETE
+     * Test case for removeElementFromRoutingCollection
      *
-     * removeElementsFromLogisticCollection.
+     * Remove element from routing collection.
      *
      */
-    public function testRemoveElementsFromLogisticCollectionUsingDELETE()
+    public function testRemoveElementFromRoutingCollection()
     {
     }
 
     /**
-     * Test case for removeElementsFromRoutingCollectionUsingDELETE
+     * Test case for removeElementsFromCollection
      *
-     * removeElementsFromRoutingCollection.
+     * Remove elements from collection.
      *
      */
-    public function testRemoveElementsFromRoutingCollectionUsingDELETE()
+    public function testRemoveElementsFromCollection()
     {
     }
 
     /**
-     * Test case for removeSingleElementFromCollectionUsingDELETE
+     * Test case for removeElementsFromLabelledCollection
      *
-     * removeSingleElementFromCollection.
+     * Remove elements from labelled collection.
      *
      */
-    public function testRemoveSingleElementFromCollectionUsingDELETE()
+    public function testRemoveElementsFromLabelledCollection()
     {
     }
 
     /**
-     * Test case for removeSingleElementFromLabelledCollectionUsingDELETE
+     * Test case for removeElementsFromLogisticCollection
      *
-     * removeSingleElementFromLabelledCollection.
+     * Remove elements from logistic collection.
      *
      */
-    public function testRemoveSingleElementFromLabelledCollectionUsingDELETE()
+    public function testRemoveElementsFromLogisticCollection()
     {
     }
 
     /**
-     * Test case for removeSingleElementFromLogisticCollectionUsingDELETE
+     * Test case for removeElementsFromRoutingCollection
      *
-     * removeSingleElementFromLogisticCollection.
+     * Remove elements from routing collection.
      *
      */
-    public function testRemoveSingleElementFromLogisticCollectionUsingDELETE()
+    public function testRemoveElementsFromRoutingCollection()
     {
     }
 
     /**
-     * Test case for removeSingleElementFromRoutingCollectionUsingDELETE
+     * Test case for updateCollection
      *
-     * removeSingleElementFromRoutingCollection.
+     * Alter collection.
      *
      */
-    public function testRemoveSingleElementFromRoutingCollectionUsingDELETE()
+    public function testUpdateCollection()
     {
     }
 
     /**
-     * Test case for renameUsingPUT
+     * Test case for updateLabelledCollection
      *
-     * rename.
+     * Rename labelled collection.
      *
      */
-    public function testRenameUsingPUT()
+    public function testUpdateLabelledCollection()
+    {
+    }
+
+    /**
+     * Test case for updateLogisticCollection
+     *
+     * Update logistic collection.
+     *
+     */
+    public function testUpdateLogisticCollection()
+    {
+    }
+
+    /**
+     * Test case for updateRoutingCollection
+     *
+     * Update routing collection.
+     *
+     */
+    public function testUpdateRoutingCollection()
     {
     }
 }

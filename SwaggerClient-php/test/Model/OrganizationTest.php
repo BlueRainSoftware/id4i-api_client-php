@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * OrganizationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Organization
+// * @description An organization
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team

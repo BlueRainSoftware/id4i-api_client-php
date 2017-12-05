@@ -1,11 +1,12 @@
-# CreateRoutingCollectionRequest
+# PaginatedResponseUserPresentation_
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**label** | **string** |  | 
-**length** | **int** |  | 
-**organization_id** | **int** |  | 
+**elements** | [**\Swagger\Client\Model\UserPresentation[]**](UserPresentation.md) |  | [optional] 
+**limit** | **int** |  | 
+**offset** | **int** |  | 
+**total** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

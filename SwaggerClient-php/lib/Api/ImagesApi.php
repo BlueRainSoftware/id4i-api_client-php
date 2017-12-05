@@ -90,9 +90,9 @@ class ImagesApi
     /**
      * Operation resolveImageUsingGET
      *
-     * resolveImage
+     * Resolve image
      *
-     * @param string $image_id imageID (required)
+     * @param string $image_id The id of the image to be resolved. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -107,9 +107,9 @@ class ImagesApi
     /**
      * Operation resolveImageUsingGETWithHttpInfo
      *
-     * resolveImage
+     * Resolve image
      *
-     * @param string $image_id imageID (required)
+     * @param string $image_id The id of the image to be resolved. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response

@@ -88,1067 +88,44 @@ class RoutingApi
     }
 
     /**
-     * Operation addElementsToRoutingCollectionUsingPUT
+     * Operation getRoute
      *
-     * addElementsToRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return int
-     */
-    public function addElementsToRoutingCollectionUsingPUT($collection_guid, $list_of_guids, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->addElementsToRoutingCollectionUsingPUTWithHttpInfo($collection_guid, $list_of_guids, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation addElementsToRoutingCollectionUsingPUTWithHttpInfo
-     *
-     * addElementsToRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of int, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addElementsToRoutingCollectionUsingPUTWithHttpInfo($collection_guid, $list_of_guids, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'collection_guid' is set
-        if ($collection_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $collection_guid when calling addElementsToRoutingCollectionUsingPUT');
-        }
-        // verify the required parameter 'list_of_guids' is set
-        if ($list_of_guids === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_of_guids when calling addElementsToRoutingCollectionUsingPUT');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{collectionGuid}/elements";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($collection_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "collectionGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($collection_guid),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($list_of_guids)) {
-            $_tempBody = $list_of_guids;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                'int',
-                '/api/v1/collections/routing/{collectionGuid}/elements'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, 'int', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'int', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation addSingleElementToRoutingCollectionUsingPUT
-     *
-     * addSingleElementToRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param string $element_guid elementGuid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return int
-     */
-    public function addSingleElementToRoutingCollectionUsingPUT($collection_guid, $element_guid, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->addSingleElementToRoutingCollectionUsingPUTWithHttpInfo($collection_guid, $element_guid, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation addSingleElementToRoutingCollectionUsingPUTWithHttpInfo
-     *
-     * addSingleElementToRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param string $element_guid elementGuid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of int, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addSingleElementToRoutingCollectionUsingPUTWithHttpInfo($collection_guid, $element_guid, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'collection_guid' is set
-        if ($collection_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $collection_guid when calling addSingleElementToRoutingCollectionUsingPUT');
-        }
-        // verify the required parameter 'element_guid' is set
-        if ($element_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $element_guid when calling addSingleElementToRoutingCollectionUsingPUT');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($collection_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "collectionGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($collection_guid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($element_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "elementGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($element_guid),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                'int',
-                '/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, 'int', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'int', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createRoutingCollectionUsingPOST
-     *
-     * createRoutingCollection
-     *
-     * @param \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Id4n
-     */
-    public function createRoutingCollectionUsingPOST($create_info, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->createRoutingCollectionUsingPOSTWithHttpInfo($create_info, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation createRoutingCollectionUsingPOSTWithHttpInfo
-     *
-     * createRoutingCollection
-     *
-     * @param \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Id4n, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createRoutingCollectionUsingPOSTWithHttpInfo($create_info, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'create_info' is set
-        if ($create_info === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_info when calling createRoutingCollectionUsingPOST');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($create_info)) {
-            $_tempBody = $create_info;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Id4n',
-                '/api/v1/collections/routing'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Id4n', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Id4n', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deleteRoutingCollectionUsingDELETE
-     *
-     * deleteRoutingCollection
+     * Retrieve current route of a GUID (or ID4N)
      *
      * @param string $id4n id4n (required)
+     * @param string $type The type of route you want to have (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\Route
      */
-    public function deleteRoutingCollectionUsingDELETE($id4n, $authorization = null, $accept_language = null)
+    public function getRoute($id4n, $type, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->deleteRoutingCollectionUsingDELETEWithHttpInfo($id4n, $authorization, $accept_language);
+        list($response) = $this->getRouteWithHttpInfo($id4n, $type, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation deleteRoutingCollectionUsingDELETEWithHttpInfo
+     * Operation getRouteWithHttpInfo
      *
-     * deleteRoutingCollection
+     * Retrieve current route of a GUID (or ID4N)
      *
      * @param string $id4n id4n (required)
+     * @param string $type The type of route you want to have (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\Route, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteRoutingCollectionUsingDELETEWithHttpInfo($id4n, $authorization = null, $accept_language = null)
+    public function getRouteWithHttpInfo($id4n, $type, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling deleteRoutingCollectionUsingDELETE');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{id4n}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                "{" . "id4n" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id4n),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/collections/routing/{id4n}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation findById4nUsingGET3
-     *
-     * findById4n
-     *
-     * @param string $id4n id4n (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GuidCollection
-     */
-    public function findById4nUsingGET3($id4n, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->findById4nUsingGET3WithHttpInfo($id4n, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation findById4nUsingGET3WithHttpInfo
-     *
-     * findById4n
-     *
-     * @param string $id4n id4n (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GuidCollection, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function findById4nUsingGET3WithHttpInfo($id4n, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling findById4nUsingGET3');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{id4n}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                "{" . "id4n" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id4n),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\GuidCollection',
-                '/api/v1/collections/routing/{id4n}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GuidCollection', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GuidCollection', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation forwardUsingGET
-     *
-     * forward
-     *
-     * @param string $guid guid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function forwardUsingGET($guid, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->forwardUsingGETWithHttpInfo($guid, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation forwardUsingGETWithHttpInfo
-     *
-     * forward
-     *
-     * @param string $guid guid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function forwardUsingGETWithHttpInfo($guid, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'guid' is set
-        if ($guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $guid when calling forwardUsingGET');
-        }
-        // parse inputs
-        $resourcePath = "/go/{guid}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "guid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($guid),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/go/{guid}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation removeElementsFromRoutingCollectionUsingDELETE
-     *
-     * removeElementsFromRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return int
-     */
-    public function removeElementsFromRoutingCollectionUsingDELETE($collection_guid, $list_of_guids, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->removeElementsFromRoutingCollectionUsingDELETEWithHttpInfo($collection_guid, $list_of_guids, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation removeElementsFromRoutingCollectionUsingDELETEWithHttpInfo
-     *
-     * removeElementsFromRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of int, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function removeElementsFromRoutingCollectionUsingDELETEWithHttpInfo($collection_guid, $list_of_guids, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'collection_guid' is set
-        if ($collection_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $collection_guid when calling removeElementsFromRoutingCollectionUsingDELETE');
-        }
-        // verify the required parameter 'list_of_guids' is set
-        if ($list_of_guids === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_of_guids when calling removeElementsFromRoutingCollectionUsingDELETE');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{collectionGuid}/elements";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($collection_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "collectionGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($collection_guid),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($list_of_guids)) {
-            $_tempBody = $list_of_guids;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                'int',
-                '/api/v1/collections/routing/{collectionGuid}/elements'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, 'int', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'int', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation removeSingleElementFromRoutingCollectionUsingDELETE
-     *
-     * removeSingleElementFromRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param string $element_guid elementGuid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return int
-     */
-    public function removeSingleElementFromRoutingCollectionUsingDELETE($collection_guid, $element_guid, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->removeSingleElementFromRoutingCollectionUsingDELETEWithHttpInfo($collection_guid, $element_guid, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation removeSingleElementFromRoutingCollectionUsingDELETEWithHttpInfo
-     *
-     * removeSingleElementFromRoutingCollection
-     *
-     * @param string $collection_guid collectionGuid (required)
-     * @param string $element_guid elementGuid (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of int, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function removeSingleElementFromRoutingCollectionUsingDELETEWithHttpInfo($collection_guid, $element_guid, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'collection_guid' is set
-        if ($collection_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $collection_guid when calling removeSingleElementFromRoutingCollectionUsingDELETE');
-        }
-        // verify the required parameter 'element_guid' is set
-        if ($element_guid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $element_guid when calling removeSingleElementFromRoutingCollectionUsingDELETE');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($collection_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "collectionGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($collection_guid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($element_guid !== null) {
-            $resourcePath = str_replace(
-                "{" . "elementGuid" . "}",
-                $this->apiClient->getSerializer()->toPathValue($element_guid),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                'int',
-                '/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, 'int', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'int', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation retrieveCurrentParamsByTypeUsingGET
-     *
-     * retrieveCurrentParamsByType
-     *
-     * @param string $id4n id4n (required)
-     * @param string $type type (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return map[string,string]
-     */
-    public function retrieveCurrentParamsByTypeUsingGET($id4n, $type, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->retrieveCurrentParamsByTypeUsingGETWithHttpInfo($id4n, $type, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation retrieveCurrentParamsByTypeUsingGETWithHttpInfo
-     *
-     * retrieveCurrentParamsByType
-     *
-     * @param string $id4n id4n (required)
-     * @param string $type type (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of map[string,string], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function retrieveCurrentParamsByTypeUsingGETWithHttpInfo($id4n, $type, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling retrieveCurrentParamsByTypeUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling getRoute');
         }
         // verify the required parameter 'type' is set
         if ($type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $type when calling retrieveCurrentParamsByTypeUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $type when calling getRoute');
         }
         // parse inputs
         $resourcePath = "/api/v1/routingfiles/{id4n}/route/{type}";
@@ -1201,15 +178,15 @@ class RoutingApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                'map[string,string]',
+                '\Swagger\Client\Model\Route',
                 '/api/v1/routingfiles/{id4n}/route/{type}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, 'map[string,string]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Route', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'map[string,string]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Route', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
@@ -1247,9 +224,9 @@ class RoutingApi
     }
 
     /**
-     * Operation retrieveRoutingFileUsingGET
+     * Operation getRoutingFile
      *
-     * retrieveRoutingFile
+     * Retrieve routing file
      *
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -1258,16 +235,16 @@ class RoutingApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\RoutingFile
      */
-    public function retrieveRoutingFileUsingGET($id4n, $authorization = null, $accept_language = null, $organization_id = null)
+    public function getRoutingFile($id4n, $authorization = null, $accept_language = null, $organization_id = null)
     {
-        list($response) = $this->retrieveRoutingFileUsingGETWithHttpInfo($id4n, $authorization, $accept_language, $organization_id);
+        list($response) = $this->getRoutingFileWithHttpInfo($id4n, $authorization, $accept_language, $organization_id);
         return $response;
     }
 
     /**
-     * Operation retrieveRoutingFileUsingGETWithHttpInfo
+     * Operation getRoutingFileWithHttpInfo
      *
-     * retrieveRoutingFile
+     * Retrieve routing file
      *
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -1276,11 +253,11 @@ class RoutingApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\RoutingFile, HTTP status code, HTTP response headers (array of strings)
      */
-    public function retrieveRoutingFileUsingGETWithHttpInfo($id4n, $authorization = null, $accept_language = null, $organization_id = null)
+    public function getRoutingFileWithHttpInfo($id4n, $authorization = null, $accept_language = null, $organization_id = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling retrieveRoutingFileUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling getRoutingFile');
         }
         // parse inputs
         $resourcePath = "/api/v1/routingfiles/{id4n}";
@@ -1376,44 +353,44 @@ class RoutingApi
     }
 
     /**
-     * Operation storeRoutingFileUsingPUT
+     * Operation updateRoutingFile
      *
-     * storeRoutingFile
+     * Store routing file
      *
      * @param \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function storeRoutingFileUsingPUT($rfr, $id4n, $authorization = null, $accept_language = null)
+    public function updateRoutingFile($rfr, $id4n, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->storeRoutingFileUsingPUTWithHttpInfo($rfr, $id4n, $authorization, $accept_language);
+        list($response) = $this->updateRoutingFileWithHttpInfo($rfr, $id4n, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation storeRoutingFileUsingPUTWithHttpInfo
+     * Operation updateRoutingFileWithHttpInfo
      *
-     * storeRoutingFile
+     * Store routing file
      *
      * @param \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storeRoutingFileUsingPUTWithHttpInfo($rfr, $id4n, $authorization = null, $accept_language = null)
+    public function updateRoutingFileWithHttpInfo($rfr, $id4n, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'rfr' is set
         if ($rfr === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $rfr when calling storeRoutingFileUsingPUT');
+            throw new \InvalidArgumentException('Missing the required parameter $rfr when calling updateRoutingFile');
         }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling storeRoutingFileUsingPUT');
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling updateRoutingFile');
         }
         // parse inputs
         $resourcePath = "/api/v1/routingfiles/{id4n}";
@@ -1463,15 +440,15 @@ class RoutingApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                '\Swagger\Client\Model\ApiError',
                 '/api/v1/routingfiles/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -4,13 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST1**](GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | create
+[**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 
 
-# **createUsingPOST1**
-> \Swagger\Client\Model\ListOfId4ns createUsingPOST1($create_guid_info, $authorization, $accept_language)
+# **createGuid**
+> \Swagger\Client\Model\ListOfId4ns createGuid($create_guid_info, $authorization, $accept_language)
 
-create
+Create GUID(s)
+
+Creating one or more GUIDs with a specified length.
 
 ### Example
 ```php
@@ -23,10 +25,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->createUsingPOST1($create_guid_info, $authorization, $accept_language);
+    $result = $api_instance->createGuid($create_guid_info, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->createUsingPOST1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GUIDsApi->createGuid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

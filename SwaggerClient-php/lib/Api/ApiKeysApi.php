@@ -1,6 +1,6 @@
 <?php
 /**
- * ApikeycontrollerApi
+ * ApiKeysApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ApikeycontrollerApi Class Doc Comment
+ * ApiKeysApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApikeycontrollerApi
+class ApiKeysApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class ApikeycontrollerApi
      *
      * @param \Swagger\Client\ApiClient $apiClient set the API client
      *
-     * @return ApikeycontrollerApi
+     * @return ApiKeysApi
      */
     public function setApiClient(\Swagger\Client\ApiClient $apiClient)
     {
@@ -88,38 +88,38 @@ class ApikeycontrollerApi
     }
 
     /**
-     * Operation createUsingPOST
+     * Operation createNewApiKey
      *
-     * create
+     * Create apiKey
      *
-     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request creationRequest (required)
+     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request ApiKey to be created. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ApiKeyPresentation
      */
-    public function createUsingPOST($creation_request, $authorization = null, $accept_language = null)
+    public function createNewApiKey($creation_request, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->createUsingPOSTWithHttpInfo($creation_request, $authorization, $accept_language);
+        list($response) = $this->createNewApiKeyWithHttpInfo($creation_request, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation createUsingPOSTWithHttpInfo
+     * Operation createNewApiKeyWithHttpInfo
      *
-     * create
+     * Create apiKey
      *
-     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request creationRequest (required)
+     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request ApiKey to be created. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ApiKeyPresentation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUsingPOSTWithHttpInfo($creation_request, $authorization = null, $accept_language = null)
+    public function createNewApiKeyWithHttpInfo($creation_request, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'creation_request' is set
         if ($creation_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $creation_request when calling createUsingPOST');
+            throw new \InvalidArgumentException('Missing the required parameter $creation_request when calling createNewApiKey');
         }
         // parse inputs
         $resourcePath = "/api/v1/apikeys";
@@ -215,39 +215,279 @@ class ApikeycontrollerApi
     }
 
     /**
-     * Operation listUsingGET
+     * Operation deleteApiKey
      *
-     * list
+     * Delete apiKey
      *
+     * @param string $key The apiKey to delete. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $organization_id organizationId (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PaginatedApiKeyResponse
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function listUsingGET($authorization = null, $accept_language = null, $organization_id = null, $offset = null, $limit = null)
+    public function deleteApiKey($key, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->listUsingGETWithHttpInfo($authorization, $accept_language, $organization_id, $offset, $limit);
+        list($response) = $this->deleteApiKeyWithHttpInfo($key, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation listUsingGETWithHttpInfo
+     * Operation deleteApiKeyWithHttpInfo
      *
-     * list
+     * Delete apiKey
      *
+     * @param string $key The apiKey to delete. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $organization_id organizationId (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteApiKeyWithHttpInfo($key, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'key' is set
+        if ($key === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling deleteApiKey');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/apikeys/{key}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($key !== null) {
+            $resourcePath = str_replace(
+                "{" . "key" . "}",
+                $this->apiClient->getSerializer()->toPathValue($key),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/apikeys/{key}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getApiKey
+     *
+     * Show apiKey
+     *
+     * @param string $key The apiKey to show. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiKeyPresentation
+     */
+    public function getApiKey($key, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->getApiKeyWithHttpInfo($key, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation getApiKeyWithHttpInfo
+     *
+     * Show apiKey
+     *
+     * @param string $key The apiKey to show. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiKeyPresentation, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getApiKeyWithHttpInfo($key, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'key' is set
+        if ($key === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling getApiKey');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/apikeys/{key}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($key !== null) {
+            $resourcePath = str_replace(
+                "{" . "key" . "}",
+                $this->apiClient->getSerializer()->toPathValue($key),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiKeyPresentation',
+                '/api/v1/apikeys/{key}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiKeyPresentation', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiKeyPresentation', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listAllApiKeysOfOrganization
+     *
+     * Find apiKeys by organization
+     *
+     * @param int $organization_id The id of the organization to search in. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\PaginatedApiKeyResponse
+     */
+    public function listAllApiKeysOfOrganization($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    {
+        list($response) = $this->listAllApiKeysOfOrganizationWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit);
+        return $response;
+    }
+
+    /**
+     * Operation listAllApiKeysOfOrganizationWithHttpInfo
+     *
+     * Find apiKeys by organization
+     *
+     * @param int $organization_id The id of the organization to search in. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PaginatedApiKeyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUsingGETWithHttpInfo($authorization = null, $accept_language = null, $organization_id = null, $offset = null, $limit = null)
+    public function listAllApiKeysOfOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling listAllApiKeysOfOrganization');
+        }
         // parse inputs
         $resourcePath = "/api/v1/apikeys";
         $httpBody = '';
@@ -341,41 +581,41 @@ class ApikeycontrollerApi
     }
 
     /**
-     * Operation removeKeyUsingDELETE
+     * Operation listApiKeyPrivileges
      *
-     * removeKey
+     * List ApiKey privileges
      *
-     * @param string $key key (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param bool $id4n_concerning id4nConcerning (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiKeyPrivilegeResponse
      */
-    public function removeKeyUsingDELETE($key, $authorization = null, $accept_language = null)
+    public function listApiKeyPrivileges($authorization = null, $accept_language = null, $id4n_concerning = null, $offset = null, $limit = null)
     {
-        list($response) = $this->removeKeyUsingDELETEWithHttpInfo($key, $authorization, $accept_language);
+        list($response) = $this->listApiKeyPrivilegesWithHttpInfo($authorization, $accept_language, $id4n_concerning, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation removeKeyUsingDELETEWithHttpInfo
+     * Operation listApiKeyPrivilegesWithHttpInfo
      *
-     * removeKey
+     * List ApiKey privileges
      *
-     * @param string $key key (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param bool $id4n_concerning id4nConcerning (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiKeyPrivilegeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeKeyUsingDELETEWithHttpInfo($key, $authorization = null, $accept_language = null)
+    public function listApiKeyPrivilegesWithHttpInfo($authorization = null, $accept_language = null, $id4n_concerning = null, $offset = null, $limit = null)
     {
-        // verify the required parameter 'key' is set
-        if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling removeKeyUsingDELETE');
-        }
         // parse inputs
-        $resourcePath = "/api/v1/apikeys/{key}";
+        $resourcePath = "/api/v1/apikeys/privileges";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -386,6 +626,18 @@ class ApikeycontrollerApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
 
+        // query params
+        if ($id4n_concerning !== null) {
+            $queryParams['id4nConcerning'] = $this->apiClient->getSerializer()->toQueryValue($id4n_concerning);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
@@ -393,14 +645,6 @@ class ApikeycontrollerApi
         // header params
         if ($accept_language !== null) {
             $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($key !== null) {
-            $resourcePath = str_replace(
-                "{" . "key" . "}",
-                $this->apiClient->getSerializer()->toPathValue($key),
-                $resourcePath
-            );
         }
 
         // for model (json/xml)
@@ -413,23 +657,19 @@ class ApikeycontrollerApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'DELETE',
+                'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/apikeys/{key}'
+                '\Swagger\Client\Model\ApiKeyPrivilegeResponse',
+                '/api/v1/apikeys/privileges'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiKeyPrivilegeResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiKeyPrivilegeResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
@@ -444,6 +684,18 @@ class ApikeycontrollerApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
@@ -455,44 +707,44 @@ class ApikeycontrollerApi
     }
 
     /**
-     * Operation setKeyActivationStatusUsingPUT
+     * Operation setApiKeyActivationStatus
      *
-     * setKeyActivationStatus
+     * Set apiKey activation state
      *
-     * @param string $key key (required)
-     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status apiKeyStatus (required)
+     * @param string $key The apiKey to change the activation state. (required)
+     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status Activation state to set. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function setKeyActivationStatusUsingPUT($key, $api_key_status, $authorization = null, $accept_language = null)
+    public function setApiKeyActivationStatus($key, $api_key_status, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->setKeyActivationStatusUsingPUTWithHttpInfo($key, $api_key_status, $authorization, $accept_language);
+        list($response) = $this->setApiKeyActivationStatusWithHttpInfo($key, $api_key_status, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation setKeyActivationStatusUsingPUTWithHttpInfo
+     * Operation setApiKeyActivationStatusWithHttpInfo
      *
-     * setKeyActivationStatus
+     * Set apiKey activation state
      *
-     * @param string $key key (required)
-     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status apiKeyStatus (required)
+     * @param string $key The apiKey to change the activation state. (required)
+     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status Activation state to set. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setKeyActivationStatusUsingPUTWithHttpInfo($key, $api_key_status, $authorization = null, $accept_language = null)
+    public function setApiKeyActivationStatusWithHttpInfo($key, $api_key_status, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling setKeyActivationStatusUsingPUT');
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling setApiKeyActivationStatus');
         }
         // verify the required parameter 'api_key_status' is set
         if ($api_key_status === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $api_key_status when calling setKeyActivationStatusUsingPUT');
+            throw new \InvalidArgumentException('Missing the required parameter $api_key_status when calling setApiKeyActivationStatus');
         }
         // parse inputs
         $resourcePath = "/api/v1/apikeys/{key}";
@@ -542,15 +794,15 @@ class ApikeycontrollerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                '\Swagger\Client\Model\ApiError',
                 '/api/v1/apikeys/{key}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -578,128 +830,6 @@ class ApikeycontrollerApi
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation showKeyUsingGET
-     *
-     * showKey
-     *
-     * @param string $key key (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiKeyPresentation
-     */
-    public function showKeyUsingGET($key, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->showKeyUsingGETWithHttpInfo($key, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation showKeyUsingGETWithHttpInfo
-     *
-     * showKey
-     *
-     * @param string $key key (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiKeyPresentation, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function showKeyUsingGETWithHttpInfo($key, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'key' is set
-        if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling showKeyUsingGET');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/apikeys/{key}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($key !== null) {
-            $resourcePath = str_replace(
-                "{" . "key" . "}",
-                $this->apiClient->getSerializer()->toPathValue($key),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ApiKeyPresentation',
-                '/api/v1/apikeys/{key}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiKeyPresentation', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiKeyPresentation', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;

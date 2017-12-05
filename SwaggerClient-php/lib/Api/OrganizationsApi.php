@@ -88,349 +88,41 @@ class OrganizationsApi
     }
 
     /**
-     * Operation addMultipleUserRolesUsingPOST
+     * Operation createOrganization
      *
-     * addMultipleUserRoles
+     * Create organization
      *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\ChangeUserRoleRequest $change_user_role_request changeUserRoleRequest (required)
+     * @param \Swagger\Client\Model\Organization $organization Organization to be created (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\Organization
      */
-    public function addMultipleUserRolesUsingPOST($organization_id, $change_user_role_request, $authorization = null, $accept_language = null)
+    public function createOrganization($organization, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->addMultipleUserRolesUsingPOSTWithHttpInfo($organization_id, $change_user_role_request, $authorization, $accept_language);
+        list($response) = $this->createOrganizationWithHttpInfo($organization, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation addMultipleUserRolesUsingPOSTWithHttpInfo
+     * Operation createOrganizationWithHttpInfo
      *
-     * addMultipleUserRoles
+     * Create organization
      *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\ChangeUserRoleRequest $change_user_role_request changeUserRoleRequest (required)
+     * @param \Swagger\Client\Model\Organization $organization Organization to be created (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\Organization, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addMultipleUserRolesUsingPOSTWithHttpInfo($organization_id, $change_user_role_request, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling addMultipleUserRolesUsingPOST');
-        }
-        // verify the required parameter 'change_user_role_request' is set
-        if ($change_user_role_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_user_role_request when calling addMultipleUserRolesUsingPOST');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/users/role";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($change_user_role_request)) {
-            $_tempBody = $change_user_role_request;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/users/role'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation addUserRolesUsingPOST
-     *
-     * addUserRoles
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $username username (required)
-     * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function addUserRolesUsingPOST($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null, $offset = null, $limit = null)
-    {
-        list($response) = $this->addUserRolesUsingPOSTWithHttpInfo($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit);
-        return $response;
-    }
-
-    /**
-     * Operation addUserRolesUsingPOSTWithHttpInfo
-     *
-     * addUserRoles
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $username username (required)
-     * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addUserRolesUsingPOSTWithHttpInfo($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null, $offset = null, $limit = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling addUserRolesUsingPOST');
-        }
-        // verify the required parameter 'username' is set
-        if ($username === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $username when calling addUserRolesUsingPOST');
-        }
-        // verify the required parameter 'change_role_request' is set
-        if ($change_role_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_role_request when calling addUserRolesUsingPOST');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/user/{username}/roles";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
-        }
-        // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($username !== null) {
-            $resourcePath = str_replace(
-                "{" . "username" . "}",
-                $this->apiClient->getSerializer()->toPathValue($username),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($change_role_request)) {
-            $_tempBody = $change_role_request;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/user/{username}/roles'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createOrganzationUsingPOST
-     *
-     * createOrganzation
-     *
-     * @param \Swagger\Client\Model\Organization $organization organization (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function createOrganzationUsingPOST($organization, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->createOrganzationUsingPOSTWithHttpInfo($organization, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation createOrganzationUsingPOSTWithHttpInfo
-     *
-     * createOrganzation
-     *
-     * @param \Swagger\Client\Model\Organization $organization organization (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createOrganzationUsingPOSTWithHttpInfo($organization, $authorization = null, $accept_language = null)
+    public function createOrganizationWithHttpInfo($organization, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization' is set
         if ($organization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization when calling createOrganzationUsingPOST');
+            throw new \InvalidArgumentException('Missing the required parameter $organization when calling createOrganization');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization";
+        $resourcePath = "/api/v1/organizations";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -469,15 +161,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization'
+                '\Swagger\Client\Model\Organization',
+                '/api/v1/organizations'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Organization', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Organization', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -523,41 +215,41 @@ class OrganizationsApi
     }
 
     /**
-     * Operation deleteOrganizationLogoUsingDELETE
+     * Operation deleteOrganization
      *
-     * deleteOrganizationLogo
+     * Delete organization
      *
-     * @param int $organization_id organizationId (required)
+     * @param int $organization_id The id of the organization to be deleted. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function deleteOrganizationLogoUsingDELETE($organization_id, $authorization = null, $accept_language = null)
+    public function deleteOrganization($organization_id, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->deleteOrganizationLogoUsingDELETEWithHttpInfo($organization_id, $authorization, $accept_language);
+        list($response) = $this->deleteOrganizationWithHttpInfo($organization_id, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation deleteOrganizationLogoUsingDELETEWithHttpInfo
+     * Operation deleteOrganizationWithHttpInfo
      *
-     * deleteOrganizationLogo
+     * Delete organization
      *
-     * @param int $organization_id organizationId (required)
+     * @param int $organization_id The id of the organization to be deleted. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrganizationLogoUsingDELETEWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    public function deleteOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling deleteOrganizationLogoUsingDELETE');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling deleteOrganization');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/logo";
+        $resourcePath = "/api/v1/organizations/{organizationId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -599,15 +291,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/logo'
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -637,41 +329,41 @@ class OrganizationsApi
     }
 
     /**
-     * Operation deleteOrganizationUsingDELETE
+     * Operation deleteOrganizationBillingAddress
      *
-     * deleteOrganization
+     * Remove billing address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function deleteOrganizationUsingDELETE($organization_id, $authorization = null, $accept_language = null)
+    public function deleteOrganizationBillingAddress($organization_id, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->deleteOrganizationUsingDELETEWithHttpInfo($organization_id, $authorization, $accept_language);
+        list($response) = $this->deleteOrganizationBillingAddressWithHttpInfo($organization_id, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation deleteOrganizationUsingDELETEWithHttpInfo
+     * Operation deleteOrganizationBillingAddressWithHttpInfo
      *
-     * deleteOrganization
+     * Remove billing address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrganizationUsingDELETEWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    public function deleteOrganizationBillingAddressWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling deleteOrganizationUsingDELETE');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling deleteOrganizationBillingAddress');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}";
+        $resourcePath = "/api/v1/organizations/{organizationId}/addresses/billing";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -713,15 +405,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}'
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/addresses/billing'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -751,9 +443,245 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getAddressUsingGET
+     * Operation deleteOrganizationLogo
      *
-     * getAddress
+     * Delete organization logo
+     *
+     * @param int $organization_id The id of the organization where the logo should be deleted. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiError
+     */
+    public function deleteOrganizationLogo($organization_id, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->deleteOrganizationLogoWithHttpInfo($organization_id, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation deleteOrganizationLogoWithHttpInfo
+     *
+     * Delete organization logo
+     *
+     * @param int $organization_id The id of the organization where the logo should be deleted. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteOrganizationLogoWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling deleteOrganizationLogo');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}/logo";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/logo'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation findOrganization
+     *
+     * Find organization by id
+     *
+     * @param int $organization_id The id of the organization to be retrieved. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Organization
+     */
+    public function findOrganization($organization_id, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->findOrganizationWithHttpInfo($organization_id, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation findOrganizationWithHttpInfo
+     *
+     * Find organization by id
+     *
+     * @param int $organization_id The id of the organization to be retrieved. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Organization, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function findOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling findOrganization');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Organization',
+                '/api/v1/organizations/{organizationId}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Organization', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Organization', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation findOrganizationAddress
+     *
+     * Retrieve address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -761,16 +689,16 @@ class OrganizationsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\OrganizationAddress
      */
-    public function getAddressUsingGET($organization_id, $authorization = null, $accept_language = null)
+    public function findOrganizationAddress($organization_id, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->getAddressUsingGETWithHttpInfo($organization_id, $authorization, $accept_language);
+        list($response) = $this->findOrganizationAddressWithHttpInfo($organization_id, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation getAddressUsingGETWithHttpInfo
+     * Operation findOrganizationAddressWithHttpInfo
      *
-     * getAddress
+     * Retrieve address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -778,14 +706,14 @@ class OrganizationsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\OrganizationAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddressUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    public function findOrganizationAddressWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAddressUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling findOrganizationAddress');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/addresses/default";
+        $resourcePath = "/api/v1/organizations/{organizationId}/addresses/default";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -828,7 +756,7 @@ class OrganizationsApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\OrganizationAddress',
-                '/api/v1/organization/{organizationId}/addresses/default'
+                '/api/v1/organizations/{organizationId}/addresses/default'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrganizationAddress', $httpHeader), $statusCode, $httpHeader];
@@ -873,47 +801,171 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getAllUsingGET
+     * Operation findOrganizationBillingAddress
      *
-     * getAll
+     * Retrieve billing address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
-     * @param string $type type (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PaginatedResponseGuidCollection_
+     * @return \Swagger\Client\Model\OrganizationAddress
      */
-    public function getAllUsingGET($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null)
+    public function findOrganizationBillingAddress($organization_id, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->getAllUsingGETWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit, $type);
+        list($response) = $this->findOrganizationBillingAddressWithHttpInfo($organization_id, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation getAllUsingGETWithHttpInfo
+     * Operation findOrganizationBillingAddressWithHttpInfo
      *
-     * getAll
+     * Retrieve billing address
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
-     * @param string $type type (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PaginatedResponseGuidCollection_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\OrganizationAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null)
+    public function findOrganizationBillingAddressWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAllUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling findOrganizationBillingAddress');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/collections";
+        $resourcePath = "/api/v1/organizations/{organizationId}/addresses/billing";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\OrganizationAddress',
+                '/api/v1/organizations/{organizationId}/addresses/billing'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrganizationAddress', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\OrganizationAddress', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAllCollectionsOfOrganization
+     *
+     * Get collections of organization
+     *
+     * @param int $organization_id organizationId (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
+     * @param string $type Filter by this type (optional)
+     * @param string $label Filter by this label (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\PaginatedGuidCollection
+     */
+    public function getAllCollectionsOfOrganization($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null)
+    {
+        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label);
+        return $response;
+    }
+
+    /**
+     * Operation getAllCollectionsOfOrganizationWithHttpInfo
+     *
+     * Get collections of organization
+     *
+     * @param int $organization_id organizationId (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
+     * @param string $type Filter by this type (optional)
+     * @param string $label Filter by this label (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\PaginatedGuidCollection, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAllCollectionsOfOrganization');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}/collections";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -936,6 +988,10 @@ class OrganizationsApi
         if ($type !== null) {
             $queryParams['type'] = $this->apiClient->getSerializer()->toQueryValue($type);
         }
+        // query params
+        if ($label !== null) {
+            $queryParams['label'] = $this->apiClient->getSerializer()->toQueryValue($label);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
@@ -967,15 +1023,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaginatedResponseGuidCollection_',
-                '/api/v1/organization/{organizationId}/collections'
+                '\Swagger\Client\Model\PaginatedGuidCollection',
+                '/api/v1/organizations/{organizationId}/collections'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedResponseGuidCollection_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedGuidCollection', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedResponseGuidCollection_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedGuidCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
@@ -1013,167 +1069,45 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getBillingAddressUsingGET
+     * Operation getAllOrganizationRoles
      *
-     * getBillingAddress
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\OrganizationAddress
-     */
-    public function getBillingAddressUsingGET($organization_id, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->getBillingAddressUsingGETWithHttpInfo($organization_id, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation getBillingAddressUsingGETWithHttpInfo
-     *
-     * getBillingAddress
+     * List users and their roles
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\OrganizationAddress, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getBillingAddressUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getBillingAddressUsingGET');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/addresses/billing";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\OrganizationAddress',
-                '/api/v1/organization/{organizationId}/addresses/billing'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrganizationAddress', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\OrganizationAddress', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getMultipleUserRolesUsingGET
-     *
-     * getMultipleUserRoles
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PaginatedUserRolesResponse
      */
-    public function getMultipleUserRolesUsingGET($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getAllOrganizationRoles($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
-        list($response) = $this->getMultipleUserRolesUsingGETWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit);
+        list($response) = $this->getAllOrganizationRolesWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation getMultipleUserRolesUsingGETWithHttpInfo
+     * Operation getAllOrganizationRolesWithHttpInfo
      *
-     * getMultipleUserRoles
+     * List users and their roles
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PaginatedUserRolesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMultipleUserRolesUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getAllOrganizationRolesWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getMultipleUserRolesUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAllOrganizationRoles');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/users/role";
+        $resourcePath = "/api/v1/organizations/{organizationId}/roles";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1224,7 +1158,7 @@ class OrganizationsApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\PaginatedUserRolesResponse',
-                '/api/v1/organization/{organizationId}/users/role'
+                '/api/v1/organizations/{organizationId}/roles'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedUserRolesResponse', $httpHeader), $statusCode, $httpHeader];
@@ -1269,160 +1203,38 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getOrganizationUsingGET
+     * Operation getOrganizationsOfUser
      *
-     * getOrganization
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Organization
-     */
-    public function getOrganizationUsingGET($organization_id, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->getOrganizationUsingGETWithHttpInfo($organization_id, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation getOrganizationUsingGETWithHttpInfo
-     *
-     * getOrganization
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Organization, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getOrganizationUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getOrganizationUsingGET');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Organization',
-                '/api/v1/organization/{organizationId}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Organization', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Organization', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getOrganizationsUsingGET
-     *
-     * getOrganizations
+     * Retrieve organizations of user
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @param string $role role (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PaginatedResponseOrganization_
      */
-    public function getOrganizationsUsingGET($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
+    public function getOrganizationsOfUser($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
     {
-        list($response) = $this->getOrganizationsUsingGETWithHttpInfo($authorization, $accept_language, $role, $offset, $limit);
+        list($response) = $this->getOrganizationsOfUserWithHttpInfo($authorization, $accept_language, $role, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation getOrganizationsUsingGETWithHttpInfo
+     * Operation getOrganizationsOfUserWithHttpInfo
      *
-     * getOrganizations
+     * Retrieve organizations of user
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @param string $role role (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PaginatedResponseOrganization_, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationsUsingGETWithHttpInfo($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
+    public function getOrganizationsOfUserWithHttpInfo($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
     {
         // parse inputs
         $resourcePath = "/api/v1/user/organizations";
@@ -1517,51 +1329,47 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getUserRolesByUsernameUsingGET
+     * Operation getUserRoles
      *
-     * getUserRolesByUsername
+     * Get user roles by username
      *
      * @param int $organization_id organizationId (required)
      * @param string $username username (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\UserRoles
      */
-    public function getUserRolesByUsernameUsingGET($organization_id, $username, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getUserRoles($organization_id, $username, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->getUserRolesByUsernameUsingGETWithHttpInfo($organization_id, $username, $authorization, $accept_language, $offset, $limit);
+        list($response) = $this->getUserRolesWithHttpInfo($organization_id, $username, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation getUserRolesByUsernameUsingGETWithHttpInfo
+     * Operation getUserRolesWithHttpInfo
      *
-     * getUserRolesByUsername
+     * Get user roles by username
      *
      * @param int $organization_id organizationId (required)
      * @param string $username username (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\UserRoles, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserRolesByUsernameUsingGETWithHttpInfo($organization_id, $username, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getUserRolesWithHttpInfo($organization_id, $username, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUserRolesByUsernameUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUserRoles');
         }
         // verify the required parameter 'username' is set
         if ($username === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $username when calling getUserRolesByUsernameUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $username when calling getUserRoles');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/user/{username}/roles";
+        $resourcePath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1572,14 +1380,6 @@ class OrganizationsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
 
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
-        }
-        // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
@@ -1620,7 +1420,7 @@ class OrganizationsApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\UserRoles',
-                '/api/v1/organization/{organizationId}/user/{username}/roles'
+                '/api/v1/organizations/{organizationId}/users/{username}/roles'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserRoles', $httpHeader), $statusCode, $httpHeader];
@@ -1665,45 +1465,45 @@ class OrganizationsApi
     }
 
     /**
-     * Operation getUsersUsingGET
+     * Operation getUsersOfOrganization
      *
-     * getUsers
+     * Find users in organization
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PaginatedUserPresentationResponse
      */
-    public function getUsersUsingGET($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getUsersOfOrganization($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
-        list($response) = $this->getUsersUsingGETWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit);
+        list($response) = $this->getUsersOfOrganizationWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation getUsersUsingGETWithHttpInfo
+     * Operation getUsersOfOrganizationWithHttpInfo
      *
-     * getUsers
+     * Find users in organization
      *
      * @param int $organization_id organizationId (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PaginatedUserPresentationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersUsingGETWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function getUsersOfOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUsersUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUsersOfOrganization');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/users";
+        $resourcePath = "/api/v1/organizations/{organizationId}/users";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1754,7 +1554,7 @@ class OrganizationsApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\PaginatedUserPresentationResponse',
-                '/api/v1/organization/{organizationId}/users'
+                '/api/v1/organizations/{organizationId}/users'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedUserPresentationResponse', $httpHeader), $statusCode, $httpHeader];
@@ -1799,296 +1599,53 @@ class OrganizationsApi
     }
 
     /**
-     * Operation removeBillingAddressUsingDELETE
+     * Operation removeUserRoles
      *
-     * removeBillingAddress
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function removeBillingAddressUsingDELETE($organization_id, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->removeBillingAddressUsingDELETEWithHttpInfo($organization_id, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation removeBillingAddressUsingDELETEWithHttpInfo
-     *
-     * removeBillingAddress
-     *
-     * @param int $organization_id organizationId (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function removeBillingAddressUsingDELETEWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling removeBillingAddressUsingDELETE');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/addresses/billing";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/addresses/billing'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation removeMultipleUserRolesUsingDELETE
-     *
-     * removeMultipleUserRoles
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\ChangeUserRoleRequest $change_user_role_request changeUserRoleRequest (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function removeMultipleUserRolesUsingDELETE($organization_id, $change_user_role_request, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->removeMultipleUserRolesUsingDELETEWithHttpInfo($organization_id, $change_user_role_request, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation removeMultipleUserRolesUsingDELETEWithHttpInfo
-     *
-     * removeMultipleUserRoles
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\ChangeUserRoleRequest $change_user_role_request changeUserRoleRequest (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function removeMultipleUserRolesUsingDELETEWithHttpInfo($organization_id, $change_user_role_request, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling removeMultipleUserRolesUsingDELETE');
-        }
-        // verify the required parameter 'change_user_role_request' is set
-        if ($change_user_role_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_user_role_request when calling removeMultipleUserRolesUsingDELETE');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/users/role";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($change_user_role_request)) {
-            $_tempBody = $change_user_role_request;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/users/role'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation removeUserRolesUsingDELETE
-     *
-     * removeUserRoles
+     * Remove role(s) from user
      *
      * @param int $organization_id organizationId (required)
      * @param string $username username (required)
      * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function removeUserRolesUsingDELETE($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function removeUserRoles($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->removeUserRolesUsingDELETEWithHttpInfo($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit);
+        list($response) = $this->removeUserRolesWithHttpInfo($organization_id, $username, $change_role_request, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation removeUserRolesUsingDELETEWithHttpInfo
+     * Operation removeUserRolesWithHttpInfo
      *
-     * removeUserRoles
+     * Remove role(s) from user
      *
      * @param int $organization_id organizationId (required)
      * @param string $username username (required)
      * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
-     * @param int $offset  (optional)
-     * @param int $limit  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserRolesUsingDELETEWithHttpInfo($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null, $offset = null, $limit = null)
+    public function removeUserRolesWithHttpInfo($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling removeUserRolesUsingDELETE');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling removeUserRoles');
         }
         // verify the required parameter 'username' is set
         if ($username === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $username when calling removeUserRolesUsingDELETE');
+            throw new \InvalidArgumentException('Missing the required parameter $username when calling removeUserRoles');
         }
         // verify the required parameter 'change_role_request' is set
         if ($change_role_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $change_role_request when calling removeUserRolesUsingDELETE');
+            throw new \InvalidArgumentException('Missing the required parameter $change_role_request when calling removeUserRoles');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/user/{username}/roles";
+        $resourcePath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2099,14 +1656,6 @@ class OrganizationsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
 
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
-        }
-        // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
@@ -2151,15 +1700,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/user/{username}/roles'
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/users/{username}/roles'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2189,47 +1738,470 @@ class OrganizationsApi
     }
 
     /**
-     * Operation setOrganizationLogoUsingPOST
+     * Operation updateOrganization
      *
-     * setOrganizationLogo
+     * Update organization
      *
-     * @param int $organization_id organizationId (required)
-     * @param \SplFileObject $file file (required)
+     * @param int $organization_id The id of the organization to be updated. (required)
+     * @param \Swagger\Client\Model\Organization $organization Updated organization object (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\Organization
      */
-    public function setOrganizationLogoUsingPOST($organization_id, $file, $authorization = null, $accept_language = null)
+    public function updateOrganization($organization_id, $organization, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->setOrganizationLogoUsingPOSTWithHttpInfo($organization_id, $file, $authorization, $accept_language);
+        list($response) = $this->updateOrganizationWithHttpInfo($organization_id, $organization, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation setOrganizationLogoUsingPOSTWithHttpInfo
+     * Operation updateOrganizationWithHttpInfo
      *
-     * setOrganizationLogo
+     * Update organization
      *
-     * @param int $organization_id organizationId (required)
-     * @param \SplFileObject $file file (required)
+     * @param int $organization_id The id of the organization to be updated. (required)
+     * @param \Swagger\Client\Model\Organization $organization Updated organization object (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\Organization, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setOrganizationLogoUsingPOSTWithHttpInfo($organization_id, $file, $authorization = null, $accept_language = null)
+    public function updateOrganizationWithHttpInfo($organization_id, $organization, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling setOrganizationLogoUsingPOST');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateOrganization');
+        }
+        // verify the required parameter 'organization' is set
+        if ($organization === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization when calling updateOrganization');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($organization)) {
+            $_tempBody = $organization;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Organization',
+                '/api/v1/organizations/{organizationId}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Organization', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Organization', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateOrganizationAddress
+     *
+     * Store address
+     *
+     * @param int $organization_id organizationId (required)
+     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiError
+     */
+    public function updateOrganizationAddress($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->updateOrganizationAddressWithHttpInfo($organization_id, $address_resource, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation updateOrganizationAddressWithHttpInfo
+     *
+     * Store address
+     *
+     * @param int $organization_id organizationId (required)
+     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateOrganizationAddressWithHttpInfo($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateOrganizationAddress');
+        }
+        // verify the required parameter 'address_resource' is set
+        if ($address_resource === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $address_resource when calling updateOrganizationAddress');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}/addresses/default";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($address_resource)) {
+            $_tempBody = $address_resource;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/addresses/default'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateOrganizationBillingAddress
+     *
+     * Store billing address
+     *
+     * @param int $organization_id organizationId (required)
+     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiError
+     */
+    public function updateOrganizationBillingAddress($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->updateOrganizationBillingAddressWithHttpInfo($organization_id, $address_resource, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation updateOrganizationBillingAddressWithHttpInfo
+     *
+     * Store billing address
+     *
+     * @param int $organization_id organizationId (required)
+     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateOrganizationBillingAddressWithHttpInfo($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateOrganizationBillingAddress');
+        }
+        // verify the required parameter 'address_resource' is set
+        if ($address_resource === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $address_resource when calling updateOrganizationBillingAddress');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/organizations/{organizationId}/addresses/billing";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "organizationId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($address_resource)) {
+            $_tempBody = $address_resource;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/addresses/billing'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateOrganizationLogo
+     *
+     * Update organization logo
+     *
+     * @param int $organization_id The id of the organization where the logo should be updated. (required)
+     * @param \SplFileObject $file An image containing the new logo. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiError
+     */
+    public function updateOrganizationLogo($organization_id, $file, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->updateOrganizationLogoWithHttpInfo($organization_id, $file, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation updateOrganizationLogoWithHttpInfo
+     *
+     * Update organization logo
+     *
+     * @param int $organization_id The id of the organization where the logo should be updated. (required)
+     * @param \SplFileObject $file An image containing the new logo. (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateOrganizationLogoWithHttpInfo($organization_id, $file, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateOrganizationLogo');
         }
         // verify the required parameter 'file' is set
         if ($file === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file when calling setOrganizationLogoUsingPOST');
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling updateOrganizationLogo');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/logo";
+        $resourcePath = "/api/v1/organizations/{organizationId}/logo";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2281,15 +2253,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/logo'
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/logo'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2335,47 +2307,53 @@ class OrganizationsApi
     }
 
     /**
-     * Operation storeAddressUsingPOST
+     * Operation updateUserRoles
      *
-     * storeAddress
+     * Add role(s) to user
      *
      * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $username username (required)
+     * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return \Swagger\Client\Model\ApiError
      */
-    public function storeAddressUsingPOST($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    public function updateUserRoles($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->storeAddressUsingPOSTWithHttpInfo($organization_id, $address_resource, $authorization, $accept_language);
+        list($response) = $this->updateUserRolesWithHttpInfo($organization_id, $username, $change_role_request, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation storeAddressUsingPOSTWithHttpInfo
+     * Operation updateUserRolesWithHttpInfo
      *
-     * storeAddress
+     * Add role(s) to user
      *
      * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
+     * @param string $username username (required)
+     * @param \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storeAddressUsingPOSTWithHttpInfo($organization_id, $address_resource, $authorization = null, $accept_language = null)
+    public function updateUserRolesWithHttpInfo($organization_id, $username, $change_role_request, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling storeAddressUsingPOST');
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateUserRoles');
         }
-        // verify the required parameter 'address_resource' is set
-        if ($address_resource === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $address_resource when calling storeAddressUsingPOST');
+        // verify the required parameter 'username' is set
+        if ($username === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $username when calling updateUserRoles');
+        }
+        // verify the required parameter 'change_role_request' is set
+        if ($change_role_request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $change_role_request when calling updateUserRoles');
         }
         // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/addresses/default";
+        $resourcePath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2402,10 +2380,18 @@ class OrganizationsApi
                 $resourcePath
             );
         }
+        // path params
+        if ($username !== null) {
+            $resourcePath = str_replace(
+                "{" . "username" . "}",
+                $this->apiClient->getSerializer()->toPathValue($username),
+                $resourcePath
+            );
+        }
         // body params
         $_tempBody = null;
-        if (isset($address_resource)) {
-            $_tempBody = $address_resource;
+        if (isset($change_role_request)) {
+            $_tempBody = $change_role_request;
         }
 
         // for model (json/xml)
@@ -2422,297 +2408,15 @@ class OrganizationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/addresses/default'
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/organizations/{organizationId}/users/{username}/roles'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation storeBillingAddressUsingPOST
-     *
-     * storeBillingAddress
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function storeBillingAddressUsingPOST($organization_id, $address_resource, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->storeBillingAddressUsingPOSTWithHttpInfo($organization_id, $address_resource, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation storeBillingAddressUsingPOSTWithHttpInfo
-     *
-     * storeBillingAddress
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function storeBillingAddressUsingPOSTWithHttpInfo($organization_id, $address_resource, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling storeBillingAddressUsingPOST');
-        }
-        // verify the required parameter 'address_resource' is set
-        if ($address_resource === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $address_resource when calling storeBillingAddressUsingPOST');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}/addresses/billing";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($address_resource)) {
-            $_tempBody = $address_resource;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
-                '/api/v1/organization/{organizationId}/addresses/billing'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateOrganizationUsingPUT
-     *
-     * updateOrganization
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\Organization $organization organization (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Organization
-     */
-    public function updateOrganizationUsingPUT($organization_id, $organization, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->updateOrganizationUsingPUTWithHttpInfo($organization_id, $organization, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation updateOrganizationUsingPUTWithHttpInfo
-     *
-     * updateOrganization
-     *
-     * @param int $organization_id organizationId (required)
-     * @param \Swagger\Client\Model\Organization $organization organization (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Organization, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateOrganizationUsingPUTWithHttpInfo($organization_id, $organization, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling updateOrganizationUsingPUT');
-        }
-        // verify the required parameter 'organization' is set
-        if ($organization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $organization when calling updateOrganizationUsingPUT');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/organization/{organizationId}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "organizationId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($organization)) {
-            $_tempBody = $organization;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Organization',
-                '/api/v1/organization/{organizationId}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Organization', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Organization', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

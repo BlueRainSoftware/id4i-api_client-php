@@ -54,12 +54,12 @@ class OrganizationAddress implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'city' => 'string',
         'company_name' => 'string',
         'firstname' => 'string',
         'lastname' => 'string',
-        'post_code' => 'string',
         'street' => 'string',
+        'post_code' => 'string',
+        'city' => 'string',
         'telephone' => 'string'
     ];
 
@@ -68,12 +68,12 @@ class OrganizationAddress implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'city' => null,
         'company_name' => null,
         'firstname' => null,
         'lastname' => null,
-        'post_code' => null,
         'street' => null,
+        'post_code' => null,
+        'city' => null,
         'telephone' => null
     ];
 
@@ -92,12 +92,12 @@ class OrganizationAddress implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'city' => 'city',
         'company_name' => 'companyName',
         'firstname' => 'firstname',
         'lastname' => 'lastname',
-        'post_code' => 'postCode',
         'street' => 'street',
+        'post_code' => 'postCode',
+        'city' => 'city',
         'telephone' => 'telephone'
     ];
 
@@ -107,12 +107,12 @@ class OrganizationAddress implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'city' => 'setCity',
         'company_name' => 'setCompanyName',
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
-        'post_code' => 'setPostCode',
         'street' => 'setStreet',
+        'post_code' => 'setPostCode',
+        'city' => 'setCity',
         'telephone' => 'setTelephone'
     ];
 
@@ -122,12 +122,12 @@ class OrganizationAddress implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'city' => 'getCity',
         'company_name' => 'getCompanyName',
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
-        'post_code' => 'getPostCode',
         'street' => 'getStreet',
+        'post_code' => 'getPostCode',
+        'city' => 'getCity',
         'telephone' => 'getTelephone'
     ];
 
@@ -162,12 +162,12 @@ class OrganizationAddress implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
         $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
-        $this->container['post_code'] = isset($data['post_code']) ? $data['post_code'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['post_code'] = isset($data['post_code']) ? $data['post_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
     }
 
@@ -179,17 +179,6 @@ class OrganizationAddress implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        if ($this->container['city'] === null) {
-            $invalid_properties[] = "'city' can't be null";
-        }
-        if ((strlen($this->container['city']) > 99)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 99.";
-        }
-
-        if ((strlen($this->container['city']) < 2)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
-        }
 
         if (!is_null($this->container['company_name']) && (strlen($this->container['company_name']) > 254)) {
             $invalid_properties[] = "invalid value for 'company_name', the character length must be smaller than or equal to 254.";
@@ -221,6 +210,17 @@ class OrganizationAddress implements ArrayAccess
             $invalid_properties[] = "invalid value for 'lastname', the character length must be bigger than or equal to 2.";
         }
 
+        if ($this->container['street'] === null) {
+            $invalid_properties[] = "'street' can't be null";
+        }
+        if ((strlen($this->container['street']) > 254)) {
+            $invalid_properties[] = "invalid value for 'street', the character length must be smaller than or equal to 254.";
+        }
+
+        if ((strlen($this->container['street']) < 3)) {
+            $invalid_properties[] = "invalid value for 'street', the character length must be bigger than or equal to 3.";
+        }
+
         if ($this->container['post_code'] === null) {
             $invalid_properties[] = "'post_code' can't be null";
         }
@@ -232,15 +232,15 @@ class OrganizationAddress implements ArrayAccess
             $invalid_properties[] = "invalid value for 'post_code', the character length must be bigger than or equal to 2.";
         }
 
-        if ($this->container['street'] === null) {
-            $invalid_properties[] = "'street' can't be null";
+        if ($this->container['city'] === null) {
+            $invalid_properties[] = "'city' can't be null";
         }
-        if ((strlen($this->container['street']) > 254)) {
-            $invalid_properties[] = "invalid value for 'street', the character length must be smaller than or equal to 254.";
+        if ((strlen($this->container['city']) > 99)) {
+            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 99.";
         }
 
-        if ((strlen($this->container['street']) < 3)) {
-            $invalid_properties[] = "invalid value for 'street', the character length must be bigger than or equal to 3.";
+        if ((strlen($this->container['city']) < 2)) {
+            $invalid_properties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
         }
 
         if (!is_null($this->container['telephone']) && (strlen($this->container['telephone']) > 99)) {
@@ -263,15 +263,6 @@ class OrganizationAddress implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['city'] === null) {
-            return false;
-        }
-        if (strlen($this->container['city']) > 99) {
-            return false;
-        }
-        if (strlen($this->container['city']) < 2) {
-            return false;
-        }
         if (strlen($this->container['company_name']) > 254) {
             return false;
         }
@@ -296,6 +287,15 @@ class OrganizationAddress implements ArrayAccess
         if (strlen($this->container['lastname']) < 2) {
             return false;
         }
+        if ($this->container['street'] === null) {
+            return false;
+        }
+        if (strlen($this->container['street']) > 254) {
+            return false;
+        }
+        if (strlen($this->container['street']) < 3) {
+            return false;
+        }
         if ($this->container['post_code'] === null) {
             return false;
         }
@@ -305,13 +305,13 @@ class OrganizationAddress implements ArrayAccess
         if (strlen($this->container['post_code']) < 2) {
             return false;
         }
-        if ($this->container['street'] === null) {
+        if ($this->container['city'] === null) {
             return false;
         }
-        if (strlen($this->container['street']) > 254) {
+        if (strlen($this->container['city']) > 99) {
             return false;
         }
-        if (strlen($this->container['street']) < 3) {
+        if (strlen($this->container['city']) < 2) {
             return false;
         }
         if (strlen($this->container['telephone']) > 99) {
@@ -323,34 +323,6 @@ class OrganizationAddress implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets city
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     * @param string $city
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        if ((strlen($city) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling OrganizationAddress., must be smaller than or equal to 99.');
-        }
-        if ((strlen($city) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling OrganizationAddress., must be bigger than or equal to 2.');
-        }
-
-        $this->container['city'] = $city;
-
-        return $this;
-    }
 
     /**
      * Gets company_name
@@ -437,34 +409,6 @@ class OrganizationAddress implements ArrayAccess
     }
 
     /**
-     * Gets post_code
-     * @return string
-     */
-    public function getPostCode()
-    {
-        return $this->container['post_code'];
-    }
-
-    /**
-     * Sets post_code
-     * @param string $post_code
-     * @return $this
-     */
-    public function setPostCode($post_code)
-    {
-        if ((strlen($post_code) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $post_code when calling OrganizationAddress., must be smaller than or equal to 40.');
-        }
-        if ((strlen($post_code) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $post_code when calling OrganizationAddress., must be bigger than or equal to 2.');
-        }
-
-        $this->container['post_code'] = $post_code;
-
-        return $this;
-    }
-
-    /**
      * Gets street
      * @return string
      */
@@ -493,6 +437,62 @@ class OrganizationAddress implements ArrayAccess
     }
 
     /**
+     * Gets post_code
+     * @return string
+     */
+    public function getPostCode()
+    {
+        return $this->container['post_code'];
+    }
+
+    /**
+     * Sets post_code
+     * @param string $post_code
+     * @return $this
+     */
+    public function setPostCode($post_code)
+    {
+        if ((strlen($post_code) > 40)) {
+            throw new \InvalidArgumentException('invalid length for $post_code when calling OrganizationAddress., must be smaller than or equal to 40.');
+        }
+        if ((strlen($post_code) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $post_code when calling OrganizationAddress., must be bigger than or equal to 2.');
+        }
+
+        $this->container['post_code'] = $post_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     * @param string $city
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        if ((strlen($city) > 99)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling OrganizationAddress., must be smaller than or equal to 99.');
+        }
+        if ((strlen($city) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling OrganizationAddress., must be bigger than or equal to 2.');
+        }
+
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
      * Gets telephone
      * @return string
      */
@@ -503,7 +503,7 @@ class OrganizationAddress implements ArrayAccess
 
     /**
      * Sets telephone
-     * @param string $telephone
+     * @param string $telephone The telephone number e.g.
      * @return $this
      */
     public function setTelephone($telephone)

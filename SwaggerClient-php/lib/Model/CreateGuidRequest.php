@@ -35,6 +35,7 @@ use \ArrayAccess;
  * CreateGuidRequest Class Doc Comment
  *
  * @category    Class
+ * @description GUID creation information
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,8 +55,8 @@ class CreateGuidRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'length' => 'int',
         'count' => 'int',
+        'length' => 'int',
         'organization_id' => 'int'
     ];
 
@@ -64,8 +65,8 @@ class CreateGuidRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'length' => 'int32',
         'count' => 'int32',
+        'length' => 'int32',
         'organization_id' => 'int64'
     ];
 
@@ -84,8 +85,8 @@ class CreateGuidRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'length' => 'length',
         'count' => 'count',
+        'length' => 'length',
         'organization_id' => 'organizationId'
     ];
 
@@ -95,8 +96,8 @@ class CreateGuidRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'length' => 'setLength',
         'count' => 'setCount',
+        'length' => 'setLength',
         'organization_id' => 'setOrganizationId'
     ];
 
@@ -106,8 +107,8 @@ class CreateGuidRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'length' => 'getLength',
         'count' => 'getCount',
+        'length' => 'getLength',
         'organization_id' => 'getOrganizationId'
     ];
 
@@ -142,8 +143,8 @@ class CreateGuidRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
     }
 
@@ -156,6 +157,27 @@ class CreateGuidRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
+        }
+        if (($this->container['count'] < 1)) {
+            $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['length'] === null) {
+            $invalid_properties[] = "'length' can't be null";
+        }
+        if (($this->container['length'] > 255)) {
+            $invalid_properties[] = "invalid value for 'length', must be smaller than or equal to 255.";
+        }
+
+        if (($this->container['length'] < 6)) {
+            $invalid_properties[] = "invalid value for 'length', must be bigger than or equal to 6.";
+        }
+
+        if ($this->container['organization_id'] === null) {
+            $invalid_properties[] = "'organization_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,30 +190,27 @@ class CreateGuidRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['count'] === null) {
+            return false;
+        }
+        if ($this->container['count'] < 1) {
+            return false;
+        }
+        if ($this->container['length'] === null) {
+            return false;
+        }
+        if ($this->container['length'] > 255) {
+            return false;
+        }
+        if ($this->container['length'] < 6) {
+            return false;
+        }
+        if ($this->container['organization_id'] === null) {
+            return false;
+        }
         return true;
     }
 
-
-    /**
-     * Gets length
-     * @return int
-     */
-    public function getLength()
-    {
-        return $this->container['length'];
-    }
-
-    /**
-     * Sets length
-     * @param int $length
-     * @return $this
-     */
-    public function setLength($length)
-    {
-        $this->container['length'] = $length;
-
-        return $this;
-    }
 
     /**
      * Gets count
@@ -204,12 +223,46 @@ class CreateGuidRequest implements ArrayAccess
 
     /**
      * Sets count
-     * @param int $count
+     * @param int $count The total number of GUIDs to create
      * @return $this
      */
     public function setCount($count)
     {
+
+        if (($count < 1)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling CreateGuidRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets length
+     * @return int
+     */
+    public function getLength()
+    {
+        return $this->container['length'];
+    }
+
+    /**
+     * Sets length
+     * @param int $length The charactersequence length of the GUID
+     * @return $this
+     */
+    public function setLength($length)
+    {
+
+        if (($length > 255)) {
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateGuidRequest., must be smaller than or equal to 255.');
+        }
+        if (($length < 6)) {
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateGuidRequest., must be bigger than or equal to 6.');
+        }
+
+        $this->container['length'] = $length;
 
         return $this;
     }
@@ -225,7 +278,7 @@ class CreateGuidRequest implements ArrayAccess
 
     /**
      * Sets organization_id
-     * @param int $organization_id
+     * @param int $organization_id The id of the organization where the generated GUIDs should be assigned.
      * @return $this
      */
     public function setOrganizationId($organization_id)

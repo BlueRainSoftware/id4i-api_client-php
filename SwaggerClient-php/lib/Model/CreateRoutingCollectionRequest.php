@@ -54,6 +54,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'label' => 'string',
         'length' => 'int',
         'organization_id' => 'int'
     ];
@@ -63,6 +64,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'label' => null,
         'length' => 'int32',
         'organization_id' => 'int64'
     ];
@@ -82,6 +84,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'label' => 'label',
         'length' => 'length',
         'organization_id' => 'organizationId'
     ];
@@ -92,6 +95,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'label' => 'setLabel',
         'length' => 'setLength',
         'organization_id' => 'setOrganizationId'
     ];
@@ -102,6 +106,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'label' => 'getLabel',
         'length' => 'getLength',
         'organization_id' => 'getOrganizationId'
     ];
@@ -137,6 +142,7 @@ class CreateRoutingCollectionRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
     }
@@ -150,6 +156,9 @@ class CreateRoutingCollectionRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['label'] === null) {
+            $invalid_properties[] = "'label' can't be null";
+        }
         if ($this->container['length'] === null) {
             $invalid_properties[] = "'length' can't be null";
         }
@@ -168,6 +177,9 @@ class CreateRoutingCollectionRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['label'] === null) {
+            return false;
+        }
         if ($this->container['length'] === null) {
             return false;
         }
@@ -177,6 +189,27 @@ class CreateRoutingCollectionRequest implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets label
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     * @param string $label
+     * @return $this
+     */
+    public function setLabel($label)
+    {
+        $this->container['label'] = $label;
+
+        return $this;
+    }
 
     /**
      * Gets length

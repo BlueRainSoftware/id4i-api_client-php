@@ -73,12 +73,12 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createUsingPOST1
+     * Test case for createGuid
      *
-     * create.
+     * Create GUID(s).
      *
      */
-    public function testCreateUsingPOST1()
+    public function testCreateGuid()
     {
     }
 }

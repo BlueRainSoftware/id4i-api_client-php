@@ -1,6 +1,6 @@
 <?php
 /**
- * ApikeyprivilegecontrollerApiTest
+ * ApiKeysApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ApikeyprivilegecontrollerApiTest Class Doc Comment
+ * ApiKeysApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApikeyprivilegecontrollerApiTest extends \PHPUnit_Framework_TestCase
+class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -73,12 +73,62 @@ class ApikeyprivilegecontrollerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for listUsingGET1
+     * Test case for createNewApiKey
      *
-     * list.
+     * Create apiKey.
      *
      */
-    public function testListUsingGET1()
+    public function testCreateNewApiKey()
+    {
+    }
+
+    /**
+     * Test case for deleteApiKey
+     *
+     * Delete apiKey.
+     *
+     */
+    public function testDeleteApiKey()
+    {
+    }
+
+    /**
+     * Test case for getApiKey
+     *
+     * Show apiKey.
+     *
+     */
+    public function testGetApiKey()
+    {
+    }
+
+    /**
+     * Test case for listAllApiKeysOfOrganization
+     *
+     * Find apiKeys by organization.
+     *
+     */
+    public function testListAllApiKeysOfOrganization()
+    {
+    }
+
+    /**
+     * Test case for listApiKeyPrivileges
+     *
+     * List ApiKey privileges.
+     *
+     */
+    public function testListApiKeyPrivileges()
+    {
+    }
+
+    /**
+     * Test case for setApiKeyActivationStatus
+     *
+     * Set apiKey activation state.
+     *
+     */
+    public function testSetApiKeyActivationStatus()
     {
     }
 }

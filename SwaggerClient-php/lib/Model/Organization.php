@@ -35,6 +35,7 @@ use \ArrayAccess;
  * Organization Class Doc Comment
  *
  * @category    Class
+ * @description An organization
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -203,7 +204,7 @@ class Organization implements ArrayAccess
 
     /**
      * Sets id
-     * @param int $id
+     * @param int $id The id of the organization
      * @return $this
      */
     public function setId($id)
@@ -224,7 +225,7 @@ class Organization implements ArrayAccess
 
     /**
      * Sets logo_url
-     * @param string $logo_url
+     * @param string $logo_url URL to a logo of the organization
      * @return $this
      */
     public function setLogoUrl($logo_url)
@@ -245,7 +246,7 @@ class Organization implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name
+     * @param string $name The name of the organization
      * @return $this
      */
     public function setName($name)

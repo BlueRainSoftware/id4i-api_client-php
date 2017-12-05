@@ -1,6 +1,6 @@
 <?php
 /**
- * OrganizationAddressTest
+ * TimestampTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * OrganizationAddressTest Class Doc Comment
+ * TimestampTest Class Doc Comment
  *
  * @category    Class */
-// * @description OrganizationAddress
+// * @description Timestamp
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
+class TimestampTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,58 +71,79 @@ class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrganizationAddress"
+     * Test "Timestamp"
      */
-    public function testOrganizationAddress()
+    public function testTimestamp()
     {
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "date"
      */
-    public function testPropertyCompanyName()
+    public function testPropertyDate()
     {
     }
 
     /**
-     * Test attribute "firstname"
+     * Test attribute "day"
      */
-    public function testPropertyFirstname()
+    public function testPropertyDay()
     {
     }
 
     /**
-     * Test attribute "lastname"
+     * Test attribute "hours"
      */
-    public function testPropertyLastname()
+    public function testPropertyHours()
     {
     }
 
     /**
-     * Test attribute "street"
+     * Test attribute "minutes"
      */
-    public function testPropertyStreet()
+    public function testPropertyMinutes()
     {
     }
 
     /**
-     * Test attribute "post_code"
+     * Test attribute "month"
      */
-    public function testPropertyPostCode()
+    public function testPropertyMonth()
     {
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "nanos"
      */
-    public function testPropertyCity()
+    public function testPropertyNanos()
     {
     }
 
     /**
-     * Test attribute "telephone"
+     * Test attribute "seconds"
      */
-    public function testPropertyTelephone()
+    public function testPropertySeconds()
+    {
+    }
+
+    /**
+     * Test attribute "time"
+     */
+    public function testPropertyTime()
+    {
+    }
+
+    /**
+     * Test attribute "timezone_offset"
+     */
+    public function testPropertyTimezoneOffset()
+    {
+    }
+
+    /**
+     * Test attribute "year"
+     */
+    public function testPropertyYear()
     {
     }
 }

@@ -78,6 +78,13 @@ class CreateLogisticCollectionRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "label"
+     */
+    public function testPropertyLabel()
+    {
+    }
+
+    /**
      * Test attribute "length"
      */
     public function testPropertyLength()

@@ -1,10 +1,12 @@
-# ChangeUserRoleRequest
+# PaginatedResponseUserRoles_
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roles** | **string[]** |  | [optional] 
-**username** | **string** |  | [optional] 
+**elements** | [**\Swagger\Client\Model\UserRoles[]**](UserRoles.md) |  | [optional] 
+**limit** | **int** |  | 
+**offset** | **int** |  | 
+**total** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
