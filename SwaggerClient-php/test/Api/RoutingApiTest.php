@@ -73,112 +73,32 @@ class RoutingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addElementsToRoutingCollectionUsingPUT
+     * Test case for getRoute
      *
-     * addElementsToRoutingCollection.
+     * Retrieve current route of a GUID (or ID4N).
      *
      */
-    public function testAddElementsToRoutingCollectionUsingPUT()
+    public function testGetRoute()
     {
     }
 
     /**
-     * Test case for addSingleElementToRoutingCollectionUsingPUT
+     * Test case for getRoutingFile
      *
-     * addSingleElementToRoutingCollection.
+     * Retrieve routing file.
      *
      */
-    public function testAddSingleElementToRoutingCollectionUsingPUT()
+    public function testGetRoutingFile()
     {
     }
 
     /**
-     * Test case for createRoutingCollectionUsingPOST
+     * Test case for updateRoutingFile
      *
-     * createRoutingCollection.
-     *
-     */
-    public function testCreateRoutingCollectionUsingPOST()
-    {
-    }
-
-    /**
-     * Test case for deleteRoutingCollectionUsingDELETE
-     *
-     * deleteRoutingCollection.
+     * Store routing file.
      *
      */
-    public function testDeleteRoutingCollectionUsingDELETE()
-    {
-    }
-
-    /**
-     * Test case for findById4nUsingGET3
-     *
-     * findById4n.
-     *
-     */
-    public function testFindById4nUsingGET3()
-    {
-    }
-
-    /**
-     * Test case for forwardUsingGET
-     *
-     * forward.
-     *
-     */
-    public function testForwardUsingGET()
-    {
-    }
-
-    /**
-     * Test case for removeElementsFromRoutingCollectionUsingDELETE
-     *
-     * removeElementsFromRoutingCollection.
-     *
-     */
-    public function testRemoveElementsFromRoutingCollectionUsingDELETE()
-    {
-    }
-
-    /**
-     * Test case for removeSingleElementFromRoutingCollectionUsingDELETE
-     *
-     * removeSingleElementFromRoutingCollection.
-     *
-     */
-    public function testRemoveSingleElementFromRoutingCollectionUsingDELETE()
-    {
-    }
-
-    /**
-     * Test case for retrieveCurrentParamsByTypeUsingGET
-     *
-     * retrieveCurrentParamsByType.
-     *
-     */
-    public function testRetrieveCurrentParamsByTypeUsingGET()
-    {
-    }
-
-    /**
-     * Test case for retrieveRoutingFileUsingGET
-     *
-     * retrieveRoutingFile.
-     *
-     */
-    public function testRetrieveRoutingFileUsingGET()
-    {
-    }
-
-    /**
-     * Test case for storeRoutingFileUsingPUT
-     *
-     * storeRoutingFile.
-     *
-     */
-    public function testStoreRoutingFileUsingPUT()
+    public function testUpdateRoutingFile()
     {
     }
 }

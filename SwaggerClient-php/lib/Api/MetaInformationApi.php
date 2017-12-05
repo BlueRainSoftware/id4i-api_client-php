@@ -90,7 +90,7 @@ class MetaInformationApi
     /**
      * Operation applicationInfo
      *
-     * Retrieve version information about Id4i.
+     * Retrieve version information about ID4i
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
@@ -106,7 +106,7 @@ class MetaInformationApi
     /**
      * Operation applicationInfoWithHttpInfo
      *
-     * Retrieve version information about Id4i.
+     * Retrieve version information about ID4i
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)

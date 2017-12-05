@@ -1,6 +1,6 @@
 <?php
 /**
- * OrganizationAddressTest
+ * PaginatedResponseUserPresentation_Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * OrganizationAddressTest Class Doc Comment
+ * PaginatedResponseUserPresentation_Test Class Doc Comment
  *
  * @category    Class */
-// * @description OrganizationAddress
+// * @description PaginatedResponseUserPresentation_
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
+class PaginatedResponseUserPresentation_Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,58 +71,37 @@ class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrganizationAddress"
+     * Test "PaginatedResponseUserPresentation_"
      */
-    public function testOrganizationAddress()
+    public function testPaginatedResponseUserPresentation_()
     {
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "elements"
      */
-    public function testPropertyCompanyName()
+    public function testPropertyElements()
     {
     }
 
     /**
-     * Test attribute "firstname"
+     * Test attribute "limit"
      */
-    public function testPropertyFirstname()
+    public function testPropertyLimit()
     {
     }
 
     /**
-     * Test attribute "lastname"
+     * Test attribute "offset"
      */
-    public function testPropertyLastname()
+    public function testPropertyOffset()
     {
     }
 
     /**
-     * Test attribute "street"
+     * Test attribute "total"
      */
-    public function testPropertyStreet()
-    {
-    }
-
-    /**
-     * Test attribute "post_code"
-     */
-    public function testPropertyPostCode()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "telephone"
-     */
-    public function testPropertyTelephone()
+    public function testPropertyTotal()
     {
     }
 }

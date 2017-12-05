@@ -88,9 +88,9 @@ class GUIDsApi
     }
 
     /**
-     * Operation createUsingPOST1
+     * Operation createGuid
      *
-     * create
+     * Create GUID(s)
      *
      * @param \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -98,16 +98,16 @@ class GUIDsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ListOfId4ns
      */
-    public function createUsingPOST1($create_guid_info, $authorization = null, $accept_language = null)
+    public function createGuid($create_guid_info, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->createUsingPOST1WithHttpInfo($create_guid_info, $authorization, $accept_language);
+        list($response) = $this->createGuidWithHttpInfo($create_guid_info, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation createUsingPOST1WithHttpInfo
+     * Operation createGuidWithHttpInfo
      *
-     * create
+     * Create GUID(s)
      *
      * @param \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -115,11 +115,11 @@ class GUIDsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ListOfId4ns, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUsingPOST1WithHttpInfo($create_guid_info, $authorization = null, $accept_language = null)
+    public function createGuidWithHttpInfo($create_guid_info, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'create_guid_info' is set
         if ($create_guid_info === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_guid_info when calling createUsingPOST1');
+            throw new \InvalidArgumentException('Missing the required parameter $create_guid_info when calling createGuid');
         }
         // parse inputs
         $resourcePath = "/api/v1/guids";

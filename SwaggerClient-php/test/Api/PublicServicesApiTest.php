@@ -73,32 +73,32 @@ class PublicServicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for forwardUsingGET
+     * Test case for go
      *
-     * forward.
-     *
-     */
-    public function testForwardUsingGET()
-    {
-    }
-
-    /**
-     * Test case for resolveHTMLUsingGET
-     *
-     * resolveHTML.
+     * Forward.
      *
      */
-    public function testResolveHTMLUsingGET()
+    public function testGo()
     {
     }
 
     /**
      * Test case for resolveImageUsingGET
      *
-     * resolveImage.
+     * Resolve image.
      *
      */
     public function testResolveImageUsingGET()
+    {
+    }
+
+    /**
+     * Test case for resolveWhoIsEntry
+     *
+     * Resolve owner of id4n.
+     *
+     */
+    public function testResolveWhoIsEntry()
     {
     }
 }

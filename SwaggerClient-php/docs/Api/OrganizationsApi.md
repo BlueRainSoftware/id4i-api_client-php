@@ -4,32 +4,32 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultipleUserRolesUsingPOST**](OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
-[**addUserRolesUsingPOST**](OrganizationsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
-[**createOrganzationUsingPOST**](OrganizationsApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
-[**deleteOrganizationLogoUsingDELETE**](OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
-[**deleteOrganizationUsingDELETE**](OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
-[**getAddressUsingGET**](OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
-[**getAllUsingGET**](OrganizationsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
-[**getBillingAddressUsingGET**](OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
-[**getMultipleUserRolesUsingGET**](OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
-[**getOrganizationUsingGET**](OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
-[**getOrganizationsUsingGET**](OrganizationsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
-[**getUserRolesByUsernameUsingGET**](OrganizationsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
-[**getUsersUsingGET**](OrganizationsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
-[**removeBillingAddressUsingDELETE**](OrganizationsApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
-[**removeMultipleUserRolesUsingDELETE**](OrganizationsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
-[**removeUserRolesUsingDELETE**](OrganizationsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
-[**setOrganizationLogoUsingPOST**](OrganizationsApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
-[**storeAddressUsingPOST**](OrganizationsApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
-[**storeBillingAddressUsingPOST**](OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
-[**updateOrganizationUsingPUT**](OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
+[**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
+[**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
+[**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
+[**deleteOrganizationLogo**](OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
+[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**findOrganizationAddress**](OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
+[**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
+[**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+[**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
+[**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
+[**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
+[**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
+[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
+[**updateUserRoles**](OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 
 
-# **addMultipleUserRolesUsingPOST**
-> \Swagger\Client\Model\ResponseEntity addMultipleUserRolesUsingPOST($organization_id, $change_user_role_request, $authorization, $accept_language)
+# **createOrganization**
+> \Swagger\Client\Model\Organization createOrganization($organization, $authorization, $accept_language)
 
-addMultipleUserRoles
+Create organization
+
+Creating a new organization.
 
 ### Example
 ```php
@@ -37,16 +37,15 @@ addMultipleUserRoles
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$change_user_role_request = new \Swagger\Client\Model\ChangeUserRoleRequest(); // \Swagger\Client\Model\ChangeUserRoleRequest | changeUserRoleRequest
+$organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Organization to be created
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addMultipleUserRolesUsingPOST($organization_id, $change_user_role_request, $authorization, $accept_language);
+    $result = $api_instance->createOrganization($organization, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->addMultipleUserRolesUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->createOrganization: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -55,14 +54,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **change_user_role_request** | [**\Swagger\Client\Model\ChangeUserRoleRequest**](../Model/ChangeUserRoleRequest.md)| changeUserRoleRequest |
+ **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| Organization to be created |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\Organization**](../Model/Organization.md)
 
 ### Authorization
 
@@ -75,10 +73,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **addUserRolesUsingPOST**
-> \Swagger\Client\Model\ResponseEntity addUserRolesUsingPOST($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit)
+# **deleteOrganization**
+> \Swagger\Client\Model\ApiError deleteOrganization($organization_id, $authorization, $accept_language)
 
-addUserRoles
+Delete organization
 
 ### Example
 ```php
@@ -86,19 +84,15 @@ addUserRoles
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$username = "username_example"; // string | username
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
+$organization_id = 789; // int | The id of the organization to be deleted.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
 
 try {
-    $result = $api_instance->addUserRolesUsingPOST($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit);
+    $result = $api_instance->deleteOrganization($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->addUserRolesUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->deleteOrganization: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -107,17 +101,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **username** | **string**| username |
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
+ **organization_id** | **int**| The id of the organization to be deleted. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 
@@ -130,57 +120,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createOrganzationUsingPOST**
-> \Swagger\Client\Model\ResponseEntity createOrganzationUsingPOST($organization, $authorization, $accept_language)
+# **deleteOrganizationBillingAddress**
+> \Swagger\Client\Model\ApiError deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language)
 
-createOrganzation
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | organization
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->createOrganzationUsingPOST($organization, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->createOrganzationUsingPOST: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| organization |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **deleteOrganizationLogoUsingDELETE**
-> \Swagger\Client\Model\ResponseEntity deleteOrganizationLogoUsingDELETE($organization_id, $authorization, $accept_language)
-
-deleteOrganizationLogo
+Remove billing address
 
 ### Example
 ```php
@@ -193,10 +136,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteOrganizationLogoUsingDELETE($organization_id, $authorization, $accept_language);
+    $result = $api_instance->deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->deleteOrganizationLogoUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->deleteOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -211,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 
@@ -224,10 +167,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **deleteOrganizationUsingDELETE**
-> \Swagger\Client\Model\ResponseEntity deleteOrganizationUsingDELETE($organization_id, $authorization, $accept_language)
+# **deleteOrganizationLogo**
+> \Swagger\Client\Model\ApiError deleteOrganizationLogo($organization_id, $authorization, $accept_language)
 
-deleteOrganization
+Delete organization logo
 
 ### Example
 ```php
@@ -235,15 +178,15 @@ deleteOrganization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
+$organization_id = 789; // int | The id of the organization where the logo should be deleted.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteOrganizationUsingDELETE($organization_id, $authorization, $accept_language);
+    $result = $api_instance->deleteOrganizationLogo($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->deleteOrganizationUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->deleteOrganizationLogo: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -252,13 +195,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **int**| The id of the organization where the logo should be deleted. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 
@@ -271,10 +214,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAddressUsingGET**
-> \Swagger\Client\Model\OrganizationAddress getAddressUsingGET($organization_id, $authorization, $accept_language)
+# **findOrganization**
+> \Swagger\Client\Model\Organization findOrganization($organization_id, $authorization, $accept_language)
 
-getAddress
+Find organization by id
+
+Returns a single organization.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$organization_id = 789; // int | The id of the organization to be retrieved.
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->findOrganization($organization_id, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->findOrganization: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| The id of the organization to be retrieved. |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Organization**](../Model/Organization.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **findOrganizationAddress**
+> \Swagger\Client\Model\OrganizationAddress findOrganizationAddress($organization_id, $authorization, $accept_language)
+
+Retrieve address
 
 ### Example
 ```php
@@ -287,10 +279,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->getAddressUsingGET($organization_id, $authorization, $accept_language);
+    $result = $api_instance->findOrganizationAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getAddressUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->findOrganizationAddress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -318,63 +310,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAllUsingGET**
-> \Swagger\Client\Model\PaginatedResponseGuidCollection_ getAllUsingGET($organization_id, $authorization, $accept_language, $offset, $limit, $type)
+# **findOrganizationBillingAddress**
+> \Swagger\Client\Model\OrganizationAddress findOrganizationBillingAddress($organization_id, $authorization, $accept_language)
 
-getAll
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
-$type = "type_example"; // string | type
-
-try {
-    $result = $api_instance->getAllUsingGET($organization_id, $authorization, $accept_language, $offset, $limit, $type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getAllUsingGET: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
- **type** | **string**| type | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedResponseGuidCollection_**](../Model/PaginatedResponseGuidCollection_.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getBillingAddressUsingGET**
-> \Swagger\Client\Model\OrganizationAddress getBillingAddressUsingGET($organization_id, $authorization, $accept_language)
-
-getBillingAddress
+Retrieve billing address
 
 ### Example
 ```php
@@ -387,10 +326,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->getBillingAddressUsingGET($organization_id, $authorization, $accept_language);
+    $result = $api_instance->findOrganizationBillingAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getBillingAddressUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->findOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -418,10 +357,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getMultipleUserRolesUsingGET**
-> \Swagger\Client\Model\PaginatedUserRolesResponse getMultipleUserRolesUsingGET($organization_id, $authorization, $accept_language, $offset, $limit)
+# **getAllCollectionsOfOrganization**
+> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label)
 
-getMultipleUserRoles
+Get collections of organization
+
+Retrieving all collections of an organization in a paginated manner.
 
 ### Example
 ```php
@@ -432,14 +373,16 @@ $api_instance = new Swagger\Client\Api\OrganizationsApi();
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+$type = "type_example"; // string | Filter by this type
+$label = "label_example"; // string | Filter by this label
 
 try {
-    $result = $api_instance->getMultipleUserRolesUsingGET($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $api_instance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getMultipleUserRolesUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -451,8 +394,63 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+ **type** | **string**| Filter by this type | [optional]
+ **label** | **string**| Filter by this label | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedGuidCollection**](../Model/PaginatedGuidCollection.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getAllOrganizationRoles**
+> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit)
+
+List users and their roles
+
+Listing users and their roles in a paginated manner.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$organization_id = 789; // int | organizationId
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| organizationId |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
@@ -469,57 +467,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getOrganizationUsingGET**
-> \Swagger\Client\Model\Organization getOrganizationUsingGET($organization_id, $authorization, $accept_language)
+# **getOrganizationsOfUser**
+> \Swagger\Client\Model\PaginatedResponseOrganization_ getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit)
 
-getOrganization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->getOrganizationUsingGET($organization_id, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getOrganizationUsingGET: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\Organization**](../Model/Organization.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getOrganizationsUsingGET**
-> \Swagger\Client\Model\PaginatedResponseOrganization_ getOrganizationsUsingGET($authorization, $accept_language, $role, $offset, $limit)
-
-getOrganizations
+Retrieve organizations of user
 
 ### Example
 ```php
@@ -530,14 +481,14 @@ $api_instance = new Swagger\Client\Api\OrganizationsApi();
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
-$offset = 56; // int | 
-$limit = 56; // int | 
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getOrganizationsUsingGET($authorization, $accept_language, $role, $offset, $limit);
+    $result = $api_instance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getOrganizationsUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -549,8 +500,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **role** | **string**| role | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
@@ -567,10 +518,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getUserRolesByUsernameUsingGET**
-> \Swagger\Client\Model\UserRoles getUserRolesByUsernameUsingGET($organization_id, $username, $authorization, $accept_language, $offset, $limit)
+# **getUserRoles**
+> \Swagger\Client\Model\UserRoles getUserRoles($organization_id, $username, $authorization, $accept_language)
 
-getUserRolesByUsername
+Get user roles by username
 
 ### Example
 ```php
@@ -582,14 +533,12 @@ $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
 
 try {
-    $result = $api_instance->getUserRolesByUsernameUsingGET($organization_id, $username, $authorization, $accept_language, $offset, $limit);
+    $result = $api_instance->getUserRoles($organization_id, $username, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getUserRolesByUsernameUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -602,8 +551,6 @@ Name | Type | Description  | Notes
  **username** | **string**| username |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
 
 ### Return type
 
@@ -620,10 +567,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getUsersUsingGET**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersUsingGET($organization_id, $authorization, $accept_language, $offset, $limit)
+# **getUsersOfOrganization**
+> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit)
 
-getUsers
+Find users in organization
+
+Finding users in the specified organization in a paginated manner.
 
 ### Example
 ```php
@@ -634,14 +583,14 @@ $api_instance = new Swagger\Client\Api\OrganizationsApi();
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUsersUsingGET($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $api_instance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->getUsersUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -653,8 +602,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
@@ -671,106 +620,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeBillingAddressUsingDELETE**
-> \Swagger\Client\Model\ResponseEntity removeBillingAddressUsingDELETE($organization_id, $authorization, $accept_language)
+# **removeUserRoles**
+> \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
 
-removeBillingAddress
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->removeBillingAddressUsingDELETE($organization_id, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->removeBillingAddressUsingDELETE: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **removeMultipleUserRolesUsingDELETE**
-> \Swagger\Client\Model\ResponseEntity removeMultipleUserRolesUsingDELETE($organization_id, $change_user_role_request, $authorization, $accept_language)
-
-removeMultipleUserRoles
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$change_user_role_request = new \Swagger\Client\Model\ChangeUserRoleRequest(); // \Swagger\Client\Model\ChangeUserRoleRequest | changeUserRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->removeMultipleUserRolesUsingDELETE($organization_id, $change_user_role_request, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->removeMultipleUserRolesUsingDELETE: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **change_user_role_request** | [**\Swagger\Client\Model\ChangeUserRoleRequest**](../Model/ChangeUserRoleRequest.md)| changeUserRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **removeUserRolesUsingDELETE**
-> \Swagger\Client\Model\ResponseEntity removeUserRolesUsingDELETE($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit)
-
-removeUserRoles
+Remove role(s) from user
 
 ### Example
 ```php
@@ -783,14 +636,12 @@ $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | 
-$limit = 56; // int | 
 
 try {
-    $result = $api_instance->removeUserRolesUsingDELETE($organization_id, $username, $change_role_request, $authorization, $accept_language, $offset, $limit);
+    $result = $api_instance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->removeUserRolesUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -804,12 +655,10 @@ Name | Type | Description  | Notes
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**|  | [optional]
- **limit** | **int**|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 
@@ -822,10 +671,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setOrganizationLogoUsingPOST**
-> \Swagger\Client\Model\ResponseEntity setOrganizationLogoUsingPOST($organization_id, $file, $authorization, $accept_language)
+# **updateOrganization**
+> \Swagger\Client\Model\Organization updateOrganization($organization_id, $organization, $authorization, $accept_language)
 
-setOrganizationLogo
+Update organization
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$organization_id = 789; // int | The id of the organization to be updated.
+$organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Updated organization object
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->updateOrganization($organization_id, $organization, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->updateOrganization: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| The id of the organization to be updated. |
+ **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| Updated organization object |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Organization**](../Model/Organization.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateOrganizationAddress**
+> \Swagger\Client\Model\ApiError updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language)
+
+Store address
 
 ### Example
 ```php
@@ -834,15 +732,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\OrganizationsApi();
 $organization_id = 789; // int | organizationId
-$file = "/path/to/file.txt"; // \SplFileObject | file
+$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->setOrganizationLogoUsingPOST($organization_id, $file, $authorization, $accept_language);
+    $result = $api_instance->updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->setOrganizationLogoUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->updateOrganizationAddress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -852,13 +750,113 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **file** | **\SplFileObject**| file |
+ **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateOrganizationBillingAddress**
+> \Swagger\Client\Model\ApiError updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language)
+
+Store billing address
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$organization_id = 789; // int | organizationId
+$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->updateOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| organizationId |
+ **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateOrganizationLogo**
+> \Swagger\Client\Model\ApiError updateOrganizationLogo($organization_id, $file, $authorization, $accept_language)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$organization_id = 789; // int | The id of the organization where the logo should be updated.
+$file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->updateOrganizationLogo($organization_id, $file, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->updateOrganizationLogo: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| The id of the organization where the logo should be updated. |
+ **file** | **\SplFileObject**| An image containing the new logo. |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 
@@ -871,10 +869,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **storeAddressUsingPOST**
-> \Swagger\Client\Model\ResponseEntity storeAddressUsingPOST($organization_id, $address_resource, $authorization, $accept_language)
+# **updateUserRoles**
+> \Swagger\Client\Model\ApiError updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
 
-storeAddress
+Add role(s) to user
 
 ### Example
 ```php
@@ -883,15 +881,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\OrganizationsApi();
 $organization_id = 789; // int | organizationId
-$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
+$username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->storeAddressUsingPOST($organization_id, $address_resource, $authorization, $accept_language);
+    $result = $api_instance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->storeAddressUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationsApi->updateUserRoles: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -901,111 +900,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
+ **username** | **string**| username |
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **storeBillingAddressUsingPOST**
-> \Swagger\Client\Model\ResponseEntity storeBillingAddressUsingPOST($organization_id, $address_resource, $authorization, $accept_language)
-
-storeBillingAddress
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->storeBillingAddressUsingPOST($organization_id, $address_resource, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->storeBillingAddressUsingPOST: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateOrganizationUsingPUT**
-> \Swagger\Client\Model\Organization updateOrganizationUsingPUT($organization_id, $organization, $authorization, $accept_language)
-
-updateOrganization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
-$organization_id = 789; // int | organizationId
-$organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | organization
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->updateOrganizationUsingPUT($organization_id, $organization, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->updateOrganizationUsingPUT: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| organization |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\Organization**](../Model/Organization.md)
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ChangeUserRoleRequestTest
+ * PaginatedResponseUserRoles_Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ChangeUserRoleRequestTest Class Doc Comment
+ * PaginatedResponseUserRoles_Test Class Doc Comment
  *
  * @category    Class */
-// * @description ChangeUserRoleRequest
+// * @description PaginatedResponseUserRoles_
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ChangeUserRoleRequestTest extends \PHPUnit_Framework_TestCase
+class PaginatedResponseUserRoles_Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,37 @@ class ChangeUserRoleRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ChangeUserRoleRequest"
+     * Test "PaginatedResponseUserRoles_"
      */
-    public function testChangeUserRoleRequest()
+    public function testPaginatedResponseUserRoles_()
     {
     }
 
     /**
-     * Test attribute "roles"
+     * Test attribute "elements"
      */
-    public function testPropertyRoles()
+    public function testPropertyElements()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "limit"
      */
-    public function testPropertyUsername()
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
     {
     }
 }

@@ -35,6 +35,7 @@ use \ArrayAccess;
  * ListOfId4ns Class Doc Comment
  *
  * @category    Class
+ * @description A list of id4ns
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -171,7 +172,7 @@ class ListOfId4ns implements ArrayAccess
 
     /**
      * Sets id4ns
-     * @param string[] $id4ns
+     * @param string[] $id4ns A list of id4ns.
      * @return $this
      */
     public function setId4ns($id4ns)

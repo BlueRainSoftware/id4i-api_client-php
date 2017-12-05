@@ -75,7 +75,7 @@ class MetaInformationApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for applicationInfo
      *
-     * Retrieve version information about Id4i..
+     * Retrieve version information about ID4i.
      *
      */
     public function testApplicationInfo()

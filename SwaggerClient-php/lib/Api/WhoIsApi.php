@@ -88,38 +88,38 @@ class WhoIsApi
     }
 
     /**
-     * Operation resolveHTMLUsingGET
+     * Operation resolveWhoIsEntry
      *
-     * resolveHTML
+     * Resolve owner of id4n
      *
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return string
+     * @return \Swagger\Client\Model\WhoIsResponse
      */
-    public function resolveHTMLUsingGET($id4n, $authorization = null, $accept_language = null)
+    public function resolveWhoIsEntry($id4n, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->resolveHTMLUsingGETWithHttpInfo($id4n, $authorization, $accept_language);
+        list($response) = $this->resolveWhoIsEntryWithHttpInfo($id4n, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation resolveHTMLUsingGETWithHttpInfo
+     * Operation resolveWhoIsEntryWithHttpInfo
      *
-     * resolveHTML
+     * Resolve owner of id4n
      *
      * @param string $id4n id4n (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\WhoIsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resolveHTMLUsingGETWithHttpInfo($id4n, $authorization = null, $accept_language = null)
+    public function resolveWhoIsEntryWithHttpInfo($id4n, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling resolveHTMLUsingGET');
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling resolveWhoIsEntry');
         }
         // parse inputs
         $resourcePath = "/whois/{id4n}";
@@ -127,7 +127,7 @@ class WhoIsApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'text/html', 'application/json;charset=UTF-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -164,15 +164,15 @@ class WhoIsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                'string',
+                '\Swagger\Client\Model\WhoIsResponse',
                 '/whois/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WhoIsResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\WhoIsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:

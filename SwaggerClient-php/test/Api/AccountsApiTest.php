@@ -73,82 +73,62 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addMultipleUserRolesUsingPOST
+     * Test case for findUserByUsername
      *
-     * addMultipleUserRoles.
+     * Find by username.
      *
      */
-    public function testAddMultipleUserRolesUsingPOST()
+    public function testFindUserByUsername()
     {
     }
 
     /**
-     * Test case for addUserRolesUsingPOST
+     * Test case for getAllOrganizationRoles
      *
-     * addUserRoles.
+     * List users and their roles.
      *
      */
-    public function testAddUserRolesUsingPOST()
+    public function testGetAllOrganizationRoles()
     {
     }
 
     /**
-     * Test case for findUserByUsernameUsingGET
+     * Test case for getOrganizationsOfUser
      *
-     * findUserByUsername.
+     * Retrieve organizations of user.
      *
      */
-    public function testFindUserByUsernameUsingGET()
+    public function testGetOrganizationsOfUser()
     {
     }
 
     /**
-     * Test case for getMultipleUserRolesUsingGET
+     * Test case for getUserRoles
      *
-     * getMultipleUserRoles.
+     * Get user roles by username.
      *
      */
-    public function testGetMultipleUserRolesUsingGET()
+    public function testGetUserRoles()
     {
     }
 
     /**
-     * Test case for getOrganizationsUsingGET
+     * Test case for getUsersOfOrganization
      *
-     * getOrganizations.
+     * Find users in organization.
      *
      */
-    public function testGetOrganizationsUsingGET()
+    public function testGetUsersOfOrganization()
     {
     }
 
     /**
-     * Test case for getUserRolesByUsernameUsingGET
+     * Test case for listAllRoles
      *
-     * getUserRolesByUsername.
-     *
-     */
-    public function testGetUserRolesByUsernameUsingGET()
-    {
-    }
-
-    /**
-     * Test case for getUsersUsingGET
-     *
-     * getUsers.
+     * List roles.
      *
      */
-    public function testGetUsersUsingGET()
-    {
-    }
-
-    /**
-     * Test case for listUsingGET2
-     *
-     * list.
-     *
-     */
-    public function testListUsingGET2()
+    public function testListAllRoles()
     {
     }
 
@@ -163,62 +143,62 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for registerUserUsingPOST
+     * Test case for registerUser
      *
-     * registerUser.
+     * Register user.
      *
      */
-    public function testRegisterUserUsingPOST()
+    public function testRegisterUser()
     {
     }
 
     /**
-     * Test case for removeMultipleUserRolesUsingDELETE
+     * Test case for removeUserRoles
      *
-     * removeMultipleUserRoles.
+     * Remove role(s) from user.
      *
      */
-    public function testRemoveMultipleUserRolesUsingDELETE()
+    public function testRemoveUserRoles()
     {
     }
 
     /**
-     * Test case for removeUserRolesUsingDELETE
+     * Test case for requestPasswordReset
      *
-     * removeUserRoles.
+     * Request password reset.
      *
      */
-    public function testRemoveUserRolesUsingDELETE()
+    public function testRequestPasswordReset()
     {
     }
 
     /**
-     * Test case for requestPasswordResetUsingPOST
+     * Test case for updateUserRoles
      *
-     * requestPasswordReset.
+     * Add role(s) to user.
      *
      */
-    public function testRequestPasswordResetUsingPOST()
+    public function testUpdateUserRoles()
     {
     }
 
     /**
-     * Test case for verifyPasswordResetUsingPUT
+     * Test case for verifyPasswordReset
      *
-     * verifyPasswordReset.
+     * Verify password reset.
      *
      */
-    public function testVerifyPasswordResetUsingPUT()
+    public function testVerifyPasswordReset()
     {
     }
 
     /**
-     * Test case for verifyRegistrationUsingPOST
+     * Test case for verifyUserRegistration
      *
-     * verifyRegistration.
+     * Verify registration.
      *
      */
-    public function testVerifyRegistrationUsingPOST()
+    public function testVerifyUserRegistration()
     {
     }
 }

@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * CreateGuidRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreateGuidRequest
+// * @description GUID creation information
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -78,16 +78,16 @@ class CreateGuidRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "length"
+     * Test attribute "count"
      */
-    public function testPropertyLength()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "length"
      */
-    public function testPropertyCount()
+    public function testPropertyLength()
     {
     }
 

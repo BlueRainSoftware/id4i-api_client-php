@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * ListOfId4nsTest Class Doc Comment
  *
  * @category    Class */
-// * @description ListOfId4ns
+// * @description A list of id4ns
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team

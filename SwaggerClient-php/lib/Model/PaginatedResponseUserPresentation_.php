@@ -1,6 +1,6 @@
 <?php
 /**
- * ChangeUserRoleRequest
+ * PaginatedResponseUserPresentation_
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ChangeUserRoleRequest Class Doc Comment
+ * PaginatedResponseUserPresentation_ Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ChangeUserRoleRequest implements ArrayAccess
+class PaginatedResponseUserPresentation_ implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,17 @@ class ChangeUserRoleRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ChangeUserRoleRequest';
+    protected static $swaggerModelName = 'PaginatedResponse«UserPresentation»';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'roles' => 'string[]',
-        'username' => 'string'
+        'elements' => '\Swagger\Client\Model\UserPresentation[]',
+        'limit' => 'int',
+        'offset' => 'int',
+        'total' => 'int'
     ];
 
     /**
@@ -63,8 +65,10 @@ class ChangeUserRoleRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'roles' => null,
-        'username' => null
+        'elements' => null,
+        'limit' => 'int32',
+        'offset' => 'int32',
+        'total' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -82,8 +86,10 @@ class ChangeUserRoleRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'roles' => 'roles',
-        'username' => 'username'
+        'elements' => 'elements',
+        'limit' => 'limit',
+        'offset' => 'offset',
+        'total' => 'total'
     ];
 
 
@@ -92,8 +98,10 @@ class ChangeUserRoleRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'roles' => 'setRoles',
-        'username' => 'setUsername'
+        'elements' => 'setElements',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset',
+        'total' => 'setTotal'
     ];
 
 
@@ -102,8 +110,10 @@ class ChangeUserRoleRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'roles' => 'getRoles',
-        'username' => 'getUsername'
+        'elements' => 'getElements',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset',
+        'total' => 'getTotal'
     ];
 
     public static function attributeMap()
@@ -137,8 +147,10 @@ class ChangeUserRoleRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['roles'] = isset($data['roles']) ? $data['roles'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['elements'] = isset($data['elements']) ? $data['elements'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -150,6 +162,12 @@ class ChangeUserRoleRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['limit'] === null) {
+            $invalid_properties[] = "'limit' can't be null";
+        }
+        if ($this->container['offset'] === null) {
+            $invalid_properties[] = "'offset' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,48 +180,96 @@ class ChangeUserRoleRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['limit'] === null) {
+            return false;
+        }
+        if ($this->container['offset'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets roles
-     * @return string[]
+     * Gets elements
+     * @return \Swagger\Client\Model\UserPresentation[]
      */
-    public function getRoles()
+    public function getElements()
     {
-        return $this->container['roles'];
+        return $this->container['elements'];
     }
 
     /**
-     * Sets roles
-     * @param string[] $roles
+     * Sets elements
+     * @param \Swagger\Client\Model\UserPresentation[] $elements
      * @return $this
      */
-    public function setRoles($roles)
+    public function setElements($elements)
     {
-        $this->container['roles'] = $roles;
+        $this->container['elements'] = $elements;
 
         return $this;
     }
 
     /**
-     * Gets username
-     * @return string
+     * Gets limit
+     * @return int
      */
-    public function getUsername()
+    public function getLimit()
     {
-        return $this->container['username'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets username
-     * @param string $username
+     * Sets limit
+     * @param int $limit
      * @return $this
      */
-    public function setUsername($username)
+    public function setLimit($limit)
     {
-        $this->container['username'] = $username;
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     * @param int $offset
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     * @param int $total
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

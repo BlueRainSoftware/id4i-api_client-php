@@ -4,13 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i.
+[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 
 
 # **applicationInfo**
 > \Swagger\Client\Model\AppInfoPresentation applicationInfo($authorization, $accept_language)
 
-Retrieve version information about Id4i.
+Retrieve version information about ID4i
+
+Retrieving version information about ID4i.
 
 ### Example
 ```php
