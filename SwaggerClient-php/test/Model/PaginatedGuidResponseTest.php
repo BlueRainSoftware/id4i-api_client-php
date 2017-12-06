@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidCollectionTest
+ * PaginatedGuidResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * GuidCollectionTest Class Doc Comment
+ * PaginatedGuidResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description GuidCollection
+// * @description PaginatedGuidResponse
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GuidCollectionTest extends \PHPUnit_Framework_TestCase
+class PaginatedGuidResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,51 +71,37 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GuidCollection"
+     * Test "PaginatedGuidResponse"
      */
-    public function testGuidCollection()
+    public function testPaginatedGuidResponse()
     {
     }
 
     /**
-     * Test attribute "created_timestamp"
+     * Test attribute "elements"
      */
-    public function testPropertyCreatedTimestamp()
+    public function testPropertyElements()
     {
     }
 
     /**
-     * Test attribute "id4n"
+     * Test attribute "limit"
      */
-    public function testPropertyId4n()
+    public function testPropertyLimit()
     {
     }
 
     /**
-     * Test attribute "label"
+     * Test attribute "offset"
      */
-    public function testPropertyLabel()
+    public function testPropertyOffset()
     {
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "total"
      */
-    public function testPropertyOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "owner_organization_id"
-     */
-    public function testPropertyOwnerOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
+    public function testPropertyTotal()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * PaginatedResponseString_Test
+ * GuidTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * PaginatedResponseString_Test Class Doc Comment
+ * GuidTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaginatedResponseString_
+// * @description Guid
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaginatedResponseString_Test extends \PHPUnit_Framework_TestCase
+class GuidTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,30 @@ class PaginatedResponseString_Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PaginatedResponseString_"
+     * Test "Guid"
      */
-    public function testPaginatedResponseString_()
+    public function testGuid()
     {
     }
 
     /**
-     * Test attribute "elements"
+     * Test attribute "created_timestamp"
      */
-    public function testPropertyElements()
+    public function testPropertyCreatedTimestamp()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "id4n"
      */
-    public function testPropertyLimit()
+    public function testPropertyId4n()
     {
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "owner_organization_id"
      */
-    public function testPropertyOffset()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
+    public function testPropertyOwnerOrganizationId()
     {
     }
 }

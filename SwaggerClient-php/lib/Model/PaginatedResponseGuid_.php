@@ -1,6 +1,6 @@
 <?php
 /**
- * PaginatedResponseString_
+ * PaginatedResponseGuid_
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * PaginatedResponseString_ Class Doc Comment
+ * PaginatedResponseGuid_ Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaginatedResponseString_ implements ArrayAccess
+class PaginatedResponseGuid_ implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class PaginatedResponseString_ implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaginatedResponse«string»';
+    protected static $swaggerModelName = 'PaginatedResponse«Guid»';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'elements' => 'string[]',
+        'elements' => '\Swagger\Client\Model\Guid[]',
         'limit' => 'int',
         'offset' => 'int',
         'total' => 'int'
@@ -192,7 +192,7 @@ class PaginatedResponseString_ implements ArrayAccess
 
     /**
      * Gets elements
-     * @return string[]
+     * @return \Swagger\Client\Model\Guid[]
      */
     public function getElements()
     {
@@ -201,7 +201,7 @@ class PaginatedResponseString_ implements ArrayAccess
 
     /**
      * Sets elements
-     * @param string[] $elements
+     * @param \Swagger\Client\Model\Guid[] $elements
      * @return $this
      */
     public function setElements($elements)

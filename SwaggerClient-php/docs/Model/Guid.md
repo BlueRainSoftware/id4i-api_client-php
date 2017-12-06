@@ -1,12 +1,11 @@
-# PaginatedResponseString_
+# Guid
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | **string[]** |  | [optional] 
-**limit** | **int** |  | 
-**offset** | **int** |  | 
-**total** | **int** |  | [optional] 
+**created_timestamp** | **int** |  | [optional] 
+**id4n** | **string** |  | 
+**owner_organization_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

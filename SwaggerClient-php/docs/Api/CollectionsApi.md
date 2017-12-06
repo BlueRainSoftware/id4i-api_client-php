@@ -1006,7 +1006,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listElementsOfCollection**
-> \Swagger\Client\Model\PaginatedResponseString_ listElementsOfCollection($id4n, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfCollection($id4n, $authorization, $accept_language, $offset, $limit)
 
 List contents of the collection
 
@@ -1043,7 +1043,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedResponseString_**](../Model/PaginatedResponseString_.md)
+[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
 
 ### Authorization
 
