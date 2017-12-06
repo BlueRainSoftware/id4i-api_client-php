@@ -55,7 +55,7 @@ class ApiKeyPresentation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'active' => 'bool',
-        'created_at' => '\DateTime',
+        'created_at' => 'int',
         'created_by' => 'string',
         'key' => 'string',
         'label' => 'string',
@@ -68,7 +68,7 @@ class ApiKeyPresentation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'active' => null,
-        'created_at' => 'date-time',
+        'created_at' => 'int64',
         'created_by' => null,
         'key' => null,
         'label' => null,
@@ -213,7 +213,7 @@ class ApiKeyPresentation implements ArrayAccess
 
     /**
      * Gets created_at
-     * @return \DateTime
+     * @return int
      */
     public function getCreatedAt()
     {
@@ -222,7 +222,7 @@ class ApiKeyPresentation implements ArrayAccess
 
     /**
      * Sets created_at
-     * @param \DateTime $created_at
+     * @param int $created_at
      * @return $this
      */
     public function setCreatedAt($created_at)

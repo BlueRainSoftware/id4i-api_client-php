@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
-**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**created_at** | **int** |  | [optional] 
 **created_by** | **string** |  | [optional] 
 **key** | **string** |  | [optional] 
 **label** | **string** |  | [optional] 
