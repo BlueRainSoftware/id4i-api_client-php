@@ -99,9 +99,9 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "next_scan_ownership"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyNextScanOwnership()
     {
     }
 

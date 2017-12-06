@@ -142,6 +142,7 @@ class ApiError implements ArrayAccess
     const CODE_GUID_CREATION = 'ERR_GUID_CREATION';
     const CODE_INVALID_ID4_N_OBJECT_TYPE = 'ERR_INVALID_ID4N_OBJECT_TYPE';
     const CODE_ENTITY_NOT_FOUND = 'ERR_ENTITY_NOT_FOUND';
+    const CODE_DUPLICATE = 'ERR_DUPLICATE';
     const CODE_HTTP = 'ERR_HTTP';
     const CODE_INTERNAL = 'ERR_INTERNAL';
     const CODE_UNKNOWN = 'ERR_UNKNOWN';
@@ -151,7 +152,6 @@ class ApiError implements ArrayAccess
     const CODE_LANGUAGE_NOT_SUPPORTED = 'ERR_LANGUAGE_NOT_SUPPORTED';
     const CODE_EMAIL_MISSING_TEMPLATE_PARAM = 'ERR_EMAIL_MISSING_TEMPLATE_PARAM';
     const CODE_EMAIL_TEMPLATE_NOT_AVAILABLE = 'ERR_EMAIL_TEMPLATE_NOT_AVAILABLE';
-    const CODE_DUPLICATE = 'ERR_DUPLICATE';
     const CODE_EMAIL_PREPARATION_FAILED = 'ERR_EMAIL_PREPARATION_FAILED';
     
 
@@ -174,6 +174,7 @@ class ApiError implements ArrayAccess
             self::CODE_GUID_CREATION,
             self::CODE_INVALID_ID4_N_OBJECT_TYPE,
             self::CODE_ENTITY_NOT_FOUND,
+            self::CODE_DUPLICATE,
             self::CODE_HTTP,
             self::CODE_INTERNAL,
             self::CODE_UNKNOWN,
@@ -183,7 +184,6 @@ class ApiError implements ArrayAccess
             self::CODE_LANGUAGE_NOT_SUPPORTED,
             self::CODE_EMAIL_MISSING_TEMPLATE_PARAM,
             self::CODE_EMAIL_TEMPLATE_NOT_AVAILABLE,
-            self::CODE_DUPLICATE,
             self::CODE_EMAIL_PREPARATION_FAILED,
         ];
     }

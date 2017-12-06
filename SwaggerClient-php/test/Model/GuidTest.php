@@ -92,6 +92,13 @@ class GuidTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "next_scan_ownership"
+     */
+    public function testPropertyNextScanOwnership()
+    {
+    }
+
+    /**
      * Test attribute "owner_organization_id"
      */
     public function testPropertyOwnerOrganizationId()

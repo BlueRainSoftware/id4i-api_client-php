@@ -57,7 +57,7 @@ class GuidCollection implements ArrayAccess
         'created_timestamp' => 'int',
         'id4n' => 'string',
         'label' => 'string',
-        'organization_id' => 'int',
+        'next_scan_ownership' => 'bool',
         'owner_organization_id' => 'int',
         'type' => 'string'
     ];
@@ -70,7 +70,7 @@ class GuidCollection implements ArrayAccess
         'created_timestamp' => 'int64',
         'id4n' => null,
         'label' => null,
-        'organization_id' => 'int64',
+        'next_scan_ownership' => null,
         'owner_organization_id' => 'int64',
         'type' => null
     ];
@@ -93,7 +93,7 @@ class GuidCollection implements ArrayAccess
         'created_timestamp' => 'createdTimestamp',
         'id4n' => 'id4n',
         'label' => 'label',
-        'organization_id' => 'organizationId',
+        'next_scan_ownership' => 'nextScanOwnership',
         'owner_organization_id' => 'ownerOrganizationId',
         'type' => 'type'
     ];
@@ -107,7 +107,7 @@ class GuidCollection implements ArrayAccess
         'created_timestamp' => 'setCreatedTimestamp',
         'id4n' => 'setId4n',
         'label' => 'setLabel',
-        'organization_id' => 'setOrganizationId',
+        'next_scan_ownership' => 'setNextScanOwnership',
         'owner_organization_id' => 'setOwnerOrganizationId',
         'type' => 'setType'
     ];
@@ -121,7 +121,7 @@ class GuidCollection implements ArrayAccess
         'created_timestamp' => 'getCreatedTimestamp',
         'id4n' => 'getId4n',
         'label' => 'getLabel',
-        'organization_id' => 'getOrganizationId',
+        'next_scan_ownership' => 'getNextScanOwnership',
         'owner_organization_id' => 'getOwnerOrganizationId',
         'type' => 'getType'
     ];
@@ -176,7 +176,7 @@ class GuidCollection implements ArrayAccess
         $this->container['created_timestamp'] = isset($data['created_timestamp']) ? $data['created_timestamp'] : null;
         $this->container['id4n'] = isset($data['id4n']) ? $data['id4n'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['next_scan_ownership'] = isset($data['next_scan_ownership']) ? $data['next_scan_ownership'] : null;
         $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -282,22 +282,22 @@ class GuidCollection implements ArrayAccess
     }
 
     /**
-     * Gets organization_id
-     * @return int
+     * Gets next_scan_ownership
+     * @return bool
      */
-    public function getOrganizationId()
+    public function getNextScanOwnership()
     {
-        return $this->container['organization_id'];
+        return $this->container['next_scan_ownership'];
     }
 
     /**
-     * Sets organization_id
-     * @param int $organization_id
+     * Sets next_scan_ownership
+     * @param bool $next_scan_ownership
      * @return $this
      */
-    public function setOrganizationId($organization_id)
+    public function setNextScanOwnership($next_scan_ownership)
     {
-        $this->container['organization_id'] = $organization_id;
+        $this->container['next_scan_ownership'] = $next_scan_ownership;
 
         return $this;
     }

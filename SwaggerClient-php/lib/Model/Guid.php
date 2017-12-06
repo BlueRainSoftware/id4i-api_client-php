@@ -56,6 +56,7 @@ class Guid implements ArrayAccess
     protected static $swaggerTypes = [
         'created_timestamp' => 'int',
         'id4n' => 'string',
+        'next_scan_ownership' => 'bool',
         'owner_organization_id' => 'int'
     ];
 
@@ -66,6 +67,7 @@ class Guid implements ArrayAccess
     protected static $swaggerFormats = [
         'created_timestamp' => 'int64',
         'id4n' => null,
+        'next_scan_ownership' => null,
         'owner_organization_id' => 'int64'
     ];
 
@@ -86,6 +88,7 @@ class Guid implements ArrayAccess
     protected static $attributeMap = [
         'created_timestamp' => 'createdTimestamp',
         'id4n' => 'id4n',
+        'next_scan_ownership' => 'nextScanOwnership',
         'owner_organization_id' => 'ownerOrganizationId'
     ];
 
@@ -97,6 +100,7 @@ class Guid implements ArrayAccess
     protected static $setters = [
         'created_timestamp' => 'setCreatedTimestamp',
         'id4n' => 'setId4n',
+        'next_scan_ownership' => 'setNextScanOwnership',
         'owner_organization_id' => 'setOwnerOrganizationId'
     ];
 
@@ -108,6 +112,7 @@ class Guid implements ArrayAccess
     protected static $getters = [
         'created_timestamp' => 'getCreatedTimestamp',
         'id4n' => 'getId4n',
+        'next_scan_ownership' => 'getNextScanOwnership',
         'owner_organization_id' => 'getOwnerOrganizationId'
     ];
 
@@ -144,6 +149,7 @@ class Guid implements ArrayAccess
     {
         $this->container['created_timestamp'] = isset($data['created_timestamp']) ? $data['created_timestamp'] : null;
         $this->container['id4n'] = isset($data['id4n']) ? $data['id4n'] : null;
+        $this->container['next_scan_ownership'] = isset($data['next_scan_ownership']) ? $data['next_scan_ownership'] : null;
         $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
     }
 
@@ -216,6 +222,27 @@ class Guid implements ArrayAccess
     public function setId4n($id4n)
     {
         $this->container['id4n'] = $id4n;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_scan_ownership
+     * @return bool
+     */
+    public function getNextScanOwnership()
+    {
+        return $this->container['next_scan_ownership'];
+    }
+
+    /**
+     * Sets next_scan_ownership
+     * @param bool $next_scan_ownership
+     * @return $this
+     */
+    public function setNextScanOwnership($next_scan_ownership)
+    {
+        $this->container['next_scan_ownership'] = $next_scan_ownership;
 
         return $this;
     }

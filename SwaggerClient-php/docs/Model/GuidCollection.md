@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **created_timestamp** | **int** |  | [optional] 
 **id4n** | **string** |  | [optional] 
 **label** | **string** |  | [optional] 
-**organization_id** | **int** |  | [optional] 
+**next_scan_ownership** | **bool** |  | [optional] 
 **owner_organization_id** | **int** |  | [optional] 
 **type** | **string** |  | [optional] 
 
