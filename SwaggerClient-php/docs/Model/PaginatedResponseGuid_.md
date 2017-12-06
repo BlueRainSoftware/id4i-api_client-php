@@ -1,9 +1,9 @@
-# PaginatedResponseString_
+# PaginatedResponseGuid_
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | **string[]** |  | [optional] 
+**elements** | [**\Swagger\Client\Model\Guid[]**](Guid.md) |  | [optional] 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 

@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidCollectionTest
+ * GuidTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * GuidCollectionTest Class Doc Comment
+ * GuidTest Class Doc Comment
  *
  * @category    Class */
-// * @description GuidCollection
+// * @description Guid
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GuidCollectionTest extends \PHPUnit_Framework_TestCase
+class GuidTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GuidCollection"
+     * Test "Guid"
      */
-    public function testGuidCollection()
+    public function testGuid()
     {
     }
 
@@ -92,13 +92,6 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "label"
-     */
-    public function testPropertyLabel()
-    {
-    }
-
-    /**
      * Test attribute "next_scan_ownership"
      */
     public function testPropertyNextScanOwnership()
@@ -109,13 +102,6 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
      * Test attribute "owner_organization_id"
      */
     public function testPropertyOwnerOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidCollection
+ * Guid
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * GuidCollection Class Doc Comment
+ * Guid Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GuidCollection implements ArrayAccess
+class Guid implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GuidCollection implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'GuidCollection';
+    protected static $swaggerModelName = 'Guid';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,8 @@ class GuidCollection implements ArrayAccess
     protected static $swaggerTypes = [
         'created_timestamp' => 'int',
         'id4n' => 'string',
-        'label' => 'string',
         'next_scan_ownership' => 'bool',
-        'owner_organization_id' => 'int',
-        'type' => 'string'
+        'owner_organization_id' => 'int'
     ];
 
     /**
@@ -69,10 +67,8 @@ class GuidCollection implements ArrayAccess
     protected static $swaggerFormats = [
         'created_timestamp' => 'int64',
         'id4n' => null,
-        'label' => null,
         'next_scan_ownership' => null,
-        'owner_organization_id' => 'int64',
-        'type' => null
+        'owner_organization_id' => 'int64'
     ];
 
     public static function swaggerTypes()
@@ -92,10 +88,8 @@ class GuidCollection implements ArrayAccess
     protected static $attributeMap = [
         'created_timestamp' => 'createdTimestamp',
         'id4n' => 'id4n',
-        'label' => 'label',
         'next_scan_ownership' => 'nextScanOwnership',
-        'owner_organization_id' => 'ownerOrganizationId',
-        'type' => 'type'
+        'owner_organization_id' => 'ownerOrganizationId'
     ];
 
 
@@ -106,10 +100,8 @@ class GuidCollection implements ArrayAccess
     protected static $setters = [
         'created_timestamp' => 'setCreatedTimestamp',
         'id4n' => 'setId4n',
-        'label' => 'setLabel',
         'next_scan_ownership' => 'setNextScanOwnership',
-        'owner_organization_id' => 'setOwnerOrganizationId',
-        'type' => 'setType'
+        'owner_organization_id' => 'setOwnerOrganizationId'
     ];
 
 
@@ -120,10 +112,8 @@ class GuidCollection implements ArrayAccess
     protected static $getters = [
         'created_timestamp' => 'getCreatedTimestamp',
         'id4n' => 'getId4n',
-        'label' => 'getLabel',
         'next_scan_ownership' => 'getNextScanOwnership',
-        'owner_organization_id' => 'getOwnerOrganizationId',
-        'type' => 'getType'
+        'owner_organization_id' => 'getOwnerOrganizationId'
     ];
 
     public static function attributeMap()
@@ -141,24 +131,8 @@ class GuidCollection implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_ROUTING_COLLECTION = 'ROUTING_COLLECTION';
-    const TYPE_LOGISTIC_COLLECTION = 'LOGISTIC_COLLECTION';
-    const TYPE_LABELLED_COLLECTION = 'LABELLED_COLLECTION';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_ROUTING_COLLECTION,
-            self::TYPE_LOGISTIC_COLLECTION,
-            self::TYPE_LABELLED_COLLECTION,
-        ];
-    }
     
 
     /**
@@ -175,10 +149,8 @@ class GuidCollection implements ArrayAccess
     {
         $this->container['created_timestamp'] = isset($data['created_timestamp']) ? $data['created_timestamp'] : null;
         $this->container['id4n'] = isset($data['id4n']) ? $data['id4n'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['next_scan_ownership'] = isset($data['next_scan_ownership']) ? $data['next_scan_ownership'] : null;
         $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -190,14 +162,9 @@ class GuidCollection implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
+        if ($this->container['id4n'] === null) {
+            $invalid_properties[] = "'id4n' can't be null";
         }
-
         return $invalid_properties;
     }
 
@@ -210,8 +177,7 @@ class GuidCollection implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ($this->container['id4n'] === null) {
             return false;
         }
         return true;
@@ -261,27 +227,6 @@ class GuidCollection implements ArrayAccess
     }
 
     /**
-     * Gets label
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->container['label'];
-    }
-
-    /**
-     * Sets label
-     * @param string $label
-     * @return $this
-     */
-    public function setLabel($label)
-    {
-        $this->container['label'] = $label;
-
-        return $this;
-    }
-
-    /**
      * Gets next_scan_ownership
      * @return bool
      */
@@ -319,36 +264,6 @@ class GuidCollection implements ArrayAccess
     public function setOwnerOrganizationId($owner_organization_id)
     {
         $this->container['owner_organization_id'] = $owner_organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     * @param string $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['type'] = $type;
 
         return $this;
     }

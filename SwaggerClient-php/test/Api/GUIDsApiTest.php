@@ -81,4 +81,24 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     public function testCreateGuid()
     {
     }
+
+    /**
+     * Test case for getGuid
+     *
+     * Retrieve GUID information.
+     *
+     */
+    public function testGetGuid()
+    {
+    }
+
+    /**
+     * Test case for updateGuid
+     *
+     * Change GUID information..
+     *
+     */
+    public function testUpdateGuid()
+    {
+    }
 }

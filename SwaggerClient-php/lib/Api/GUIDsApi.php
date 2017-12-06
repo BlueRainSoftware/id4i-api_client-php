@@ -213,4 +213,267 @@ class GUIDsApi
             throw $e;
         }
     }
+
+    /**
+     * Operation getGuid
+     *
+     * Retrieve GUID information
+     *
+     * @param string $id4n The GUID number (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Guid
+     */
+    public function getGuid($id4n, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->getGuidWithHttpInfo($id4n, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation getGuidWithHttpInfo
+     *
+     * Retrieve GUID information
+     *
+     * @param string $id4n The GUID number (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Guid, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGuidWithHttpInfo($id4n, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling getGuid');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/guids/{id4n}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                "{" . "id4n" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id4n),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Guid',
+                '/api/v1/guids/{id4n}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Guid', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Guid', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateGuid
+     *
+     * Change GUID information.
+     *
+     * @param string $id4n The GUID number (required)
+     * @param \Swagger\Client\Model\Guid $request request (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ResponseEntity
+     */
+    public function updateGuid($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->updateGuidWithHttpInfo($id4n, $request, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation updateGuidWithHttpInfo
+     *
+     * Change GUID information.
+     *
+     * @param string $id4n The GUID number (required)
+     * @param \Swagger\Client\Model\Guid $request request (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateGuidWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id4n when calling updateGuid');
+        }
+        // verify the required parameter 'request' is set
+        if ($request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling updateGuid');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/guids/{id4n}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                "{" . "id4n" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($request)) {
+            $_tempBody = $request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ResponseEntity',
+                '/api/v1/guids/{id4n}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
 }

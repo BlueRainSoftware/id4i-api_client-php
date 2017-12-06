@@ -131,6 +131,8 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateLogisticCollection**](docs/Api/CollectionsApi.md#updatelogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**updateRoutingCollection**](docs/Api/CollectionsApi.md#updateroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *GUIDsApi* | [**createGuid**](docs/Api/GUIDsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
+*GUIDsApi* | [**getGuid**](docs/Api/GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
@@ -175,6 +177,7 @@ Class | Method | HTTP request | Description
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
  - [CreateRoutingCollectionRequest](docs/Model/CreateRoutingCollectionRequest.md)
+ - [Guid](docs/Model/Guid.md)
  - [GuidCollection](docs/Model/GuidCollection.md)
  - [Id4n](docs/Model/Id4n.md)
  - [ListOfId4ns](docs/Model/ListOfId4ns.md)
@@ -182,12 +185,13 @@ Class | Method | HTTP request | Description
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
+ - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
+ - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
- - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
  - [PaginatedResponseUserPresentation_](docs/Model/PaginatedResponseUserPresentation_.md)
  - [PaginatedResponseUserRoles_](docs/Model/PaginatedResponseUserRoles_.md)
  - [PaginatedUserPresentationResponse](docs/Model/PaginatedUserPresentationResponse.md)

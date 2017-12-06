@@ -1,6 +1,6 @@
 <?php
 /**
- * PaginatedResponseString_Test
+ * PaginatedGuidResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * PaginatedResponseString_Test Class Doc Comment
+ * PaginatedGuidResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaginatedResponseString_
+// * @description PaginatedGuidResponse
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaginatedResponseString_Test extends \PHPUnit_Framework_TestCase
+class PaginatedGuidResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class PaginatedResponseString_Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PaginatedResponseString_"
+     * Test "PaginatedGuidResponse"
      */
-    public function testPaginatedResponseString_()
+    public function testPaginatedGuidResponse()
     {
     }
 
