@@ -190,6 +190,14 @@ class GuidCollection implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['label']) && (strlen($this->container['label']) > 128)) {
+            $invalid_properties[] = "invalid value for 'label', the character length must be smaller than or equal to 128.";
+        }
+
+        if (!is_null($this->container['label']) && (strlen($this->container['label']) < 5)) {
+            $invalid_properties[] = "invalid value for 'label', the character length must be bigger than or equal to 5.";
+        }
+
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -210,6 +218,12 @@ class GuidCollection implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['label']) > 128) {
+            return false;
+        }
+        if (strlen($this->container['label']) < 5) {
+            return false;
+        }
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
@@ -276,6 +290,13 @@ class GuidCollection implements ArrayAccess
      */
     public function setLabel($label)
     {
+        if (!is_null($label) && (strlen($label) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $label when calling GuidCollection., must be smaller than or equal to 128.');
+        }
+        if (!is_null($label) && (strlen($label) < 5)) {
+            throw new \InvalidArgumentException('invalid length for $label when calling GuidCollection., must be bigger than or equal to 5.');
+        }
+
         $this->container['label'] = $label;
 
         return $this;
