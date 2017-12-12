@@ -143,7 +143,6 @@ class ApiError implements ArrayAccess
     const CODE_INVALID_ID4_N_OBJECT_TYPE = 'ERR_INVALID_ID4N_OBJECT_TYPE';
     const CODE_ENTITY_NOT_FOUND = 'ERR_ENTITY_NOT_FOUND';
     const CODE_DUPLICATE = 'ERR_DUPLICATE';
-    const CODE_HTTP = 'ERR_HTTP';
     const CODE_INTERNAL = 'ERR_INTERNAL';
     const CODE_UNKNOWN = 'ERR_UNKNOWN';
     const CODE_INVALID_ORGANIZATION_USERROLE = 'ERR_INVALID_ORGANIZATION_USERROLE';
@@ -175,7 +174,6 @@ class ApiError implements ArrayAccess
             self::CODE_INVALID_ID4_N_OBJECT_TYPE,
             self::CODE_ENTITY_NOT_FOUND,
             self::CODE_DUPLICATE,
-            self::CODE_HTTP,
             self::CODE_INTERNAL,
             self::CODE_UNKNOWN,
             self::CODE_INVALID_ORGANIZATION_USERROLE,
