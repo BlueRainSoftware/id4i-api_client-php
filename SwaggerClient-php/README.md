@@ -118,6 +118,9 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**findRoutingCollection**](docs/Api/CollectionsApi.md#findroutingcollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 *CollectionsApi* | [**getAllCollectionsOfOrganization**](docs/Api/CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *CollectionsApi* | [**listElementsOfCollection**](docs/Api/CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfLabelledCollection**](docs/Api/CollectionsApi.md#listelementsoflabelledcollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfLogisticCollection**](docs/Api/CollectionsApi.md#listelementsoflogisticcollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfRoutingCollection**](docs/Api/CollectionsApi.md#listelementsofroutingcollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
 *CollectionsApi* | [**removeElementFromCollection**](docs/Api/CollectionsApi.md#removeelementfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
 *CollectionsApi* | [**removeElementFromLabelledCollection**](docs/Api/CollectionsApi.md#removeelementfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
 *CollectionsApi* | [**removeElementFromLogisticCollection**](docs/Api/CollectionsApi.md#removeelementfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
@@ -186,14 +189,17 @@ Class | Method | HTTP request | Description
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
+ - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
+ - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
  - [PaginatedResponseUserPresentation_](docs/Model/PaginatedResponseUserPresentation_.md)
  - [PaginatedResponseUserRoles_](docs/Model/PaginatedResponseUserRoles_.md)
+ - [PaginatedStringResponse](docs/Model/PaginatedStringResponse.md)
  - [PaginatedUserPresentationResponse](docs/Model/PaginatedUserPresentationResponse.md)
  - [PaginatedUserRolesResponse](docs/Model/PaginatedUserRolesResponse.md)
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)

@@ -283,6 +283,36 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for listElementsOfLabelledCollection
+     *
+     * List contents of the collection.
+     *
+     */
+    public function testListElementsOfLabelledCollection()
+    {
+    }
+
+    /**
+     * Test case for listElementsOfLogisticCollection
+     *
+     * List contents of the collection.
+     *
+     */
+    public function testListElementsOfLogisticCollection()
+    {
+    }
+
+    /**
+     * Test case for listElementsOfRoutingCollection
+     *
+     * List contents of the collection.
+     *
+     */
+    public function testListElementsOfRoutingCollection()
+    {
+    }
+
+    /**
      * Test case for removeElementFromCollection
      *
      * Remove element from collection.
