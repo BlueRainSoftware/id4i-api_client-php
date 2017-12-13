@@ -93,6 +93,16 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getGuidsWithoutCollection
+     *
+     * Retrieve GUIDs not in any collection.
+     *
+     */
+    public function testGetGuidsWithoutCollection()
+    {
+    }
+
+    /**
      * Test case for updateGuid
      *
      * Change GUID information..
