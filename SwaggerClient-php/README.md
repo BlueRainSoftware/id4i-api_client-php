@@ -74,7 +74,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

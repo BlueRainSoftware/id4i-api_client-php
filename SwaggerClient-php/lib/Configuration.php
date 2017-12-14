@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://localhost';
+    protected $host = 'https://backend.id4i.de';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout
