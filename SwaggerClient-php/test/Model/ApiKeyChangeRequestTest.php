@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyStatusTest
+ * ApiKeyChangeRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ApiKeyStatusTest Class Doc Comment
+ * ApiKeyChangeRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description ApiKeyStatus
+// * @description ApiKeyChangeRequest
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyStatusTest extends \PHPUnit_Framework_TestCase
+class ApiKeyChangeRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ApiKeyStatusTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ApiKeyStatus"
+     * Test "ApiKeyChangeRequest"
      */
-    public function testApiKeyStatus()
+    public function testApiKeyChangeRequest()
     {
     }
 
@@ -81,6 +81,13 @@ class ApiKeyStatusTest extends \PHPUnit_Framework_TestCase
      * Test attribute "active"
      */
     public function testPropertyActive()
+    {
+    }
+
+    /**
+     * Test attribute "new_label"
+     */
+    public function testPropertyNewLabel()
     {
     }
 }

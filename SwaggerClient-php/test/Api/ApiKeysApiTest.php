@@ -75,7 +75,7 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createNewApiKey
      *
-     * Create apiKey.
+     * Create API key.
      *
      */
     public function testCreateNewApiKey()
@@ -85,7 +85,7 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteApiKey
      *
-     * Delete apiKey.
+     * Delete API key.
      *
      */
     public function testDeleteApiKey()
@@ -95,7 +95,7 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getApiKey
      *
-     * Show apiKey.
+     * Show API key.
      *
      */
     public function testGetApiKey()
@@ -105,7 +105,7 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for listAllApiKeysOfOrganization
      *
-     * Find apiKeys by organization.
+     * Find API key by organization.
      *
      */
     public function testListAllApiKeysOfOrganization()
@@ -115,7 +115,7 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for listApiKeyPrivileges
      *
-     * List ApiKey privileges.
+     * List API key privileges.
      *
      */
     public function testListApiKeyPrivileges()
@@ -123,12 +123,12 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for setApiKeyActivationStatus
+     * Test case for updateApiKey
      *
-     * Set apiKey activation state.
+     * Update API keys.
      *
      */
-    public function testSetApiKeyActivationStatus()
+    public function testUpdateApiKey()
     {
     }
 }

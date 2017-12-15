@@ -90,9 +90,9 @@ class ApiKeysApi
     /**
      * Operation createNewApiKey
      *
-     * Create apiKey
+     * Create API key
      *
-     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request ApiKey to be created. (required)
+     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -107,9 +107,9 @@ class ApiKeysApi
     /**
      * Operation createNewApiKeyWithHttpInfo
      *
-     * Create apiKey
+     * Create API key
      *
-     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request ApiKey to be created. (required)
+     * @param \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -217,9 +217,9 @@ class ApiKeysApi
     /**
      * Operation deleteApiKey
      *
-     * Delete apiKey
+     * Delete API key
      *
-     * @param string $key The apiKey to delete. (required)
+     * @param string $key The API key to delete. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -234,9 +234,9 @@ class ApiKeysApi
     /**
      * Operation deleteApiKeyWithHttpInfo
      *
-     * Delete apiKey
+     * Delete API key
      *
-     * @param string $key The apiKey to delete. (required)
+     * @param string $key The API key to delete. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -331,9 +331,9 @@ class ApiKeysApi
     /**
      * Operation getApiKey
      *
-     * Show apiKey
+     * Show API key
      *
-     * @param string $key The apiKey to show. (required)
+     * @param string $key The API key to show. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -348,9 +348,9 @@ class ApiKeysApi
     /**
      * Operation getApiKeyWithHttpInfo
      *
-     * Show apiKey
+     * Show API key
      *
-     * @param string $key The apiKey to show. (required)
+     * @param string $key The API key to show. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -453,7 +453,7 @@ class ApiKeysApi
     /**
      * Operation listAllApiKeysOfOrganization
      *
-     * Find apiKeys by organization
+     * Find API key by organization
      *
      * @param int $organization_id The id of the organization to search in. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -472,7 +472,7 @@ class ApiKeysApi
     /**
      * Operation listAllApiKeysOfOrganizationWithHttpInfo
      *
-     * Find apiKeys by organization
+     * Find API key by organization
      *
      * @param int $organization_id The id of the organization to search in. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -583,7 +583,7 @@ class ApiKeysApi
     /**
      * Operation listApiKeyPrivileges
      *
-     * List ApiKey privileges
+     * List API key privileges
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
@@ -602,7 +602,7 @@ class ApiKeysApi
     /**
      * Operation listApiKeyPrivilegesWithHttpInfo
      *
-     * List ApiKey privileges
+     * List API key privileges
      *
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
@@ -707,44 +707,44 @@ class ApiKeysApi
     }
 
     /**
-     * Operation setApiKeyActivationStatus
+     * Operation updateApiKey
      *
-     * Set apiKey activation state
+     * Update API keys
      *
-     * @param string $key The apiKey to change the activation state. (required)
-     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status Activation state to set. (required)
+     * @param string $key The API key to be updated. (required)
+     * @param \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ApiError
      */
-    public function setApiKeyActivationStatus($key, $api_key_status, $authorization = null, $accept_language = null)
+    public function updateApiKey($key, $api_key_change, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->setApiKeyActivationStatusWithHttpInfo($key, $api_key_status, $authorization, $accept_language);
+        list($response) = $this->updateApiKeyWithHttpInfo($key, $api_key_change, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation setApiKeyActivationStatusWithHttpInfo
+     * Operation updateApiKeyWithHttpInfo
      *
-     * Set apiKey activation state
+     * Update API keys
      *
-     * @param string $key The apiKey to change the activation state. (required)
-     * @param \Swagger\Client\Model\ApiKeyStatus $api_key_status Activation state to set. (required)
+     * @param string $key The API key to be updated. (required)
+     * @param \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setApiKeyActivationStatusWithHttpInfo($key, $api_key_status, $authorization = null, $accept_language = null)
+    public function updateApiKeyWithHttpInfo($key, $api_key_change, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling setApiKeyActivationStatus');
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling updateApiKey');
         }
-        // verify the required parameter 'api_key_status' is set
-        if ($api_key_status === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $api_key_status when calling setApiKeyActivationStatus');
+        // verify the required parameter 'api_key_change' is set
+        if ($api_key_change === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $api_key_change when calling updateApiKey');
         }
         // parse inputs
         $resourcePath = "/api/v1/apikeys/{key}";
@@ -776,8 +776,8 @@ class ApiKeysApi
         }
         // body params
         $_tempBody = null;
-        if (isset($api_key_status)) {
-            $_tempBody = $api_key_status;
+        if (isset($api_key_change)) {
+            $_tempBody = $api_key_change;
         }
 
         // for model (json/xml)

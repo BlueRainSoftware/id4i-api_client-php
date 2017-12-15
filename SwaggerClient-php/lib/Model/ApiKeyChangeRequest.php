@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyStatus
+ * ApiKeyChangeRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ApiKeyStatus Class Doc Comment
+ * ApiKeyChangeRequest Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyStatus implements ArrayAccess
+class ApiKeyChangeRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class ApiKeyStatus implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ApiKeyStatus';
+    protected static $swaggerModelName = 'ApiKeyChangeRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'active' => 'bool'
+        'active' => 'bool',
+        'new_label' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class ApiKeyStatus implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'active' => null
+        'active' => null,
+        'new_label' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class ApiKeyStatus implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'active' => 'active'
+        'active' => 'active',
+        'new_label' => 'newLabel'
     ];
 
 
@@ -89,7 +92,8 @@ class ApiKeyStatus implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'active' => 'setActive'
+        'active' => 'setActive',
+        'new_label' => 'setNewLabel'
     ];
 
 
@@ -98,7 +102,8 @@ class ApiKeyStatus implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'active' => 'getActive'
+        'active' => 'getActive',
+        'new_label' => 'getNewLabel'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class ApiKeyStatus implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['new_label'] = isset($data['new_label']) ? $data['new_label'] : null;
     }
 
     /**
@@ -143,6 +149,17 @@ class ApiKeyStatus implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if ($this->container['new_label'] === null) {
+            $invalid_properties[] = "'new_label' can't be null";
+        }
+        if ((strlen($this->container['new_label']) > 50)) {
+            $invalid_properties[] = "invalid value for 'new_label', the character length must be smaller than or equal to 50.";
+        }
+
+        if ((strlen($this->container['new_label']) < 5)) {
+            $invalid_properties[] = "invalid value for 'new_label', the character length must be bigger than or equal to 5.";
+        }
 
         return $invalid_properties;
     }
@@ -156,6 +173,15 @@ class ApiKeyStatus implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['new_label'] === null) {
+            return false;
+        }
+        if (strlen($this->container['new_label']) > 50) {
+            return false;
+        }
+        if (strlen($this->container['new_label']) < 5) {
+            return false;
+        }
         return true;
     }
 
@@ -177,6 +203,34 @@ class ApiKeyStatus implements ArrayAccess
     public function setActive($active)
     {
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets new_label
+     * @return string
+     */
+    public function getNewLabel()
+    {
+        return $this->container['new_label'];
+    }
+
+    /**
+     * Sets new_label
+     * @param string $new_label
+     * @return $this
+     */
+    public function setNewLabel($new_label)
+    {
+        if ((strlen($new_label) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $new_label when calling ApiKeyChangeRequest., must be smaller than or equal to 50.');
+        }
+        if ((strlen($new_label) < 5)) {
+            throw new \InvalidArgumentException('invalid length for $new_label when calling ApiKeyChangeRequest., must be bigger than or equal to 5.');
+        }
+
+        $this->container['new_label'] = $new_label;
 
         return $this;
     }

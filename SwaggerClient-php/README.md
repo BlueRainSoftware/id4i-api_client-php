@@ -91,12 +91,12 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**updateUserRoles**](docs/Api/AccountsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *AccountsApi* | [**verifyPasswordReset**](docs/Api/AccountsApi.md#verifypasswordreset) | **PUT** /account/password | Verify password reset
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
-*ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create apiKey
-*ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-*ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-*ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-*ApiKeysApi* | [**setApiKeyActivationStatus**](docs/Api/ApiKeysApi.md#setapikeyactivationstatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+*ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create API key
+*ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+*ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show API key
+*ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find API key by organization
+*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
 *CollectionsApi* | [**addElementToLogisticCollection**](docs/Api/CollectionsApi.md#addelementtologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
@@ -170,11 +170,11 @@ Class | Method | HTTP request | Description
 
  - [AccountCredentials](docs/Model/AccountCredentials.md)
  - [ApiError](docs/Model/ApiError.md)
+ - [ApiKeyChangeRequest](docs/Model/ApiKeyChangeRequest.md)
  - [ApiKeyCreationRequest](docs/Model/ApiKeyCreationRequest.md)
  - [ApiKeyPresentation](docs/Model/ApiKeyPresentation.md)
  - [ApiKeyPrivilegeInfo](docs/Model/ApiKeyPrivilegeInfo.md)
  - [ApiKeyPrivilegeResponse](docs/Model/ApiKeyPrivilegeResponse.md)
- - [ApiKeyStatus](docs/Model/ApiKeyStatus.md)
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
  - [CreateGuidRequest](docs/Model/CreateGuidRequest.md)
