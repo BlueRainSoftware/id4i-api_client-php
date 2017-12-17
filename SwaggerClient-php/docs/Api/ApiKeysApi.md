@@ -1,23 +1,23 @@
 # Swagger\Client\ApiKeysApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
-[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-[**setApiKeyActivationStatus**](ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
+[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
+[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+[**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
 
 # **createNewApiKey**
 > \Swagger\Client\Model\ApiKeyPresentation createNewApiKey($creation_request, $authorization, $accept_language)
 
-Create apiKey
+Create API key
 
-Creation of a new apiKey.
+Creation of a new API key.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ Creation of a new apiKey.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ApiKeysApi();
-$creation_request = new \Swagger\Client\Model\ApiKeyCreationRequest(); // \Swagger\Client\Model\ApiKeyCreationRequest | ApiKey to be created.
+$creation_request = new \Swagger\Client\Model\ApiKeyCreationRequest(); // \Swagger\Client\Model\ApiKeyCreationRequest | API key to be created.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **creation_request** | [**\Swagger\Client\Model\ApiKeyCreationRequest**](../Model/ApiKeyCreationRequest.md)| ApiKey to be created. |
+ **creation_request** | [**\Swagger\Client\Model\ApiKeyCreationRequest**](../Model/ApiKeyCreationRequest.md)| API key to be created. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
@@ -64,9 +64,9 @@ No authorization required
 # **deleteApiKey**
 > \Swagger\Client\Model\ApiError deleteApiKey($key, $authorization, $accept_language)
 
-Delete apiKey
+Delete API key
 
-Deletion of an apiKey.
+Deletion of an API key.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ Deletion of an apiKey.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ApiKeysApi();
-$key = "key_example"; // string | The apiKey to delete.
+$key = "key_example"; // string | The API key to delete.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
@@ -91,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **string**| The apiKey to delete. |
+ **key** | **string**| The API key to delete. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
@@ -113,9 +113,9 @@ No authorization required
 # **getApiKey**
 > \Swagger\Client\Model\ApiKeyPresentation getApiKey($key, $authorization, $accept_language)
 
-Show apiKey
+Show API key
 
-Showing the details of an apiKey.
+Showing the details of an API key.
 
 ### Example
 ```php
@@ -123,7 +123,7 @@ Showing the details of an apiKey.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ApiKeysApi();
-$key = "key_example"; // string | The apiKey to show.
+$key = "key_example"; // string | The API key to show.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **string**| The apiKey to show. |
+ **key** | **string**| The API key to show. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
@@ -162,9 +162,9 @@ No authorization required
 # **listAllApiKeysOfOrganization**
 > \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit)
 
-Find apiKeys by organization
+Find API key by organization
 
-Finding all apiKeys assigned to the specified organization in a paginated manner.
+Finding all API key assigned to the specified organization in a paginated manner.
 
 ### Example
 ```php
@@ -215,9 +215,9 @@ No authorization required
 # **listApiKeyPrivileges**
 > \Swagger\Client\Model\ApiKeyPrivilegeResponse listApiKeyPrivileges($authorization, $accept_language, $id4n_concerning, $offset, $limit)
 
-List ApiKey privileges
+List API key privileges
 
-Listing api key privileges.
+Listing API key privileges.
 
 ### Example
 ```php
@@ -265,12 +265,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setApiKeyActivationStatus**
-> \Swagger\Client\Model\ApiError setApiKeyActivationStatus($key, $api_key_status, $authorization, $accept_language)
+# **updateApiKey**
+> \Swagger\Client\Model\ApiError updateApiKey($key, $api_key_change, $authorization, $accept_language)
 
-Set apiKey activation state
+Update API keys
 
-Setting the apiKey activation state.
+API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
 
 ### Example
 ```php
@@ -278,16 +278,16 @@ Setting the apiKey activation state.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ApiKeysApi();
-$key = "key_example"; // string | The apiKey to change the activation state.
-$api_key_status = new \Swagger\Client\Model\ApiKeyStatus(); // \Swagger\Client\Model\ApiKeyStatus | Activation state to set.
+$key = "key_example"; // string | The API key to be updated.
+$api_key_change = new \Swagger\Client\Model\ApiKeyChangeRequest(); // \Swagger\Client\Model\ApiKeyChangeRequest | The new values to apply.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->setApiKeyActivationStatus($key, $api_key_status, $authorization, $accept_language);
+    $result = $api_instance->updateApiKey($key, $api_key_change, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiKeysApi->setApiKeyActivationStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiKeysApi->updateApiKey: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -296,8 +296,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **string**| The apiKey to change the activation state. |
- **api_key_status** | [**\Swagger\Client\Model\ApiKeyStatus**](../Model/ApiKeyStatus.md)| Activation state to set. |
+ **key** | **string**| The API key to be updated. |
+ **api_key_change** | [**\Swagger\Client\Model\ApiKeyChangeRequest**](../Model/ApiKeyChangeRequest.md)| The new values to apply. |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 

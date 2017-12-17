@@ -354,7 +354,7 @@ class AccountsApi
      * @param int $offset Start with the n-th element. (optional)
      * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PaginatedResponseOrganization_
+     * @return \Swagger\Client\Model\PaginatedOrganizationResponse
      */
     public function getOrganizationsOfUser($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
     {
@@ -373,7 +373,7 @@ class AccountsApi
      * @param int $offset Start with the n-th element. (optional)
      * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PaginatedResponseOrganization_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedOrganizationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationsOfUserWithHttpInfo($authorization = null, $accept_language = null, $role = null, $offset = null, $limit = null)
     {
@@ -424,15 +424,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaginatedResponseOrganization_',
+                '\Swagger\Client\Model\PaginatedOrganizationResponse',
                 '/api/v1/user/organizations'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedResponseOrganization_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedOrganizationResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedResponseOrganization_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedOrganizationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
@@ -478,12 +478,14 @@ class AccountsApi
      * @param string $username username (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UserRoles
+     * @return \Swagger\Client\Model\PaginatedStringResponse
      */
-    public function getUserRoles($organization_id, $username, $authorization = null, $accept_language = null)
+    public function getUserRoles($organization_id, $username, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
-        list($response) = $this->getUserRolesWithHttpInfo($organization_id, $username, $authorization, $accept_language);
+        list($response) = $this->getUserRolesWithHttpInfo($organization_id, $username, $authorization, $accept_language, $offset, $limit);
         return $response;
     }
 
@@ -496,10 +498,12 @@ class AccountsApi
      * @param string $username username (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param int $offset Start with the n-th element. (optional)
+     * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UserRoles, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedStringResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserRolesWithHttpInfo($organization_id, $username, $authorization = null, $accept_language = null)
+    public function getUserRolesWithHttpInfo($organization_id, $username, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -521,6 +525,14 @@ class AccountsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
 
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
@@ -560,15 +572,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\UserRoles',
+                '\Swagger\Client\Model\PaginatedStringResponse',
                 '/api/v1/organizations/{organizationId}/users/{username}/roles'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UserRoles', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedStringResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UserRoles', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedStringResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:

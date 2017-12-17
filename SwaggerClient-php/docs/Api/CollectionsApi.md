@@ -1,6 +1,6 @@
 # Swagger\Client\CollectionsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,9 @@ Method | HTTP request | Description
 [**findRoutingCollection**](CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 [**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 [**listElementsOfCollection**](CollectionsApi.md#listElementsOfCollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+[**listElementsOfLabelledCollection**](CollectionsApi.md#listElementsOfLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
+[**listElementsOfLogisticCollection**](CollectionsApi.md#listElementsOfLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
+[**listElementsOfRoutingCollection**](CollectionsApi.md#listElementsOfRoutingCollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
 [**removeElementFromCollection**](CollectionsApi.md#removeElementFromCollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
 [**removeElementFromLabelledCollection**](CollectionsApi.md#removeElementFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
 [**removeElementFromLogisticCollection**](CollectionsApi.md#removeElementFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
@@ -1027,6 +1030,159 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listElementsOfLabelledCollection**
+> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfLabelledCollection($id4n, $authorization, $accept_language, $offset, $limit)
+
+List contents of the collection
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\CollectionsApi();
+$id4n = "id4n_example"; // string | id4n
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->listElementsOfLabelledCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->listElementsOfLabelledCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listElementsOfLogisticCollection**
+> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfLogisticCollection($id4n, $authorization, $accept_language, $offset, $limit)
+
+List contents of the collection
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\CollectionsApi();
+$id4n = "id4n_example"; // string | id4n
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->listElementsOfLogisticCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->listElementsOfLogisticCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listElementsOfRoutingCollection**
+> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfRoutingCollection($id4n, $authorization, $accept_language, $offset, $limit)
+
+List contents of the collection
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\CollectionsApi();
+$id4n = "id4n_example"; // string | id4n
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->listElementsOfRoutingCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->listElementsOfRoutingCollection: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

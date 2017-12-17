@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyStatusTest
+ * PaginatedStringResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ApiKeyStatusTest Class Doc Comment
+ * PaginatedStringResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description ApiKeyStatus
+// * @description PaginatedStringResponse
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyStatusTest extends \PHPUnit_Framework_TestCase
+class PaginatedStringResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,37 @@ class ApiKeyStatusTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ApiKeyStatus"
+     * Test "PaginatedStringResponse"
      */
-    public function testApiKeyStatus()
+    public function testPaginatedStringResponse()
     {
     }
 
     /**
-     * Test attribute "active"
+     * Test attribute "elements"
      */
-    public function testPropertyActive()
+    public function testPropertyElements()
+    {
+    }
+
+    /**
+     * Test attribute "limit"
+     */
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
     {
     }
 }

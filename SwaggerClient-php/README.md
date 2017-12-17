@@ -74,7 +74,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -91,12 +91,12 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**updateUserRoles**](docs/Api/AccountsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *AccountsApi* | [**verifyPasswordReset**](docs/Api/AccountsApi.md#verifypasswordreset) | **PUT** /account/password | Verify password reset
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
-*ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create apiKey
-*ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-*ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-*ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-*ApiKeysApi* | [**setApiKeyActivationStatus**](docs/Api/ApiKeysApi.md#setapikeyactivationstatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+*ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create API key
+*ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+*ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show API key
+*ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find API key by organization
+*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
 *CollectionsApi* | [**addElementToLogisticCollection**](docs/Api/CollectionsApi.md#addelementtologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
@@ -118,6 +118,9 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**findRoutingCollection**](docs/Api/CollectionsApi.md#findroutingcollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 *CollectionsApi* | [**getAllCollectionsOfOrganization**](docs/Api/CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *CollectionsApi* | [**listElementsOfCollection**](docs/Api/CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfLabelledCollection**](docs/Api/CollectionsApi.md#listelementsoflabelledcollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfLogisticCollection**](docs/Api/CollectionsApi.md#listelementsoflogisticcollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**listElementsOfRoutingCollection**](docs/Api/CollectionsApi.md#listelementsofroutingcollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
 *CollectionsApi* | [**removeElementFromCollection**](docs/Api/CollectionsApi.md#removeelementfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
 *CollectionsApi* | [**removeElementFromLabelledCollection**](docs/Api/CollectionsApi.md#removeelementfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
 *CollectionsApi* | [**removeElementFromLogisticCollection**](docs/Api/CollectionsApi.md#removeelementfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
@@ -132,6 +135,7 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateRoutingCollection**](docs/Api/CollectionsApi.md#updateroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *GUIDsApi* | [**createGuid**](docs/Api/GUIDsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GUIDsApi* | [**getGuid**](docs/Api/GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*GUIDsApi* | [**getGuidsWithoutCollection**](docs/Api/GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
@@ -166,11 +170,11 @@ Class | Method | HTTP request | Description
 
  - [AccountCredentials](docs/Model/AccountCredentials.md)
  - [ApiError](docs/Model/ApiError.md)
+ - [ApiKeyChangeRequest](docs/Model/ApiKeyChangeRequest.md)
  - [ApiKeyCreationRequest](docs/Model/ApiKeyCreationRequest.md)
  - [ApiKeyPresentation](docs/Model/ApiKeyPresentation.md)
  - [ApiKeyPrivilegeInfo](docs/Model/ApiKeyPrivilegeInfo.md)
  - [ApiKeyPrivilegeResponse](docs/Model/ApiKeyPrivilegeResponse.md)
- - [ApiKeyStatus](docs/Model/ApiKeyStatus.md)
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
  - [CreateGuidRequest](docs/Model/CreateGuidRequest.md)
@@ -186,14 +190,17 @@ Class | Method | HTTP request | Description
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
+ - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
+ - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
  - [PaginatedResponseUserPresentation_](docs/Model/PaginatedResponseUserPresentation_.md)
  - [PaginatedResponseUserRoles_](docs/Model/PaginatedResponseUserRoles_.md)
+ - [PaginatedStringResponse](docs/Model/PaginatedStringResponse.md)
  - [PaginatedUserPresentationResponse](docs/Model/PaginatedUserPresentationResponse.md)
  - [PaginatedUserRolesResponse](docs/Model/PaginatedUserRolesResponse.md)
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)

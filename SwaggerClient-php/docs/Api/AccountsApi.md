@@ -1,6 +1,6 @@
 # Swagger\Client\AccountsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -120,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrganizationsOfUser**
-> \Swagger\Client\Model\PaginatedResponseOrganization_ getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit)
+> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit)
 
 Retrieve organizations of user
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedResponseOrganization_**](../Model/PaginatedResponseOrganization_.md)
+[**\Swagger\Client\Model\PaginatedOrganizationResponse**](../Model/PaginatedOrganizationResponse.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRoles**
-> \Swagger\Client\Model\UserRoles getUserRoles($organization_id, $username, $authorization, $accept_language)
+> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit)
 
 Get user roles by username
 
@@ -185,9 +185,11 @@ $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUserRoles($organization_id, $username, $authorization, $accept_language);
+    $result = $api_instance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -203,10 +205,12 @@ Name | Type | Description  | Notes
  **username** | **string**| username |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\UserRoles**](../Model/UserRoles.md)
+[**\Swagger\Client\Model\PaginatedStringResponse**](../Model/PaginatedStringResponse.md)
 
 ### Authorization
 
