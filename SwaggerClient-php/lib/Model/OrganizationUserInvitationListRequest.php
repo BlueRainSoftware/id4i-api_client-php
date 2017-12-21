@@ -1,6 +1,6 @@
 <?php
 /**
- * UserPresentation
+ * OrganizationUserInvitationListRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * UserPresentation Class Doc Comment
+ * OrganizationUserInvitationListRequest Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserPresentation implements ArrayAccess
+class OrganizationUserInvitationListRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,14 @@ class UserPresentation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'UserPresentation';
+    protected static $swaggerModelName = 'OrganizationUserInvitationListRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'name' => 'string'
+        'invitations' => '\Swagger\Client\Model\OrganizationUserInvitation[]'
     ];
 
     /**
@@ -63,8 +62,7 @@ class UserPresentation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null
+        'invitations' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +80,7 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name'
+        'invitations' => 'invitations'
     ];
 
 
@@ -92,8 +89,7 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName'
+        'invitations' => 'setInvitations'
     ];
 
 
@@ -102,8 +98,7 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName'
+        'invitations' => 'getInvitations'
     ];
 
     public static function attributeMap()
@@ -137,8 +132,7 @@ class UserPresentation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['invitations'] = isset($data['invitations']) ? $data['invitations'] : null;
     }
 
     /**
@@ -150,6 +144,9 @@ class UserPresentation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['invitations'] === null) {
+            $invalid_properties[] = "'invitations' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,48 +159,30 @@ class UserPresentation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['invitations'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets invitations
+     * @return \Swagger\Client\Model\OrganizationUserInvitation[]
      */
-    public function getId()
+    public function getInvitations()
     {
-        return $this->container['id'];
+        return $this->container['invitations'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets invitations
+     * @param \Swagger\Client\Model\OrganizationUserInvitation[] $invitations
      * @return $this
      */
-    public function setId($id)
+    public function setInvitations($invitations)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
+        $this->container['invitations'] = $invitations;
 
         return $this;
     }

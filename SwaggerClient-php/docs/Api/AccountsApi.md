@@ -4,11 +4,14 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**completeRegistration**](AccountsApi.md#completeRegistration) | **POST** /account/completeRegistration | Complete registration
 [**findUserByUsername**](AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
+[**findUsers**](AccountsApi.md#findUsers) | **GET** /api/v1/users | Find users
 [**getAllOrganizationRoles**](AccountsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 [**getOrganizationsOfUser**](AccountsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**inviteUsers**](AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listAllRoles**](AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
 [**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
@@ -18,6 +21,55 @@ Method | HTTP request | Description
 [**verifyPasswordReset**](AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 [**verifyUserRegistration**](AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 
+
+# **completeRegistration**
+> \Swagger\Client\Model\ApiError completeRegistration($complete_registration, $authorization, $accept_language)
+
+Complete registration
+
+Completing a registration e.g. for invited users. Finish registration with a username and a password.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\AccountsApi();
+$complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->completeRegistration($complete_registration, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **complete_registration** | [**\Swagger\Client\Model\CompleteUserRegistrationRequest**](../Model/CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findUserByUsername**
 > \Swagger\Client\Model\UserPresentation findUserByUsername($username, $authorization, $accept_language)
@@ -54,6 +106,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserPresentation**](../Model/UserPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **findUsers**
+> \Swagger\Client\Model\PaginatedUserPresentationResponse findUsers($username_prefix, $authorization, $accept_language, $offset, $limit)
+
+Find users
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\AccountsApi();
+$username_prefix = "username_prefix_example"; // string | Find users starting with this prefix.
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->findUsers($username_prefix, $authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->findUsers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **username_prefix** | **string**| Find users starting with this prefix. |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedUserPresentationResponse**](../Model/PaginatedUserPresentationResponse.md)
 
 ### Authorization
 
@@ -264,6 +367,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\PaginatedUserPresentationResponse**](../Model/PaginatedUserPresentationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **inviteUsers**
+> \Swagger\Client\Model\ApiError inviteUsers($organization_id, $invitation_list, $authorization, $accept_language)
+
+Invite Users
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\AccountsApi();
+$organization_id = 789; // int | organizationId
+$invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| organizationId |
+ **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
 
 ### Authorization
 

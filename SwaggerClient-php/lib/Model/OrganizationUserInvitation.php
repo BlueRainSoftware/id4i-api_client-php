@@ -1,6 +1,6 @@
 <?php
 /**
- * UserPresentation
+ * OrganizationUserInvitation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * UserPresentation Class Doc Comment
+ * OrganizationUserInvitation Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserPresentation implements ArrayAccess
+class OrganizationUserInvitation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,16 @@ class UserPresentation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'UserPresentation';
+    protected static $swaggerModelName = 'OrganizationUserInvitation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'name' => 'string'
+        'email' => 'string',
+        'user_name' => 'string',
+        'roles' => 'string[]'
     ];
 
     /**
@@ -63,8 +64,9 @@ class UserPresentation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null
+        'email' => null,
+        'user_name' => null,
+        'roles' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +84,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name'
+        'email' => 'email',
+        'user_name' => 'userName',
+        'roles' => 'roles'
     ];
 
 
@@ -92,8 +95,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName'
+        'email' => 'setEmail',
+        'user_name' => 'setUserName',
+        'roles' => 'setRoles'
     ];
 
 
@@ -102,8 +106,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName'
+        'email' => 'getEmail',
+        'user_name' => 'getUserName',
+        'roles' => 'getRoles'
     ];
 
     public static function attributeMap()
@@ -137,8 +142,9 @@ class UserPresentation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
+        $this->container['roles'] = isset($data['roles']) ? $data['roles'] : null;
     }
 
     /**
@@ -150,6 +156,9 @@ class UserPresentation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['roles'] === null) {
+            $invalid_properties[] = "'roles' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,48 +171,72 @@ class UserPresentation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['roles'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets id
+     * Gets email
      * @return string
      */
-    public function getId()
+    public function getEmail()
     {
-        return $this->container['id'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets email
+     * @param string $email
      * @return $this
      */
-    public function setId($id)
+    public function setEmail($email)
     {
-        $this->container['id'] = $id;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets user_name
      * @return string
      */
-    public function getName()
+    public function getUserName()
     {
-        return $this->container['name'];
+        return $this->container['user_name'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets user_name
+     * @param string $user_name
      * @return $this
      */
-    public function setName($name)
+    public function setUserName($user_name)
     {
-        $this->container['name'] = $name;
+        $this->container['user_name'] = $user_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets roles
+     * @return string[]
+     */
+    public function getRoles()
+    {
+        return $this->container['roles'];
+    }
+
+    /**
+     * Sets roles
+     * @param string[] $roles
+     * @return $this
+     */
+    public function setRoles($roles)
+    {
+        $this->container['roles'] = $roles;
 
         return $this;
     }

@@ -193,6 +193,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for inviteUsers
+     *
+     * Invite Users.
+     *
+     */
+    public function testInviteUsers()
+    {
+    }
+
+    /**
      * Test case for removeUserRoles
      *
      * Remove role(s) from user.

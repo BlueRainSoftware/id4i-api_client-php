@@ -1,6 +1,6 @@
 <?php
 /**
- * UserPresentationTest
+ * OrganizationUserInvitationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * UserPresentationTest Class Doc Comment
+ * OrganizationUserInvitationTest Class Doc Comment
  *
  * @category    Class */
-// * @description UserPresentation
+// * @description OrganizationUserInvitation
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserPresentationTest extends \PHPUnit_Framework_TestCase
+class OrganizationUserInvitationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,30 @@ class UserPresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "UserPresentation"
+     * Test "OrganizationUserInvitation"
      */
-    public function testUserPresentation()
+    public function testOrganizationUserInvitation()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "email"
      */
-    public function testPropertyId()
+    public function testPropertyEmail()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "user_name"
      */
-    public function testPropertyName()
+    public function testPropertyUserName()
+    {
+    }
+
+    /**
+     * Test attribute "roles"
+     */
+    public function testPropertyRoles()
     {
     }
 }

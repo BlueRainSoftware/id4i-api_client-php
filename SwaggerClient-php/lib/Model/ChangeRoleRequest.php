@@ -144,6 +144,9 @@ class ChangeRoleRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['roles'] === null) {
+            $invalid_properties[] = "'roles' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -156,6 +159,9 @@ class ChangeRoleRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['roles'] === null) {
+            return false;
+        }
         return true;
     }
 

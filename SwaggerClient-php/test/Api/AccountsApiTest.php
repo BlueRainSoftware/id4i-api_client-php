@@ -73,12 +73,32 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for completeRegistration
+     *
+     * Complete registration.
+     *
+     */
+    public function testCompleteRegistration()
+    {
+    }
+
+    /**
      * Test case for findUserByUsername
      *
      * Find by username.
      *
      */
     public function testFindUserByUsername()
+    {
+    }
+
+    /**
+     * Test case for findUsers
+     *
+     * Find users.
+     *
+     */
+    public function testFindUsers()
     {
     }
 
@@ -119,6 +139,16 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testGetUsersOfOrganization()
+    {
+    }
+
+    /**
+     * Test case for inviteUsers
+     *
+     * Invite Users.
+     *
+     */
+    public function testInviteUsers()
     {
     }
 

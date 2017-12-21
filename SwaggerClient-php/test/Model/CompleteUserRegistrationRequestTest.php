@@ -1,6 +1,6 @@
 <?php
 /**
- * UserPresentationTest
+ * CompleteUserRegistrationRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * UserPresentationTest Class Doc Comment
+ * CompleteUserRegistrationRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description UserPresentation
+// * @description CompleteUserRegistrationRequest
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserPresentationTest extends \PHPUnit_Framework_TestCase
+class CompleteUserRegistrationRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,30 @@ class UserPresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "UserPresentation"
+     * Test "CompleteUserRegistrationRequest"
      */
-    public function testUserPresentation()
+    public function testCompleteUserRegistrationRequest()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "verification_token"
      */
-    public function testPropertyId()
+    public function testPropertyVerificationToken()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "username"
      */
-    public function testPropertyName()
+    public function testPropertyUsername()
+    {
+    }
+
+    /**
+     * Test attribute "password"
+     */
+    public function testPropertyPassword()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * UserPresentation
+ * CompleteUserRegistrationRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * UserPresentation Class Doc Comment
+ * CompleteUserRegistrationRequest Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserPresentation implements ArrayAccess
+class CompleteUserRegistrationRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,16 @@ class UserPresentation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'UserPresentation';
+    protected static $swaggerModelName = 'CompleteUserRegistrationRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'name' => 'string'
+        'verification_token' => 'string',
+        'username' => 'string',
+        'password' => 'string'
     ];
 
     /**
@@ -63,8 +64,9 @@ class UserPresentation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null
+        'verification_token' => null,
+        'username' => null,
+        'password' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +84,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name'
+        'verification_token' => 'verificationToken',
+        'username' => 'username',
+        'password' => 'password'
     ];
 
 
@@ -92,8 +95,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName'
+        'verification_token' => 'setVerificationToken',
+        'username' => 'setUsername',
+        'password' => 'setPassword'
     ];
 
 
@@ -102,8 +106,9 @@ class UserPresentation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName'
+        'verification_token' => 'getVerificationToken',
+        'username' => 'getUsername',
+        'password' => 'getPassword'
     ];
 
     public static function attributeMap()
@@ -137,8 +142,9 @@ class UserPresentation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['verification_token'] = isset($data['verification_token']) ? $data['verification_token'] : null;
+        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -149,6 +155,27 @@ class UserPresentation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if ($this->container['verification_token'] === null) {
+            $invalid_properties[] = "'verification_token' can't be null";
+        }
+        if ($this->container['username'] === null) {
+            $invalid_properties[] = "'username' can't be null";
+        }
+        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
+            $invalid_properties[] = "invalid value for 'username', must be conform to the pattern /[a-zA-Z0-9_.-]{6,50}/.";
+        }
+
+        if ($this->container['password'] === null) {
+            $invalid_properties[] = "'password' can't be null";
+        }
+        if ((strlen($this->container['password']) > 99)) {
+            $invalid_properties[] = "invalid value for 'password', the character length must be smaller than or equal to 99.";
+        }
+
+        if ((strlen($this->container['password']) < 8)) {
+            $invalid_properties[] = "invalid value for 'password', the character length must be bigger than or equal to 8.";
+        }
 
         return $invalid_properties;
     }
@@ -162,48 +189,99 @@ class UserPresentation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['verification_token'] === null) {
+            return false;
+        }
+        if ($this->container['username'] === null) {
+            return false;
+        }
+        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
+            return false;
+        }
+        if ($this->container['password'] === null) {
+            return false;
+        }
+        if (strlen($this->container['password']) > 99) {
+            return false;
+        }
+        if (strlen($this->container['password']) < 8) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets id
+     * Gets verification_token
      * @return string
      */
-    public function getId()
+    public function getVerificationToken()
     {
-        return $this->container['id'];
+        return $this->container['verification_token'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets verification_token
+     * @param string $verification_token
      * @return $this
      */
-    public function setId($id)
+    public function setVerificationToken($verification_token)
     {
-        $this->container['id'] = $id;
+        $this->container['verification_token'] = $verification_token;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets username
      * @return string
      */
-    public function getName()
+    public function getUsername()
     {
-        return $this->container['name'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets username
+     * @param string $username
      * @return $this
      */
-    public function setName($name)
+    public function setUsername($username)
     {
-        $this->container['name'] = $name;
+
+        if ((!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $username))) {
+            throw new \InvalidArgumentException("invalid value for $username when calling CompleteUserRegistrationRequest., must conform to the pattern /[a-zA-Z0-9_.-]{6,50}/.");
+        }
+
+        $this->container['username'] = $username;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     * @param string $password
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        if ((strlen($password) > 99)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be smaller than or equal to 99.');
+        }
+        if ((strlen($password) < 8)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be bigger than or equal to 8.');
+        }
+
+        $this->container['password'] = $password;
 
         return $this;
     }

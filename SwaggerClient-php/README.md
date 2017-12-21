@@ -58,15 +58,15 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\AccountsApi();
-$username = "username_example"; // string | username
+$complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findUserByUsername($username, $authorization, $accept_language);
+    $result = $api_instance->completeRegistration($complete_registration, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->findUserByUsername: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -78,11 +78,14 @@ All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**completeRegistration**](docs/Api/AccountsApi.md#completeregistration) | **POST** /account/completeRegistration | Complete registration
 *AccountsApi* | [**findUserByUsername**](docs/Api/AccountsApi.md#finduserbyusername) | **GET** /api/v1/users/{username} | Find by username
+*AccountsApi* | [**findUsers**](docs/Api/AccountsApi.md#findusers) | **GET** /api/v1/users | Find users
 *AccountsApi* | [**getAllOrganizationRoles**](docs/Api/AccountsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 *AccountsApi* | [**getOrganizationsOfUser**](docs/Api/AccountsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *AccountsApi* | [**getUserRoles**](docs/Api/AccountsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *AccountsApi* | [**getUsersOfOrganization**](docs/Api/AccountsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+*AccountsApi* | [**inviteUsers**](docs/Api/AccountsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 *AccountsApi* | [**listAllRoles**](docs/Api/AccountsApi.md#listallroles) | **GET** /api/v1/roles | List roles
 *AccountsApi* | [**login**](docs/Api/AccountsApi.md#login) | **POST** /login | 
 *AccountsApi* | [**registerUser**](docs/Api/AccountsApi.md#registeruser) | **POST** /account/registration | Register user
@@ -151,6 +154,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**getOrganizationsOfUser**](docs/Api/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *OrganizationsApi* | [**getUserRoles**](docs/Api/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**getUsersOfOrganization**](docs/Api/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+*OrganizationsApi* | [**inviteUsers**](docs/Api/OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 *OrganizationsApi* | [**removeUserRoles**](docs/Api/OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *OrganizationsApi* | [**updateOrganization**](docs/Api/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -177,6 +181,7 @@ Class | Method | HTTP request | Description
  - [ApiKeyPrivilegeResponse](docs/Model/ApiKeyPrivilegeResponse.md)
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
+ - [CompleteUserRegistrationRequest](docs/Model/CompleteUserRegistrationRequest.md)
  - [CreateGuidRequest](docs/Model/CreateGuidRequest.md)
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
@@ -187,6 +192,8 @@ Class | Method | HTTP request | Description
  - [ListOfId4ns](docs/Model/ListOfId4ns.md)
  - [Organization](docs/Model/Organization.md)
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
+ - [OrganizationUserInvitation](docs/Model/OrganizationUserInvitation.md)
+ - [OrganizationUserInvitationListRequest](docs/Model/OrganizationUserInvitationListRequest.md)
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)

@@ -1,9 +1,11 @@
-# ChangeRoleRequest
+# CompleteUserRegistrationRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roles** | **string[]** |  | 
+**verification_token** | **string** |  | 
+**username** | **string** |  | 
+**password** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
