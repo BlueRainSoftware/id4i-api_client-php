@@ -156,28 +156,6 @@ class CreateLogisticCollectionRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['label']) && (strlen($this->container['label']) > 128)) {
-            $invalid_properties[] = "invalid value for 'label', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['label']) && (strlen($this->container['label']) < 1)) {
-            $invalid_properties[] = "invalid value for 'label', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['length'] === null) {
-            $invalid_properties[] = "'length' can't be null";
-        }
-        if (($this->container['length'] > 255)) {
-            $invalid_properties[] = "invalid value for 'length', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['length'] < 6)) {
-            $invalid_properties[] = "invalid value for 'length', must be bigger than or equal to 6.";
-        }
-
-        if ($this->container['organization_id'] === null) {
-            $invalid_properties[] = "'organization_id' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -190,24 +168,6 @@ class CreateLogisticCollectionRequest implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['label']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['label']) < 1) {
-            return false;
-        }
-        if ($this->container['length'] === null) {
-            return false;
-        }
-        if ($this->container['length'] > 255) {
-            return false;
-        }
-        if ($this->container['length'] < 6) {
-            return false;
-        }
-        if ($this->container['organization_id'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -228,13 +188,6 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      */
     public function setLabel($label)
     {
-        if (!is_null($label) && (strlen($label) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be smaller than or equal to 128.');
-        }
-        if (!is_null($label) && (strlen($label) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be bigger than or equal to 1.');
-        }
-
         $this->container['label'] = $label;
 
         return $this;
@@ -256,14 +209,6 @@ class CreateLogisticCollectionRequest implements ArrayAccess
      */
     public function setLength($length)
     {
-
-        if (($length > 255)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling CreateLogisticCollectionRequest., must be smaller than or equal to 255.');
-        }
-        if (($length < 6)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling CreateLogisticCollectionRequest., must be bigger than or equal to 6.');
-        }
-
         $this->container['length'] = $length;
 
         return $this;
