@@ -1,6 +1,6 @@
 <?php
 /**
- * GUIDsApiTest
+ * AliasApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * GUIDsApiTest Class Doc Comment
+ * AliasApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GUIDsApiTest extends \PHPUnit_Framework_TestCase
+class AliasApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -89,46 +89,6 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testAddGuidAlias1()
-    {
-    }
-
-    /**
-     * Test case for createGuid
-     *
-     * Create GUID(s).
-     *
-     */
-    public function testCreateGuid()
-    {
-    }
-
-    /**
-     * Test case for getGuid
-     *
-     * Retrieve GUID information.
-     *
-     */
-    public function testGetGuid()
-    {
-    }
-
-    /**
-     * Test case for getGuidsWithoutCollection
-     *
-     * Retrieve GUIDs not in any collection.
-     *
-     */
-    public function testGetGuidsWithoutCollection()
-    {
-    }
-
-    /**
-     * Test case for updateGuid
-     *
-     * Change GUID information..
-     *
-     */
-    public function testUpdateGuid()
     {
     }
 }

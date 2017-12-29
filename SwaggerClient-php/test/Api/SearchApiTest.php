@@ -1,6 +1,6 @@
 <?php
 /**
- * GUIDsApiTest
+ * SearchApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * GUIDsApiTest Class Doc Comment
+ * SearchApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GUIDsApiTest extends \PHPUnit_Framework_TestCase
+class SearchApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -73,62 +73,12 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addGuidAlias
+     * Test case for searchByAlias
      *
-     * Add alias for GUIDs.
-     *
-     */
-    public function testAddGuidAlias()
-    {
-    }
-
-    /**
-     * Test case for addGuidAlias1
-     *
-     * Remove aliases from GUIDs.
+     * Search for GUIDs by alias.
      *
      */
-    public function testAddGuidAlias1()
-    {
-    }
-
-    /**
-     * Test case for createGuid
-     *
-     * Create GUID(s).
-     *
-     */
-    public function testCreateGuid()
-    {
-    }
-
-    /**
-     * Test case for getGuid
-     *
-     * Retrieve GUID information.
-     *
-     */
-    public function testGetGuid()
-    {
-    }
-
-    /**
-     * Test case for getGuidsWithoutCollection
-     *
-     * Retrieve GUIDs not in any collection.
-     *
-     */
-    public function testGetGuidsWithoutCollection()
-    {
-    }
-
-    /**
-     * Test case for updateGuid
-     *
-     * Change GUID information..
-     *
-     */
-    public function testUpdateGuid()
+    public function testSearchByAlias()
     {
     }
 }
