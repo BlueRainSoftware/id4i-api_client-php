@@ -264,7 +264,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateGuid**
-> \Swagger\Client\Model\ResponseEntity updateGuid($id4n, $request, $authorization, $accept_language)
+> object updateGuid($id4n, $request, $authorization, $accept_language)
 
 Change GUID information.
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 

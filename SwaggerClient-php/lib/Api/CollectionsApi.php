@@ -1845,7 +1845,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return object
      */
     public function deleteLogisticCollection($id4n, $authorization = null, $accept_language = null)
     {
@@ -1862,7 +1862,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteLogisticCollectionWithHttpInfo($id4n, $authorization = null, $accept_language = null)
     {
@@ -1913,15 +1913,15 @@ class CollectionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                'object',
                 '/api/v1/collections/logistic/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -4002,15 +4002,15 @@ class CollectionsApi
      * Remove elements from logistic collection
      *
      * @param string $collection_id4n collectionId4n (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $listof_guids listofGuids (required)
+     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ApiError
      */
-    public function removeElementsFromLogisticCollection($collection_id4n, $listof_guids, $authorization = null, $accept_language = null)
+    public function removeElementsFromLogisticCollection($collection_id4n, $list_of_guids, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->removeElementsFromLogisticCollectionWithHttpInfo($collection_id4n, $listof_guids, $authorization, $accept_language);
+        list($response) = $this->removeElementsFromLogisticCollectionWithHttpInfo($collection_id4n, $list_of_guids, $authorization, $accept_language);
         return $response;
     }
 
@@ -4020,21 +4020,21 @@ class CollectionsApi
      * Remove elements from logistic collection
      *
      * @param string $collection_id4n collectionId4n (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $listof_guids listofGuids (required)
+     * @param \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeElementsFromLogisticCollectionWithHttpInfo($collection_id4n, $listof_guids, $authorization = null, $accept_language = null)
+    public function removeElementsFromLogisticCollectionWithHttpInfo($collection_id4n, $list_of_guids, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'collection_id4n' is set
         if ($collection_id4n === null) {
             throw new \InvalidArgumentException('Missing the required parameter $collection_id4n when calling removeElementsFromLogisticCollection');
         }
-        // verify the required parameter 'listof_guids' is set
-        if ($listof_guids === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $listof_guids when calling removeElementsFromLogisticCollection');
+        // verify the required parameter 'list_of_guids' is set
+        if ($list_of_guids === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list_of_guids when calling removeElementsFromLogisticCollection');
         }
         // parse inputs
         $resourcePath = "/api/v1/collections/logistic/{collectionId4n}/elements";
@@ -4066,8 +4066,8 @@ class CollectionsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($listof_guids)) {
-            $_tempBody = $listof_guids;
+        if (isset($list_of_guids)) {
+            $_tempBody = $list_of_guids;
         }
 
         // for model (json/xml)
@@ -4256,7 +4256,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return object
      */
     public function updateCollection($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4274,7 +4274,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCollectionWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4334,15 +4334,15 @@ class CollectionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                'object',
                 '/api/v1/collections/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -4397,7 +4397,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return object
      */
     public function updateLabelledCollection($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4415,7 +4415,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateLabelledCollectionWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4475,15 +4475,15 @@ class CollectionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                'object',
                 '/api/v1/collections/labelled/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -4538,7 +4538,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return object
      */
     public function updateLogisticCollection($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4556,7 +4556,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateLogisticCollectionWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4616,15 +4616,15 @@ class CollectionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                'object',
                 '/api/v1/collections/logistic/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -4679,7 +4679,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return object
      */
     public function updateRoutingCollection($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4697,7 +4697,7 @@ class CollectionsApi
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateRoutingCollectionWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
@@ -4757,15 +4757,15 @@ class CollectionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResponseEntity',
+                'object',
                 '/api/v1/collections/routing/{id4n}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResponseEntity', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResponseEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

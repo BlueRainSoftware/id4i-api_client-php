@@ -670,7 +670,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteLogisticCollection**
-> \Swagger\Client\Model\ResponseEntity deleteLogisticCollection($id4n, $authorization, $accept_language)
+> object deleteLogisticCollection($id4n, $authorization, $accept_language)
 
 Delete logistic collection
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
@@ -1507,7 +1507,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeElementsFromLogisticCollection**
-> \Swagger\Client\Model\ApiError removeElementsFromLogisticCollection($collection_id4n, $listof_guids, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError removeElementsFromLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language)
 
 Remove elements from logistic collection
 
@@ -1518,12 +1518,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\CollectionsApi();
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
-$listof_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listofGuids
+$list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementsFromLogisticCollection($collection_id4n, $listof_guids, $authorization, $accept_language);
+    $result = $api_instance->removeElementsFromLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -1536,7 +1536,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
- **listof_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listofGuids |
+ **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
@@ -1605,7 +1605,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCollection**
-> \Swagger\Client\Model\ResponseEntity updateCollection($id4n, $request, $authorization, $accept_language)
+> object updateCollection($id4n, $request, $authorization, $accept_language)
 
 Alter collection
 
@@ -1640,7 +1640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
@@ -1654,7 +1654,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateLabelledCollection**
-> \Swagger\Client\Model\ResponseEntity updateLabelledCollection($id4n, $request, $authorization, $accept_language)
+> object updateLabelledCollection($id4n, $request, $authorization, $accept_language)
 
 Rename labelled collection
 
@@ -1689,7 +1689,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
@@ -1703,7 +1703,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateLogisticCollection**
-> \Swagger\Client\Model\ResponseEntity updateLogisticCollection($id4n, $request, $authorization, $accept_language)
+> object updateLogisticCollection($id4n, $request, $authorization, $accept_language)
 
 Update logistic collection
 
@@ -1738,7 +1738,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
@@ -1752,7 +1752,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRoutingCollection**
-> \Swagger\Client\Model\ResponseEntity updateRoutingCollection($id4n, $request, $authorization, $accept_language)
+> object updateRoutingCollection($id4n, $request, $authorization, $accept_language)
 
 Update routing collection
 
@@ -1787,7 +1787,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
