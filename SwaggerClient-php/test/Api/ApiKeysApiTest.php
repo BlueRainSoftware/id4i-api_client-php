@@ -73,6 +73,36 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addApiKeyId4nPrivileges
+     *
+     * Add ID4ns of a privilege.
+     *
+     */
+    public function testAddApiKeyId4nPrivileges()
+    {
+    }
+
+    /**
+     * Test case for addApiKeyPrivilege
+     *
+     * Add privilege.
+     *
+     */
+    public function testAddApiKeyPrivilege()
+    {
+    }
+
+    /**
+     * Test case for addApiKeyPrivileges
+     *
+     * Remove privilege.
+     *
+     */
+    public function testAddApiKeyPrivileges()
+    {
+    }
+
+    /**
      * Test case for createNewApiKey
      *
      * Create API key.
@@ -103,6 +133,16 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for listAllApiKeyPrivileges
+     *
+     * List all privileges.
+     *
+     */
+    public function testListAllApiKeyPrivileges()
+    {
+    }
+
+    /**
      * Test case for listAllApiKeysOfOrganization
      *
      * Find API key by organization.
@@ -115,10 +155,30 @@ class ApiKeysApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for listApiKeyPrivileges
      *
-     * List API key privileges.
+     * List privileges.
      *
      */
     public function testListApiKeyPrivileges()
+    {
+    }
+
+    /**
+     * Test case for listId4ns
+     *
+     * ID4ns of a privilege.
+     *
+     */
+    public function testListId4ns()
+    {
+    }
+
+    /**
+     * Test case for removeApiKeyId4nPrivileges
+     *
+     * Remove id4ns of a privilege.
+     *
+     */
+    public function testRemoveApiKeyId4nPrivileges()
     {
     }
 

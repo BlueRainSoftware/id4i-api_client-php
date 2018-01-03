@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyPrivilegeResponseTest
+ * ApiKeyPrivilegeTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ApiKeyPrivilegeResponseTest Class Doc Comment
+ * ApiKeyPrivilegeTest Class Doc Comment
  *
  * @category    Class */
-// * @description ApiKeyPrivilegeResponse
+// * @description ApiKeyPrivilege
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyPrivilegeResponseTest extends \PHPUnit_Framework_TestCase
+class ApiKeyPrivilegeTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,23 @@ class ApiKeyPrivilegeResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ApiKeyPrivilegeResponse"
+     * Test "ApiKeyPrivilege"
      */
-    public function testApiKeyPrivilegeResponse()
+    public function testApiKeyPrivilege()
     {
     }
 
     /**
-     * Test attribute "elements"
+     * Test attribute "id4n_associated"
      */
-    public function testPropertyElements()
+    public function testPropertyId4nAssociated()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "privilege"
      */
-    public function testPropertyLimit()
-    {
-    }
-
-    /**
-     * Test attribute "offset"
-     */
-    public function testPropertyOffset()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
+    public function testPropertyPrivilege()
     {
     }
 }

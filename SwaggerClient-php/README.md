@@ -96,11 +96,17 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/Api/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *AliasApi* | [**addGuidAlias1**](docs/Api/AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*ApiKeysApi* | [**addApiKeyId4nPrivileges**](docs/Api/ApiKeysApi.md#addapikeyid4nprivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
+*ApiKeysApi* | [**addApiKeyPrivilege**](docs/Api/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
+*ApiKeysApi* | [**addApiKeyPrivileges**](docs/Api/ApiKeysApi.md#addapikeyprivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create API key
 *ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 *ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show API key
+*ApiKeysApi* | [**listAllApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listallapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List all privileges
 *ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find API key by organization
-*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
+*ApiKeysApi* | [**listId4ns**](docs/Api/ApiKeysApi.md#listid4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
+*ApiKeysApi* | [**removeApiKeyId4nPrivileges**](docs/Api/ApiKeysApi.md#removeapikeyid4nprivileges) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
@@ -178,12 +184,15 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccountCredentials](docs/Model/AccountCredentials.md)
+ - [AddApiKeyPrivilegeRequest](docs/Model/AddApiKeyPrivilegeRequest.md)
  - [ApiError](docs/Model/ApiError.md)
  - [ApiKeyChangeRequest](docs/Model/ApiKeyChangeRequest.md)
  - [ApiKeyCreationRequest](docs/Model/ApiKeyCreationRequest.md)
  - [ApiKeyPresentation](docs/Model/ApiKeyPresentation.md)
+ - [ApiKeyPrivilege](docs/Model/ApiKeyPrivilege.md)
  - [ApiKeyPrivilegeInfo](docs/Model/ApiKeyPrivilegeInfo.md)
- - [ApiKeyPrivilegeResponse](docs/Model/ApiKeyPrivilegeResponse.md)
+ - [ApiKeyPrivilegeInfoResponse](docs/Model/ApiKeyPrivilegeInfoResponse.md)
+ - [ApiKeyPrivilegePaginatedResponse](docs/Model/ApiKeyPrivilegePaginatedResponse.md)
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
  - [CompleteUserRegistrationRequest](docs/Model/CompleteUserRegistrationRequest.md)
@@ -195,6 +204,8 @@ Class | Method | HTTP request | Description
  - [GuidAlias](docs/Model/GuidAlias.md)
  - [GuidCollection](docs/Model/GuidCollection.md)
  - [Id4n](docs/Model/Id4n.md)
+ - [Id4nPresentation](docs/Model/Id4nPresentation.md)
+ - [Id4nPresentationPaginatedResponse](docs/Model/Id4nPresentationPaginatedResponse.md)
  - [ListOfId4ns](docs/Model/ListOfId4ns.md)
  - [Organization](docs/Model/Organization.md)
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
@@ -206,8 +217,10 @@ Class | Method | HTTP request | Description
  - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
+ - [PaginatedResponseApiKeyPrivilege_](docs/Model/PaginatedResponseApiKeyPrivilege_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
+ - [PaginatedResponseId4nPresentation_](docs/Model/PaginatedResponseId4nPresentation_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
  - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
@@ -219,6 +232,7 @@ Class | Method | HTTP request | Description
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/Model/PasswordResetVerificationRequest.md)
  - [RegistrationVerificationTokenPresentation](docs/Model/RegistrationVerificationTokenPresentation.md)
+ - [RemoveApiKeyPrivilegeRequest](docs/Model/RemoveApiKeyPrivilegeRequest.md)
  - [Role](docs/Model/Role.md)
  - [RoleResponse](docs/Model/RoleResponse.md)
  - [Route](docs/Model/Route.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyPrivilegeResponse
+ * ApiKeyPrivilegePaginatedResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ApiKeyPrivilegeResponse Class Doc Comment
+ * ApiKeyPrivilegePaginatedResponse Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyPrivilegeResponse implements ArrayAccess
+class ApiKeyPrivilegePaginatedResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class ApiKeyPrivilegeResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ApiKeyPrivilegeResponse';
+    protected static $swaggerModelName = 'ApiKeyPrivilegePaginatedResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'elements' => '\Swagger\Client\Model\ApiKeyPrivilegeInfo[]',
+        'elements' => '\Swagger\Client\Model\ApiKeyPrivilege[]',
         'limit' => 'int',
         'offset' => 'int',
         'total' => 'int'
@@ -192,7 +192,7 @@ class ApiKeyPrivilegeResponse implements ArrayAccess
 
     /**
      * Gets elements
-     * @return \Swagger\Client\Model\ApiKeyPrivilegeInfo[]
+     * @return \Swagger\Client\Model\ApiKeyPrivilege[]
      */
     public function getElements()
     {
@@ -201,7 +201,7 @@ class ApiKeyPrivilegeResponse implements ArrayAccess
 
     /**
      * Sets elements
-     * @param \Swagger\Client\Model\ApiKeyPrivilegeInfo[] $elements
+     * @param \Swagger\Client\Model\ApiKeyPrivilege[] $elements
      * @return $this
      */
     public function setElements($elements)
