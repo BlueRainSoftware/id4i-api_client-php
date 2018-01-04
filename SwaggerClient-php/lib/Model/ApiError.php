@@ -164,6 +164,7 @@ class ApiError implements ArrayAccess
     const CODE_EMAIL_PREPARATION_FAILED = 'ERR_EMAIL_PREPARATION_FAILED';
     const CODE_IMAGE_CONVERSION = 'ERR_IMAGE_CONVERSION';
     const CODE_INVALID_ALIAS_TYPE = 'ERR_INVALID_ALIAS_TYPE';
+    const CODE_INVALID_URI_TEMPLATE_VARIABLE = 'ERR_INVALID_URI_TEMPLATE_VARIABLE';
     
 
     
@@ -207,6 +208,7 @@ class ApiError implements ArrayAccess
             self::CODE_EMAIL_PREPARATION_FAILED,
             self::CODE_IMAGE_CONVERSION,
             self::CODE_INVALID_ALIAS_TYPE,
+            self::CODE_INVALID_URI_TEMPLATE_VARIABLE,
         ];
     }
     
