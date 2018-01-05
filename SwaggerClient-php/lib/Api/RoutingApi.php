@@ -96,12 +96,14 @@ class RoutingApi
      * @param string $type The type of route you want to have (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param bool $private_routes privateRoutes (optional)
+     * @param bool $public_routes publicRoutes (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Route
      */
-    public function getRoute($id4n, $type, $authorization = null, $accept_language = null)
+    public function getRoute($id4n, $type, $authorization = null, $accept_language = null, $private_routes = null, $public_routes = null)
     {
-        list($response) = $this->getRouteWithHttpInfo($id4n, $type, $authorization, $accept_language);
+        list($response) = $this->getRouteWithHttpInfo($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes);
         return $response;
     }
 
@@ -114,10 +116,12 @@ class RoutingApi
      * @param string $type The type of route you want to have (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
+     * @param bool $private_routes privateRoutes (optional)
+     * @param bool $public_routes publicRoutes (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Route, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRouteWithHttpInfo($id4n, $type, $authorization = null, $accept_language = null)
+    public function getRouteWithHttpInfo($id4n, $type, $authorization = null, $accept_language = null, $private_routes = null, $public_routes = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -139,6 +143,14 @@ class RoutingApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
 
+        // query params
+        if ($private_routes !== null) {
+            $queryParams['privateRoutes'] = $this->apiClient->getSerializer()->toQueryValue($private_routes);
+        }
+        // query params
+        if ($public_routes !== null) {
+            $queryParams['publicRoutes'] = $this->apiClient->getSerializer()->toQueryValue($public_routes);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getRoute**
-> \Swagger\Client\Model\Route getRoute($id4n, $type, $authorization, $accept_language)
+> \Swagger\Client\Model\Route getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -24,9 +24,11 @@ $id4n = "id4n_example"; // string | id4n
 $type = "type_example"; // string | The type of route you want to have
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
+$private_routes = true; // bool | privateRoutes
+$public_routes = true; // bool | publicRoutes
 
 try {
-    $result = $api_instance->getRoute($id4n, $type, $authorization, $accept_language);
+    $result = $api_instance->getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoute: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +44,8 @@ Name | Type | Description  | Notes
  **type** | **string**| The type of route you want to have |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
+ **private_routes** | **bool**| privateRoutes | [optional]
+ **public_routes** | **bool**| publicRoutes | [optional]
 
 ### Return type
 
