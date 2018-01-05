@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**addGuidAlias1**](GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**updateGuid**](GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -25,7 +26,7 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\GUIDsApi();
-$id4n = "id4n_example"; // string | The GUID for which to add the alias
+$id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
@@ -44,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID for which to add the alias |
+ **id4n** | **string**| The GUID to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
@@ -78,7 +79,7 @@ Remove the alias of the given type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\GUIDsApi();
-$id4n = "id4n_example"; // string | The GUID for which to add the alias
+$id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -96,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID for which to add the alias |
+ **id4n** | **string**| The GUID to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
@@ -200,6 +201,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Guid**](../Model/Guid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getGuidAliases**
+> map[string,string] getGuidAliases($id4n, $authorization, $accept_language)
+
+Get all aliases for the given GUID
+
+Looks up the alias for each alias type (group and single GUID) and returns all found ones
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\GUIDsApi();
+$id4n = "id4n_example"; // string | The GUID to operate on
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->getGuidAliases($id4n, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GUIDsApi->getGuidAliases: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID to operate on |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**map[string,string]**](../Model/map.md)
 
 ### Authorization
 

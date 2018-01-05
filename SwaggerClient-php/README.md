@@ -96,6 +96,8 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/Api/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *AliasApi* | [**addGuidAlias1**](docs/Api/AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*AliasApi* | [**getGuidAliases**](docs/Api/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**searchByAlias**](docs/Api/AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *ApiKeysApi* | [**addApiKeyId4nPrivileges**](docs/Api/ApiKeysApi.md#addapikeyid4nprivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 *ApiKeysApi* | [**addApiKeyPrivilege**](docs/Api/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
 *ApiKeysApi* | [**addApiKeyPrivileges**](docs/Api/ApiKeysApi.md#addapikeyprivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
@@ -148,6 +150,7 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**addGuidAlias1**](docs/Api/GUIDsApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GUIDsApi* | [**createGuid**](docs/Api/GUIDsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GUIDsApi* | [**getGuid**](docs/Api/GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*GUIDsApi* | [**getGuidAliases**](docs/Api/GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GUIDsApi* | [**getGuidsWithoutCollection**](docs/Api/GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
@@ -177,7 +180,6 @@ Class | Method | HTTP request | Description
 *RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**getRoutingFile**](docs/Api/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**updateRoutingFile**](docs/Api/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-*SearchApi* | [**searchByAlias**](docs/Api/SearchApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *WhoIsApi* | [**resolveWhoIsEntry**](docs/Api/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
