@@ -160,6 +160,10 @@ class CreateGuidRequest implements ArrayAccess
         if ($this->container['count'] === null) {
             $invalid_properties[] = "'count' can't be null";
         }
+        if (($this->container['count'] > 1000)) {
+            $invalid_properties[] = "invalid value for 'count', must be smaller than or equal to 1000.";
+        }
+
         if (($this->container['count'] < 1)) {
             $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 1.";
         }
@@ -191,6 +195,9 @@ class CreateGuidRequest implements ArrayAccess
     {
 
         if ($this->container['count'] === null) {
+            return false;
+        }
+        if ($this->container['count'] > 1000) {
             return false;
         }
         if ($this->container['count'] < 1) {
@@ -229,6 +236,9 @@ class CreateGuidRequest implements ArrayAccess
     public function setCount($count)
     {
 
+        if (($count > 1000)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling CreateGuidRequest., must be smaller than or equal to 1000.');
+        }
         if (($count < 1)) {
             throw new \InvalidArgumentException('invalid value for $count when calling CreateGuidRequest., must be bigger than or equal to 1.');
         }
