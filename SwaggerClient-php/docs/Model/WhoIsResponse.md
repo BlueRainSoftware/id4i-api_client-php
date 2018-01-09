@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aliases** | **map[string,string]** |  | [optional] 
 **organization** | [**\Swagger\Client\Model\Organization**](Organization.md) |  | [optional] 
 **organization_address** | [**\Swagger\Client\Model\OrganizationAddress**](OrganizationAddress.md) |  | [optional] 
 

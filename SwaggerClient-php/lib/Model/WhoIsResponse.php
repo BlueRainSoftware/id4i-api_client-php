@@ -54,6 +54,7 @@ class WhoIsResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'aliases' => 'map[string,string]',
         'organization' => '\Swagger\Client\Model\Organization',
         'organization_address' => '\Swagger\Client\Model\OrganizationAddress'
     ];
@@ -63,6 +64,7 @@ class WhoIsResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'aliases' => null,
         'organization' => null,
         'organization_address' => null
     ];
@@ -82,6 +84,7 @@ class WhoIsResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'aliases' => 'aliases',
         'organization' => 'organization',
         'organization_address' => 'organizationAddress'
     ];
@@ -92,6 +95,7 @@ class WhoIsResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'aliases' => 'setAliases',
         'organization' => 'setOrganization',
         'organization_address' => 'setOrganizationAddress'
     ];
@@ -102,6 +106,7 @@ class WhoIsResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'aliases' => 'getAliases',
         'organization' => 'getOrganization',
         'organization_address' => 'getOrganizationAddress'
     ];
@@ -137,6 +142,7 @@ class WhoIsResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['aliases'] = isset($data['aliases']) ? $data['aliases'] : null;
         $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
         $this->container['organization_address'] = isset($data['organization_address']) ? $data['organization_address'] : null;
     }
@@ -165,6 +171,27 @@ class WhoIsResponse implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets aliases
+     * @return map[string,string]
+     */
+    public function getAliases()
+    {
+        return $this->container['aliases'];
+    }
+
+    /**
+     * Sets aliases
+     * @param map[string,string] $aliases
+     * @return $this
+     */
+    public function setAliases($aliases)
+    {
+        $this->container['aliases'] = $aliases;
+
+        return $this;
+    }
 
     /**
      * Gets organization

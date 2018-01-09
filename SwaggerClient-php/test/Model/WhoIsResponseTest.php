@@ -78,6 +78,13 @@ class WhoIsResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "aliases"
+     */
+    public function testPropertyAliases()
+    {
+    }
+
+    /**
      * Test attribute "organization"
      */
     public function testPropertyOrganization()
