@@ -54,7 +54,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'username' => 'string',
         'password' => 'string',
         'token' => 'string'
     ];
@@ -64,7 +63,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'username' => null,
         'password' => null,
         'token' => null
     ];
@@ -84,7 +82,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'username' => 'username',
         'password' => 'password',
         'token' => 'token'
     ];
@@ -95,7 +92,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'username' => 'setUsername',
         'password' => 'setPassword',
         'token' => 'setToken'
     ];
@@ -106,7 +102,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'username' => 'getUsername',
         'password' => 'getPassword',
         'token' => 'getToken'
     ];
@@ -142,7 +137,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
     }
@@ -171,27 +165,6 @@ class PasswordResetVerificationRequest implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets username
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     * @param string $username
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->container['username'] = $username;
-
-        return $this;
-    }
 
     /**
      * Gets password

@@ -78,13 +78,6 @@ class PasswordResetVerificationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-    }
-
-    /**
      * Test attribute "password"
      */
     public function testPropertyPassword()
