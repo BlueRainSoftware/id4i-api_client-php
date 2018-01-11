@@ -156,6 +156,15 @@ class CreateLabelledCollectionRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['label'] === null) {
+            $invalid_properties[] = "'label' can't be null";
+        }
+        if ($this->container['length'] === null) {
+            $invalid_properties[] = "'length' can't be null";
+        }
+        if ($this->container['organization_id'] === null) {
+            $invalid_properties[] = "'organization_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,6 +177,15 @@ class CreateLabelledCollectionRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['label'] === null) {
+            return false;
+        }
+        if ($this->container['length'] === null) {
+            return false;
+        }
+        if ($this->container['organization_id'] === null) {
+            return false;
+        }
         return true;
     }
 
