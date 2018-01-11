@@ -1,6 +1,6 @@
 <?php
 /**
- * OrganizationAddressTest
+ * CountryTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * OrganizationAddressTest Class Doc Comment
+ * CountryTest Class Doc Comment
  *
  * @category    Class */
-// * @description OrganizationAddress
+// * @description Country
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
+class CountryTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,23 @@ class OrganizationAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrganizationAddress"
+     * Test "Country"
      */
-    public function testOrganizationAddress()
+    public function testCountry()
     {
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "code"
      */
-    public function testPropertyCompanyName()
+    public function testPropertyCode()
     {
     }
 
     /**
-     * Test attribute "firstname"
+     * Test attribute "name"
      */
-    public function testPropertyFirstname()
-    {
-    }
-
-    /**
-     * Test attribute "lastname"
-     */
-    public function testPropertyLastname()
-    {
-    }
-
-    /**
-     * Test attribute "street"
-     */
-    public function testPropertyStreet()
-    {
-    }
-
-    /**
-     * Test attribute "post_code"
-     */
-    public function testPropertyPostCode()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "country_code"
-     */
-    public function testPropertyCountryCode()
-    {
-    }
-
-    /**
-     * Test attribute "country_name"
-     */
-    public function testPropertyCountryName()
-    {
-    }
-
-    /**
-     * Test attribute "telephone"
-     */
-    public function testPropertyTelephone()
+    public function testPropertyName()
     {
     }
 }

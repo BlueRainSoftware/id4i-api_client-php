@@ -60,6 +60,8 @@ class OrganizationAddress implements ArrayAccess
         'street' => 'string',
         'post_code' => 'string',
         'city' => 'string',
+        'country_code' => 'string',
+        'country_name' => 'string',
         'telephone' => 'string'
     ];
 
@@ -74,6 +76,8 @@ class OrganizationAddress implements ArrayAccess
         'street' => null,
         'post_code' => null,
         'city' => null,
+        'country_code' => null,
+        'country_name' => null,
         'telephone' => null
     ];
 
@@ -98,6 +102,8 @@ class OrganizationAddress implements ArrayAccess
         'street' => 'street',
         'post_code' => 'postCode',
         'city' => 'city',
+        'country_code' => 'countryCode',
+        'country_name' => 'countryName',
         'telephone' => 'telephone'
     ];
 
@@ -113,6 +119,8 @@ class OrganizationAddress implements ArrayAccess
         'street' => 'setStreet',
         'post_code' => 'setPostCode',
         'city' => 'setCity',
+        'country_code' => 'setCountryCode',
+        'country_name' => 'setCountryName',
         'telephone' => 'setTelephone'
     ];
 
@@ -128,6 +136,8 @@ class OrganizationAddress implements ArrayAccess
         'street' => 'getStreet',
         'post_code' => 'getPostCode',
         'city' => 'getCity',
+        'country_code' => 'getCountryCode',
+        'country_name' => 'getCountryName',
         'telephone' => 'getTelephone'
     ];
 
@@ -168,6 +178,8 @@ class OrganizationAddress implements ArrayAccess
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['post_code'] = isset($data['post_code']) ? $data['post_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['country_name'] = isset($data['country_name']) ? $data['country_name'] : null;
         $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
     }
 
@@ -243,6 +255,17 @@ class OrganizationAddress implements ArrayAccess
             $invalid_properties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
         }
 
+        if ($this->container['country_code'] === null) {
+            $invalid_properties[] = "'country_code' can't be null";
+        }
+        if ((strlen($this->container['country_code']) > 2)) {
+            $invalid_properties[] = "invalid value for 'country_code', the character length must be smaller than or equal to 2.";
+        }
+
+        if ((strlen($this->container['country_code']) < 0)) {
+            $invalid_properties[] = "invalid value for 'country_code', the character length must be bigger than or equal to 0.";
+        }
+
         if (!is_null($this->container['telephone']) && (strlen($this->container['telephone']) > 99)) {
             $invalid_properties[] = "invalid value for 'telephone', the character length must be smaller than or equal to 99.";
         }
@@ -312,6 +335,15 @@ class OrganizationAddress implements ArrayAccess
             return false;
         }
         if (strlen($this->container['city']) < 2) {
+            return false;
+        }
+        if ($this->container['country_code'] === null) {
+            return false;
+        }
+        if (strlen($this->container['country_code']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['country_code']) < 0) {
             return false;
         }
         if (strlen($this->container['telephone']) > 99) {
@@ -488,6 +520,55 @@ class OrganizationAddress implements ArrayAccess
         }
 
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_code
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->container['country_code'];
+    }
+
+    /**
+     * Sets country_code
+     * @param string $country_code The ISO 3166 two-letter country code
+     * @return $this
+     */
+    public function setCountryCode($country_code)
+    {
+        if ((strlen($country_code) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $country_code when calling OrganizationAddress., must be smaller than or equal to 2.');
+        }
+        if ((strlen($country_code) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $country_code when calling OrganizationAddress., must be bigger than or equal to 0.');
+        }
+
+        $this->container['country_code'] = $country_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_name
+     * @return string
+     */
+    public function getCountryName()
+    {
+        return $this->container['country_name'];
+    }
+
+    /**
+     * Sets country_name
+     * @param string $country_name The country name
+     * @return $this
+     */
+    public function setCountryName($country_name)
+    {
+        $this->container['country_name'] = $country_name;
 
         return $this;
     }

@@ -203,6 +203,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for listCountries
+     *
+     * List countries.
+     *
+     */
+    public function testListCountries()
+    {
+    }
+
+    /**
      * Test case for removeUserRoles
      *
      * Remove role(s) from user.

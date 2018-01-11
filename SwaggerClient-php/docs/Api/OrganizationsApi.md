@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -674,6 +675,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **listCountries**
+> \Swagger\Client\Model\PaginatedCountryResponse listCountries($authorization, $accept_language, $offset, $limit)
+
+List countries
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+$offset = 56; // int | Start with the n-th element.
+$limit = 56; // int | The maximum count of returned elements.
+
+try {
+    $result = $api_instance->listCountries($authorization, $accept_language, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->listCountries: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+ **offset** | **int**| Start with the n-th element. | [optional]
+ **limit** | **int**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedCountryResponse**](../Model/PaginatedCountryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **removeUserRoles**
 > \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
 
@@ -775,7 +825,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationAddress**
-> \Swagger\Client\Model\ApiError updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language)
 
 Store address
 
@@ -810,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+[**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)
 
 ### Authorization
 
@@ -824,7 +874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationBillingAddress**
-> \Swagger\Client\Model\ApiError updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language)
 
 Store billing address
 
@@ -859,7 +909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+[**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)
 
 ### Authorization
 

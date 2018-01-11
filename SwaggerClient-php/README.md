@@ -168,6 +168,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**getUserRoles**](docs/Api/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**getUsersOfOrganization**](docs/Api/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *OrganizationsApi* | [**inviteUsers**](docs/Api/OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+*OrganizationsApi* | [**listCountries**](docs/Api/OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
 *OrganizationsApi* | [**removeUserRoles**](docs/Api/OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *OrganizationsApi* | [**updateOrganization**](docs/Api/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -198,6 +199,7 @@ Class | Method | HTTP request | Description
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
  - [CompleteUserRegistrationRequest](docs/Model/CompleteUserRegistrationRequest.md)
+ - [Country](docs/Model/Country.md)
  - [CreateGuidRequest](docs/Model/CreateGuidRequest.md)
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
@@ -214,12 +216,14 @@ Class | Method | HTTP request | Description
  - [OrganizationUserInvitation](docs/Model/OrganizationUserInvitation.md)
  - [OrganizationUserInvitationListRequest](docs/Model/OrganizationUserInvitationListRequest.md)
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
+ - [PaginatedCountryResponse](docs/Model/PaginatedCountryResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
  - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
  - [PaginatedResponseApiKeyPrivilege_](docs/Model/PaginatedResponseApiKeyPrivilege_.md)
+ - [PaginatedResponseCountry_](docs/Model/PaginatedResponseCountry_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
  - [PaginatedResponseId4nPresentation_](docs/Model/PaginatedResponseId4nPresentation_.md)
