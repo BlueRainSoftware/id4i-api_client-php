@@ -360,7 +360,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label)
+> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -379,9 +379,10 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 $type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
+$label_prefix = "label_prefix_example"; // string | Filter by this label prefix
 
 try {
-    $result = $api_instance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label);
+    $result = $api_instance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -400,6 +401,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The maximum count of returned elements. | [optional]
  **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
+ **label_prefix** | **string**| Filter by this label prefix | [optional]
 
 ### Return type
 

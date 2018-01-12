@@ -54,6 +54,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'help_text' => 'string',
         'id4n_associated' => 'bool',
         'name' => 'string'
     ];
@@ -63,6 +64,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'help_text' => null,
         'id4n_associated' => null,
         'name' => null
     ];
@@ -82,6 +84,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'help_text' => 'helpText',
         'id4n_associated' => 'id4nAssociated',
         'name' => 'name'
     ];
@@ -92,6 +95,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'help_text' => 'setHelpText',
         'id4n_associated' => 'setId4nAssociated',
         'name' => 'setName'
     ];
@@ -102,6 +106,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'help_text' => 'getHelpText',
         'id4n_associated' => 'getId4nAssociated',
         'name' => 'getName'
     ];
@@ -137,6 +142,7 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['help_text'] = isset($data['help_text']) ? $data['help_text'] : null;
         $this->container['id4n_associated'] = isset($data['id4n_associated']) ? $data['id4n_associated'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
@@ -177,6 +183,27 @@ class ApiKeyPrivilegeInfo implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets help_text
+     * @return string
+     */
+    public function getHelpText()
+    {
+        return $this->container['help_text'];
+    }
+
+    /**
+     * Sets help_text
+     * @param string $help_text
+     * @return $this
+     */
+    public function setHelpText($help_text)
+    {
+        $this->container['help_text'] = $help_text;
+
+        return $this;
+    }
 
     /**
      * Gets id4n_associated

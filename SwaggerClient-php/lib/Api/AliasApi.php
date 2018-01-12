@@ -504,7 +504,7 @@ class AliasApi
      * @param int $offset Start with the n-th element. (optional)
      * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PaginatedResponseGuid_
+     * @return \Swagger\Client\Model\PaginatedGuidResponse
      */
     public function searchByAlias($alias, $alias_type, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
@@ -524,7 +524,7 @@ class AliasApi
      * @param int $offset Start with the n-th element. (optional)
      * @param int $limit The maximum count of returned elements. (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PaginatedResponseGuid_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedGuidResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByAliasWithHttpInfo($alias, $alias_type, $authorization = null, $accept_language = null, $offset = null, $limit = null)
     {
@@ -587,15 +587,15 @@ class AliasApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaginatedResponseGuid_',
+                '\Swagger\Client\Model\PaginatedGuidResponse',
                 '/api/v1/search/guids'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedResponseGuid_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaginatedGuidResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedResponseGuid_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaginatedGuidResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:

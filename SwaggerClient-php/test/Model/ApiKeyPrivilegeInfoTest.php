@@ -78,6 +78,13 @@ class ApiKeyPrivilegeInfoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "help_text"
+     */
+    public function testPropertyHelpText()
+    {
+    }
+
+    /**
      * Test attribute "id4n_associated"
      */
     public function testPropertyId4nAssociated()

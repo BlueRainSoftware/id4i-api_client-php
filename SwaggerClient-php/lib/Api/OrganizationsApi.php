@@ -934,12 +934,13 @@ class OrganizationsApi
      * @param int $limit The maximum count of returned elements. (optional)
      * @param string $type Filter by this type (optional)
      * @param string $label Filter by this label (optional)
+     * @param string $label_prefix Filter by this label prefix (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\PaginatedGuidCollection
      */
-    public function getAllCollectionsOfOrganization($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null)
+    public function getAllCollectionsOfOrganization($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label);
+        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
         return $response;
     }
 
@@ -955,10 +956,11 @@ class OrganizationsApi
      * @param int $limit The maximum count of returned elements. (optional)
      * @param string $type Filter by this type (optional)
      * @param string $label Filter by this label (optional)
+     * @param string $label_prefix Filter by this label prefix (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\PaginatedGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null)
+    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -991,6 +993,10 @@ class OrganizationsApi
         // query params
         if ($label !== null) {
             $queryParams['label'] = $this->apiClient->getSerializer()->toQueryValue($label);
+        }
+        // query params
+        if ($label_prefix !== null) {
+            $queryParams['labelPrefix'] = $this->apiClient->getSerializer()->toQueryValue($label_prefix);
         }
         // header params
         if ($authorization !== null) {

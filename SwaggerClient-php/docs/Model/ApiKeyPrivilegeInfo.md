@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**help_text** | **string** |  | [optional] 
 **id4n_associated** | **bool** |  | 
 **name** | **string** |  | 
 

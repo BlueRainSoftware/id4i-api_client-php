@@ -88,161 +88,6 @@ class ApiKeysApi
     }
 
     /**
-     * Operation addApiKeyId4nPrivileges
-     *
-     * Add ID4ns of a privilege
-     *
-     * @param string $key key (required)
-     * @param string $privilege privilege (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiError
-     */
-    public function addApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
-    {
-        list($response) = $this->addApiKeyId4nPrivilegesWithHttpInfo($key, $privilege, $id4ns, $authorization, $accept_language);
-        return $response;
-    }
-
-    /**
-     * Operation addApiKeyId4nPrivilegesWithHttpInfo
-     *
-     * Add ID4ns of a privilege
-     *
-     * @param string $key key (required)
-     * @param string $privilege privilege (required)
-     * @param \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param string $accept_language Requested language (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addApiKeyId4nPrivilegesWithHttpInfo($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
-    {
-        // verify the required parameter 'key' is set
-        if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling addApiKeyId4nPrivileges');
-        }
-        // verify the required parameter 'privilege' is set
-        if ($privilege === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $privilege when calling addApiKeyId4nPrivileges');
-        }
-        // verify the required parameter 'id4ns' is set
-        if ($id4ns === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4ns when calling addApiKeyId4nPrivileges');
-        }
-        // parse inputs
-        $resourcePath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
-
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // header params
-        if ($accept_language !== null) {
-            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
-        }
-        // path params
-        if ($key !== null) {
-            $resourcePath = str_replace(
-                "{" . "key" . "}",
-                $this->apiClient->getSerializer()->toPathValue($key),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($privilege !== null) {
-            $resourcePath = str_replace(
-                "{" . "privilege" . "}",
-                $this->apiClient->getSerializer()->toPathValue($privilege),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($id4ns)) {
-            $_tempBody = $id4ns;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\ApiError',
-                '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation addApiKeyPrivilege
      *
      * Add privilege
@@ -384,47 +229,53 @@ class ApiKeysApi
     }
 
     /**
-     * Operation addApiKeyPrivileges
+     * Operation addApiKeyPrivilegeForId4ns
      *
-     * Remove privilege
+     * Add ID4ns of a privilege
      *
      * @param string $key key (required)
-     * @param \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
+     * @param string $privilege privilege (required)
+     * @param \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ApiError
      */
-    public function addApiKeyPrivileges($key, $remove_api_key_privilege_request, $authorization = null, $accept_language = null)
+    public function addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->addApiKeyPrivilegesWithHttpInfo($key, $remove_api_key_privilege_request, $authorization, $accept_language);
+        list($response) = $this->addApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation addApiKeyPrivilegesWithHttpInfo
+     * Operation addApiKeyPrivilegeForId4nsWithHttpInfo
      *
-     * Remove privilege
+     * Add ID4ns of a privilege
      *
      * @param string $key key (required)
-     * @param \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
+     * @param string $privilege privilege (required)
+     * @param \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param string $accept_language Requested language (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addApiKeyPrivilegesWithHttpInfo($key, $remove_api_key_privilege_request, $authorization = null, $accept_language = null)
+    public function addApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling addApiKeyPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling addApiKeyPrivilegeForId4ns');
         }
-        // verify the required parameter 'remove_api_key_privilege_request' is set
-        if ($remove_api_key_privilege_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $remove_api_key_privilege_request when calling addApiKeyPrivileges');
+        // verify the required parameter 'privilege' is set
+        if ($privilege === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $privilege when calling addApiKeyPrivilegeForId4ns');
+        }
+        // verify the required parameter 'id4ns' is set
+        if ($id4ns === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id4ns when calling addApiKeyPrivilegeForId4ns');
         }
         // parse inputs
-        $resourcePath = "/api/v1/apikeys/{key}/privileges";
+        $resourcePath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -451,10 +302,18 @@ class ApiKeysApi
                 $resourcePath
             );
         }
+        // path params
+        if ($privilege !== null) {
+            $resourcePath = str_replace(
+                "{" . "privilege" . "}",
+                $this->apiClient->getSerializer()->toPathValue($privilege),
+                $resourcePath
+            );
+        }
         // body params
         $_tempBody = null;
-        if (isset($remove_api_key_privilege_request)) {
-            $_tempBody = $remove_api_key_privilege_request;
+        if (isset($id4ns)) {
+            $_tempBody = $id4ns;
         }
 
         // for model (json/xml)
@@ -467,12 +326,12 @@ class ApiKeysApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'DELETE',
+                'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\ApiError',
-                '/api/v1/apikeys/{key}/privileges'
+                '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
@@ -495,6 +354,22 @@ class ApiKeysApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -1410,7 +1285,132 @@ class ApiKeysApi
     }
 
     /**
-     * Operation removeApiKeyId4nPrivileges
+     * Operation removeApiKeyPrivilege
+     *
+     * Remove privilege
+     *
+     * @param string $key key (required)
+     * @param \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ApiError
+     */
+    public function removeApiKeyPrivilege($key, $remove_api_key_privilege_request, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->removeApiKeyPrivilegeWithHttpInfo($key, $remove_api_key_privilege_request, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation removeApiKeyPrivilegeWithHttpInfo
+     *
+     * Remove privilege
+     *
+     * @param string $key key (required)
+     * @param \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function removeApiKeyPrivilegeWithHttpInfo($key, $remove_api_key_privilege_request, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'key' is set
+        if ($key === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling removeApiKeyPrivilege');
+        }
+        // verify the required parameter 'remove_api_key_privilege_request' is set
+        if ($remove_api_key_privilege_request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $remove_api_key_privilege_request when calling removeApiKeyPrivilege');
+        }
+        // parse inputs
+        $resourcePath = "/api/v1/apikeys/{key}/privileges";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+        // path params
+        if ($key !== null) {
+            $resourcePath = str_replace(
+                "{" . "key" . "}",
+                $this->apiClient->getSerializer()->toPathValue($key),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($remove_api_key_privilege_request)) {
+            $_tempBody = $remove_api_key_privilege_request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\ApiError',
+                '/api/v1/apikeys/{key}/privileges'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation removeApiKeyPrivilegeForId4ns
      *
      * Remove id4ns of a privilege
      *
@@ -1422,14 +1422,14 @@ class ApiKeysApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ApiError
      */
-    public function removeApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
+    public function removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->removeApiKeyId4nPrivilegesWithHttpInfo($key, $privilege, $id4ns, $authorization, $accept_language);
+        list($response) = $this->removeApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation removeApiKeyId4nPrivilegesWithHttpInfo
+     * Operation removeApiKeyPrivilegeForId4nsWithHttpInfo
      *
      * Remove id4ns of a privilege
      *
@@ -1441,19 +1441,19 @@ class ApiKeysApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ApiError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeApiKeyId4nPrivilegesWithHttpInfo($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
+    public function removeApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $key when calling removeApiKeyId4nPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $key when calling removeApiKeyPrivilegeForId4ns');
         }
         // verify the required parameter 'privilege' is set
         if ($privilege === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $privilege when calling removeApiKeyId4nPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $privilege when calling removeApiKeyPrivilegeForId4ns');
         }
         // verify the required parameter 'id4ns' is set
         if ($id4ns === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id4ns when calling removeApiKeyId4nPrivileges');
+            throw new \InvalidArgumentException('Missing the required parameter $id4ns when calling removeApiKeyPrivilegeForId4ns');
         }
         // parse inputs
         $resourcePath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";

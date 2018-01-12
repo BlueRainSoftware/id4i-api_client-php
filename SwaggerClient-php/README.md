@@ -98,9 +98,8 @@ Class | Method | HTTP request | Description
 *AliasApi* | [**addGuidAlias1**](docs/Api/AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**getGuidAliases**](docs/Api/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *AliasApi* | [**searchByAlias**](docs/Api/AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
-*ApiKeysApi* | [**addApiKeyId4nPrivileges**](docs/Api/ApiKeysApi.md#addapikeyid4nprivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 *ApiKeysApi* | [**addApiKeyPrivilege**](docs/Api/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
-*ApiKeysApi* | [**addApiKeyPrivileges**](docs/Api/ApiKeysApi.md#addapikeyprivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+*ApiKeysApi* | [**addApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#addapikeyprivilegeforid4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 *ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create API key
 *ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 *ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show API key
@@ -108,7 +107,8 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find API key by organization
 *ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
 *ApiKeysApi* | [**listId4ns**](docs/Api/ApiKeysApi.md#listid4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
-*ApiKeysApi* | [**removeApiKeyId4nPrivileges**](docs/Api/ApiKeysApi.md#removeapikeyid4nprivileges) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
+*ApiKeysApi* | [**removeApiKeyPrivilege**](docs/Api/ApiKeysApi.md#removeapikeyprivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+*ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#removeapikeyprivilegeforid4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection

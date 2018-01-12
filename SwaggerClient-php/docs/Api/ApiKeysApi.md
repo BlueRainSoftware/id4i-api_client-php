@@ -4,9 +4,8 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addApiKeyId4nPrivileges**](ApiKeysApi.md#addApiKeyId4nPrivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 [**addApiKeyPrivilege**](ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
-[**addApiKeyPrivileges**](ApiKeysApi.md#addApiKeyPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+[**addApiKeyPrivilegeForId4ns**](ApiKeysApi.md#addApiKeyPrivilegeForId4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 [**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
 [**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 [**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
@@ -14,60 +13,10 @@ Method | HTTP request | Description
 [**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
 [**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
 [**listId4ns**](ApiKeysApi.md#listId4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
-[**removeApiKeyId4nPrivileges**](ApiKeysApi.md#removeApiKeyId4nPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
+[**removeApiKeyPrivilege**](ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+[**removeApiKeyPrivilegeForId4ns**](ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 [**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
-
-# **addApiKeyId4nPrivileges**
-> \Swagger\Client\Model\ApiError addApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization, $accept_language)
-
-Add ID4ns of a privilege
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\ApiKeysApi();
-$key = "key_example"; // string | key
-$privilege = "privilege_example"; // string | privilege
-$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $api_instance->addApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ApiKeysApi->addApiKeyId4nPrivileges: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| key |
- **privilege** | **string**| privilege |
- **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addApiKeyPrivilege**
 > \Swagger\Client\Model\ApiError addApiKeyPrivilege($key, $add_api_key_privilege_request, $authorization, $accept_language)
@@ -118,10 +67,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **addApiKeyPrivileges**
-> \Swagger\Client\Model\ApiError addApiKeyPrivileges($key, $remove_api_key_privilege_request, $authorization, $accept_language)
+# **addApiKeyPrivilegeForId4ns**
+> \Swagger\Client\Model\ApiError addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language)
 
-Remove privilege
+Add ID4ns of a privilege
 
 ### Example
 ```php
@@ -130,15 +79,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ApiKeysApi();
 $key = "key_example"; // string | key
-$remove_api_key_privilege_request = new \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest(); // \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
+$privilege = "privilege_example"; // string | privilege
+$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addApiKeyPrivileges($key, $remove_api_key_privilege_request, $authorization, $accept_language);
+    $result = $api_instance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiKeysApi->addApiKeyPrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiKeysApi->addApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -148,7 +98,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
- **remove_api_key_privilege_request** | [**\Swagger\Client\Model\RemoveApiKeyPrivilegeRequest**](../Model/RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest |
+ **privilege** | **string**| privilege |
+ **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
@@ -526,8 +477,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeApiKeyId4nPrivileges**
-> \Swagger\Client\Model\ApiError removeApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization, $accept_language)
+# **removeApiKeyPrivilege**
+> \Swagger\Client\Model\ApiError removeApiKeyPrivilege($key, $remove_api_key_privilege_request, $authorization, $accept_language)
+
+Remove privilege
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\ApiKeysApi();
+$key = "key_example"; // string | key
+$remove_api_key_privilege_request = new \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest(); // \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->removeApiKeyPrivilege($key, $remove_api_key_privilege_request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **string**| key |
+ **remove_api_key_privilege_request** | [**\Swagger\Client\Model\RemoveApiKeyPrivilegeRequest**](../Model/RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **removeApiKeyPrivilegeForId4ns**
+> \Swagger\Client\Model\ApiError removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language)
 
 Remove id4ns of a privilege
 
@@ -544,10 +544,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeApiKeyId4nPrivileges($key, $privilege, $id4ns, $authorization, $accept_language);
+    $result = $api_instance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiKeysApi->removeApiKeyId4nPrivileges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
