@@ -122,7 +122,7 @@ class AccountsApi
             throw new \InvalidArgumentException('Missing the required parameter $complete_registration when calling completeRegistration');
         }
         // parse inputs
-        $resourcePath = "/account/completeRegistration";
+        $resourcePath = "/account/registration";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -157,12 +157,12 @@ class AccountsApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'POST',
+                'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\ApiError',
-                '/account/completeRegistration'
+                '/account/registration'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiError', $httpHeader), $statusCode, $httpHeader];

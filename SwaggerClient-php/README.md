@@ -78,7 +78,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountsApi* | [**completeRegistration**](docs/Api/AccountsApi.md#completeregistration) | **POST** /account/completeRegistration | Complete registration
+*AccountsApi* | [**completeRegistration**](docs/Api/AccountsApi.md#completeregistration) | **PUT** /account/registration | Complete registration
 *AccountsApi* | [**findUserByUsername**](docs/Api/AccountsApi.md#finduserbyusername) | **GET** /api/v1/users/{username} | Find by username
 *AccountsApi* | [**findUsers**](docs/Api/AccountsApi.md#findusers) | **GET** /api/v1/users | Find users
 *AccountsApi* | [**getAllOrganizationRoles**](docs/Api/AccountsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
