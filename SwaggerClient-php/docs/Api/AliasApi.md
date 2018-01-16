@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**addGuidAlias1**](AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**getGuidAliasTypes**](AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 [**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**searchByAlias**](AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
@@ -102,6 +103,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getGuidAliasTypes**
+> string[] getGuidAliasTypes($authorization, $accept_language)
+
+List all supported alias types
+
+Retrieve this list to find out all alias types to use with alias search and change operations
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\AliasApi();
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $api_instance->getGuidAliasTypes($authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AliasApi->getGuidAliasTypes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**string[]**
 
 ### Authorization
 

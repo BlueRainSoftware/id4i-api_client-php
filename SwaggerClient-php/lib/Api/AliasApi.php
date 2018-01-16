@@ -371,6 +371,114 @@ class AliasApi
     }
 
     /**
+     * Operation getGuidAliasTypes
+     *
+     * List all supported alias types
+     *
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return string[]
+     */
+    public function getGuidAliasTypes($authorization = null, $accept_language = null)
+    {
+        list($response) = $this->getGuidAliasTypesWithHttpInfo($authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation getGuidAliasTypesWithHttpInfo
+     *
+     * List all supported alias types
+     *
+     * @param string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param string $accept_language Requested language (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGuidAliasTypesWithHttpInfo($authorization = null, $accept_language = null)
+    {
+        // parse inputs
+        $resourcePath = "/api/v1/search/guids/aliases/types";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/xml', 'application/json;charset=UTF-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/xml', 'application/json;charset=UTF-8']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = $this->apiClient->getSerializer()->toHeaderValue($accept_language);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'string[]',
+                '/api/v1/search/guids/aliases/types'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'string[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getGuidAliases
      *
      * Get all aliases for the given GUID
