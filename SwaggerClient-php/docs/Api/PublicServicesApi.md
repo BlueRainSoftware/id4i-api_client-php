@@ -21,13 +21,17 @@ Forwarding to the designated route defined in the routing,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PublicServicesApi();
+$apiInstance = new Swagger\Client\Api\PublicServicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $guid = "guid_example"; // string | guid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->go($guid, $authorization, $accept_language);
+    $result = $apiInstance->go($guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->go: ', $e->getMessage(), PHP_EOL;
@@ -68,13 +72,17 @@ Resolve image
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PublicServicesApi();
+$apiInstance = new Swagger\Client\Api\PublicServicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $image_id = "image_id_example"; // string | The id of the image to be resolved.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->resolveImageUsingGET($image_id, $authorization, $accept_language);
+    $result = $apiInstance->resolveImageUsingGET($image_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->resolveImageUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -115,13 +123,17 @@ Resolve owner of id4n
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PublicServicesApi();
+$apiInstance = new Swagger\Client\Api\PublicServicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
+    $result = $apiInstance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->resolveWhoIsEntry: ', $e->getMessage(), PHP_EOL;

@@ -9,7 +9,7 @@ For more information, please visit [http://bluerain.de](http://bluerain.de)
 
 ## Requirements
 
-PHP 5.4.0 and later
+PHP 5.5 and later
 
 ## Installation & Usage
 ### Composer
@@ -37,7 +37,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/autoload.php');
+    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
 ```
 
 ## Tests
@@ -57,13 +57,17 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->completeRegistration($complete_registration, $authorization, $accept_language);
+    $result = $apiInstance->completeRegistration($complete_registration, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;

@@ -38,13 +38,17 @@ Creating a new organization.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Organization to be created
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->createOrganization($organization, $authorization, $accept_language);
+    $result = $apiInstance->createOrganization($organization, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->createOrganization: ', $e->getMessage(), PHP_EOL;
@@ -85,13 +89,17 @@ Delete organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | The id of the organization to be deleted.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteOrganization($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganization($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganization: ', $e->getMessage(), PHP_EOL;
@@ -132,13 +140,17 @@ Remove billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -179,13 +191,17 @@ Delete organization logo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | The id of the organization where the logo should be deleted.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteOrganizationLogo($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganizationLogo($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationLogo: ', $e->getMessage(), PHP_EOL;
@@ -228,13 +244,17 @@ Returns a single organization.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | The id of the organization to be retrieved.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findOrganization($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganization($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganization: ', $e->getMessage(), PHP_EOL;
@@ -275,13 +295,17 @@ Retrieve address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findOrganizationAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganizationAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganizationAddress: ', $e->getMessage(), PHP_EOL;
@@ -322,13 +346,17 @@ Retrieve billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findOrganizationBillingAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganizationBillingAddress($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -371,7 +399,11 @@ Retrieving all collections of an organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -382,7 +414,7 @@ $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
 
 try {
-    $result = $api_instance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -430,7 +462,11 @@ Listing users and their roles in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -438,7 +474,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
@@ -481,7 +517,11 @@ Retrieve organizations of user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
@@ -489,7 +529,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
+    $result = $apiInstance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
@@ -532,7 +572,11 @@ Get user roles by username
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
@@ -541,7 +585,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -587,7 +631,11 @@ Finding users in the specified organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -595,7 +643,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -638,14 +686,18 @@ Invite Users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
+    $result = $apiInstance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
@@ -687,14 +739,18 @@ List countries
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listCountries($authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listCountries($authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->listCountries: ', $e->getMessage(), PHP_EOL;
@@ -736,7 +792,11 @@ Remove role(s) from user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
@@ -744,7 +804,7 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -787,14 +847,18 @@ Update organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | The id of the organization to be updated.
 $organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Updated organization object
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateOrganization($organization_id, $organization, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganization($organization_id, $organization, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganization: ', $e->getMessage(), PHP_EOL;
@@ -836,14 +900,18 @@ Store address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationAddress: ', $e->getMessage(), PHP_EOL;
@@ -885,14 +953,18 @@ Store billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -936,14 +1008,18 @@ Updating an organization logo using a multipart file upload.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | The id of the organization where the logo should be updated.
 $file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateOrganizationLogo($organization_id, $file, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganizationLogo($organization_id, $file, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationLogo: ', $e->getMessage(), PHP_EOL;
@@ -985,7 +1061,11 @@ Add role(s) to user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrganizationsApi();
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
@@ -993,7 +1073,7 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateUserRoles: ', $e->getMessage(), PHP_EOL;

@@ -23,7 +23,11 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AliasApi();
+$apiInstance = new Swagger\Client\Api\AliasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
@@ -31,7 +35,7 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addGuidAlias($id4n, $alias_type, $alias, $authorization, $accept_language);
+    $result = $apiInstance->addGuidAlias($id4n, $alias_type, $alias, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->addGuidAlias: ', $e->getMessage(), PHP_EOL;
@@ -76,14 +80,18 @@ Remove the alias of the given type
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AliasApi();
+$apiInstance = new Swagger\Client\Api\AliasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addGuidAlias1($id4n, $alias_type, $authorization, $accept_language);
+    $result = $apiInstance->addGuidAlias1($id4n, $alias_type, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->addGuidAlias1: ', $e->getMessage(), PHP_EOL;
@@ -127,12 +135,16 @@ Retrieve this list to find out all alias types to use with alias search and chan
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AliasApi();
+$apiInstance = new Swagger\Client\Api\AliasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->getGuidAliasTypes($authorization, $accept_language);
+    $result = $apiInstance->getGuidAliasTypes($authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->getGuidAliasTypes: ', $e->getMessage(), PHP_EOL;
@@ -174,13 +186,17 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AliasApi();
+$apiInstance = new Swagger\Client\Api\AliasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | The GUID to operate on
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->getGuidAliases($id4n, $authorization, $accept_language);
+    $result = $apiInstance->getGuidAliases($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->getGuidAliases: ', $e->getMessage(), PHP_EOL;
@@ -221,7 +237,11 @@ Search for GUIDs by alias
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AliasApi();
+$apiInstance = new Swagger\Client\Api\AliasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $alias = "alias_example"; // string | The alias to search for
 $alias_type = "alias_type_example"; // string | Alias type type to search for
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
@@ -230,7 +250,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->searchByAlias($alias, $alias_type, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->searchByAlias($alias, $alias_type, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->searchByAlias: ', $e->getMessage(), PHP_EOL;

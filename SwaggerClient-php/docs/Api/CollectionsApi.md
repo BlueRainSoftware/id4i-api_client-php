@@ -52,14 +52,18 @@ Add element to collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $element_guid = "element_guid_example"; // string | elementGuid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementToCollection($id4n, $element_guid, $authorization, $accept_language);
+    $result = $apiInstance->addElementToCollection($id4n, $element_guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementToCollection: ', $e->getMessage(), PHP_EOL;
@@ -101,14 +105,18 @@ Add element to labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $element_guid = "element_guid_example"; // string | elementGuid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementToLabelledCollection($collection_id4n, $element_guid, $authorization, $accept_language);
+    $result = $apiInstance->addElementToLabelledCollection($collection_id4n, $element_guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementToLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -150,14 +158,18 @@ Add element to logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementToLogisticCollection($collection_id4n, $guid, $authorization, $accept_language);
+    $result = $apiInstance->addElementToLogisticCollection($collection_id4n, $guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementToLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -199,14 +211,18 @@ Add element to routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementToRoutingCollection($collection_id4n, $guid, $authorization, $accept_language);
+    $result = $apiInstance->addElementToRoutingCollection($collection_id4n, $guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementToRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -248,14 +264,18 @@ Add elements to collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementsToCollection($id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->addElementsToCollection($id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToCollection: ', $e->getMessage(), PHP_EOL;
@@ -297,14 +317,18 @@ Add elements to labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementsToLabelledCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->addElementsToLabelledCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -346,14 +370,18 @@ Add elements to logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementsToLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->addElementsToLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -395,14 +423,18 @@ Add element to routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->addElementsToRoutingCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->addElementsToRoutingCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -444,13 +476,17 @@ Create labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $create_info = new \Swagger\Client\Model\CreateLabelledCollectionRequest(); // \Swagger\Client\Model\CreateLabelledCollectionRequest | createInfo
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->createLabelledCollection($create_info, $authorization, $accept_language);
+    $result = $apiInstance->createLabelledCollection($create_info, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->createLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -491,13 +527,17 @@ Create logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $create_info = new \Swagger\Client\Model\CreateLogisticCollectionRequest(); // \Swagger\Client\Model\CreateLogisticCollectionRequest | createInfo
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->createLogisticCollection($create_info, $authorization, $accept_language);
+    $result = $apiInstance->createLogisticCollection($create_info, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->createLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -538,13 +578,17 @@ Create routing collecton
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $create_info = new \Swagger\Client\Model\CreateRoutingCollectionRequest(); // \Swagger\Client\Model\CreateRoutingCollectionRequest | createInfo
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->createRoutingCollection($create_info, $authorization, $accept_language);
+    $result = $apiInstance->createRoutingCollection($create_info, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->createRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -585,13 +629,17 @@ Delete collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->deleteCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteCollection: ', $e->getMessage(), PHP_EOL;
@@ -632,13 +680,17 @@ Delete labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteLabelledCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->deleteLabelledCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -679,13 +731,17 @@ Delete logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteLogisticCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->deleteLogisticCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -726,13 +782,17 @@ Delete routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->deleteRoutingCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->deleteRoutingCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -773,13 +833,17 @@ Find collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->findCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->findCollection: ', $e->getMessage(), PHP_EOL;
@@ -820,13 +884,17 @@ Find labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findLabelledCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->findLabelledCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->findLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -867,13 +935,17 @@ Find logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findLogisticCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->findLogisticCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->findLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -914,13 +986,17 @@ Find routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findRoutingCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->findRoutingCollection($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->findRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -963,7 +1039,11 @@ Retrieving all collections of an organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -974,7 +1054,7 @@ $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
 
 try {
-    $result = $api_instance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -1020,7 +1100,11 @@ List contents of the collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -1028,7 +1112,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listElementsOfCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listElementsOfCollection($id4n, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfCollection: ', $e->getMessage(), PHP_EOL;
@@ -1071,7 +1155,11 @@ List contents of the collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -1079,7 +1167,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listElementsOfLabelledCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listElementsOfLabelledCollection($id4n, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -1122,7 +1210,11 @@ List contents of the collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -1130,7 +1222,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listElementsOfLogisticCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listElementsOfLogisticCollection($id4n, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -1173,7 +1265,11 @@ List contents of the collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -1181,7 +1277,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listElementsOfRoutingCollection($id4n, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listElementsOfRoutingCollection($id4n, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -1224,14 +1320,18 @@ Remove element from collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $element_guid = "element_guid_example"; // string | elementGuid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementFromCollection($id4n, $element_guid, $authorization, $accept_language);
+    $result = $apiInstance->removeElementFromCollection($id4n, $element_guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementFromCollection: ', $e->getMessage(), PHP_EOL;
@@ -1273,14 +1373,18 @@ Remove element from labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $element_guid = "element_guid_example"; // string | elementGuid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementFromLabelledCollection($collection_id4n, $element_guid, $authorization, $accept_language);
+    $result = $apiInstance->removeElementFromLabelledCollection($collection_id4n, $element_guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementFromLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -1322,14 +1426,18 @@ Remove element from logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementFromLogisticCollection($collection_id4n, $guid, $authorization, $accept_language);
+    $result = $apiInstance->removeElementFromLogisticCollection($collection_id4n, $guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementFromLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -1371,14 +1479,18 @@ Remove element from routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementFromRoutingCollection($collection_id4n, $guid, $authorization, $accept_language);
+    $result = $apiInstance->removeElementFromRoutingCollection($collection_id4n, $guid, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementFromRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -1420,14 +1532,18 @@ Remove elements from collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementsFromCollection($id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->removeElementsFromCollection($id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromCollection: ', $e->getMessage(), PHP_EOL;
@@ -1469,14 +1585,18 @@ Remove elements from labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementsFromLabelledCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->removeElementsFromLabelledCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -1518,14 +1638,18 @@ Remove elements from logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementsFromLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->removeElementsFromLogisticCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -1567,14 +1691,18 @@ Remove elements from routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeElementsFromRoutingCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
+    $result = $apiInstance->removeElementsFromRoutingCollection($collection_id4n, $list_of_guids, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromRoutingCollection: ', $e->getMessage(), PHP_EOL;
@@ -1616,14 +1744,18 @@ Alter collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateCollection($id4n, $request, $authorization, $accept_language);
+    $result = $apiInstance->updateCollection($id4n, $request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->updateCollection: ', $e->getMessage(), PHP_EOL;
@@ -1665,14 +1797,18 @@ Rename labelled collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateLabelledCollection($id4n, $request, $authorization, $accept_language);
+    $result = $apiInstance->updateLabelledCollection($id4n, $request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->updateLabelledCollection: ', $e->getMessage(), PHP_EOL;
@@ -1714,14 +1850,18 @@ Update logistic collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateLogisticCollection($id4n, $request, $authorization, $accept_language);
+    $result = $apiInstance->updateLogisticCollection($id4n, $request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->updateLogisticCollection: ', $e->getMessage(), PHP_EOL;
@@ -1763,14 +1903,18 @@ Update routing collection
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CollectionsApi();
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateRoutingCollection($id4n, $request, $authorization, $accept_language);
+    $result = $apiInstance->updateRoutingCollection($id4n, $request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->updateRoutingCollection: ', $e->getMessage(), PHP_EOL;

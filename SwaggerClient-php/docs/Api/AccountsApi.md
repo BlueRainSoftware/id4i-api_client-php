@@ -34,13 +34,17 @@ Completing a registration e.g. for invited users. Finish registration with a use
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->completeRegistration($complete_registration, $authorization, $accept_language);
+    $result = $apiInstance->completeRegistration($complete_registration, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;
@@ -81,13 +85,17 @@ Find by username
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findUserByUsername($username, $authorization, $accept_language);
+    $result = $apiInstance->findUserByUsername($username, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->findUserByUsername: ', $e->getMessage(), PHP_EOL;
@@ -128,7 +136,11 @@ Find users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $username_prefix = "username_prefix_example"; // string | Find users starting with this prefix.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -136,7 +148,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->findUsers($username_prefix, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->findUsers($username_prefix, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->findUsers: ', $e->getMessage(), PHP_EOL;
@@ -181,7 +193,11 @@ Listing users and their roles in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -189,7 +205,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
@@ -232,7 +248,11 @@ Retrieve organizations of user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
@@ -240,7 +260,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
+    $result = $apiInstance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
@@ -283,7 +303,11 @@ Get user roles by username
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
@@ -292,7 +316,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -338,7 +362,11 @@ Finding users in the specified organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
@@ -346,7 +374,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -389,14 +417,18 @@ Invite Users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
+    $result = $apiInstance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
@@ -440,7 +472,11 @@ Listing of roles.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $privilege = "privilege_example"; // string | If specified the roles will be filtered containing that privilege.
@@ -448,7 +484,7 @@ $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
 
 try {
-    $result = $api_instance->listAllRoles($authorization, $accept_language, $privilege, $offset, $limit);
+    $result = $apiInstance->listAllRoles($authorization, $accept_language, $privilege, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->listAllRoles: ', $e->getMessage(), PHP_EOL;
@@ -493,11 +529,15 @@ ID4i API Login
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $account_credentials = new \Swagger\Client\Model\AccountCredentials(); // \Swagger\Client\Model\AccountCredentials | 
 
 try {
-    $api_instance->login($account_credentials);
+    $apiInstance->login($account_credentials);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->login: ', $e->getMessage(), PHP_EOL;
 }
@@ -537,13 +577,17 @@ Registering a new user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $user_registration = new \Swagger\Client\Model\UserRegistrationRequest(); // \Swagger\Client\Model\UserRegistrationRequest | The user information about the new created user.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->registerUser($user_registration, $authorization, $accept_language);
+    $result = $apiInstance->registerUser($user_registration, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->registerUser: ', $e->getMessage(), PHP_EOL;
@@ -584,7 +628,11 @@ Remove role(s) from user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
@@ -592,7 +640,7 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -637,13 +685,17 @@ Requesting a reset for a new password.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $reset_request = new \Swagger\Client\Model\PasswordResetRequest(); // \Swagger\Client\Model\PasswordResetRequest | Contains the required information to request a new password.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->requestPasswordReset($reset_request, $authorization, $accept_language);
+    $result = $apiInstance->requestPasswordReset($reset_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->requestPasswordReset: ', $e->getMessage(), PHP_EOL;
@@ -684,7 +736,11 @@ Add role(s) to user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
@@ -692,7 +748,7 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->updateUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -737,13 +793,17 @@ Setting a new password and verifying the request to set the password.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $verification_request = new \Swagger\Client\Model\PasswordResetVerificationRequest(); // \Swagger\Client\Model\PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->verifyPasswordReset($verification_request, $authorization, $accept_language);
+    $result = $apiInstance->verifyPasswordReset($verification_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->verifyPasswordReset: ', $e->getMessage(), PHP_EOL;
@@ -786,13 +846,17 @@ Verifies a new user registration.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $token = new \Swagger\Client\Model\RegistrationVerificationTokenPresentation(); // \Swagger\Client\Model\RegistrationVerificationTokenPresentation | The token for user verification.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->verifyUserRegistration($token, $authorization, $accept_language);
+    $result = $apiInstance->verifyUserRegistration($token, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->verifyUserRegistration: ', $e->getMessage(), PHP_EOL;

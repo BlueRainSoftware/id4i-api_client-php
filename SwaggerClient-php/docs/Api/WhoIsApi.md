@@ -17,13 +17,17 @@ Resolve owner of id4n
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WhoIsApi();
+$apiInstance = new Swagger\Client\Api\WhoIsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
+    $result = $apiInstance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WhoIsApi->resolveWhoIsEntry: ', $e->getMessage(), PHP_EOL;
