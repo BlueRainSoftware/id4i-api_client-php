@@ -72,6 +72,16 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addUserRoles
+     *
+     * Add role(s) to user.
+     *
+     */
+    public function testAddUserRoles()
+    {
+    }
+
+    /**
      * Test case for completeRegistration
      *
      * Complete registration.
@@ -198,16 +208,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testRequestPasswordReset()
-    {
-    }
-
-    /**
-     * Test case for updateUserRoles
-     *
-     * Add role(s) to user.
-     *
-     */
-    public function testUpdateUserRoles()
     {
     }
 

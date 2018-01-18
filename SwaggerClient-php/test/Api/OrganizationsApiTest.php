@@ -72,6 +72,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addUserRoles
+     *
+     * Add role(s) to user.
+     *
+     */
+    public function testAddUserRoles()
+    {
+    }
+
+    /**
      * Test case for createOrganization
      *
      * Create organization.
@@ -258,16 +268,6 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testUpdateOrganizationLogo()
-    {
-    }
-
-    /**
-     * Test case for updateUserRoles
-     *
-     * Add role(s) to user.
-     *
-     */
-    public function testUpdateUserRoles()
     {
     }
 }

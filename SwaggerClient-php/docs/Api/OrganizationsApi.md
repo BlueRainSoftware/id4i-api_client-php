@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUserRoles**](OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -23,8 +24,62 @@ Method | HTTP request | Description
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 [**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-[**updateUserRoles**](OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 
+
+# **addUserRoles**
+> \Swagger\Client\Model\ApiError addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
+
+Add role(s) to user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organization_id = 789; // int | organizationId
+$username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| organizationId |
+ **username** | **string**| username |
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrganization**
 > \Swagger\Client\Model\Organization createOrganization($organization, $authorization, $accept_language)
@@ -1047,61 +1102,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateUserRoles**
-> \Swagger\Client\Model\ApiError updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
-
-Add role(s) to user
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\OrganizationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$organization_id = 789; // int | organizationId
-$username = "username_example"; // string | username
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $apiInstance->updateUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->updateUserRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **username** | **string**| username |
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -62,15 +62,17 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
+$organization_id = 789; // int | organizationId
+$username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->completeRegistration($complete_registration, $authorization, $accept_language);
+    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -82,6 +84,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**addUserRoles**](docs/Api/AccountsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *AccountsApi* | [**completeRegistration**](docs/Api/AccountsApi.md#completeregistration) | **PUT** /account/registration | Complete registration
 *AccountsApi* | [**findUserByUsername**](docs/Api/AccountsApi.md#finduserbyusername) | **GET** /api/v1/users/{username} | Find by username
 *AccountsApi* | [**findUsers**](docs/Api/AccountsApi.md#findusers) | **GET** /api/v1/users | Find users
@@ -95,7 +98,6 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**registerUser**](docs/Api/AccountsApi.md#registeruser) | **POST** /account/registration | Register user
 *AccountsApi* | [**removeUserRoles**](docs/Api/AccountsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *AccountsApi* | [**requestPasswordReset**](docs/Api/AccountsApi.md#requestpasswordreset) | **POST** /account/password | Request password reset
-*AccountsApi* | [**updateUserRoles**](docs/Api/AccountsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *AccountsApi* | [**verifyPasswordReset**](docs/Api/AccountsApi.md#verifypasswordreset) | **PUT** /account/password | Verify password reset
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/Api/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
@@ -160,6 +162,7 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/Api/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *OrganizationsApi* | [**deleteOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#deleteorganizationbillingaddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -179,7 +182,6 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *OrganizationsApi* | [**updateOrganizationLogo**](docs/Api/OrganizationsApi.md#updateorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-*OrganizationsApi* | [**updateUserRoles**](docs/Api/OrganizationsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *PublicServicesApi* | [**go**](docs/Api/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/Api/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/Api/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
