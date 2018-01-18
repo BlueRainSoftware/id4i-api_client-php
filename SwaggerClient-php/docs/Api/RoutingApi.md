@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getRoute**
-> \Swagger\Client\Model\Route getRoute($id4n, $type, $authorization, $accept_language)
+> \Swagger\Client\Model\Route getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -19,14 +19,20 @@ Retrieve current route of a GUID (or ID4N)
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\RoutingApi();
+$apiInstance = new Swagger\Client\Api\RoutingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $type = "type_example"; // string | The type of route you want to have
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
+$private_routes = true; // bool | privateRoutes
+$public_routes = true; // bool | publicRoutes
 
 try {
-    $result = $api_instance->getRoute($id4n, $type, $authorization, $accept_language);
+    $result = $apiInstance->getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoute: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +48,8 @@ Name | Type | Description  | Notes
  **type** | **string**| The type of route you want to have |
  **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
  **accept_language** | **string**| Requested language | [optional]
+ **private_routes** | **bool**| privateRoutes | [optional]
+ **public_routes** | **bool**| publicRoutes | [optional]
 
 ### Return type
 
@@ -68,14 +76,18 @@ Retrieve routing file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\RoutingApi();
+$apiInstance = new Swagger\Client\Api\RoutingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 $organization_id = 789; // int | organizationId
 
 try {
-    $result = $api_instance->getRoutingFile($id4n, $authorization, $accept_language, $organization_id);
+    $result = $apiInstance->getRoutingFile($id4n, $authorization, $accept_language, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoutingFile: ', $e->getMessage(), PHP_EOL;
@@ -117,14 +129,18 @@ Store routing file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\RoutingApi();
+$apiInstance = new Swagger\Client\Api\RoutingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $rfr = new \Swagger\Client\Model\RoutingFileRequest(); // \Swagger\Client\Model\RoutingFileRequest | rfr
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->updateRoutingFile($rfr, $id4n, $authorization, $accept_language);
+    $result = $apiInstance->updateRoutingFile($rfr, $id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->updateRoutingFile: ', $e->getMessage(), PHP_EOL;

@@ -9,7 +9,7 @@ For more information, please visit [http://bluerain.de](http://bluerain.de)
 
 ## Requirements
 
-PHP 5.4.0 and later
+PHP 5.5 and later
 
 ## Installation & Usage
 ### Composer
@@ -37,7 +37,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/autoload.php');
+    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
 ```
 
 ## Tests
@@ -57,16 +57,22 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\AccountsApi();
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $api_instance->findUserByUsername($username, $authorization, $accept_language);
+    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->findUserByUsername: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -78,24 +84,38 @@ All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**addUserRoles**](docs/Api/AccountsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
+*AccountsApi* | [**completeRegistration**](docs/Api/AccountsApi.md#completeregistration) | **PUT** /account/registration | Complete registration
 *AccountsApi* | [**findUserByUsername**](docs/Api/AccountsApi.md#finduserbyusername) | **GET** /api/v1/users/{username} | Find by username
+*AccountsApi* | [**findUsers**](docs/Api/AccountsApi.md#findusers) | **GET** /api/v1/users | Find users
 *AccountsApi* | [**getAllOrganizationRoles**](docs/Api/AccountsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 *AccountsApi* | [**getOrganizationsOfUser**](docs/Api/AccountsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *AccountsApi* | [**getUserRoles**](docs/Api/AccountsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *AccountsApi* | [**getUsersOfOrganization**](docs/Api/AccountsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+*AccountsApi* | [**inviteUsers**](docs/Api/AccountsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 *AccountsApi* | [**listAllRoles**](docs/Api/AccountsApi.md#listallroles) | **GET** /api/v1/roles | List roles
 *AccountsApi* | [**login**](docs/Api/AccountsApi.md#login) | **POST** /login | 
 *AccountsApi* | [**registerUser**](docs/Api/AccountsApi.md#registeruser) | **POST** /account/registration | Register user
 *AccountsApi* | [**removeUserRoles**](docs/Api/AccountsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *AccountsApi* | [**requestPasswordReset**](docs/Api/AccountsApi.md#requestpasswordreset) | **POST** /account/password | Request password reset
-*AccountsApi* | [**updateUserRoles**](docs/Api/AccountsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *AccountsApi* | [**verifyPasswordReset**](docs/Api/AccountsApi.md#verifypasswordreset) | **PUT** /account/password | Verify password reset
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
+*AliasApi* | [**addGuidAlias**](docs/Api/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*AliasApi* | [**addGuidAlias1**](docs/Api/AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*AliasApi* | [**getGuidAliasTypes**](docs/Api/AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
+*AliasApi* | [**getGuidAliases**](docs/Api/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**searchByAlias**](docs/Api/AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
+*ApiKeysApi* | [**addApiKeyPrivilege**](docs/Api/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
+*ApiKeysApi* | [**addApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#addapikeyprivilegeforid4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 *ApiKeysApi* | [**createNewApiKey**](docs/Api/ApiKeysApi.md#createnewapikey) | **POST** /api/v1/apikeys | Create API key
 *ApiKeysApi* | [**deleteApiKey**](docs/Api/ApiKeysApi.md#deleteapikey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 *ApiKeysApi* | [**getApiKey**](docs/Api/ApiKeysApi.md#getapikey) | **GET** /api/v1/apikeys/{key} | Show API key
+*ApiKeysApi* | [**listAllApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listallapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List all privileges
 *ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/Api/ApiKeysApi.md#listallapikeysoforganization) | **GET** /api/v1/apikeys | Find API key by organization
-*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*ApiKeysApi* | [**listApiKeyPrivileges**](docs/Api/ApiKeysApi.md#listapikeyprivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
+*ApiKeysApi* | [**listId4ns**](docs/Api/ApiKeysApi.md#listid4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
+*ApiKeysApi* | [**removeApiKeyPrivilege**](docs/Api/ApiKeysApi.md#removeapikeyprivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+*ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#removeapikeyprivilegeforid4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
@@ -133,12 +153,16 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateLabelledCollection**](docs/Api/CollectionsApi.md#updatelabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
 *CollectionsApi* | [**updateLogisticCollection**](docs/Api/CollectionsApi.md#updatelogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**updateRoutingCollection**](docs/Api/CollectionsApi.md#updateroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+*GUIDsApi* | [**addGuidAlias**](docs/Api/GUIDsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*GUIDsApi* | [**addGuidAlias1**](docs/Api/GUIDsApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GUIDsApi* | [**createGuid**](docs/Api/GUIDsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GUIDsApi* | [**getGuid**](docs/Api/GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*GUIDsApi* | [**getGuidAliases**](docs/Api/GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GUIDsApi* | [**getGuidsWithoutCollection**](docs/Api/GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/Api/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *OrganizationsApi* | [**deleteOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#deleteorganizationbillingaddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -151,12 +175,13 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**getOrganizationsOfUser**](docs/Api/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *OrganizationsApi* | [**getUserRoles**](docs/Api/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**getUsersOfOrganization**](docs/Api/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+*OrganizationsApi* | [**inviteUsers**](docs/Api/OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+*OrganizationsApi* | [**listCountries**](docs/Api/OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
 *OrganizationsApi* | [**removeUserRoles**](docs/Api/OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *OrganizationsApi* | [**updateOrganization**](docs/Api/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *OrganizationsApi* | [**updateOrganizationLogo**](docs/Api/OrganizationsApi.md#updateorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-*OrganizationsApi* | [**updateUserRoles**](docs/Api/OrganizationsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *PublicServicesApi* | [**go**](docs/Api/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/Api/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/Api/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -169,32 +194,46 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccountCredentials](docs/Model/AccountCredentials.md)
+ - [AddApiKeyPrivilegeRequest](docs/Model/AddApiKeyPrivilegeRequest.md)
  - [ApiError](docs/Model/ApiError.md)
  - [ApiKeyChangeRequest](docs/Model/ApiKeyChangeRequest.md)
  - [ApiKeyCreationRequest](docs/Model/ApiKeyCreationRequest.md)
  - [ApiKeyPresentation](docs/Model/ApiKeyPresentation.md)
+ - [ApiKeyPrivilege](docs/Model/ApiKeyPrivilege.md)
  - [ApiKeyPrivilegeInfo](docs/Model/ApiKeyPrivilegeInfo.md)
- - [ApiKeyPrivilegeResponse](docs/Model/ApiKeyPrivilegeResponse.md)
+ - [ApiKeyPrivilegeInfoResponse](docs/Model/ApiKeyPrivilegeInfoResponse.md)
+ - [ApiKeyPrivilegePaginatedResponse](docs/Model/ApiKeyPrivilegePaginatedResponse.md)
  - [AppInfoPresentation](docs/Model/AppInfoPresentation.md)
  - [ChangeRoleRequest](docs/Model/ChangeRoleRequest.md)
+ - [CompleteUserRegistrationRequest](docs/Model/CompleteUserRegistrationRequest.md)
+ - [Country](docs/Model/Country.md)
  - [CreateGuidRequest](docs/Model/CreateGuidRequest.md)
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
  - [CreateRoutingCollectionRequest](docs/Model/CreateRoutingCollectionRequest.md)
  - [Guid](docs/Model/Guid.md)
+ - [GuidAlias](docs/Model/GuidAlias.md)
  - [GuidCollection](docs/Model/GuidCollection.md)
  - [Id4n](docs/Model/Id4n.md)
+ - [Id4nPresentation](docs/Model/Id4nPresentation.md)
+ - [Id4nPresentationPaginatedResponse](docs/Model/Id4nPresentationPaginatedResponse.md)
  - [ListOfId4ns](docs/Model/ListOfId4ns.md)
  - [Organization](docs/Model/Organization.md)
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
+ - [OrganizationUserInvitation](docs/Model/OrganizationUserInvitation.md)
+ - [OrganizationUserInvitationListRequest](docs/Model/OrganizationUserInvitationListRequest.md)
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
+ - [PaginatedCountryResponse](docs/Model/PaginatedCountryResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
  - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
+ - [PaginatedResponseApiKeyPrivilege_](docs/Model/PaginatedResponseApiKeyPrivilege_.md)
+ - [PaginatedResponseCountry_](docs/Model/PaginatedResponseCountry_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
+ - [PaginatedResponseId4nPresentation_](docs/Model/PaginatedResponseId4nPresentation_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
  - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
@@ -206,7 +245,7 @@ Class | Method | HTTP request | Description
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/Model/PasswordResetVerificationRequest.md)
  - [RegistrationVerificationTokenPresentation](docs/Model/RegistrationVerificationTokenPresentation.md)
- - [ResponseEntity](docs/Model/ResponseEntity.md)
+ - [RemoveApiKeyPrivilegeRequest](docs/Model/RemoveApiKeyPrivilegeRequest.md)
  - [Role](docs/Model/Role.md)
  - [RoleResponse](docs/Model/RoleResponse.md)
  - [Route](docs/Model/Route.md)

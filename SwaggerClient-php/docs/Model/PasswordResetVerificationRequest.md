@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  | [optional] 
 **password** | **string** |  | [optional] 
 **token** | **string** |  | [optional] 
 
