@@ -191,6 +191,7 @@ class ApiError implements ModelInterface, ArrayAccess
     const CODE_INVALID_ID4_N_OBJECT_TYPE = 'ERR_INVALID_ID4N_OBJECT_TYPE';
     const CODE_COLLECTION_UPDATE_DENIED = 'ERR_COLLECTION_UPDATE_DENIED';
     const CODE_ENTITY_NOT_FOUND = 'ERR_ENTITY_NOT_FOUND';
+    const CODE_ENTITY_TOO_BIG = 'ERR_ENTITY_TOO_BIG';
     const CODE_DUPLICATE = 'ERR_DUPLICATE';
     const CODE_INTERNAL = 'ERR_INTERNAL';
     const CODE_UNKNOWN = 'ERR_UNKNOWN';
@@ -237,6 +238,7 @@ class ApiError implements ModelInterface, ArrayAccess
             self::CODE_INVALID_ID4_N_OBJECT_TYPE,
             self::CODE_COLLECTION_UPDATE_DENIED,
             self::CODE_ENTITY_NOT_FOUND,
+            self::CODE_ENTITY_TOO_BIG,
             self::CODE_DUPLICATE,
             self::CODE_INTERNAL,
             self::CODE_UNKNOWN,

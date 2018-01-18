@@ -162,6 +162,8 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*MicrostorageApi* | [**read**](docs/Api/MicrostorageApi.md#read) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+*MicrostorageApi* | [**write**](docs/Api/MicrostorageApi.md#write) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/Api/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -211,12 +213,15 @@ Class | Method | HTTP request | Description
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
  - [CreateRoutingCollectionRequest](docs/Model/CreateRoutingCollectionRequest.md)
+ - [File](docs/Model/File.md)
  - [Guid](docs/Model/Guid.md)
  - [GuidAlias](docs/Model/GuidAlias.md)
  - [GuidCollection](docs/Model/GuidCollection.md)
  - [Id4n](docs/Model/Id4n.md)
  - [Id4nPresentation](docs/Model/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Model/Id4nPresentationPaginatedResponse.md)
+ - [InputStream](docs/Model/InputStream.md)
+ - [InputStreamResource](docs/Model/InputStreamResource.md)
  - [ListOfId4ns](docs/Model/ListOfId4ns.md)
  - [Organization](docs/Model/Organization.md)
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
@@ -254,6 +259,8 @@ Class | Method | HTTP request | Description
  - [RoutingOptions](docs/Model/RoutingOptions.md)
  - [SimpleMessageResponse](docs/Model/SimpleMessageResponse.md)
  - [Timestamp](docs/Model/Timestamp.md)
+ - [URI](docs/Model/URI.md)
+ - [URL](docs/Model/URL.md)
  - [UserPresentation](docs/Model/UserPresentation.md)
  - [UserRegistrationRequest](docs/Model/UserRegistrationRequest.md)
  - [UserRegistrationResponse](docs/Model/UserRegistrationResponse.md)
