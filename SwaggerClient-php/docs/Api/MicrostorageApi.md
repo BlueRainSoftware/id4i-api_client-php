@@ -25,7 +25,7 @@ $apiInstance = new Swagger\Client\Api\MicrostorageApi(
 );
 $organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -78,7 +78,7 @@ $apiInstance = new Swagger\Client\Api\MicrostorageApi(
 );
 $organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]
@@ -113,7 +113,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, */*, application/json;charset=UTF-8
+ - **Content-Type**: */*
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

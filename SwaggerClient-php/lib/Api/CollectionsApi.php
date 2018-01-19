@@ -89,7 +89,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -109,7 +109,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -259,7 +259,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -282,7 +282,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -335,7 +335,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -460,7 +460,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -480,7 +480,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -630,7 +630,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -653,7 +653,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -706,7 +706,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -831,7 +831,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -851,7 +851,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1001,7 +1001,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1024,7 +1024,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1077,7 +1077,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1202,7 +1202,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1222,7 +1222,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1372,7 +1372,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1395,7 +1395,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1448,7 +1448,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1573,7 +1573,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1593,7 +1593,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1743,7 +1743,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1766,7 +1766,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1819,7 +1819,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1939,7 +1939,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1959,7 +1959,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2109,7 +2109,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2132,7 +2132,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2185,7 +2185,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2305,7 +2305,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2325,7 +2325,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2475,7 +2475,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2498,7 +2498,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2551,7 +2551,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2671,7 +2671,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2691,7 +2691,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2841,7 +2841,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2864,7 +2864,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -2917,7 +2917,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3036,7 +3036,7 @@ class CollectionsApi
      * Create labelled collection
      *
      * @param  \Swagger\Client\Model\CreateLabelledCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3055,7 +3055,7 @@ class CollectionsApi
      * Create labelled collection
      *
      * @param  \Swagger\Client\Model\CreateLabelledCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3204,7 +3204,7 @@ class CollectionsApi
      * Create labelled collection
      *
      * @param  \Swagger\Client\Model\CreateLabelledCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3226,7 +3226,7 @@ class CollectionsApi
      * Create labelled collection
      *
      * @param  \Swagger\Client\Model\CreateLabelledCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3278,7 +3278,7 @@ class CollectionsApi
      * Create request for operation 'createLabelledCollection'
      *
      * @param  \Swagger\Client\Model\CreateLabelledCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3383,7 +3383,7 @@ class CollectionsApi
      * Create logistic collection
      *
      * @param  \Swagger\Client\Model\CreateLogisticCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3402,7 +3402,7 @@ class CollectionsApi
      * Create logistic collection
      *
      * @param  \Swagger\Client\Model\CreateLogisticCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3551,7 +3551,7 @@ class CollectionsApi
      * Create logistic collection
      *
      * @param  \Swagger\Client\Model\CreateLogisticCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3573,7 +3573,7 @@ class CollectionsApi
      * Create logistic collection
      *
      * @param  \Swagger\Client\Model\CreateLogisticCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3625,7 +3625,7 @@ class CollectionsApi
      * Create request for operation 'createLogisticCollection'
      *
      * @param  \Swagger\Client\Model\CreateLogisticCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3730,7 +3730,7 @@ class CollectionsApi
      * Create routing collecton
      *
      * @param  \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3749,7 +3749,7 @@ class CollectionsApi
      * Create routing collecton
      *
      * @param  \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3898,7 +3898,7 @@ class CollectionsApi
      * Create routing collecton
      *
      * @param  \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3920,7 +3920,7 @@ class CollectionsApi
      * Create routing collecton
      *
      * @param  \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3972,7 +3972,7 @@ class CollectionsApi
      * Create request for operation 'createRoutingCollection'
      *
      * @param  \Swagger\Client\Model\CreateRoutingCollectionRequest $create_info createInfo (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4077,7 +4077,7 @@ class CollectionsApi
      * Delete collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4096,7 +4096,7 @@ class CollectionsApi
      * Delete collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4213,7 +4213,7 @@ class CollectionsApi
      * Delete collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4235,7 +4235,7 @@ class CollectionsApi
      * Delete collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4287,7 +4287,7 @@ class CollectionsApi
      * Create request for operation 'deleteCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4397,7 +4397,7 @@ class CollectionsApi
      * Delete labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4416,7 +4416,7 @@ class CollectionsApi
      * Delete labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4533,7 +4533,7 @@ class CollectionsApi
      * Delete labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4555,7 +4555,7 @@ class CollectionsApi
      * Delete labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4607,7 +4607,7 @@ class CollectionsApi
      * Create request for operation 'deleteLabelledCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4717,7 +4717,7 @@ class CollectionsApi
      * Delete logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4736,7 +4736,7 @@ class CollectionsApi
      * Delete logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4853,7 +4853,7 @@ class CollectionsApi
      * Delete logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4875,7 +4875,7 @@ class CollectionsApi
      * Delete logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4927,7 +4927,7 @@ class CollectionsApi
      * Create request for operation 'deleteLogisticCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5037,7 +5037,7 @@ class CollectionsApi
      * Delete routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5056,7 +5056,7 @@ class CollectionsApi
      * Delete routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5173,7 +5173,7 @@ class CollectionsApi
      * Delete routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5195,7 +5195,7 @@ class CollectionsApi
      * Delete routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5247,7 +5247,7 @@ class CollectionsApi
      * Create request for operation 'deleteRoutingCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5357,7 +5357,7 @@ class CollectionsApi
      * Find collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5376,7 +5376,7 @@ class CollectionsApi
      * Find collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5509,7 +5509,7 @@ class CollectionsApi
      * Find collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5531,7 +5531,7 @@ class CollectionsApi
      * Find collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5583,7 +5583,7 @@ class CollectionsApi
      * Create request for operation 'findCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5693,7 +5693,7 @@ class CollectionsApi
      * Find labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5712,7 +5712,7 @@ class CollectionsApi
      * Find labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -5845,7 +5845,7 @@ class CollectionsApi
      * Find labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5867,7 +5867,7 @@ class CollectionsApi
      * Find labelled collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -5919,7 +5919,7 @@ class CollectionsApi
      * Create request for operation 'findLabelledCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6029,7 +6029,7 @@ class CollectionsApi
      * Find logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -6048,7 +6048,7 @@ class CollectionsApi
      * Find logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -6181,7 +6181,7 @@ class CollectionsApi
      * Find logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6203,7 +6203,7 @@ class CollectionsApi
      * Find logistic collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6255,7 +6255,7 @@ class CollectionsApi
      * Create request for operation 'findLogisticCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6365,7 +6365,7 @@ class CollectionsApi
      * Find routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -6384,7 +6384,7 @@ class CollectionsApi
      * Find routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -6517,7 +6517,7 @@ class CollectionsApi
      * Find routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6539,7 +6539,7 @@ class CollectionsApi
      * Find routing collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6591,7 +6591,7 @@ class CollectionsApi
      * Create request for operation 'findRoutingCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -6701,7 +6701,7 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  int $organization_id organizationId (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -6725,7 +6725,7 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  int $organization_id organizationId (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -6863,7 +6863,7 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  int $organization_id organizationId (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -6890,7 +6890,7 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  int $organization_id organizationId (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -6947,7 +6947,7 @@ class CollectionsApi
      * Create request for operation 'getAllCollectionsOfOrganization'
      *
      * @param  int $organization_id organizationId (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -6966,6 +6966,13 @@ class CollectionsApi
                 'Missing the required parameter $organization_id when calling getAllCollectionsOfOrganization'
             );
         }
+        if ($label_prefix !== null && $label_prefix > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 2147483647.');
+        }
+        if ($label_prefix !== null && $label_prefix < 1) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 1.');
+        }
+
 
         $resourcePath = '/api/v1/organizations/{organizationId}/collections';
         $formParams = [];
@@ -7082,7 +7089,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7103,7 +7110,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7238,7 +7245,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7262,7 +7269,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7316,7 +7323,7 @@ class CollectionsApi
      * Create request for operation 'listElementsOfCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7436,7 +7443,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7457,7 +7464,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7592,7 +7599,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7616,7 +7623,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7670,7 +7677,7 @@ class CollectionsApi
      * Create request for operation 'listElementsOfLabelledCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7790,7 +7797,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7811,7 +7818,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7946,7 +7953,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -7970,7 +7977,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8024,7 +8031,7 @@ class CollectionsApi
      * Create request for operation 'listElementsOfLogisticCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8144,7 +8151,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8165,7 +8172,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8300,7 +8307,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8324,7 +8331,7 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8378,7 +8385,7 @@ class CollectionsApi
      * Create request for operation 'listElementsOfRoutingCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -8499,7 +8506,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -8519,7 +8526,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -8637,7 +8644,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -8660,7 +8667,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -8713,7 +8720,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -8838,7 +8845,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -8858,7 +8865,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -8976,7 +8983,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -8999,7 +9006,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9052,7 +9059,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $element_guid elementGuid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9177,7 +9184,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9197,7 +9204,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9315,7 +9322,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9338,7 +9345,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9391,7 +9398,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9516,7 +9523,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9536,7 +9543,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9654,7 +9661,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9677,7 +9684,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9730,7 +9737,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  string $guid guid (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -9855,7 +9862,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9875,7 +9882,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -9993,7 +10000,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10016,7 +10023,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10069,7 +10076,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10189,7 +10196,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10209,7 +10216,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10327,7 +10334,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10350,7 +10357,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10403,7 +10410,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10523,7 +10530,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10543,7 +10550,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10661,7 +10668,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10684,7 +10691,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10737,7 +10744,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -10857,7 +10864,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10877,7 +10884,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -10995,7 +11002,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11018,7 +11025,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11071,7 +11078,7 @@ class CollectionsApi
      *
      * @param  string $collection_id4n collectionId4n (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $list_of_guids listOfGuids (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11191,7 +11198,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -11211,7 +11218,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -11361,7 +11368,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11384,7 +11391,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11437,7 +11444,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11557,7 +11564,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -11577,7 +11584,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -11727,7 +11734,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11750,7 +11757,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11803,7 +11810,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -11923,7 +11930,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -11943,7 +11950,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -12093,7 +12100,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -12116,7 +12123,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -12169,7 +12176,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -12289,7 +12296,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -12309,7 +12316,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -12459,7 +12466,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -12482,7 +12489,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -12535,7 +12542,7 @@ class CollectionsApi
      *
      * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\GuidCollection $request request (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException

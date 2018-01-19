@@ -89,7 +89,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -109,7 +109,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -243,7 +243,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -266,7 +266,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -319,7 +319,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -444,7 +444,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
@@ -466,7 +466,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
@@ -618,7 +618,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
@@ -643,7 +643,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
@@ -698,7 +698,7 @@ class MicrostorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
@@ -772,7 +772,7 @@ class MicrostorageApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/xml', 'application/json;charset=UTF-8'],
-                ['application/xml', '*/*', 'application/json;charset=UTF-8']
+                ['*/*']
             );
         }
 

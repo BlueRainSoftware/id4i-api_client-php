@@ -88,7 +88,7 @@ class WhoIsApi
      * Resolve owner of id4n
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -107,7 +107,7 @@ class WhoIsApi
      * Resolve owner of id4n
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -240,7 +240,7 @@ class WhoIsApi
      * Resolve owner of id4n
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -262,7 +262,7 @@ class WhoIsApi
      * Resolve owner of id4n
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -314,7 +314,7 @@ class WhoIsApi
      * Create request for operation 'resolveWhoIsEntry'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException

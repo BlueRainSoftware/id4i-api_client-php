@@ -89,7 +89,7 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $private_routes privateRoutes (optional)
      * @param  bool $public_routes publicRoutes (optional)
@@ -111,7 +111,7 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $private_routes privateRoutes (optional)
      * @param  bool $public_routes publicRoutes (optional)
@@ -247,7 +247,7 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $private_routes privateRoutes (optional)
      * @param  bool $public_routes publicRoutes (optional)
@@ -272,7 +272,7 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $private_routes privateRoutes (optional)
      * @param  bool $public_routes publicRoutes (optional)
@@ -327,7 +327,7 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $private_routes privateRoutes (optional)
      * @param  bool $public_routes publicRoutes (optional)
@@ -461,7 +461,7 @@ class RoutingApi
      * Retrieve routing file
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $organization_id organizationId (optional)
      *
@@ -481,7 +481,7 @@ class RoutingApi
      * Retrieve routing file
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $organization_id organizationId (optional)
      *
@@ -615,7 +615,7 @@ class RoutingApi
      * Retrieve routing file
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $organization_id organizationId (optional)
      *
@@ -638,7 +638,7 @@ class RoutingApi
      * Retrieve routing file
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $organization_id organizationId (optional)
      *
@@ -691,7 +691,7 @@ class RoutingApi
      * Create request for operation 'getRoutingFile'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $organization_id organizationId (optional)
      *
@@ -806,7 +806,7 @@ class RoutingApi
      *
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -826,7 +826,7 @@ class RoutingApi
      *
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -976,7 +976,7 @@ class RoutingApi
      *
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -999,7 +999,7 @@ class RoutingApi
      *
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1052,7 +1052,7 @@ class RoutingApi
      *
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
      * @param  string $id4n id4n (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException

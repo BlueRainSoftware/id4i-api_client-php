@@ -89,7 +89,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -109,7 +109,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -259,7 +259,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -282,7 +282,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -335,7 +335,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -456,7 +456,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -477,7 +477,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -628,7 +628,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -652,7 +652,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -706,7 +706,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -839,7 +839,7 @@ class ApiKeysApi
      * Create API key
      *
      * @param  \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -858,7 +858,7 @@ class ApiKeysApi
      * Create API key
      *
      * @param  \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1007,7 +1007,7 @@ class ApiKeysApi
      * Create API key
      *
      * @param  \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1029,7 +1029,7 @@ class ApiKeysApi
      * Create API key
      *
      * @param  \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1081,7 +1081,7 @@ class ApiKeysApi
      * Create request for operation 'createNewApiKey'
      *
      * @param  \Swagger\Client\Model\ApiKeyCreationRequest $creation_request API key to be created. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1186,7 +1186,7 @@ class ApiKeysApi
      * Delete API key
      *
      * @param  string $key The API key to delete. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1205,7 +1205,7 @@ class ApiKeysApi
      * Delete API key
      *
      * @param  string $key The API key to delete. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1322,7 +1322,7 @@ class ApiKeysApi
      * Delete API key
      *
      * @param  string $key The API key to delete. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1344,7 +1344,7 @@ class ApiKeysApi
      * Delete API key
      *
      * @param  string $key The API key to delete. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1396,7 +1396,7 @@ class ApiKeysApi
      * Create request for operation 'deleteApiKey'
      *
      * @param  string $key The API key to delete. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1506,7 +1506,7 @@ class ApiKeysApi
      * Show API key
      *
      * @param  string $key The API key to show. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1525,7 +1525,7 @@ class ApiKeysApi
      * Show API key
      *
      * @param  string $key The API key to show. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1658,7 +1658,7 @@ class ApiKeysApi
      * Show API key
      *
      * @param  string $key The API key to show. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1680,7 +1680,7 @@ class ApiKeysApi
      * Show API key
      *
      * @param  string $key The API key to show. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1732,7 +1732,7 @@ class ApiKeysApi
      * Create request for operation 'getApiKey'
      *
      * @param  string $key The API key to show. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1841,7 +1841,7 @@ class ApiKeysApi
      *
      * List all privileges
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $id4n_concerning id4nConcerning (optional)
      * @param  int $offset Start with the n-th element. (optional)
@@ -1862,7 +1862,7 @@ class ApiKeysApi
      *
      * List all privileges
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $id4n_concerning id4nConcerning (optional)
      * @param  int $offset Start with the n-th element. (optional)
@@ -1997,7 +1997,7 @@ class ApiKeysApi
      *
      * List all privileges
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $id4n_concerning id4nConcerning (optional)
      * @param  int $offset Start with the n-th element. (optional)
@@ -2021,7 +2021,7 @@ class ApiKeysApi
      *
      * List all privileges
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $id4n_concerning id4nConcerning (optional)
      * @param  int $offset Start with the n-th element. (optional)
@@ -2075,7 +2075,7 @@ class ApiKeysApi
     /**
      * Create request for operation 'listAllApiKeyPrivileges'
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  bool $id4n_concerning id4nConcerning (optional)
      * @param  int $offset Start with the n-th element. (optional)
@@ -2186,7 +2186,7 @@ class ApiKeysApi
      * Find API key by organization
      *
      * @param  int $organization_id The id of the organization to search in. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2207,7 +2207,7 @@ class ApiKeysApi
      * Find API key by organization
      *
      * @param  int $organization_id The id of the organization to search in. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2342,7 +2342,7 @@ class ApiKeysApi
      * Find API key by organization
      *
      * @param  int $organization_id The id of the organization to search in. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2366,7 +2366,7 @@ class ApiKeysApi
      * Find API key by organization
      *
      * @param  int $organization_id The id of the organization to search in. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2420,7 +2420,7 @@ class ApiKeysApi
      * Create request for operation 'listAllApiKeysOfOrganization'
      *
      * @param  int $organization_id The id of the organization to search in. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2536,7 +2536,7 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2557,7 +2557,7 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2692,7 +2692,7 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2716,7 +2716,7 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2770,7 +2770,7 @@ class ApiKeysApi
      * Create request for operation 'listApiKeyPrivileges'
      *
      * @param  string $key key (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2891,7 +2891,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -2913,7 +2913,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -3049,7 +3049,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -3074,7 +3074,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -3129,7 +3129,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -3264,7 +3264,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3284,7 +3284,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3402,7 +3402,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3425,7 +3425,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3478,7 +3478,7 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest $remove_api_key_privilege_request removeApiKeyPrivilegeRequest (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3599,7 +3599,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3620,7 +3620,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3739,7 +3739,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3763,7 +3763,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3817,7 +3817,7 @@ class ApiKeysApi
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
      * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -3951,7 +3951,7 @@ class ApiKeysApi
      *
      * @param  string $key The API key to be updated. (required)
      * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -3971,7 +3971,7 @@ class ApiKeysApi
      *
      * @param  string $key The API key to be updated. (required)
      * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -4121,7 +4121,7 @@ class ApiKeysApi
      *
      * @param  string $key The API key to be updated. (required)
      * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4144,7 +4144,7 @@ class ApiKeysApi
      *
      * @param  string $key The API key to be updated. (required)
      * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -4197,7 +4197,7 @@ class ApiKeysApi
      *
      * @param  string $key The API key to be updated. (required)
      * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException

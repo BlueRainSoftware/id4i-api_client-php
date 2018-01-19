@@ -90,7 +90,7 @@ class AliasApi
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -111,7 +111,7 @@ class AliasApi
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -262,7 +262,7 @@ class AliasApi
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -286,7 +286,7 @@ class AliasApi
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -340,7 +340,7 @@ class AliasApi
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -474,7 +474,7 @@ class AliasApi
      *
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -494,7 +494,7 @@ class AliasApi
      *
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -612,7 +612,7 @@ class AliasApi
      *
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -635,7 +635,7 @@ class AliasApi
      *
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -688,7 +688,7 @@ class AliasApi
      *
      * @param  string $id4n The GUID to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -811,7 +811,7 @@ class AliasApi
      *
      * List all supported alias types
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -829,7 +829,7 @@ class AliasApi
      *
      * List all supported alias types
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -961,7 +961,7 @@ class AliasApi
      *
      * List all supported alias types
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -982,7 +982,7 @@ class AliasApi
      *
      * List all supported alias types
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1033,7 +1033,7 @@ class AliasApi
     /**
      * Create request for operation 'getGuidAliasTypes'
      *
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1129,7 +1129,7 @@ class AliasApi
      * Get all aliases for the given GUID
      *
      * @param  string $id4n The GUID to operate on (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1148,7 +1148,7 @@ class AliasApi
      * Get all aliases for the given GUID
      *
      * @param  string $id4n The GUID to operate on (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1281,7 +1281,7 @@ class AliasApi
      * Get all aliases for the given GUID
      *
      * @param  string $id4n The GUID to operate on (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1303,7 +1303,7 @@ class AliasApi
      * Get all aliases for the given GUID
      *
      * @param  string $id4n The GUID to operate on (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1355,7 +1355,7 @@ class AliasApi
      * Create request for operation 'getGuidAliases'
      *
      * @param  string $id4n The GUID to operate on (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      *
      * @throws \InvalidArgumentException
@@ -1466,7 +1466,7 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -1488,7 +1488,7 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -1624,7 +1624,7 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -1649,7 +1649,7 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)
@@ -1704,7 +1704,7 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  string $authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  int $offset Start with the n-th element. (optional)
      * @param  int $limit The maximum count of returned elements. (optional)

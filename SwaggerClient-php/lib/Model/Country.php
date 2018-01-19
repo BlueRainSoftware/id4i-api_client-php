@@ -195,6 +195,12 @@ class Country implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -207,6 +213,12 @@ class Country implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['code'] === null) {
+            return false;
+        }
+        if ($this->container['name'] === null) {
+            return false;
+        }
         return true;
     }
 

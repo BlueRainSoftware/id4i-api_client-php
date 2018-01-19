@@ -216,6 +216,9 @@ class Route implements ModelInterface, ArrayAccess
         if ($this->container['params'] === null) {
             $invalidProperties[] = "'params' can't be null";
         }
+        if ($this->container['public'] === null) {
+            $invalidProperties[] = "'public' can't be null";
+        }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -232,6 +235,9 @@ class Route implements ModelInterface, ArrayAccess
     {
 
         if ($this->container['params'] === null) {
+            return false;
+        }
+        if ($this->container['public'] === null) {
             return false;
         }
         if ($this->container['type'] === null) {

@@ -207,6 +207,9 @@ class PaginatedResponseApiKeyPresentation_ implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
+        if ($this->container['elements'] === null) {
+            $invalidProperties[] = "'elements' can't be null";
+        }
         if ($this->container['limit'] === null) {
             $invalidProperties[] = "'limit' can't be null";
         }
@@ -225,6 +228,9 @@ class PaginatedResponseApiKeyPresentation_ implements ModelInterface, ArrayAcces
     public function valid()
     {
 
+        if ($this->container['elements'] === null) {
+            return false;
+        }
         if ($this->container['limit'] === null) {
             return false;
         }

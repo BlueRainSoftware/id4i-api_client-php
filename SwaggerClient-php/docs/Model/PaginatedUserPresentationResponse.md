@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Swagger\Client\Model\UserPresentation[]**](UserPresentation.md) |  | [optional] 
+**elements** | [**\Swagger\Client\Model\UserPresentation[]**](UserPresentation.md) |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 
