@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Swagger\Client\Model\Id4nPresentation[]**](Id4nPresentation.md) |  | [optional] 
+**elements** | [**\Swagger\Client\Model\Id4nPresentation[]**](Id4nPresentation.md) |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 

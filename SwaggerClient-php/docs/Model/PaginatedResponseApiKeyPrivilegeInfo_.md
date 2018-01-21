@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Swagger\Client\Model\ApiKeyPrivilegeInfo[]**](ApiKeyPrivilegeInfo.md) |  | [optional] 
+**elements** | [**\Swagger\Client\Model\ApiKeyPrivilegeInfo[]**](ApiKeyPrivilegeInfo.md) |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 

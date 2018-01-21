@@ -26,7 +26,7 @@ $apiInstance = new Swagger\Client\Api\RoutingApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $type = "type_example"; // string | The type of route you want to have
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $private_routes = true; // bool | privateRoutes
 $public_routes = true; // bool | publicRoutes
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **type** | **string**| The type of route you want to have |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **private_routes** | **bool**| privateRoutes | [optional]
  **public_routes** | **bool**| publicRoutes | [optional]
@@ -82,7 +82,7 @@ $apiInstance = new Swagger\Client\Api\RoutingApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $organization_id = 789; // int | organizationId
 
@@ -100,7 +100,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **organization_id** | **int**| organizationId | [optional]
 
@@ -136,7 +136,7 @@ $apiInstance = new Swagger\Client\Api\RoutingApi(
 );
 $rfr = new \Swagger\Client\Model\RoutingFileRequest(); // \Swagger\Client\Model\RoutingFileRequest | rfr
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**\Swagger\Client\Model\RoutingFileRequest**](../Model/RoutingFileRequest.md)| rfr |
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type

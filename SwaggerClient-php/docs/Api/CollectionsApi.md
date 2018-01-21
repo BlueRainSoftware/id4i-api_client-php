@@ -59,7 +59,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $element_guid = "element_guid_example"; // string | elementGuid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **element_guid** | **string**| elementGuid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -112,7 +112,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $element_guid = "element_guid_example"; // string | elementGuid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **element_guid** | **string**| elementGuid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -165,7 +165,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **guid** | **string**| guid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -218,7 +218,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **guid** | **string**| guid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -271,7 +271,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -324,7 +324,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -377,7 +377,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -430,7 +430,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -482,7 +482,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $create_info = new \Swagger\Client\Model\CreateLabelledCollectionRequest(); // \Swagger\Client\Model\CreateLabelledCollectionRequest | createInfo
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -499,7 +499,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_info** | [**\Swagger\Client\Model\CreateLabelledCollectionRequest**](../Model/CreateLabelledCollectionRequest.md)| createInfo |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -533,7 +533,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $create_info = new \Swagger\Client\Model\CreateLogisticCollectionRequest(); // \Swagger\Client\Model\CreateLogisticCollectionRequest | createInfo
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -550,7 +550,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_info** | [**\Swagger\Client\Model\CreateLogisticCollectionRequest**](../Model/CreateLogisticCollectionRequest.md)| createInfo |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -584,7 +584,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $create_info = new \Swagger\Client\Model\CreateRoutingCollectionRequest(); // \Swagger\Client\Model\CreateRoutingCollectionRequest | createInfo
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -601,7 +601,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_info** | [**\Swagger\Client\Model\CreateRoutingCollectionRequest**](../Model/CreateRoutingCollectionRequest.md)| createInfo |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -635,7 +635,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -652,7 +652,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -686,7 +686,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -703,7 +703,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -737,7 +737,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -754,7 +754,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -788,7 +788,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -805,7 +805,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -839,7 +839,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -856,7 +856,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -890,7 +890,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -907,7 +907,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -941,7 +941,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -958,7 +958,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -992,7 +992,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1009,7 +1009,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1045,7 +1045,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -1067,7 +1067,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -1106,7 +1106,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -1125,7 +1125,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -1161,7 +1161,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -1180,7 +1180,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -1216,7 +1216,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -1235,7 +1235,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -1271,7 +1271,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -1290,7 +1290,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -1327,7 +1327,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $element_guid = "element_guid_example"; // string | elementGuid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **element_guid** | **string**| elementGuid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1380,7 +1380,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $element_guid = "element_guid_example"; // string | elementGuid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1398,7 +1398,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **element_guid** | **string**| elementGuid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1433,7 +1433,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1451,7 +1451,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **guid** | **string**| guid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1486,7 +1486,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $guid = "guid_example"; // string | guid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1504,7 +1504,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **guid** | **string**| guid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1539,7 +1539,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1592,7 +1592,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1610,7 +1610,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1645,7 +1645,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1663,7 +1663,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1698,7 +1698,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1716,7 +1716,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collection_id4n** | **string**| collectionId4n |
  **list_of_guids** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| listOfGuids |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1751,7 +1751,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1769,7 +1769,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1804,7 +1804,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1822,7 +1822,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1857,7 +1857,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1875,7 +1875,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -1910,7 +1910,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -1928,7 +1928,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type

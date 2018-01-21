@@ -27,7 +27,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client()
 );
 $guid = "guid_example"; // string | guid
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **string**| guid |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -78,7 +78,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client()
 );
 $image_id = "image_id_example"; // string | The id of the image to be resolved.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -95,7 +95,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **image_id** | **string**| The id of the image to be resolved. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -129,7 +129,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -146,7 +146,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type

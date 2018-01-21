@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Swagger\Client\Model\Guid[]**](Guid.md) |  | [optional] 
+**elements** | [**\Swagger\Client\Model\Guid[]**](Guid.md) |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 

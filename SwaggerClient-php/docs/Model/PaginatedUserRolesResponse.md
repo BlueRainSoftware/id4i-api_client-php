@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**\Swagger\Client\Model\UserRoles[]**](UserRoles.md) |  | [optional] 
+**elements** | [**\Swagger\Client\Model\UserRoles[]**](UserRoles.md) |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 **total** | **int** |  | [optional] 

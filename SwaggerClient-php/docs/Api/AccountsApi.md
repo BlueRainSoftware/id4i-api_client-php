@@ -40,7 +40,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -95,7 +95,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -112,7 +112,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **complete_registration** | [**\Swagger\Client\Model\CompleteUserRegistrationRequest**](../Model/CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -146,7 +146,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $username = "username_example"; // string | username
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -163,7 +163,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **string**| username |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -197,7 +197,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $username_prefix = "username_prefix_example"; // string | Find users starting with this prefix.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -216,7 +216,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username_prefix** | **string**| Find users starting with this prefix. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -254,7 +254,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -273,7 +273,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -308,7 +308,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
 $offset = 56; // int | Start with the n-th element.
@@ -327,7 +327,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **role** | **string**| role | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
@@ -365,7 +365,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 );
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -423,7 +423,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -442,7 +442,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -479,7 +479,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 );
 $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -532,7 +532,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $privilege = "privilege_example"; // string | If specified the roles will be filtered containing that privilege.
 $offset = 56; // int | Start with the n-th element.
@@ -551,7 +551,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **privilege** | **string**| If specified the roles will be filtered containing that privilege. | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
@@ -638,7 +638,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $user_registration = new \Swagger\Client\Model\UserRegistrationRequest(); // \Swagger\Client\Model\UserRegistrationRequest | The user information about the new created user.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -655,7 +655,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_registration** | [**\Swagger\Client\Model\UserRegistrationRequest**](../Model/UserRegistrationRequest.md)| The user information about the new created user. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -691,7 +691,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -746,7 +746,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $reset_request = new \Swagger\Client\Model\PasswordResetRequest(); // \Swagger\Client\Model\PasswordResetRequest | Contains the required information to request a new password.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -763,7 +763,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reset_request** | [**\Swagger\Client\Model\PasswordResetRequest**](../Model/PasswordResetRequest.md)| Contains the required information to request a new password. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -799,7 +799,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $verification_request = new \Swagger\Client\Model\PasswordResetVerificationRequest(); // \Swagger\Client\Model\PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -816,7 +816,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verification_request** | [**\Swagger\Client\Model\PasswordResetVerificationRequest**](../Model/PasswordResetVerificationRequest.md)| Contains the new password and the verification token to set the new password. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -852,7 +852,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $token = new \Swagger\Client\Model\RegistrationVerificationTokenPresentation(); // \Swagger\Client\Model\RegistrationVerificationTokenPresentation | The token for user verification.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -869,7 +869,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**\Swagger\Client\Model\RegistrationVerificationTokenPresentation**](../Model/RegistrationVerificationTokenPresentation.md)| The token for user verification. |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type

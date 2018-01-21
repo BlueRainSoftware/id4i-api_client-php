@@ -33,7 +33,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
 $id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
  **id4n** | **string**| The GUID to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -89,7 +89,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
 );
 $id4n = "id4n_example"; // string | The GUID to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -143,7 +143,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
     new GuzzleHttp\Client()
 );
 $create_guid_info = new \Swagger\Client\Model\CreateGuidRequest(); // \Swagger\Client\Model\CreateGuidRequest | createGUIDInfo
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -160,7 +160,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_guid_info** | [**\Swagger\Client\Model\CreateGuidRequest**](../Model/CreateGuidRequest.md)| createGUIDInfo |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -194,7 +194,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | The GUID number
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -211,7 +211,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -247,7 +247,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | The GUID to operate on
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -264,7 +264,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
@@ -298,7 +298,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
     new GuzzleHttp\Client()
 );
 $organization_id = 789; // int | Organization to search GUIDs for (required).
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element.
 $limit = 56; // int | The maximum count of returned elements.
@@ -317,7 +317,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| Organization to search GUIDs for (required). |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element. | [optional]
  **limit** | **int**| The maximum count of returned elements. | [optional]
@@ -356,7 +356,7 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
 );
 $id4n = "id4n_example"; // string | The GUID number
 $request = new \Swagger\Client\Model\Guid(); // \Swagger\Client\Model\Guid | request
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token as returned from /login
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number |
  **request** | [**\Swagger\Client\Model\Guid**](../Model/Guid.md)| request |
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
