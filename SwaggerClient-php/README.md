@@ -117,7 +117,7 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**removeApiKeyPrivilege**](docs/Api/ApiKeysApi.md#removeapikeyprivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#removeapikeyprivilegeforid4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
-*BillingApi* | [**findCollection**](docs/Api/BillingApi.md#findcollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
+*BillingApi* | [**getSumForOrganization**](docs/Api/BillingApi.md#getsumfororganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
 *CollectionsApi* | [**addElementToLogisticCollection**](docs/Api/CollectionsApi.md#addelementtologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
@@ -133,7 +133,7 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**deleteLabelledCollection**](docs/Api/CollectionsApi.md#deletelabelledcollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 *CollectionsApi* | [**deleteLogisticCollection**](docs/Api/CollectionsApi.md#deletelogisticcollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 *CollectionsApi* | [**deleteRoutingCollection**](docs/Api/CollectionsApi.md#deleteroutingcollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-*CollectionsApi* | [**findCollection1**](docs/Api/CollectionsApi.md#findcollection1) | **GET** /api/v1/collections/{id4n} | Find collection
+*CollectionsApi* | [**findCollection**](docs/Api/CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
 *CollectionsApi* | [**findLabelledCollection**](docs/Api/CollectionsApi.md#findlabelledcollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 *CollectionsApi* | [**findLogisticCollection**](docs/Api/CollectionsApi.md#findlogisticcollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 *CollectionsApi* | [**findRoutingCollection**](docs/Api/CollectionsApi.md#findroutingcollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection

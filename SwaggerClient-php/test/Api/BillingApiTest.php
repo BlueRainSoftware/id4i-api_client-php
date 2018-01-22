@@ -72,12 +72,12 @@ class BillingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for findCollection
+     * Test case for getSumForOrganization
      *
      * Get billing amount of services for a given organization.
      *
      */
-    public function testFindCollection()
+    public function testGetSumForOrganization()
     {
     }
 }

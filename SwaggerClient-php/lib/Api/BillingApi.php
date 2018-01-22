@@ -83,7 +83,7 @@ class BillingApi
     }
 
     /**
-     * Operation findCollection
+     * Operation getSumForOrganization
      *
      * Get billing amount of services for a given organization
      *
@@ -95,14 +95,14 @@ class BillingApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ServiceCosts
      */
-    public function findCollection($organization_id, $authorization = null, $accept_language = null)
+    public function getSumForOrganization($organization_id, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->findCollectionWithHttpInfo($organization_id, $authorization, $accept_language);
+        list($response) = $this->getSumForOrganizationWithHttpInfo($organization_id, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation findCollectionWithHttpInfo
+     * Operation getSumForOrganizationWithHttpInfo
      *
      * Get billing amount of services for a given organization
      *
@@ -114,10 +114,10 @@ class BillingApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ServiceCosts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function findCollectionWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    public function getSumForOrganizationWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         $returnType = '\Swagger\Client\Model\ServiceCosts';
-        $request = $this->findCollectionRequest($organization_id, $authorization, $accept_language);
+        $request = $this->getSumForOrganizationRequest($organization_id, $authorization, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -235,7 +235,7 @@ class BillingApi
     }
 
     /**
-     * Operation findCollectionAsync
+     * Operation getSumForOrganizationAsync
      *
      * Get billing amount of services for a given organization
      *
@@ -246,9 +246,9 @@ class BillingApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findCollectionAsync($organization_id, $authorization = null, $accept_language = null)
+    public function getSumForOrganizationAsync($organization_id, $authorization = null, $accept_language = null)
     {
-        return $this->findCollectionAsyncWithHttpInfo($organization_id, $authorization, $accept_language)
+        return $this->getSumForOrganizationAsyncWithHttpInfo($organization_id, $authorization, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,7 +257,7 @@ class BillingApi
     }
 
     /**
-     * Operation findCollectionAsyncWithHttpInfo
+     * Operation getSumForOrganizationAsyncWithHttpInfo
      *
      * Get billing amount of services for a given organization
      *
@@ -268,10 +268,10 @@ class BillingApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findCollectionAsyncWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
+    public function getSumForOrganizationAsyncWithHttpInfo($organization_id, $authorization = null, $accept_language = null)
     {
         $returnType = '\Swagger\Client\Model\ServiceCosts';
-        $request = $this->findCollectionRequest($organization_id, $authorization, $accept_language);
+        $request = $this->getSumForOrganizationRequest($organization_id, $authorization, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,7 +311,7 @@ class BillingApi
     }
 
     /**
-     * Create request for operation 'findCollection'
+     * Create request for operation 'getSumForOrganization'
      *
      * @param  int $organization_id The organization to compute the billing information for (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
@@ -320,12 +320,12 @@ class BillingApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findCollectionRequest($organization_id, $authorization = null, $accept_language = null)
+    protected function getSumForOrganizationRequest($organization_id, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling findCollection'
+                'Missing the required parameter $organization_id when calling getSumForOrganization'
             );
         }
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findCollection**](BillingApi.md#findCollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
+[**getSumForOrganization**](BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 
 
-# **findCollection**
-> \Swagger\Client\Model\ServiceCosts findCollection($organization_id, $authorization, $accept_language)
+# **getSumForOrganization**
+> \Swagger\Client\Model\ServiceCosts getSumForOrganization($organization_id, $authorization, $accept_language)
 
 Get billing amount of services for a given organization
 
@@ -27,10 +27,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->findCollection($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->getSumForOrganization($organization_id, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BillingApi->findCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingApi->getSumForOrganization: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
