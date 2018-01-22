@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**deleteLabelledCollection**](CollectionsApi.md#deleteLabelledCollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 [**deleteLogisticCollection**](CollectionsApi.md#deleteLogisticCollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 [**deleteRoutingCollection**](CollectionsApi.md#deleteRoutingCollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-[**findCollection**](CollectionsApi.md#findCollection) | **GET** /api/v1/collections/{id4n} | Find collection
+[**findCollection1**](CollectionsApi.md#findCollection1) | **GET** /api/v1/collections/{id4n} | Find collection
 [**findLabelledCollection**](CollectionsApi.md#findLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 [**findLogisticCollection**](CollectionsApi.md#findLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 [**findRoutingCollection**](CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
@@ -823,8 +823,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **findCollection**
-> \Swagger\Client\Model\GuidCollection findCollection($id4n, $authorization, $accept_language)
+# **findCollection1**
+> \Swagger\Client\Model\GuidCollection findCollection1($id4n, $authorization, $accept_language)
 
 Find collection
 
@@ -843,10 +843,10 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->findCollection($id4n, $authorization, $accept_language);
+    $result = $apiInstance->findCollection1($id4n, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CollectionsApi->findCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CollectionsApi->findCollection1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

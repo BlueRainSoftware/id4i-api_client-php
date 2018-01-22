@@ -222,12 +222,12 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for findCollection
+     * Test case for findCollection1
      *
      * Find collection.
      *
      */
-    public function testFindCollection()
+    public function testFindCollection1()
     {
     }
 

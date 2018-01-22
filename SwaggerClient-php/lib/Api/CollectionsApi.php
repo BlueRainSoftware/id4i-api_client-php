@@ -5352,7 +5352,7 @@ class CollectionsApi
     }
 
     /**
-     * Operation findCollection
+     * Operation findCollection1
      *
      * Find collection
      *
@@ -5364,14 +5364,14 @@ class CollectionsApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\GuidCollection
      */
-    public function findCollection($id4n, $authorization = null, $accept_language = null)
+    public function findCollection1($id4n, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->findCollectionWithHttpInfo($id4n, $authorization, $accept_language);
+        list($response) = $this->findCollection1WithHttpInfo($id4n, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation findCollectionWithHttpInfo
+     * Operation findCollection1WithHttpInfo
      *
      * Find collection
      *
@@ -5383,10 +5383,10 @@ class CollectionsApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\GuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function findCollectionWithHttpInfo($id4n, $authorization = null, $accept_language = null)
+    public function findCollection1WithHttpInfo($id4n, $authorization = null, $accept_language = null)
     {
         $returnType = '\Swagger\Client\Model\GuidCollection';
-        $request = $this->findCollectionRequest($id4n, $authorization, $accept_language);
+        $request = $this->findCollection1Request($id4n, $authorization, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5504,7 +5504,7 @@ class CollectionsApi
     }
 
     /**
-     * Operation findCollectionAsync
+     * Operation findCollection1Async
      *
      * Find collection
      *
@@ -5515,9 +5515,9 @@ class CollectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findCollectionAsync($id4n, $authorization = null, $accept_language = null)
+    public function findCollection1Async($id4n, $authorization = null, $accept_language = null)
     {
-        return $this->findCollectionAsyncWithHttpInfo($id4n, $authorization, $accept_language)
+        return $this->findCollection1AsyncWithHttpInfo($id4n, $authorization, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5526,7 +5526,7 @@ class CollectionsApi
     }
 
     /**
-     * Operation findCollectionAsyncWithHttpInfo
+     * Operation findCollection1AsyncWithHttpInfo
      *
      * Find collection
      *
@@ -5537,10 +5537,10 @@ class CollectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findCollectionAsyncWithHttpInfo($id4n, $authorization = null, $accept_language = null)
+    public function findCollection1AsyncWithHttpInfo($id4n, $authorization = null, $accept_language = null)
     {
         $returnType = '\Swagger\Client\Model\GuidCollection';
-        $request = $this->findCollectionRequest($id4n, $authorization, $accept_language);
+        $request = $this->findCollection1Request($id4n, $authorization, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5580,7 +5580,7 @@ class CollectionsApi
     }
 
     /**
-     * Create request for operation 'findCollection'
+     * Create request for operation 'findCollection1'
      *
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
@@ -5589,12 +5589,12 @@ class CollectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findCollectionRequest($id4n, $authorization = null, $accept_language = null)
+    protected function findCollection1Request($id4n, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling findCollection'
+                'Missing the required parameter $id4n when calling findCollection1'
             );
         }
 
