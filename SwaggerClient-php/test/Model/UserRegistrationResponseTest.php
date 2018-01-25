@@ -85,13 +85,6 @@ class UserRegistrationResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()
