@@ -58,6 +58,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
+        'id' => 'int',
         'message' => 'string',
         'username' => 'string'
     ];
@@ -69,6 +70,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => null,
+        'id' => 'int64',
         'message' => null,
         'username' => null
     ];
@@ -101,6 +103,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'email' => 'email',
+        'id' => 'id',
         'message' => 'message',
         'username' => 'username'
     ];
@@ -112,6 +115,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'email' => 'setEmail',
+        'id' => 'setId',
         'message' => 'setMessage',
         'username' => 'setUsername'
     ];
@@ -123,6 +127,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'email' => 'getEmail',
+        'id' => 'getId',
         'message' => 'getMessage',
         'username' => 'getUsername'
     ];
@@ -188,6 +193,7 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
     }
@@ -237,6 +243,30 @@ class UserRegistrationResponse implements ModelInterface, ArrayAccess
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
