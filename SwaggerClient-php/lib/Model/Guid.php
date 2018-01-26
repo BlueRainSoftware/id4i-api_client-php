@@ -207,9 +207,6 @@ class Guid implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id4n'] === null) {
-            $invalidProperties[] = "'id4n' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -222,9 +219,6 @@ class Guid implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id4n'] === null) {
-            return false;
-        }
         return true;
     }
 
