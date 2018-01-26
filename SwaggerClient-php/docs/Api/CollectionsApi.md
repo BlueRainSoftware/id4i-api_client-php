@@ -36,10 +36,14 @@ Method | HTTP request | Description
 [**removeElementsFromLabelledCollection**](CollectionsApi.md#removeElementsFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 [**removeElementsFromLogisticCollection**](CollectionsApi.md#removeElementsFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 [**removeElementsFromRoutingCollection**](CollectionsApi.md#removeElementsFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-[**updateCollection**](CollectionsApi.md#updateCollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**setCollection**](CollectionsApi.md#setCollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+[**setLabelledCollection**](CollectionsApi.md#setLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+[**setLogisticCollection**](CollectionsApi.md#setLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+[**setRoutingCollection**](CollectionsApi.md#setRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**updateCollection**](CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 
 
 # **addElementToCollection**
@@ -1734,10 +1738,230 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **setCollection**
+> object setCollection($id4n, $request, $authorization, $accept_language)
+
+Set collection
+
+Update collection replacing all values but the ID
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id4n = "id4n_example"; // string | id4n
+$request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setCollection($id4n, $request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->setCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **setLabelledCollection**
+> object setLabelledCollection($id4n, $request, $authorization, $accept_language)
+
+Set labelled collection values
+
+Update labelled collection replacing all values but the ID
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id4n = "id4n_example"; // string | id4n
+$request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setLabelledCollection($id4n, $request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->setLabelledCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **setLogisticCollection**
+> object setLogisticCollection($id4n, $request, $authorization, $accept_language)
+
+Replace logistic collection
+
+Update logistic collection replacing all values but the ID
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id4n = "id4n_example"; // string | id4n
+$request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setLogisticCollection($id4n, $request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->setLogisticCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **setRoutingCollection**
+> object setRoutingCollection($id4n, $request, $authorization, $accept_language)
+
+Update routing collection
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\CollectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id4n = "id4n_example"; // string | id4n
+$request = new \Swagger\Client\Model\GuidCollection(); // \Swagger\Client\Model\GuidCollection | request
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setRoutingCollection($id4n, $request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CollectionsApi->setRoutingCollection: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+ **request** | [**\Swagger\Client\Model\GuidCollection**](../Model/GuidCollection.md)| request |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **updateCollection**
 > object updateCollection($id4n, $request, $authorization, $accept_language)
 
-Alter collection
+Update collection
+
+Update collection changing only the given values
 
 ### Example
 ```php
@@ -1790,7 +2014,9 @@ No authorization required
 # **updateLabelledCollection**
 > object updateLabelledCollection($id4n, $request, $authorization, $accept_language)
 
-Rename labelled collection
+Update labelled collection
+
+Update labelled collection updating only the given values
 
 ### Example
 ```php
@@ -1845,6 +2071,8 @@ No authorization required
 
 Update logistic collection
 
+Update logistic collection updating only the given values
+
 ### Example
 ```php
 <?php
@@ -1897,6 +2125,8 @@ No authorization required
 > object updateRoutingCollection($id4n, $request, $authorization, $accept_language)
 
 Update routing collection
+
+Update routing collection updating only the given values
 
 ### Example
 ```php

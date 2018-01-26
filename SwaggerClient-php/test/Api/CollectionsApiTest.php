@@ -392,9 +392,49 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for setCollection
+     *
+     * Set collection.
+     *
+     */
+    public function testSetCollection()
+    {
+    }
+
+    /**
+     * Test case for setLabelledCollection
+     *
+     * Set labelled collection values.
+     *
+     */
+    public function testSetLabelledCollection()
+    {
+    }
+
+    /**
+     * Test case for setLogisticCollection
+     *
+     * Replace logistic collection.
+     *
+     */
+    public function testSetLogisticCollection()
+    {
+    }
+
+    /**
+     * Test case for setRoutingCollection
+     *
+     * Update routing collection.
+     *
+     */
+    public function testSetRoutingCollection()
+    {
+    }
+
+    /**
      * Test case for updateCollection
      *
-     * Alter collection.
+     * Update collection.
      *
      */
     public function testUpdateCollection()
@@ -404,7 +444,7 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateLabelledCollection
      *
-     * Rename labelled collection.
+     * Update labelled collection.
      *
      */
     public function testUpdateLabelledCollection()
