@@ -2176,7 +2176,7 @@ class GUIDsApi
     }
 
     /**
-     * Operation updateGuid
+     * Operation setGuid
      *
      * Change GUID information.
      *
@@ -2189,14 +2189,14 @@ class GUIDsApi
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function updateGuid($id4n, $request, $authorization = null, $accept_language = null)
+    public function setGuid($id4n, $request, $authorization = null, $accept_language = null)
     {
-        list($response) = $this->updateGuidWithHttpInfo($id4n, $request, $authorization, $accept_language);
+        list($response) = $this->setGuidWithHttpInfo($id4n, $request, $authorization, $accept_language);
         return $response;
     }
 
     /**
-     * Operation updateGuidWithHttpInfo
+     * Operation setGuidWithHttpInfo
      *
      * Change GUID information.
      *
@@ -2209,10 +2209,10 @@ class GUIDsApi
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateGuidWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
+    public function setGuidWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
         $returnType = 'object';
-        $request = $this->updateGuidRequest($id4n, $request, $authorization, $accept_language);
+        $request = $this->setGuidRequest($id4n, $request, $authorization, $accept_language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2346,7 +2346,7 @@ class GUIDsApi
     }
 
     /**
-     * Operation updateGuidAsync
+     * Operation setGuidAsync
      *
      * Change GUID information.
      *
@@ -2358,9 +2358,9 @@ class GUIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGuidAsync($id4n, $request, $authorization = null, $accept_language = null)
+    public function setGuidAsync($id4n, $request, $authorization = null, $accept_language = null)
     {
-        return $this->updateGuidAsyncWithHttpInfo($id4n, $request, $authorization, $accept_language)
+        return $this->setGuidAsyncWithHttpInfo($id4n, $request, $authorization, $accept_language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2369,7 +2369,7 @@ class GUIDsApi
     }
 
     /**
-     * Operation updateGuidAsyncWithHttpInfo
+     * Operation setGuidAsyncWithHttpInfo
      *
      * Change GUID information.
      *
@@ -2381,10 +2381,10 @@ class GUIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGuidAsyncWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
+    public function setGuidAsyncWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
     {
         $returnType = 'object';
-        $request = $this->updateGuidRequest($id4n, $request, $authorization, $accept_language);
+        $request = $this->setGuidRequest($id4n, $request, $authorization, $accept_language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2424,7 +2424,7 @@ class GUIDsApi
     }
 
     /**
-     * Create request for operation 'updateGuid'
+     * Create request for operation 'setGuid'
      *
      * @param  string $id4n The GUID number (required)
      * @param  \Swagger\Client\Model\Guid $request request (required)
@@ -2434,18 +2434,18 @@ class GUIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateGuidRequest($id4n, $request, $authorization = null, $accept_language = null)
+    protected function setGuidRequest($id4n, $request, $authorization = null, $accept_language = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling updateGuid'
+                'Missing the required parameter $id4n when calling setGuid'
             );
         }
         // verify the required parameter 'request' is set
         if ($request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $request when calling updateGuid'
+                'Missing the required parameter $request when calling setGuid'
             );
         }
 
@@ -2535,6 +2535,300 @@ class GUIDsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation setGuid1
+     *
+     * Change GUID information.
+     *
+     * @param  string $id4n The GUID number (required)
+     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
+     * @param  string $accept_language Requested language (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object
+     */
+    public function setGuid1($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        list($response) = $this->setGuid1WithHttpInfo($id4n, $request, $authorization, $accept_language);
+        return $response;
+    }
+
+    /**
+     * Operation setGuid1WithHttpInfo
+     *
+     * Change GUID information.
+     *
+     * @param  string $id4n The GUID number (required)
+     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
+     * @param  string $accept_language Requested language (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function setGuid1WithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        $returnType = 'object';
+        $request = $this->setGuid1Request($id4n, $request, $authorization, $accept_language);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation setGuid1Async
+     *
+     * Change GUID information.
+     *
+     * @param  string $id4n The GUID number (required)
+     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
+     * @param  string $accept_language Requested language (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setGuid1Async($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        return $this->setGuid1AsyncWithHttpInfo($id4n, $request, $authorization, $accept_language)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation setGuid1AsyncWithHttpInfo
+     *
+     * Change GUID information.
+     *
+     * @param  string $id4n The GUID number (required)
+     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
+     * @param  string $accept_language Requested language (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setGuid1AsyncWithHttpInfo($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        $returnType = 'object';
+        $request = $this->setGuid1Request($id4n, $request, $authorization, $accept_language);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'setGuid1'
+     *
+     * @param  string $id4n The GUID number (required)
+     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $authorization Authorization JWT Bearer Token (optional)
+     * @param  string $accept_language Requested language (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function setGuid1Request($id4n, $request, $authorization = null, $accept_language = null)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling setGuid1'
+            );
+        }
+        // verify the required parameter 'request' is set
+        if ($request === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $request when calling setGuid1'
+            );
+        }
+
+        $resourcePath = '/api/v1/guids/{id4n}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+        // header params
+        if ($accept_language !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($accept_language);
+        }
+
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($request)) {
+            $_tempBody = $request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json;charset=UTF-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json;charset=UTF-8'],
+                ['application/xml', 'application/json;charset=UTF-8']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

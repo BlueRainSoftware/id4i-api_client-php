@@ -132,12 +132,22 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateGuid
+     * Test case for setGuid
      *
      * Change GUID information..
      *
      */
-    public function testUpdateGuid()
+    public function testSetGuid()
+    {
+    }
+
+    /**
+     * Test case for setGuid1
+     *
+     * Change GUID information..
+     *
+     */
+    public function testSetGuid1()
     {
     }
 }

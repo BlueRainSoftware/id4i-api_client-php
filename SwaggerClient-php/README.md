@@ -164,7 +164,8 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**getGuid**](docs/Api/GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GUIDsApi* | [**getGuidAliases**](docs/Api/GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GUIDsApi* | [**getGuidsWithoutCollection**](docs/Api/GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-*GUIDsApi* | [**updateGuid**](docs/Api/GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+*GUIDsApi* | [**setGuid**](docs/Api/GUIDsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+*GUIDsApi* | [**setGuid1**](docs/Api/GUIDsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *MicrostorageApi* | [**read**](docs/Api/MicrostorageApi.md#read) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage

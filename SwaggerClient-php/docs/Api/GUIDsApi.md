@@ -10,7 +10,8 @@ Method | HTTP request | Description
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**updateGuid**](GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 # **addGuidAlias**
@@ -337,8 +338,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateGuid**
-> object updateGuid($id4n, $request, $authorization, $accept_language)
+# **setGuid**
+> object setGuid($id4n, $request, $authorization, $accept_language)
 
 Change GUID information.
 
@@ -360,10 +361,65 @@ $authorization = "authorization_example"; // string | Authorization JWT Bearer T
 $accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateGuid($id4n, $request, $authorization, $accept_language);
+    $result = $apiInstance->setGuid($id4n, $request, $authorization, $accept_language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->updateGuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GUIDsApi->setGuid: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID number |
+ **request** | [**\Swagger\Client\Model\Guid**](../Model/Guid.md)| request |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **setGuid1**
+> object setGuid1($id4n, $request, $authorization, $accept_language)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\GUIDsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id4n = "id4n_example"; // string | The GUID number
+$request = new \Swagger\Client\Model\Guid(); // \Swagger\Client\Model\Guid | request
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setGuid1($id4n, $request, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GUIDsApi->setGuid1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
