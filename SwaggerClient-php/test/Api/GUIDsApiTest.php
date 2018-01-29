@@ -132,6 +132,16 @@ class GUIDsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getId4n
+     *
+     * Retrieve ID4n information.
+     *
+     */
+    public function testGetId4n()
+    {
+    }
+
+    /**
      * Test case for setGuid
      *
      * Change GUID information..

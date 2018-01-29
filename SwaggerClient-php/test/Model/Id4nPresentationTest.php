@@ -78,6 +78,13 @@ class Id4nPresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "created_timestamp"
+     */
+    public function testPropertyCreatedTimestamp()
+    {
+    }
+
+    /**
      * Test attribute "id4n"
      */
     public function testPropertyId4n()
@@ -88,6 +95,20 @@ class Id4nPresentationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "label"
      */
     public function testPropertyLabel()
+    {
+    }
+
+    /**
+     * Test attribute "next_scan_ownership"
+     */
+    public function testPropertyNextScanOwnership()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
     }
 }
