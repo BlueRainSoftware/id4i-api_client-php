@@ -72,46 +72,6 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addElementToCollection
-     *
-     * Add element to collection.
-     *
-     */
-    public function testAddElementToCollection()
-    {
-    }
-
-    /**
-     * Test case for addElementToLabelledCollection
-     *
-     * Add element to labelled collection.
-     *
-     */
-    public function testAddElementToLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for addElementToLogisticCollection
-     *
-     * Add element to logistic collection.
-     *
-     */
-    public function testAddElementToLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for addElementToRoutingCollection
-     *
-     * Add element to routing collection.
-     *
-     */
-    public function testAddElementToRoutingCollection()
-    {
-    }
-
-    /**
      * Test case for addElementsToCollection
      *
      * Add elements to collection.
@@ -308,46 +268,6 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testListElementsOfRoutingCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementFromCollection
-     *
-     * Remove element from collection.
-     *
-     */
-    public function testRemoveElementFromCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementFromLabelledCollection
-     *
-     * Remove element from labelled collection.
-     *
-     */
-    public function testRemoveElementFromLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementFromLogisticCollection
-     *
-     * Remove element from logistic collection.
-     *
-     */
-    public function testRemoveElementFromLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementFromRoutingCollection
-     *
-     * Remove element from routing collection.
-     *
-     */
-    public function testRemoveElementFromRoutingCollection()
     {
     }
 

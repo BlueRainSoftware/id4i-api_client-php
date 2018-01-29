@@ -118,14 +118,10 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/Api/ApiKeysApi.md#removeapikeyprivilegeforid4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/Api/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *BillingApi* | [**getSumForOrganization**](docs/Api/BillingApi.md#getsumfororganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
-*CollectionsApi* | [**addElementToCollection**](docs/Api/CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
-*CollectionsApi* | [**addElementToLabelledCollection**](docs/Api/CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
-*CollectionsApi* | [**addElementToLogisticCollection**](docs/Api/CollectionsApi.md#addelementtologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
-*CollectionsApi* | [**addElementToRoutingCollection**](docs/Api/CollectionsApi.md#addelementtoroutingcollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
-*CollectionsApi* | [**addElementsToCollection**](docs/Api/CollectionsApi.md#addelementstocollection) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
-*CollectionsApi* | [**addElementsToLabelledCollection**](docs/Api/CollectionsApi.md#addelementstolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
-*CollectionsApi* | [**addElementsToLogisticCollection**](docs/Api/CollectionsApi.md#addelementstologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
-*CollectionsApi* | [**addElementsToRoutingCollection**](docs/Api/CollectionsApi.md#addelementstoroutingcollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+*CollectionsApi* | [**addElementsToCollection**](docs/Api/CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
+*CollectionsApi* | [**addElementsToLabelledCollection**](docs/Api/CollectionsApi.md#addelementstolabelledcollection) | **POST** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
+*CollectionsApi* | [**addElementsToLogisticCollection**](docs/Api/CollectionsApi.md#addelementstologisticcollection) | **POST** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
+*CollectionsApi* | [**addElementsToRoutingCollection**](docs/Api/CollectionsApi.md#addelementstoroutingcollection) | **POST** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
 *CollectionsApi* | [**createLabelledCollection**](docs/Api/CollectionsApi.md#createlabelledcollection) | **POST** /api/v1/collections/labelled | Create labelled collection
 *CollectionsApi* | [**createLogisticCollection**](docs/Api/CollectionsApi.md#createlogisticcollection) | **POST** /api/v1/collections/logistic | Create logistic collection
 *CollectionsApi* | [**createRoutingCollection**](docs/Api/CollectionsApi.md#createroutingcollection) | **POST** /api/v1/collections/routing | Create routing collecton
@@ -142,10 +138,6 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**listElementsOfLabelledCollection**](docs/Api/CollectionsApi.md#listelementsoflabelledcollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
 *CollectionsApi* | [**listElementsOfLogisticCollection**](docs/Api/CollectionsApi.md#listelementsoflogisticcollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
 *CollectionsApi* | [**listElementsOfRoutingCollection**](docs/Api/CollectionsApi.md#listelementsofroutingcollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
-*CollectionsApi* | [**removeElementFromCollection**](docs/Api/CollectionsApi.md#removeelementfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
-*CollectionsApi* | [**removeElementFromLabelledCollection**](docs/Api/CollectionsApi.md#removeelementfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
-*CollectionsApi* | [**removeElementFromLogisticCollection**](docs/Api/CollectionsApi.md#removeelementfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
-*CollectionsApi* | [**removeElementFromRoutingCollection**](docs/Api/CollectionsApi.md#removeelementfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
 *CollectionsApi* | [**removeElementsFromCollection**](docs/Api/CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 *CollectionsApi* | [**removeElementsFromLabelledCollection**](docs/Api/CollectionsApi.md#removeelementsfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 *CollectionsApi* | [**removeElementsFromLogisticCollection**](docs/Api/CollectionsApi.md#removeelementsfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
