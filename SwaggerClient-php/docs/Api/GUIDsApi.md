@@ -302,8 +302,8 @@ $apiInstance = new Swagger\Client\Api\GUIDsApi(
 $organization_id = 789; // int | Organization to search GUIDs for (required).
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->getGuidsWithoutCollection($organization_id, $authorization, $accept_language, $offset, $limit);
@@ -321,8 +321,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| Organization to search GUIDs for (required). |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 

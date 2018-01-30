@@ -1158,8 +1158,8 @@ class AccountsApi
      * @param  string $username_prefix Find users starting with this prefix. (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1179,8 +1179,8 @@ class AccountsApi
      * @param  string $username_prefix Find users starting with this prefix. (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1314,8 +1314,8 @@ class AccountsApi
      * @param  string $username_prefix Find users starting with this prefix. (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1338,8 +1338,8 @@ class AccountsApi
      * @param  string $username_prefix Find users starting with this prefix. (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1392,8 +1392,8 @@ class AccountsApi
      * @param  string $username_prefix Find users starting with this prefix. (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1512,8 +1512,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1533,8 +1533,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1668,8 +1668,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1692,8 +1692,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1746,8 +1746,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1866,8 +1866,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $role role (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1887,8 +1887,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $role role (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2022,8 +2022,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $role role (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2046,8 +2046,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $role role (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2100,8 +2100,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $role role (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2211,8 +2211,8 @@ class AccountsApi
      * @param  string $username username (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2233,8 +2233,8 @@ class AccountsApi
      * @param  string $username username (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2369,8 +2369,8 @@ class AccountsApi
      * @param  string $username username (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2394,8 +2394,8 @@ class AccountsApi
      * @param  string $username username (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2449,8 +2449,8 @@ class AccountsApi
      * @param  string $username username (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2583,8 +2583,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2604,8 +2604,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2739,8 +2739,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2763,8 +2763,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2817,8 +2817,8 @@ class AccountsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3303,8 +3303,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3324,8 +3324,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3459,8 +3459,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3483,8 +3483,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3537,8 +3537,8 @@ class AccountsApi
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
      * @param  string $privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -209,6 +209,7 @@ class ApiError implements ModelInterface, ArrayAccess
     const CODE_INVALID_ALIAS_TYPE = 'ERR_INVALID_ALIAS_TYPE';
     const CODE_INVALID_URI_TEMPLATE = 'ERR_INVALID_URI_TEMPLATE';
     const CODE_INVALID_URI_TEMPLATE_VARIABLE = 'ERR_INVALID_URI_TEMPLATE_VARIABLE';
+    const CODE_MODULE_NOT_ACTIVE = 'ERR_MODULE_NOT_ACTIVE';
     
 
     
@@ -256,6 +257,7 @@ class ApiError implements ModelInterface, ArrayAccess
             self::CODE_INVALID_ALIAS_TYPE,
             self::CODE_INVALID_URI_TEMPLATE,
             self::CODE_INVALID_URI_TEMPLATE_VARIABLE,
+            self::CODE_MODULE_NOT_ACTIVE,
         ];
     }
     

@@ -831,8 +831,8 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
@@ -853,8 +853,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
  **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
  **label_prefix** | **string**| Filter by this label prefix | [optional]
@@ -892,8 +892,8 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listElementsOfCollection($id4n, $authorization, $accept_language, $offset, $limit);
@@ -911,8 +911,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -947,8 +947,8 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listElementsOfLabelledCollection($id4n, $authorization, $accept_language, $offset, $limit);
@@ -966,8 +966,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1002,8 +1002,8 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listElementsOfLogisticCollection($id4n, $authorization, $accept_language, $offset, $limit);
@@ -1021,8 +1021,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1057,8 +1057,8 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listElementsOfRoutingCollection($id4n, $authorization, $accept_language, $offset, $limit);
@@ -1076,8 +1076,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 

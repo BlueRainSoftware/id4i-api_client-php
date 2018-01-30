@@ -5219,8 +5219,8 @@ class CollectionsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
@@ -5243,8 +5243,8 @@ class CollectionsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
@@ -5381,8 +5381,8 @@ class CollectionsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
@@ -5408,8 +5408,8 @@ class CollectionsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
@@ -5465,8 +5465,8 @@ class CollectionsApi
      * @param  int $organization_id organizationId (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
@@ -5607,8 +5607,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5628,8 +5628,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5763,8 +5763,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5787,8 +5787,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5841,8 +5841,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5961,8 +5961,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5982,8 +5982,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6117,8 +6117,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6141,8 +6141,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6195,8 +6195,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6315,8 +6315,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6336,8 +6336,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6471,8 +6471,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6495,8 +6495,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6549,8 +6549,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6669,8 +6669,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6690,8 +6690,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6825,8 +6825,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6849,8 +6849,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6903,8 +6903,8 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

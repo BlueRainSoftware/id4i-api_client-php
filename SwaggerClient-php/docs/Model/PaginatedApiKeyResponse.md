@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **elements** | [**\Swagger\Client\Model\ApiKeyPresentation[]**](ApiKeyPresentation.md) |  | 
-**limit** | **int** |  | 
-**offset** | **int** |  | 
-**total** | **int** |  | [optional] 
+**limit** | **int** | The number of returned elements | 
+**offset** | **int** | Starting with the n-th element | 
+**total** | **int** | The total number of elements | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

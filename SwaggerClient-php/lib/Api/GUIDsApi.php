@@ -1833,8 +1833,8 @@ class GUIDsApi
      * @param  int $organization_id Organization to search GUIDs for (required). (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1854,8 +1854,8 @@ class GUIDsApi
      * @param  int $organization_id Organization to search GUIDs for (required). (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1989,8 +1989,8 @@ class GUIDsApi
      * @param  int $organization_id Organization to search GUIDs for (required). (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2013,8 +2013,8 @@ class GUIDsApi
      * @param  int $organization_id Organization to search GUIDs for (required). (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2067,8 +2067,8 @@ class GUIDsApi
      * @param  int $organization_id Organization to search GUIDs for (required). (required)
      * @param  string $authorization Authorization JWT Bearer Token (optional)
      * @param  string $accept_language Requested language (optional)
-     * @param  int $offset Start with the n-th element. (optional)
-     * @param  int $limit The maximum count of returned elements. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -278,7 +278,7 @@ class PaginatedResponseUserRoles_ implements ModelInterface, ArrayAccess
     /**
      * Sets limit
      *
-     * @param int $limit limit
+     * @param int $limit The number of returned elements
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class PaginatedResponseUserRoles_ implements ModelInterface, ArrayAccess
     /**
      * Sets offset
      *
-     * @param int $offset offset
+     * @param int $offset Starting with the n-th element
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class PaginatedResponseUserRoles_ implements ModelInterface, ArrayAccess
     /**
      * Sets total
      *
-     * @param int $total total
+     * @param int $total The total number of elements
      *
      * @return $this
      */

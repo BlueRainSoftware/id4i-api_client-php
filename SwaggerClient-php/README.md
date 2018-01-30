@@ -161,8 +161,6 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**setGuid1**](docs/Api/GUIDsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
-*MicrostorageApi* | [**read**](docs/Api/MicrostorageApi.md#read) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-*MicrostorageApi* | [**write**](docs/Api/MicrostorageApi.md#write) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/Api/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -183,12 +181,48 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *OrganizationsApi* | [**updateOrganizationLogo**](docs/Api/OrganizationsApi.md#updateorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
+*PublicServicesApi* | [**getPublicDocument**](docs/Api/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*PublicServicesApi* | [**getPublicDocument1**](docs/Api/PublicServicesApi.md#getpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
 *PublicServicesApi* | [**go**](docs/Api/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
+*PublicServicesApi* | [**listAllPublicDocuments**](docs/Api/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
+*PublicServicesApi* | [**listAllPublicDocuments1**](docs/Api/PublicServicesApi.md#listallpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
+*PublicServicesApi* | [**listPublicDocuments**](docs/Api/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**listPublicDocuments1**](docs/Api/PublicServicesApi.md#listpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**readPublicDocument**](docs/Api/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*PublicServicesApi* | [**readPublicDocument1**](docs/Api/PublicServicesApi.md#readpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/Api/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/Api/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 *RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**getRoutingFile**](docs/Api/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**updateRoutingFile**](docs/Api/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
+*StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId} | Create an empty document for an id4n
+*StorageApi* | [**createDocument1**](docs/Api/StorageApi.md#createdocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId} | Create an empty document for an id4n
+*StorageApi* | [**deleteDocument**](docs/Api/StorageApi.md#deletedocument) | **DELETE** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Delete a document
+*StorageApi* | [**deleteDocument1**](docs/Api/StorageApi.md#deletedocument1) | **DELETE** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Delete a document
+*StorageApi* | [**getDocument**](docs/Api/StorageApi.md#getdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**getDocument1**](docs/Api/StorageApi.md#getdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**getPublicDocument**](docs/Api/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**getPublicDocument1**](docs/Api/StorageApi.md#getpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**listAllDocuments**](docs/Api/StorageApi.md#listalldocuments) | **GET** /api/v1/collections/{id4n}/documents | List documents
+*StorageApi* | [**listAllDocuments1**](docs/Api/StorageApi.md#listalldocuments1) | **GET** /api/v1/guids/{id4n}/documents | List documents
+*StorageApi* | [**listAllPublicDocuments**](docs/Api/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
+*StorageApi* | [**listAllPublicDocuments1**](docs/Api/StorageApi.md#listallpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
+*StorageApi* | [**listDocuments**](docs/Api/StorageApi.md#listdocuments) | **GET** /api/v1/collections/{id4n}/documents/{organizationId} | List organization specific documents
+*StorageApi* | [**listDocuments1**](docs/Api/StorageApi.md#listdocuments1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId} | List organization specific documents
+*StorageApi* | [**listPublicDocuments**](docs/Api/StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
+*StorageApi* | [**listPublicDocuments1**](docs/Api/StorageApi.md#listpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
+*StorageApi* | [**read**](docs/Api/StorageApi.md#read) | **GET** /api/v1/collections/{id4n}/micro/{organization} | Read data from microstorage
+*StorageApi* | [**read1**](docs/Api/StorageApi.md#read1) | **GET** /api/v1/guids/{id4n}/micro/{organization} | Read data from microstorage
+*StorageApi* | [**readDocument**](docs/Api/StorageApi.md#readdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**readDocument1**](docs/Api/StorageApi.md#readdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**readPublicDocument**](docs/Api/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**readPublicDocument1**](docs/Api/StorageApi.md#readpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**updateDocument**](docs/Api/StorageApi.md#updatedocument) | **PATCH** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Update a document
+*StorageApi* | [**updateDocument1**](docs/Api/StorageApi.md#updatedocument1) | **PATCH** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Update a document
+*StorageApi* | [**write**](docs/Api/StorageApi.md#write) | **PUT** /api/v1/collections/{id4n}/micro/{organization} | Write data to microstorage
+*StorageApi* | [**write1**](docs/Api/StorageApi.md#write1) | **PUT** /api/v1/guids/{id4n}/micro/{organization} | Write data to microstorage
+*StorageApi* | [**writeDocument**](docs/Api/StorageApi.md#writedocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
+*StorageApi* | [**writeDocument1**](docs/Api/StorageApi.md#writedocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
 *WhoIsApi* | [**resolveWhoIsEntry**](docs/Api/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
@@ -212,6 +246,8 @@ Class | Method | HTTP request | Description
  - [CreateLabelledCollectionRequest](docs/Model/CreateLabelledCollectionRequest.md)
  - [CreateLogisticCollectionRequest](docs/Model/CreateLogisticCollectionRequest.md)
  - [CreateRoutingCollectionRequest](docs/Model/CreateRoutingCollectionRequest.md)
+ - [Document](docs/Model/Document.md)
+ - [DocumentUpdate](docs/Model/DocumentUpdate.md)
  - [File](docs/Model/File.md)
  - [Guid](docs/Model/Guid.md)
  - [GuidAlias](docs/Model/GuidAlias.md)
@@ -226,19 +262,24 @@ Class | Method | HTTP request | Description
  - [OrganizationAddress](docs/Model/OrganizationAddress.md)
  - [OrganizationUserInvitation](docs/Model/OrganizationUserInvitation.md)
  - [OrganizationUserInvitationListRequest](docs/Model/OrganizationUserInvitationListRequest.md)
+ - [OwnedDocument](docs/Model/OwnedDocument.md)
  - [PaginatedApiKeyResponse](docs/Model/PaginatedApiKeyResponse.md)
  - [PaginatedCountryResponse](docs/Model/PaginatedCountryResponse.md)
+ - [PaginatedDocumentResponse](docs/Model/PaginatedDocumentResponse.md)
  - [PaginatedGuidCollection](docs/Model/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/Model/PaginatedGuidResponse.md)
  - [PaginatedOrganizationResponse](docs/Model/PaginatedOrganizationResponse.md)
+ - [PaginatedOwnedDocumentResponse](docs/Model/PaginatedOwnedDocumentResponse.md)
  - [PaginatedResponseApiKeyPresentation_](docs/Model/PaginatedResponseApiKeyPresentation_.md)
  - [PaginatedResponseApiKeyPrivilegeInfo_](docs/Model/PaginatedResponseApiKeyPrivilegeInfo_.md)
  - [PaginatedResponseApiKeyPrivilege_](docs/Model/PaginatedResponseApiKeyPrivilege_.md)
  - [PaginatedResponseCountry_](docs/Model/PaginatedResponseCountry_.md)
+ - [PaginatedResponseDocument_](docs/Model/PaginatedResponseDocument_.md)
  - [PaginatedResponseGuidCollection_](docs/Model/PaginatedResponseGuidCollection_.md)
  - [PaginatedResponseGuid_](docs/Model/PaginatedResponseGuid_.md)
  - [PaginatedResponseId4nPresentation_](docs/Model/PaginatedResponseId4nPresentation_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
+ - [PaginatedResponseOwnedDocument_](docs/Model/PaginatedResponseOwnedDocument_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
  - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
  - [PaginatedResponseUserPresentation_](docs/Model/PaginatedResponseUserPresentation_.md)
