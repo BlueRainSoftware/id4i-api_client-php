@@ -59,7 +59,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'filename' => 'string',
         'public_visibility' => 'bool',
-        'visible_by_organization_ids' => 'int[]'
+        'shared_with_organization_ids' => 'int[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'filename' => null,
         'public_visibility' => null,
-        'visible_by_organization_ids' => 'int64'
+        'shared_with_organization_ids' => 'int64'
     ];
 
     /**
@@ -102,7 +102,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'filename' => 'filename',
         'public_visibility' => 'publicVisibility',
-        'visible_by_organization_ids' => 'visibleByOrganizationIds'
+        'shared_with_organization_ids' => 'sharedWithOrganizationIds'
     ];
 
     /**
@@ -113,7 +113,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     protected static $setters = [
         'filename' => 'setFilename',
         'public_visibility' => 'setPublicVisibility',
-        'visible_by_organization_ids' => 'setVisibleByOrganizationIds'
+        'shared_with_organization_ids' => 'setSharedWithOrganizationIds'
     ];
 
     /**
@@ -124,7 +124,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     protected static $getters = [
         'filename' => 'getFilename',
         'public_visibility' => 'getPublicVisibility',
-        'visible_by_organization_ids' => 'getVisibleByOrganizationIds'
+        'shared_with_organization_ids' => 'getSharedWithOrganizationIds'
     ];
 
     /**
@@ -189,7 +189,7 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     {
         $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
         $this->container['public_visibility'] = isset($data['public_visibility']) ? $data['public_visibility'] : null;
-        $this->container['visible_by_organization_ids'] = isset($data['visible_by_organization_ids']) ? $data['visible_by_organization_ids'] : null;
+        $this->container['shared_with_organization_ids'] = isset($data['shared_with_organization_ids']) ? $data['shared_with_organization_ids'] : null;
     }
 
     /**
@@ -266,25 +266,25 @@ class DocumentUpdate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets visible_by_organization_ids
+     * Gets shared_with_organization_ids
      *
      * @return int[]
      */
-    public function getVisibleByOrganizationIds()
+    public function getSharedWithOrganizationIds()
     {
-        return $this->container['visible_by_organization_ids'];
+        return $this->container['shared_with_organization_ids'];
     }
 
     /**
-     * Sets visible_by_organization_ids
+     * Sets shared_with_organization_ids
      *
-     * @param int[] $visible_by_organization_ids Document is readable by these organizations
+     * @param int[] $shared_with_organization_ids Document is readable by these organizations
      *
      * @return $this
      */
-    public function setVisibleByOrganizationIds($visible_by_organization_ids)
+    public function setSharedWithOrganizationIds($shared_with_organization_ids)
     {
-        $this->container['visible_by_organization_ids'] = $visible_by_organization_ids;
+        $this->container['shared_with_organization_ids'] = $shared_with_organization_ids;
 
         return $this;
     }

@@ -92,9 +92,9 @@ class DocumentUpdateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "visible_by_organization_ids"
+     * Test attribute "shared_with_organization_ids"
      */
-    public function testPropertyVisibleByOrganizationIds()
+    public function testPropertySharedWithOrganizationIds()
     {
     }
 }
