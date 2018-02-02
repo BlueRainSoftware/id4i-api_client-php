@@ -291,7 +291,7 @@ class Id4nPresentation implements ModelInterface, ArrayAccess
     /**
      * Sets created_timestamp
      *
-     * @param int $created_timestamp A unix timestamp of when this ID has been created
+     * @param int $created_timestamp The UTC unix timestamp of when this ID has been created
      *
      * @return $this
      */

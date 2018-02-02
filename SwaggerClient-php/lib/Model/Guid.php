@@ -236,7 +236,7 @@ class Guid implements ModelInterface, ArrayAccess
     /**
      * Sets created_timestamp
      *
-     * @param int $created_timestamp created_timestamp
+     * @param int $created_timestamp The UTC unix timestamp of when this GUID has been created
      *
      * @return $this
      */
@@ -260,7 +260,7 @@ class Guid implements ModelInterface, ArrayAccess
     /**
      * Sets id4n
      *
-     * @param string $id4n id4n
+     * @param string $id4n The ID
      *
      * @return $this
      */

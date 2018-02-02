@@ -218,7 +218,7 @@ class Id4n implements ModelInterface, ArrayAccess
     /**
      * Sets id4n
      *
-     * @param string $id4n id4n
+     * @param string $id4n The ID
      *
      * @return $this
      */
