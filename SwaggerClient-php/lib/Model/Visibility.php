@@ -1,6 +1,6 @@
 <?php
 /**
- * OwnedDocument
+ * Visibility
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * OwnedDocument Class Doc Comment
+ * Visibility Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OwnedDocument implements ModelInterface, ArrayAccess
+class Visibility implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OwnedDocument';
+    protected static $swaggerModelName = 'Visibility';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'owner_organization_id' => 'int',
-        'visibility' => '\Swagger\Client\Model\Visibility'
+        'public' => 'bool',
+        'shared_organization_ids' => 'int[]'
     ];
 
     /**
@@ -68,9 +67,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null,
-        'owner_organization_id' => 'int64',
-        'visibility' => null
+        'public' => null,
+        'shared_organization_ids' => 'int64'
     ];
 
     /**
@@ -100,9 +98,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename',
-        'owner_organization_id' => 'ownerOrganizationId',
-        'visibility' => 'visibility'
+        'public' => 'public',
+        'shared_organization_ids' => 'sharedOrganizationIds'
     ];
 
     /**
@@ -111,9 +108,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename',
-        'owner_organization_id' => 'setOwnerOrganizationId',
-        'visibility' => 'setVisibility'
+        'public' => 'setPublic',
+        'shared_organization_ids' => 'setSharedOrganizationIds'
     ];
 
     /**
@@ -122,9 +118,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename',
-        'owner_organization_id' => 'getOwnerOrganizationId',
-        'visibility' => 'getVisibility'
+        'public' => 'getPublic',
+        'shared_organization_ids' => 'getSharedOrganizationIds'
     ];
 
     /**
@@ -187,9 +182,8 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
-        $this->container['visibility'] = isset($data['visibility']) ? $data['visibility'] : null;
+        $this->container['public'] = isset($data['public']) ? $data['public'] : null;
+        $this->container['shared_organization_ids'] = isset($data['shared_organization_ids']) ? $data['shared_organization_ids'] : null;
     }
 
     /**
@@ -218,73 +212,49 @@ class OwnedDocument implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets filename
+     * Gets public
      *
-     * @return string
+     * @return bool
      */
-    public function getFilename()
+    public function getPublic()
     {
-        return $this->container['filename'];
+        return $this->container['public'];
     }
 
     /**
-     * Sets filename
+     * Sets public
      *
-     * @param string $filename filename
+     * @param bool $public Document is publicly readable (if ID4N is owned by the same organization)
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setPublic($public)
     {
-        $this->container['filename'] = $filename;
+        $this->container['public'] = $public;
 
         return $this;
     }
 
     /**
-     * Gets owner_organization_id
+     * Gets shared_organization_ids
      *
-     * @return int
+     * @return int[]
      */
-    public function getOwnerOrganizationId()
+    public function getSharedOrganizationIds()
     {
-        return $this->container['owner_organization_id'];
+        return $this->container['shared_organization_ids'];
     }
 
     /**
-     * Sets owner_organization_id
+     * Sets shared_organization_ids
      *
-     * @param int $owner_organization_id The organization's id which owns the document
+     * @param int[] $shared_organization_ids Document is readable by these organizations (independend of ID4N ownership)
      *
      * @return $this
      */
-    public function setOwnerOrganizationId($owner_organization_id)
+    public function setSharedOrganizationIds($shared_organization_ids)
     {
-        $this->container['owner_organization_id'] = $owner_organization_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets visibility
-     *
-     * @return \Swagger\Client\Model\Visibility
-     */
-    public function getVisibility()
-    {
-        return $this->container['visibility'];
-    }
-
-    /**
-     * Sets visibility
-     *
-     * @param \Swagger\Client\Model\Visibility $visibility Visibility configuration
-     *
-     * @return $this
-     */
-    public function setVisibility($visibility)
-    {
-        $this->container['visibility'] = $visibility;
+        $this->container['shared_organization_ids'] = $shared_organization_ids;
 
         return $this;
     }

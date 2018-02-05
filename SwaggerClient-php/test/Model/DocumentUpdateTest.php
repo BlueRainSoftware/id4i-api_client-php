@@ -85,16 +85,9 @@ class DocumentUpdateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "public_visibility"
+     * Test attribute "visibility"
      */
-    public function testPropertyPublicVisibility()
-    {
-    }
-
-    /**
-     * Test attribute "shared_with_organization_ids"
-     */
-    public function testPropertySharedWithOrganizationIds()
+    public function testPropertyVisibility()
     {
     }
 }

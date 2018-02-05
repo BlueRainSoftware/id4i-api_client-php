@@ -1,6 +1,6 @@
 <?php
 /**
- * OwnedDocumentTest
+ * VisibilityUpdateTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * OwnedDocumentTest Class Doc Comment
+ * VisibilityUpdateTest Class Doc Comment
  *
  * @category    Class */
-// * @description OwnedDocument
+// * @description VisibilityUpdate
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OwnedDocumentTest extends \PHPUnit_Framework_TestCase
+class VisibilityUpdateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,23 @@ class OwnedDocumentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OwnedDocument"
+     * Test "VisibilityUpdate"
      */
-    public function testOwnedDocument()
+    public function testVisibilityUpdate()
     {
     }
 
     /**
-     * Test attribute "filename"
+     * Test attribute "public"
      */
-    public function testPropertyFilename()
+    public function testPropertyPublic()
     {
     }
 
     /**
-     * Test attribute "owner_organization_id"
+     * Test attribute "shared_with_organization_ids"
      */
-    public function testPropertyOwnerOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "visibility"
-     */
-    public function testPropertyVisibility()
+    public function testPropertySharedWithOrganizationIds()
     {
     }
 }
