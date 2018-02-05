@@ -232,6 +232,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for setOrganizationLogo
+     *
+     * Update organization logo.
+     *
+     */
+    public function testSetOrganizationLogo()
+    {
+    }
+
+    /**
      * Test case for updateOrganization
      *
      * Update organization.
@@ -258,16 +268,6 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testUpdateOrganizationBillingAddress()
-    {
-    }
-
-    /**
-     * Test case for updateOrganizationLogo
-     *
-     * Update organization logo.
-     *
-     */
-    public function testUpdateOrganizationLogo()
     {
     }
 }
