@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 # **addUserRoles**
@@ -462,8 +462,8 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
@@ -484,8 +484,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
  **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
  **label_prefix** | **string**| Filter by this label prefix | [optional]
@@ -525,8 +525,8 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
@@ -544,8 +544,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -580,8 +580,8 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
@@ -599,8 +599,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **role** | **string**| role | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -636,8 +636,8 @@ $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
@@ -656,8 +656,8 @@ Name | Type | Description  | Notes
  **username** | **string**| username |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -694,8 +694,8 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | organizationId
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
@@ -713,8 +713,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -801,8 +801,8 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 );
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listCountries($authorization, $accept_language, $offset, $limit);
@@ -819,8 +819,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -888,6 +888,61 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **setOrganizationLogo**
+> \Swagger\Client\Model\PublicImagePresentation setOrganizationLogo($organization_id, $file, $authorization, $accept_language)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organization_id = 789; // int | The id of the organization where the logo should be updated.
+$file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
+$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
+$accept_language = "accept_language_example"; // string | Requested language
+
+try {
+    $result = $apiInstance->setOrganizationLogo($organization_id, $file, $authorization, $accept_language);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->setOrganizationLogo: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **int**| The id of the organization where the logo should be updated. |
+ **file** | **\SplFileObject**| An image containing the new logo. |
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional]
+ **accept_language** | **string**| Requested language | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PublicImagePresentation**](../Model/PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1047,61 +1102,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateOrganizationLogo**
-> \Swagger\Client\Model\ApiError updateOrganizationLogo($organization_id, $file, $authorization, $accept_language)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\OrganizationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$organization_id = 789; // int | The id of the organization where the logo should be updated.
-$file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
-
-try {
-    $result = $apiInstance->updateOrganizationLogo($organization_id, $file, $authorization, $accept_language);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrganizationsApi->updateOrganizationLogo: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization where the logo should be updated. |
- **file** | **\SplFileObject**| An image containing the new logo. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

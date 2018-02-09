@@ -305,8 +305,8 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
 $id4n_concerning = true; // bool | id4nConcerning
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listAllApiKeyPrivileges($authorization, $accept_language, $id4n_concerning, $offset, $limit);
@@ -324,8 +324,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
  **id4n_concerning** | **bool**| id4nConcerning | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -362,8 +362,8 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
 $organization_id = 789; // int | The id of the organization to search in.
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listAllApiKeysOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
@@ -381,8 +381,8 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| The id of the organization to search in. |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -417,8 +417,8 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
 $key = "key_example"; // string | key
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listApiKeyPrivileges($key, $authorization, $accept_language, $offset, $limit);
@@ -436,8 +436,8 @@ Name | Type | Description  | Notes
  **key** | **string**| key |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -475,8 +475,8 @@ $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->listId4ns($key, $privilege, $authorization, $accept_language, $offset, $limit);
@@ -495,8 +495,8 @@ Name | Type | Description  | Notes
  **privilege** | **string**| privilege |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 

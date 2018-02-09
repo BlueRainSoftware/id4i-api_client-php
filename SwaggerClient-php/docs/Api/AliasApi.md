@@ -246,8 +246,8 @@ $alias = "alias_example"; // string | The alias to search for
 $alias_type = "alias_type_example"; // string | Alias type type to search for
 $authorization = "authorization_example"; // string | Authorization JWT Bearer Token
 $accept_language = "accept_language_example"; // string | Requested language
-$offset = 56; // int | Start with the n-th element.
-$limit = 56; // int | The maximum count of returned elements.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
     $result = $apiInstance->searchByAlias($alias, $alias_type, $authorization, $accept_language, $offset, $limit);
@@ -266,8 +266,8 @@ Name | Type | Description  | Notes
  **alias_type** | **string**| Alias type type to search for |
  **authorization** | **string**| Authorization JWT Bearer Token | [optional]
  **accept_language** | **string**| Requested language | [optional]
- **offset** | **int**| Start with the n-th element. | [optional]
- **limit** | **int**| The maximum count of returned elements. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
