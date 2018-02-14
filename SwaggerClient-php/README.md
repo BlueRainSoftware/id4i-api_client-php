@@ -296,6 +296,7 @@ Class | Method | HTTP request | Description
  - [PublicImagePresentation](docs/Model/PublicImagePresentation.md)
  - [RegistrationVerificationTokenPresentation](docs/Model/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/Model/RemoveApiKeyPrivilegeRequest.md)
+ - [ResponseEntity](docs/Model/ResponseEntity.md)
  - [Role](docs/Model/Role.md)
  - [RoleResponse](docs/Model/RoleResponse.md)
  - [Route](docs/Model/Route.md)

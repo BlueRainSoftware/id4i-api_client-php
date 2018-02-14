@@ -94,7 +94,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\Document
      */
     public function createDocument($id4n, $organization_id, $document, $mime_type = null)
     {
@@ -114,11 +114,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDocumentWithHttpInfo($id4n, $organization_id, $document, $mime_type = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\Document';
         $request = $this->createDocumentRequest($id4n, $organization_id, $document, $mime_type);
 
         try {
@@ -170,7 +170,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class StorageApi
      */
     public function createDocumentAsyncWithHttpInfo($id4n, $organization_id, $document, $mime_type = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\Document';
         $request = $this->createDocumentRequest($id4n, $organization_id, $document, $mime_type);
 
         return $this->client
@@ -475,7 +475,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\Document
      */
     public function createDocument1($id4n, $organization_id, $document, $mime_type = null)
     {
@@ -495,11 +495,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDocument1WithHttpInfo($id4n, $organization_id, $document, $mime_type = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\Document';
         $request = $this->createDocument1Request($id4n, $organization_id, $document, $mime_type);
 
         try {
@@ -551,7 +551,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -671,7 +671,7 @@ class StorageApi
      */
     public function createDocument1AsyncWithHttpInfo($id4n, $organization_id, $document, $mime_type = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\Document';
         $request = $this->createDocument1Request($id4n, $organization_id, $document, $mime_type);
 
         return $this->client
@@ -855,7 +855,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\ResponseEntity
      */
     public function deleteDocument($organization_id, $id4n, $file_name)
     {
@@ -874,11 +874,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
@@ -930,7 +930,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\ResponseEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1016,7 +1016,7 @@ class StorageApi
      */
     public function deleteDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
@@ -1200,7 +1200,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\ResponseEntity
      */
     public function deleteDocument1($organization_id, $id4n, $file_name)
     {
@@ -1219,11 +1219,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDocument1WithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->deleteDocument1Request($organization_id, $id4n, $file_name);
 
         try {
@@ -1275,7 +1275,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\ResponseEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1361,7 +1361,7 @@ class StorageApi
      */
     public function deleteDocument1AsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->deleteDocument1Request($organization_id, $id4n, $file_name);
 
         return $this->client
@@ -9331,7 +9331,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\ResponseEntity
      */
     public function writeDocument($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
@@ -9352,11 +9352,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function writeDocumentWithHttpInfo($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->writeDocumentRequest($organization_id, $id4n, $file_name, $content_type, $content_length);
 
         try {
@@ -9408,7 +9408,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\ResponseEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9530,7 +9530,7 @@ class StorageApi
      */
     public function writeDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->writeDocumentRequest($organization_id, $id4n, $file_name, $content_type, $content_length);
 
         return $this->client
@@ -9726,7 +9726,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\ResponseEntity
      */
     public function writeDocument1($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
@@ -9747,11 +9747,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function writeDocument1WithHttpInfo($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->writeDocument1Request($organization_id, $id4n, $file_name, $content_type, $content_length);
 
         try {
@@ -9803,7 +9803,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\ResponseEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9925,7 +9925,7 @@ class StorageApi
      */
     public function writeDocument1AsyncWithHttpInfo($organization_id, $id4n, $file_name, $content_type = null, $content_length = null)
     {
-        $returnType = 'object';
+        $returnType = '\Swagger\Client\Model\ResponseEntity';
         $request = $this->writeDocument1Request($organization_id, $id4n, $file_name, $content_type, $content_length);
 
         return $this->client

@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **createDocument**
-> object createDocument($id4n, $organization_id, $document, $mime_type)
+> \Swagger\Client\Model\Document createDocument($id4n, $organization_id, $document, $mime_type)
 
 Create an empty document for an id4n
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createDocument1**
-> object createDocument1($id4n, $organization_id, $document, $mime_type)
+> \Swagger\Client\Model\Document createDocument1($id4n, $organization_id, $document, $mime_type)
 
 Create an empty document for an id4n
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDocument**
-> object deleteDocument($organization_id, $id4n, $file_name)
+> \Swagger\Client\Model\ResponseEntity deleteDocument($organization_id, $id4n, $file_name)
 
 Delete a document
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDocument1**
-> object deleteDocument1($organization_id, $id4n, $file_name)
+> \Swagger\Client\Model\ResponseEntity deleteDocument1($organization_id, $id4n, $file_name)
 
 Delete a document
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
 
 ### Authorization
 
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writeDocument**
-> object writeDocument($organization_id, $id4n, $file_name, $content_type, $content_length)
+> \Swagger\Client\Model\ResponseEntity writeDocument($organization_id, $id4n, $file_name, $content_type, $content_length)
 
 Write document contents
 
@@ -1604,7 +1604,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
 
 ### Authorization
 
@@ -1618,7 +1618,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writeDocument1**
-> object writeDocument1($organization_id, $id4n, $file_name, $content_type, $content_length)
+> \Swagger\Client\Model\ResponseEntity writeDocument1($organization_id, $id4n, $file_name, $content_type, $content_length)
 
 Write document contents
 
@@ -1665,7 +1665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
 
 ### Authorization
 
