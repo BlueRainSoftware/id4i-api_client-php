@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **resolveImageUsingGET**
-> string resolveImageUsingGET($image_id, $authorization, $accept_language)
+> string resolveImageUsingGET($image_id)
 
 Resolve image
 
@@ -17,17 +17,21 @@ Resolve image
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ImagesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $image_id = "image_id_example"; // string | The id of the image to be resolved.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->resolveImageUsingGET($image_id, $authorization, $accept_language);
+    $result = $apiInstance->resolveImageUsingGET($image_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ImagesApi->resolveImageUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -40,8 +44,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **image_id** | **string**| The id of the image to be resolved. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -49,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getRoute**
-> \Swagger\Client\Model\Route getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes)
+> \Swagger\Client\Model\Route getRoute($id4n, $type, $private_routes, $public_routes)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -19,20 +19,24 @@ Retrieve current route of a GUID (or ID4N)
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\RoutingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id4n = "id4n_example"; // string | id4n
 $type = "type_example"; // string | The type of route you want to have
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $private_routes = true; // bool | privateRoutes
 $public_routes = true; // bool | publicRoutes
 
 try {
-    $result = $apiInstance->getRoute($id4n, $type, $authorization, $accept_language, $private_routes, $public_routes);
+    $result = $apiInstance->getRoute($id4n, $type, $private_routes, $public_routes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoute: ', $e->getMessage(), PHP_EOL;
@@ -46,8 +50,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **type** | **string**| The type of route you want to have |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **private_routes** | **bool**| privateRoutes | [optional]
  **public_routes** | **bool**| publicRoutes | [optional]
 
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -67,7 +69,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRoutingFile**
-> \Swagger\Client\Model\RoutingFile getRoutingFile($id4n, $authorization, $accept_language, $organization_id)
+> \Swagger\Client\Model\RoutingFile getRoutingFile($id4n, $organization_id)
 
 Retrieve routing file
 
@@ -76,18 +78,22 @@ Retrieve routing file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\RoutingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $organization_id = 789; // int | organizationId
 
 try {
-    $result = $apiInstance->getRoutingFile($id4n, $authorization, $accept_language, $organization_id);
+    $result = $apiInstance->getRoutingFile($id4n, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoutingFile: ', $e->getMessage(), PHP_EOL;
@@ -100,8 +106,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **organization_id** | **int**| organizationId | [optional]
 
 ### Return type
@@ -110,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -120,7 +124,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRoutingFile**
-> \Swagger\Client\Model\ApiError updateRoutingFile($rfr, $id4n, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError updateRoutingFile($rfr, $id4n)
 
 Store routing file
 
@@ -129,18 +133,22 @@ Store routing file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\RoutingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $rfr = new \Swagger\Client\Model\RoutingFileRequest(); // \Swagger\Client\Model\RoutingFileRequest | rfr
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateRoutingFile($rfr, $id4n, $authorization, $accept_language);
+    $result = $apiInstance->updateRoutingFile($rfr, $id4n);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->updateRoutingFile: ', $e->getMessage(), PHP_EOL;
@@ -154,8 +162,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**\Swagger\Client\Model\RoutingFileRequest**](../Model/RoutingFileRequest.md)| rfr |
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -163,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 

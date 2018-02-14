@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **applicationInfo**
-> \Swagger\Client\Model\AppInfoPresentation applicationInfo($authorization, $accept_language)
+> \Swagger\Client\Model\AppInfoPresentation applicationInfo()
 
 Retrieve version information about ID4i
 
@@ -19,16 +19,20 @@ Retrieving version information about ID4i.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\MetaInformationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->applicationInfo($authorization, $accept_language);
+    $result = $apiInstance->applicationInfo();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MetaInformationApi->applicationInfo: ', $e->getMessage(), PHP_EOL;
@@ -37,11 +41,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 

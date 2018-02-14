@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **addApiKeyPrivilege**
-> \Swagger\Client\Model\ApiError addApiKeyPrivilege($key, $add_api_key_privilege_request, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError addApiKeyPrivilege($key, $add_api_key_privilege_request)
 
 Add privilege
 
@@ -28,18 +28,22 @@ Add privilege
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
 $add_api_key_privilege_request = new \Swagger\Client\Model\AddApiKeyPrivilegeRequest(); // \Swagger\Client\Model\AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->addApiKeyPrivilege($key, $add_api_key_privilege_request, $authorization, $accept_language);
+    $result = $apiInstance->addApiKeyPrivilege($key, $add_api_key_privilege_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
@@ -53,8 +57,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
  **add_api_key_privilege_request** | [**\Swagger\Client\Model\AddApiKeyPrivilegeRequest**](../Model/AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -62,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -72,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addApiKeyPrivilegeForId4ns**
-> \Swagger\Client\Model\ApiError addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Add ID4ns of a privilege
 
@@ -81,19 +83,23 @@ Add ID4ns of a privilege
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
 $id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language);
+    $result = $apiInstance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
@@ -108,8 +114,6 @@ Name | Type | Description  | Notes
  **key** | **string**| key |
  **privilege** | **string**| privilege |
  **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -127,7 +131,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNewApiKey**
-> \Swagger\Client\Model\ApiKeyPresentation createNewApiKey($creation_request, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiKeyPresentation createNewApiKey($creation_request)
 
 Create API key
 
@@ -138,17 +142,21 @@ Creation of a new API key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $creation_request = new \Swagger\Client\Model\ApiKeyCreationRequest(); // \Swagger\Client\Model\ApiKeyCreationRequest | API key to be created.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->createNewApiKey($creation_request, $authorization, $accept_language);
+    $result = $apiInstance->createNewApiKey($creation_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->createNewApiKey: ', $e->getMessage(), PHP_EOL;
@@ -161,8 +169,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **creation_request** | [**\Swagger\Client\Model\ApiKeyCreationRequest**](../Model/ApiKeyCreationRequest.md)| API key to be created. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -170,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -180,7 +186,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteApiKey**
-> \Swagger\Client\Model\ApiError deleteApiKey($key, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError deleteApiKey($key)
 
 Delete API key
 
@@ -191,17 +197,21 @@ Deletion of an API key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | The API key to delete.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->deleteApiKey($key, $authorization, $accept_language);
+    $result = $apiInstance->deleteApiKey($key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->deleteApiKey: ', $e->getMessage(), PHP_EOL;
@@ -214,8 +224,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to delete. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -233,7 +241,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getApiKey**
-> \Swagger\Client\Model\ApiKeyPresentation getApiKey($key, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiKeyPresentation getApiKey($key)
 
 Show API key
 
@@ -244,17 +252,21 @@ Showing the details of an API key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | The API key to show.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->getApiKey($key, $authorization, $accept_language);
+    $result = $apiInstance->getApiKey($key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->getApiKey: ', $e->getMessage(), PHP_EOL;
@@ -267,8 +279,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to show. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -276,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -286,7 +296,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges($authorization, $accept_language, $id4n_concerning, $offset, $limit)
+> \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges($id4n_concerning, $offset, $limit)
 
 List all privileges
 
@@ -297,19 +307,23 @@ Listing all possible API key privileges.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $id4n_concerning = true; // bool | id4nConcerning
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllApiKeyPrivileges($authorization, $accept_language, $id4n_concerning, $offset, $limit);
+    $result = $apiInstance->listAllApiKeyPrivileges($id4n_concerning, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listAllApiKeyPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -321,8 +335,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **id4n_concerning** | **bool**| id4nConcerning | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -333,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -343,7 +355,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeysOfOrganization**
-> \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($organization_id, $offset, $limit)
 
 Find API key by organization
 
@@ -354,19 +366,23 @@ Finding all API key assigned to the specified organization in a paginated manner
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization to search in.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllApiKeysOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listAllApiKeysOfOrganization($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listAllApiKeysOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -379,8 +395,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization to search in. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -390,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -400,7 +414,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges($key, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges($key, $offset, $limit)
 
 List privileges
 
@@ -409,19 +423,23 @@ List privileges
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listApiKeyPrivileges($key, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listApiKeyPrivileges($key, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listApiKeyPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -434,8 +452,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -445,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -455,7 +471,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listId4ns**
-> \Swagger\Client\Model\Id4nPresentationPaginatedResponse listId4ns($key, $privilege, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\Id4nPresentationPaginatedResponse listId4ns($key, $privilege, $offset, $limit)
 
 ID4ns of a privilege
 
@@ -466,20 +482,24 @@ Listing ID4ns of a id4n concerning privilege
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listId4ns($key, $privilege, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listId4ns($key, $privilege, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listId4ns: ', $e->getMessage(), PHP_EOL;
@@ -493,8 +513,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
  **privilege** | **string**| privilege |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -504,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -514,7 +532,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeApiKeyPrivilege**
-> \Swagger\Client\Model\ApiError removeApiKeyPrivilege($key, $remove_api_key_privilege_request, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError removeApiKeyPrivilege($key, $remove_api_key_privilege_request)
 
 Remove privilege
 
@@ -523,18 +541,22 @@ Remove privilege
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
 $remove_api_key_privilege_request = new \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest(); // \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->removeApiKeyPrivilege($key, $remove_api_key_privilege_request, $authorization, $accept_language);
+    $result = $apiInstance->removeApiKeyPrivilege($key, $remove_api_key_privilege_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
@@ -548,8 +570,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
  **remove_api_key_privilege_request** | [**\Swagger\Client\Model\RemoveApiKeyPrivilegeRequest**](../Model/RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -557,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -567,7 +587,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeApiKeyPrivilegeForId4ns**
-> \Swagger\Client\Model\ApiError removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Remove id4ns of a privilege
 
@@ -576,19 +596,23 @@ Remove id4ns of a privilege
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
 $id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns, $authorization, $accept_language);
+    $result = $apiInstance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
@@ -603,8 +627,6 @@ Name | Type | Description  | Notes
  **key** | **string**| key |
  **privilege** | **string**| privilege |
  **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -612,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -622,7 +644,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateApiKey**
-> \Swagger\Client\Model\ApiError updateApiKey($key, $api_key_change, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError updateApiKey($key, $api_key_change)
 
 Update API keys
 
@@ -633,18 +655,22 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $key = "key_example"; // string | The API key to be updated.
 $api_key_change = new \Swagger\Client\Model\ApiKeyChangeRequest(); // \Swagger\Client\Model\ApiKeyChangeRequest | The new values to apply.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateApiKey($key, $api_key_change, $authorization, $accept_language);
+    $result = $apiInstance->updateApiKey($key, $api_key_change);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->updateApiKey: ', $e->getMessage(), PHP_EOL;
@@ -658,8 +684,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to be updated. |
  **api_key_change** | [**\Swagger\Client\Model\ApiKeyChangeRequest**](../Model/ApiKeyChangeRequest.md)| The new values to apply. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -667,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 

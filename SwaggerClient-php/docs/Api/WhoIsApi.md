@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **resolveWhoIsEntry**
-> \Swagger\Client\Model\WhoIsResponse resolveWhoIsEntry($id4n, $authorization, $accept_language)
+> \Swagger\Client\Model\WhoIsResponse resolveWhoIsEntry($id4n)
 
 Resolve owner of id4n
 
@@ -23,11 +23,9 @@ $apiInstance = new Swagger\Client\Api\WhoIsApi(
     new GuzzleHttp\Client()
 );
 $id4n = "id4n_example"; // string | id4n
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->resolveWhoIsEntry($id4n, $authorization, $accept_language);
+    $result = $apiInstance->resolveWhoIsEntry($id4n);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WhoIsApi->resolveWhoIsEntry: ', $e->getMessage(), PHP_EOL;
@@ -40,8 +38,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
