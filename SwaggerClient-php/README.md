@@ -185,48 +185,30 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**updateOrganization**](docs/Api/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-*PublicServicesApi* | [**getPublicDocument**](docs/Api/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-*PublicServicesApi* | [**getPublicDocument1**](docs/Api/PublicServicesApi.md#getpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*PublicServicesApi* | [**getPublicDocument**](docs/Api/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
 *PublicServicesApi* | [**go**](docs/Api/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
-*PublicServicesApi* | [**listAllPublicDocuments**](docs/Api/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
-*PublicServicesApi* | [**listAllPublicDocuments1**](docs/Api/PublicServicesApi.md#listallpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
-*PublicServicesApi* | [**listPublicDocuments**](docs/Api/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
-*PublicServicesApi* | [**listPublicDocuments1**](docs/Api/PublicServicesApi.md#listpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
-*PublicServicesApi* | [**readPublicDocument**](docs/Api/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-*PublicServicesApi* | [**readPublicDocument1**](docs/Api/PublicServicesApi.md#readpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
+*PublicServicesApi* | [**listAllPublicDocuments**](docs/Api/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+*PublicServicesApi* | [**listPublicDocuments**](docs/Api/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**readPublicDocument**](docs/Api/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/Api/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/Api/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 *RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**getRoutingFile**](docs/Api/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**updateRoutingFile**](docs/Api/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-*StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-*StorageApi* | [**createDocument1**](docs/Api/StorageApi.md#createdocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-*StorageApi* | [**deleteDocument**](docs/Api/StorageApi.md#deletedocument) | **DELETE** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-*StorageApi* | [**deleteDocument1**](docs/Api/StorageApi.md#deletedocument1) | **DELETE** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-*StorageApi* | [**getDocument**](docs/Api/StorageApi.md#getdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-*StorageApi* | [**getDocument1**](docs/Api/StorageApi.md#getdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-*StorageApi* | [**getPublicDocument**](docs/Api/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-*StorageApi* | [**getPublicDocument1**](docs/Api/StorageApi.md#getpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-*StorageApi* | [**listAllDocuments**](docs/Api/StorageApi.md#listalldocuments) | **GET** /api/v1/collections/{id4n}/documents | List documents
-*StorageApi* | [**listAllDocuments1**](docs/Api/StorageApi.md#listalldocuments1) | **GET** /api/v1/guids/{id4n}/documents | List documents
-*StorageApi* | [**listAllPublicDocuments**](docs/Api/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
-*StorageApi* | [**listAllPublicDocuments1**](docs/Api/StorageApi.md#listallpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
-*StorageApi* | [**listDocuments**](docs/Api/StorageApi.md#listdocuments) | **GET** /api/v1/collections/{id4n}/documents/{organizationId} | List organization specific documents
-*StorageApi* | [**listDocuments1**](docs/Api/StorageApi.md#listdocuments1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId} | List organization specific documents
-*StorageApi* | [**listPublicDocuments**](docs/Api/StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
-*StorageApi* | [**listPublicDocuments1**](docs/Api/StorageApi.md#listpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
-*StorageApi* | [**read**](docs/Api/StorageApi.md#read) | **GET** /api/v1/collections/{id4n}/micro/{organization} | Read data from microstorage
-*StorageApi* | [**read1**](docs/Api/StorageApi.md#read1) | **GET** /api/v1/guids/{id4n}/micro/{organization} | Read data from microstorage
-*StorageApi* | [**readDocument**](docs/Api/StorageApi.md#readdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-*StorageApi* | [**readDocument1**](docs/Api/StorageApi.md#readdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-*StorageApi* | [**readPublicDocument**](docs/Api/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-*StorageApi* | [**readPublicDocument1**](docs/Api/StorageApi.md#readpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-*StorageApi* | [**updateDocument**](docs/Api/StorageApi.md#updatedocument) | **PATCH** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Update a document
-*StorageApi* | [**updateDocument1**](docs/Api/StorageApi.md#updatedocument1) | **PATCH** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Update a document
-*StorageApi* | [**write**](docs/Api/StorageApi.md#write) | **PUT** /api/v1/collections/{id4n}/micro/{organization} | Write data to microstorage
-*StorageApi* | [**write1**](docs/Api/StorageApi.md#write1) | **PUT** /api/v1/guids/{id4n}/micro/{organization} | Write data to microstorage
-*StorageApi* | [**writeDocument**](docs/Api/StorageApi.md#writedocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
-*StorageApi* | [**writeDocument1**](docs/Api/StorageApi.md#writedocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
+*StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
+*StorageApi* | [**deleteDocument**](docs/Api/StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
+*StorageApi* | [**getDocument**](docs/Api/StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**getPublicDocument**](docs/Api/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**listAllDocuments**](docs/Api/StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
+*StorageApi* | [**listAllPublicDocuments**](docs/Api/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+*StorageApi* | [**listDocuments**](docs/Api/StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+*StorageApi* | [**listPublicDocuments**](docs/Api/StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*StorageApi* | [**readDocument**](docs/Api/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**readFromMicrostorage**](docs/Api/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+*StorageApi* | [**readPublicDocument**](docs/Api/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+*StorageApi* | [**updateDocument**](docs/Api/StorageApi.md#updatedocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+*StorageApi* | [**writeDocument**](docs/Api/StorageApi.md#writedocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+*StorageApi* | [**writeToMicrostorage**](docs/Api/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *WhoIsApi* | [**resolveWhoIsEntry**](docs/Api/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 

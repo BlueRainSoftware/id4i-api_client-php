@@ -82,16 +82,6 @@ class PublicServicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getPublicDocument1
-     *
-     * Retrieve a document (meta-data only, no content).
-     *
-     */
-    public function testGetPublicDocument1()
-    {
-    }
-
-    /**
      * Test case for go
      *
      * Forward.
@@ -112,16 +102,6 @@ class PublicServicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for listAllPublicDocuments1
-     *
-     * List organization specific documents.
-     *
-     */
-    public function testListAllPublicDocuments1()
-    {
-    }
-
-    /**
      * Test case for listPublicDocuments
      *
      * List organization specific documents.
@@ -132,32 +112,12 @@ class PublicServicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for listPublicDocuments1
-     *
-     * List organization specific documents.
-     *
-     */
-    public function testListPublicDocuments1()
-    {
-    }
-
-    /**
      * Test case for readPublicDocument
      *
      * Read document contents.
      *
      */
     public function testReadPublicDocument()
-    {
-    }
-
-    /**
-     * Test case for readPublicDocument1
-     *
-     * Read document contents.
-     *
-     */
-    public function testReadPublicDocument1()
     {
     }
 

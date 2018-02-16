@@ -4,38 +4,24 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**createDocument1**](StorageApi.md#createDocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**deleteDocument1**](StorageApi.md#deleteDocument1) | **DELETE** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getDocument1**](StorageApi.md#getDocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument1**](StorageApi.md#getPublicDocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/collections/{id4n}/documents | List documents
-[**listAllDocuments1**](StorageApi.md#listAllDocuments1) | **GET** /api/v1/guids/{id4n}/documents | List documents
-[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
-[**listAllPublicDocuments1**](StorageApi.md#listAllPublicDocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
-[**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**listDocuments1**](StorageApi.md#listDocuments1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**listPublicDocuments1**](StorageApi.md#listPublicDocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**read**](StorageApi.md#read) | **GET** /api/v1/collections/{id4n}/micro/{organization} | Read data from microstorage
-[**read1**](StorageApi.md#read1) | **GET** /api/v1/guids/{id4n}/micro/{organization} | Read data from microstorage
-[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readDocument1**](StorageApi.md#readDocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readPublicDocument1**](StorageApi.md#readPublicDocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**updateDocument1**](StorageApi.md#updateDocument1) | **PATCH** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**write**](StorageApi.md#write) | **PUT** /api/v1/collections/{id4n}/micro/{organization} | Write data to microstorage
-[**write1**](StorageApi.md#write1) | **PUT** /api/v1/guids/{id4n}/micro/{organization} | Write data to microstorage
-[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
-[**writeDocument1**](StorageApi.md#writeDocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
+[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
+[**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
+[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
+[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
 # **createDocument**
-> \Swagger\Client\Model\Document createDocument($id4n, $organization_id, $document, $mime_type)
+> \Swagger\Client\Model\Document createDocument($organization_id, $id4n, $document, $mime_type)
 
 Create an empty document for an id4n
 
@@ -57,13 +43,13 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | id4n
 $organization_id = 789; // int | organizationId
+$id4n = "id4n_example"; // string | id4n
 $document = new \Swagger\Client\Model\Document(); // \Swagger\Client\Model\Document | document
 $mime_type = "mime_type_example"; // string | mimeType
 
 try {
-    $result = $apiInstance->createDocument($id4n, $organization_id, $document, $mime_type);
+    $result = $apiInstance->createDocument($organization_id, $id4n, $document, $mime_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->createDocument: ', $e->getMessage(), PHP_EOL;
@@ -75,69 +61,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
  **organization_id** | **int**| organizationId |
- **document** | [**\Swagger\Client\Model\Document**](../Model/Document.md)| document |
- **mime_type** | **string**| mimeType | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\Document**](../Model/Document.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **createDocument1**
-> \Swagger\Client\Model\Document createDocument1($id4n, $organization_id, $document, $mime_type)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | id4n
-$organization_id = 789; // int | organizationId
-$document = new \Swagger\Client\Model\Document(); // \Swagger\Client\Model\Document | document
-$mime_type = "mime_type_example"; // string | mimeType
-
-try {
-    $result = $apiInstance->createDocument1($id4n, $organization_id, $document, $mime_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->createDocument1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **organization_id** | **int**| organizationId |
  **document** | [**\Swagger\Client\Model\Document**](../Model/Document.md)| document |
  **mime_type** | **string**| mimeType | [optional]
 
@@ -186,63 +111,6 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->deleteDocument: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **deleteDocument1**
-> \Swagger\Client\Model\ResponseEntity deleteDocument1($organization_id, $id4n, $file_name)
-
-Delete a document
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-
-try {
-    $result = $apiInstance->deleteDocument1($organization_id, $id4n, $file_name);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->deleteDocument1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -327,63 +195,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getDocument1**
-> \Swagger\Client\Model\Document getDocument1($organization_id, $id4n, $file_name)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-
-try {
-    $result = $apiInstance->getDocument1($organization_id, $id4n, $file_name);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->getDocument1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
-
-### Return type
-
-[**\Swagger\Client\Model\Document**](../Model/Document.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **getPublicDocument**
 > \Swagger\Client\Model\Document getPublicDocument($organization_id, $id4n, $file_name)
 
@@ -414,63 +225,6 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->getPublicDocument: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
-
-### Return type
-
-[**\Swagger\Client\Model\Document**](../Model/Document.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getPublicDocument1**
-> \Swagger\Client\Model\Document getPublicDocument1($organization_id, $id4n, $file_name)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-
-try {
-    $result = $apiInstance->getPublicDocument1($organization_id, $id4n, $file_name);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->getPublicDocument1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -557,65 +311,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **listAllDocuments1**
-> \Swagger\Client\Model\PaginatedOwnedDocumentResponse listAllDocuments1($id4n, $offset, $limit)
-
-List documents
-
-Listing all documents of an id4n
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | id4n
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listAllDocuments1($id4n, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->listAllDocuments1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedOwnedDocumentResponse**](../Model/PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **listAllPublicDocuments**
 > \Swagger\Client\Model\PaginatedOwnedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $offset, $limit)
 
@@ -649,67 +344,6 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->listAllPublicDocuments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
- **organization_id** | **int**| organizationId | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedOwnedDocumentResponse**](../Model/PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **listAllPublicDocuments1**
-> \Swagger\Client\Model\PaginatedOwnedDocumentResponse listAllPublicDocuments1($id4n, $organization_id, $offset, $limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | id4n
-$organization_id = 789; // int | organizationId
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listAllPublicDocuments1($id4n, $organization_id, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->listAllPublicDocuments1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -799,67 +433,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **listDocuments1**
-> \Swagger\Client\Model\PaginatedDocumentResponse listDocuments1($organization_id, $id4n, $offset, $limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listDocuments1($organization_id, $id4n, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->listDocuments1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **listPublicDocuments**
 > \Swagger\Client\Model\PaginatedDocumentResponse listPublicDocuments($organization_id, $id4n, $offset, $limit)
 
@@ -921,179 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **listPublicDocuments1**
-> \Swagger\Client\Model\PaginatedDocumentResponse listPublicDocuments1($organization_id, $id4n, $offset, $limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listPublicDocuments1($organization_id, $id4n, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->listPublicDocuments1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **read**
-> \Swagger\Client\Model\InputStreamResource read($organization, $id4n)
-
-Read data from microstorage
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization = 789; // int | organization
-$id4n = "id4n_example"; // string | id4n
-
-try {
-    $result = $apiInstance->read($organization, $id4n);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->read: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
- **id4n** | **string**| id4n |
-
-### Return type
-
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **read1**
-> \Swagger\Client\Model\InputStreamResource read1($organization, $id4n)
-
-Read data from microstorage
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization = 789; // int | organization
-$id4n = "id4n_example"; // string | id4n
-
-try {
-    $result = $apiInstance->read1($organization, $id4n);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->read1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
- **id4n** | **string**| id4n |
-
-### Return type
-
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **readDocument**
-> \Swagger\Client\Model\InputStreamResource readDocument($organization_id, $id4n, $file_name)
+> \Swagger\Client\Model\File readDocument($organization_id, $id4n, $file_name)
 
 Read document contents
 
@@ -1136,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
+[**\Swagger\Client\Model\File**](../Model/File.md)
 
 ### Authorization
 
@@ -1149,10 +551,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **readDocument1**
-> \Swagger\Client\Model\InputStreamResource readDocument1($organization_id, $id4n, $file_name)
+# **readFromMicrostorage**
+> string readFromMicrostorage($organization, $id4n)
 
-Read document contents
+Read data from microstorage
 
 ### Example
 ```php
@@ -1170,15 +572,14 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->readDocument1($organization_id, $id4n, $file_name);
+    $result = $apiInstance->readFromMicrostorage($organization, $id4n);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageApi->readDocument1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageApi->readFromMicrostorage: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1187,13 +588,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
 
 ### Return type
 
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
+**string**
 
 ### Authorization
 
@@ -1207,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readPublicDocument**
-> \Swagger\Client\Model\InputStreamResource readPublicDocument($organization_id, $id4n, $file_name)
+> \Swagger\Client\Model\File readPublicDocument($organization_id, $id4n, $file_name)
 
 Read document contents
 
@@ -1250,64 +650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **readPublicDocument1**
-> \Swagger\Client\Model\InputStreamResource readPublicDocument1($organization_id, $id4n, $file_name)
-
-Read document contents
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-
-try {
-    $result = $apiInstance->readPublicDocument1($organization_id, $id4n, $file_name);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->readPublicDocument1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
-
-### Return type
-
-[**\Swagger\Client\Model\InputStreamResource**](../Model/InputStreamResource.md)
+[**\Swagger\Client\Model\File**](../Model/File.md)
 
 ### Authorization
 
@@ -1379,185 +722,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateDocument1**
-> \Swagger\Client\Model\Document updateDocument1($organization_id, $id4n, $file_name, $document)
-
-Update a document
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-$document = new \Swagger\Client\Model\DocumentUpdate(); // \Swagger\Client\Model\DocumentUpdate | document
-
-try {
-    $result = $apiInstance->updateDocument1($organization_id, $id4n, $file_name, $document);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->updateDocument1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
- **document** | [**\Swagger\Client\Model\DocumentUpdate**](../Model/DocumentUpdate.md)| document |
-
-### Return type
-
-[**\Swagger\Client\Model\Document**](../Model/Document.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **write**
-> object write($organization, $id4n, $content_type, $content_length)
-
-Write data to microstorage
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization = 789; // int | organization
-$id4n = "id4n_example"; // string | id4n
-$content_type = "content_type_example"; // string | Content-Type
-$content_length = 789; // int | Content-Length
-
-try {
-    $result = $apiInstance->write($organization, $id4n, $content_type, $content_length);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->write: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
- **id4n** | **string**| id4n |
- **content_type** | **string**| Content-Type | [optional]
- **content_length** | **int**| Content-Length | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **write1**
-> object write1($organization, $id4n, $content_type, $content_length)
-
-Write data to microstorage
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization = 789; // int | organization
-$id4n = "id4n_example"; // string | id4n
-$content_type = "content_type_example"; // string | Content-Type
-$content_length = 789; // int | Content-Length
-
-try {
-    $result = $apiInstance->write1($organization, $id4n, $content_type, $content_length);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->write1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
- **id4n** | **string**| id4n |
- **content_type** | **string**| Content-Type | [optional]
- **content_length** | **int**| Content-Length | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **writeDocument**
-> \Swagger\Client\Model\ResponseEntity writeDocument($organization_id, $id4n, $file_name, $content_type, $content_length)
+> \Swagger\Client\Model\ResponseEntity writeDocument($organization_id, $id4n, $file_name, $body, $content_type, $content_length)
 
 Write document contents
 
@@ -1580,11 +746,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
 $organization_id = 789; // int | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
+$body = new \Swagger\Client\Model\File(); // \Swagger\Client\Model\File | binary data
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
 
 try {
-    $result = $apiInstance->writeDocument($organization_id, $id4n, $file_name, $content_type, $content_length);
+    $result = $apiInstance->writeDocument($organization_id, $id4n, $file_name, $body, $content_type, $content_length);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->writeDocument: ', $e->getMessage(), PHP_EOL;
@@ -1599,6 +766,7 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
+ **body** | [**\Swagger\Client\Model\File**](../Model/File.md)| binary data |
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]
 
@@ -1617,10 +785,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **writeDocument1**
-> \Swagger\Client\Model\ResponseEntity writeDocument1($organization_id, $id4n, $file_name, $content_type, $content_length)
+# **writeToMicrostorage**
+> object writeToMicrostorage($organization, $id4n, $body, $content_type, $content_length)
 
-Write document contents
+Write data to microstorage
 
 ### Example
 ```php
@@ -1638,17 +806,17 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
+$body = "body_example"; // string | binary data
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
 
 try {
-    $result = $apiInstance->writeDocument1($organization_id, $id4n, $file_name, $content_type, $content_length);
+    $result = $apiInstance->writeToMicrostorage($organization, $id4n, $body, $content_type, $content_length);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageApi->writeDocument1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageApi->writeToMicrostorage: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1657,15 +825,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
+ **body** | **string**| binary data |
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+**object**
 
 ### Authorization
 
