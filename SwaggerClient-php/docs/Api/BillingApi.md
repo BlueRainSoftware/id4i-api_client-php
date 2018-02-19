@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getSumForOrganization**
-> \Swagger\Client\Model\ServiceCosts getSumForOrganization($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\ServiceCosts getSumForOrganization($organization_id)
 
 Get billing amount of services for a given organization
 
@@ -17,17 +17,21 @@ Get billing amount of services for a given organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\BillingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The organization to compute the billing information for
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->getSumForOrganization($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->getSumForOrganization($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->getSumForOrganization: ', $e->getMessage(), PHP_EOL;
@@ -40,8 +44,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The organization to compute the billing information for |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -49,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **addUserRoles**
-> \Swagger\Client\Model\ApiError addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError addUserRoles($organization_id, $username, $change_role_request)
 
 Add role(s) to user
 
@@ -36,19 +36,23 @@ Add role(s) to user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -63,8 +67,6 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -82,7 +84,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrganization**
-> \Swagger\Client\Model\Organization createOrganization($organization, $authorization, $accept_language)
+> \Swagger\Client\Model\Organization createOrganization($organization)
 
 Create organization
 
@@ -93,17 +95,21 @@ Creating a new organization.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Organization to be created
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->createOrganization($organization, $authorization, $accept_language);
+    $result = $apiInstance->createOrganization($organization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->createOrganization: ', $e->getMessage(), PHP_EOL;
@@ -116,8 +122,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| Organization to be created |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -125,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -135,7 +139,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganization**
-> \Swagger\Client\Model\ApiError deleteOrganization($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError deleteOrganization($organization_id)
 
 Delete organization
 
@@ -144,17 +148,21 @@ Delete organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization to be deleted.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->deleteOrganization($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganization($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganization: ', $e->getMessage(), PHP_EOL;
@@ -167,8 +175,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization to be deleted. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -176,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -186,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganizationBillingAddress**
-> \Swagger\Client\Model\ApiError deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError deleteOrganizationBillingAddress($organization_id)
 
 Remove billing address
 
@@ -195,17 +201,21 @@ Remove billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->deleteOrganizationBillingAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganizationBillingAddress($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -218,8 +228,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -227,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -237,7 +245,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganizationLogo**
-> \Swagger\Client\Model\ApiError deleteOrganizationLogo($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError deleteOrganizationLogo($organization_id)
 
 Delete organization logo
 
@@ -246,17 +254,21 @@ Delete organization logo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization where the logo should be deleted.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->deleteOrganizationLogo($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->deleteOrganizationLogo($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationLogo: ', $e->getMessage(), PHP_EOL;
@@ -269,8 +281,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization where the logo should be deleted. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -278,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -288,7 +298,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findOrganization**
-> \Swagger\Client\Model\Organization findOrganization($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\Organization findOrganization($organization_id)
 
 Find organization by id
 
@@ -299,17 +309,21 @@ Returns a single organization.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization to be retrieved.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->findOrganization($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganization($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganization: ', $e->getMessage(), PHP_EOL;
@@ -322,8 +336,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization to be retrieved. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -331,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -341,7 +353,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findOrganizationAddress**
-> \Swagger\Client\Model\OrganizationAddress findOrganizationAddress($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress findOrganizationAddress($organization_id)
 
 Retrieve address
 
@@ -350,17 +362,21 @@ Retrieve address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->findOrganizationAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganizationAddress($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganizationAddress: ', $e->getMessage(), PHP_EOL;
@@ -373,8 +389,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -382,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -392,7 +406,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findOrganizationBillingAddress**
-> \Swagger\Client\Model\OrganizationAddress findOrganizationBillingAddress($organization_id, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress findOrganizationBillingAddress($organization_id)
 
 Retrieve billing address
 
@@ -401,17 +415,21 @@ Retrieve billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->findOrganizationBillingAddress($organization_id, $authorization, $accept_language);
+    $result = $apiInstance->findOrganizationBillingAddress($organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->findOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -424,8 +442,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -433,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -443,7 +459,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix)
+> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -454,14 +470,18 @@ Retrieving all collections of an organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
@@ -469,7 +489,7 @@ $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
 
 try {
-    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit, $type, $label, $label_prefix);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -482,8 +502,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
  **type** | **string**| Filter by this type | [optional]
@@ -496,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -506,7 +524,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllOrganizationRoles**
-> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $offset, $limit)
 
 List users and their roles
 
@@ -517,19 +535,23 @@ Listing users and their roles in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getAllOrganizationRoles($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getAllOrganizationRoles($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
@@ -542,8 +564,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -553,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -563,7 +583,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrganizationsOfUser**
-> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit)
+> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($role, $offset, $limit)
 
 Retrieve organizations of user
 
@@ -572,19 +592,23 @@ Retrieve organizations of user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $role = "role_example"; // string | role
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getOrganizationsOfUser($authorization, $accept_language, $role, $offset, $limit);
+    $result = $apiInstance->getOrganizationsOfUser($role, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
@@ -596,8 +620,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **role** | **string**| role | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -608,7 +630,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -618,7 +640,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRoles**
-> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $offset, $limit)
 
 Get user roles by username
 
@@ -627,20 +649,24 @@ Get user roles by username
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getUserRoles($organization_id, $username, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUserRoles($organization_id, $username, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -654,8 +680,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -665,7 +689,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -675,7 +699,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsersOfOrganization**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $offset, $limit)
 
 Find users in organization
 
@@ -686,19 +710,23 @@ Finding users in the specified organization in a paginated manner.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getUsersOfOrganization($organization_id, $authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->getUsersOfOrganization($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -711,8 +739,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -722,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -732,7 +758,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUsers**
-> \Swagger\Client\Model\ApiError inviteUsers($organization_id, $invitation_list, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError inviteUsers($organization_id, $invitation_list)
 
 Invite Users
 
@@ -741,18 +767,22 @@ Invite Users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->inviteUsers($organization_id, $invitation_list, $authorization, $accept_language);
+    $result = $apiInstance->inviteUsers($organization_id, $invitation_list);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
@@ -766,8 +796,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -775,7 +803,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -785,7 +813,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCountries**
-> \Swagger\Client\Model\PaginatedCountryResponse listCountries($authorization, $accept_language, $offset, $limit)
+> \Swagger\Client\Model\PaginatedCountryResponse listCountries($offset, $limit)
 
 List countries
 
@@ -794,18 +822,22 @@ List countries
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listCountries($authorization, $accept_language, $offset, $limit);
+    $result = $apiInstance->listCountries($offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->listCountries: ', $e->getMessage(), PHP_EOL;
@@ -817,8 +849,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -828,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -838,7 +868,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserRoles**
-> \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language)
+> \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request)
 
 Remove role(s) from user
 
@@ -847,19 +877,23 @@ Remove role(s) from user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request, $authorization, $accept_language);
+    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -874,8 +908,6 @@ Name | Type | Description  | Notes
  **organization_id** | **int**| organizationId |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -883,7 +915,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -893,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setOrganizationLogo**
-> \Swagger\Client\Model\PublicImagePresentation setOrganizationLogo($organization_id, $file, $authorization, $accept_language)
+> \Swagger\Client\Model\PublicImagePresentation setOrganizationLogo($organization_id, $file)
 
 Update organization logo
 
@@ -904,18 +936,22 @@ Updating an organization logo using a multipart file upload.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization where the logo should be updated.
 $file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->setOrganizationLogo($organization_id, $file, $authorization, $accept_language);
+    $result = $apiInstance->setOrganizationLogo($organization_id, $file);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->setOrganizationLogo: ', $e->getMessage(), PHP_EOL;
@@ -929,8 +965,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization where the logo should be updated. |
  **file** | **\SplFileObject**| An image containing the new logo. |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -938,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -948,7 +982,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganization**
-> \Swagger\Client\Model\Organization updateOrganization($organization_id, $organization, $authorization, $accept_language)
+> \Swagger\Client\Model\Organization updateOrganization($organization_id, $organization)
 
 Update organization
 
@@ -957,18 +991,22 @@ Update organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | The id of the organization to be updated.
 $organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Updated organization object
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateOrganization($organization_id, $organization, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganization($organization_id, $organization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganization: ', $e->getMessage(), PHP_EOL;
@@ -982,8 +1020,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The id of the organization to be updated. |
  **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| Updated organization object |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -991,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1001,7 +1037,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationAddress**
-> \Swagger\Client\Model\OrganizationAddress updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationAddress($organization_id, $address_resource)
 
 Store address
 
@@ -1010,18 +1046,22 @@ Store address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateOrganizationAddress($organization_id, $address_resource, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganizationAddress($organization_id, $address_resource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationAddress: ', $e->getMessage(), PHP_EOL;
@@ -1035,8 +1075,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -1044,7 +1082,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1054,7 +1092,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationBillingAddress**
-> \Swagger\Client\Model\OrganizationAddress updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationBillingAddress($organization_id, $address_resource)
 
 Store billing address
 
@@ -1063,18 +1101,22 @@ Store billing address
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organization_id = 789; // int | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
-$authorization = "authorization_example"; // string | Authorization JWT Bearer Token
-$accept_language = "accept_language_example"; // string | Requested language
 
 try {
-    $result = $apiInstance->updateOrganizationBillingAddress($organization_id, $address_resource, $authorization, $accept_language);
+    $result = $apiInstance->updateOrganizationBillingAddress($organization_id, $address_resource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -1088,8 +1130,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| organizationId |
  **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
- **authorization** | **string**| Authorization JWT Bearer Token | [optional]
- **accept_language** | **string**| Requested language | [optional]
 
 ### Return type
 
@@ -1097,7 +1137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../../README.md#Authorization)
 
 ### HTTP request headers
 
