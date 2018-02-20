@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getRoute**
-> \Swagger\Client\Model\Route getRoute($id4n, $type, $private_routes, $public_routes)
+> \Swagger\Client\Model\Route getRoute($id4n, $type, $private_routes, $public_routes, $interpolate)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -34,9 +34,10 @@ $id4n = "id4n_example"; // string | id4n
 $type = "type_example"; // string | The type of route you want to have
 $private_routes = true; // bool | privateRoutes
 $public_routes = true; // bool | publicRoutes
+$interpolate = true; // bool | interpolate
 
 try {
-    $result = $apiInstance->getRoute($id4n, $type, $private_routes, $public_routes);
+    $result = $apiInstance->getRoute($id4n, $type, $private_routes, $public_routes, $interpolate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->getRoute: ', $e->getMessage(), PHP_EOL;
@@ -52,6 +53,7 @@ Name | Type | Description  | Notes
  **type** | **string**| The type of route you want to have |
  **private_routes** | **bool**| privateRoutes | [optional]
  **public_routes** | **bool**| publicRoutes | [optional]
+ **interpolate** | **bool**| interpolate | [optional]
 
 ### Return type
 
