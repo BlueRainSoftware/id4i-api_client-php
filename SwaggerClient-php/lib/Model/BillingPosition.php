@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyPrivilege
+ * BillingPosition
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ApiKeyPrivilege Class Doc Comment
+ * BillingPosition Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyPrivilege implements ModelInterface, ArrayAccess
+class BillingPosition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiKeyPrivilege';
+    protected static $swaggerModelName = 'BillingPosition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id4n_associated' => 'bool',
-        'privilege' => 'string'
+        'count' => 'int',
+        'description' => 'string',
+        'service' => 'string',
+        'sum' => 'float'
     ];
 
     /**
@@ -67,8 +69,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id4n_associated' => null,
-        'privilege' => null
+        'count' => 'int64',
+        'description' => null,
+        'service' => null,
+        'sum' => 'float'
     ];
 
     /**
@@ -98,8 +102,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id4n_associated' => 'id4nAssociated',
-        'privilege' => 'privilege'
+        'count' => 'count',
+        'description' => 'description',
+        'service' => 'service',
+        'sum' => 'sum'
     ];
 
     /**
@@ -108,8 +114,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id4n_associated' => 'setId4nAssociated',
-        'privilege' => 'setPrivilege'
+        'count' => 'setCount',
+        'description' => 'setDescription',
+        'service' => 'setService',
+        'sum' => 'setSum'
     ];
 
     /**
@@ -118,8 +126,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id4n_associated' => 'getId4nAssociated',
-        'privilege' => 'getPrivilege'
+        'count' => 'getCount',
+        'description' => 'getDescription',
+        'service' => 'getService',
+        'sum' => 'getSum'
     ];
 
     /**
@@ -182,8 +192,10 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id4n_associated'] = isset($data['id4n_associated']) ? $data['id4n_associated'] : null;
-        $this->container['privilege'] = isset($data['privilege']) ? $data['privilege'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['service'] = isset($data['service']) ? $data['service'] : null;
+        $this->container['sum'] = isset($data['sum']) ? $data['sum'] : null;
     }
 
     /**
@@ -195,11 +207,17 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id4n_associated'] === null) {
-            $invalidProperties[] = "'id4n_associated' can't be null";
+        if ($this->container['count'] === null) {
+            $invalidProperties[] = "'count' can't be null";
         }
-        if ($this->container['privilege'] === null) {
-            $invalidProperties[] = "'privilege' can't be null";
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ($this->container['service'] === null) {
+            $invalidProperties[] = "'service' can't be null";
+        }
+        if ($this->container['sum'] === null) {
+            $invalidProperties[] = "'sum' can't be null";
         }
         return $invalidProperties;
     }
@@ -213,10 +231,16 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id4n_associated'] === null) {
+        if ($this->container['count'] === null) {
             return false;
         }
-        if ($this->container['privilege'] === null) {
+        if ($this->container['description'] === null) {
+            return false;
+        }
+        if ($this->container['service'] === null) {
+            return false;
+        }
+        if ($this->container['sum'] === null) {
             return false;
         }
         return true;
@@ -224,49 +248,97 @@ class ApiKeyPrivilege implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id4n_associated
+     * Gets count
      *
-     * @return bool
+     * @return int
      */
-    public function getId4nAssociated()
+    public function getCount()
     {
-        return $this->container['id4n_associated'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets id4n_associated
+     * Sets count
      *
-     * @param bool $id4n_associated id4n_associated
+     * @param int $count count
      *
      * @return $this
      */
-    public function setId4nAssociated($id4n_associated)
+    public function setCount($count)
     {
-        $this->container['id4n_associated'] = $id4n_associated;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets privilege
+     * Gets description
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getDescription()
     {
-        return $this->container['privilege'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets privilege
+     * Sets description
      *
-     * @param string $privilege privilege
+     * @param string $description description
      *
      * @return $this
      */
-    public function setPrivilege($privilege)
+    public function setDescription($description)
     {
-        $this->container['privilege'] = $privilege;
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets service
+     *
+     * @return string
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param string $service service
+     *
+     * @return $this
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
+
+        return $this;
+    }
+
+    /**
+     * Gets sum
+     *
+     * @return float
+     */
+    public function getSum()
+    {
+        return $this->container['sum'];
+    }
+
+    /**
+     * Sets sum
+     *
+     * @param float $sum sum
+     *
+     * @return $this
+     */
+    public function setSum($sum)
+    {
+        $this->container['sum'] = $sum;
 
         return $this;
     }

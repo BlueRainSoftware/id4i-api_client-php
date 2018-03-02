@@ -1,6 +1,6 @@
 <?php
 /**
- * UserRegistrationResponseTest
+ * BillingPositionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * UserRegistrationResponseTest Class Doc Comment
+ * BillingPositionTest Class Doc Comment
  *
  * @category    Class */
-// * @description UserRegistrationResponse
+// * @description BillingPosition
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserRegistrationResponseTest extends \PHPUnit_Framework_TestCase
+class BillingPositionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,37 @@ class UserRegistrationResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "UserRegistrationResponse"
+     * Test "BillingPosition"
      */
-    public function testUserRegistrationResponse()
+    public function testBillingPosition()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "count"
      */
-    public function testPropertyEmail()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "description"
      */
-    public function testPropertyId()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "service"
      */
-    public function testPropertyMessage()
+    public function testPropertyService()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "sum"
      */
-    public function testPropertyUsername()
+    public function testPropertySum()
     {
     }
 }
