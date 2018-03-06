@@ -204,9 +204,25 @@ class CreateLabelledCollectionRequest implements ModelInterface, ArrayAccess
         if ($this->container['label'] === null) {
             $invalidProperties[] = "'label' can't be null";
         }
+        if ((strlen($this->container['label']) > 128)) {
+            $invalidProperties[] = "invalid value for 'label', the character length must be smaller than or equal to 128.";
+        }
+
+        if ((strlen($this->container['label']) < 1)) {
+            $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['length'] === null) {
             $invalidProperties[] = "'length' can't be null";
         }
+        if (($this->container['length'] > 255)) {
+            $invalidProperties[] = "invalid value for 'length', must be smaller than or equal to 255.";
+        }
+
+        if (($this->container['length'] < 6)) {
+            $invalidProperties[] = "invalid value for 'length', must be bigger than or equal to 6.";
+        }
+
         if ($this->container['organization_id'] === null) {
             $invalidProperties[] = "'organization_id' can't be null";
         }
@@ -225,7 +241,19 @@ class CreateLabelledCollectionRequest implements ModelInterface, ArrayAccess
         if ($this->container['label'] === null) {
             return false;
         }
+        if (strlen($this->container['label']) > 128) {
+            return false;
+        }
+        if (strlen($this->container['label']) < 1) {
+            return false;
+        }
         if ($this->container['length'] === null) {
+            return false;
+        }
+        if ($this->container['length'] > 255) {
+            return false;
+        }
+        if ($this->container['length'] < 6) {
             return false;
         }
         if ($this->container['organization_id'] === null) {
@@ -254,6 +282,13 @@ class CreateLabelledCollectionRequest implements ModelInterface, ArrayAccess
      */
     public function setLabel($label)
     {
+        if ((strlen($label) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $label when calling CreateLabelledCollectionRequest., must be smaller than or equal to 128.');
+        }
+        if ((strlen($label) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $label when calling CreateLabelledCollectionRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['label'] = $label;
 
         return $this;
@@ -278,6 +313,14 @@ class CreateLabelledCollectionRequest implements ModelInterface, ArrayAccess
      */
     public function setLength($length)
     {
+
+        if (($length > 255)) {
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateLabelledCollectionRequest., must be smaller than or equal to 255.');
+        }
+        if (($length < 6)) {
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateLabelledCollectionRequest., must be bigger than or equal to 6.');
+        }
+
         $this->container['length'] = $length;
 
         return $this;
