@@ -85,6 +85,13 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "mime_type"
+     */
+    public function testPropertyMimeType()
+    {
+    }
+
+    /**
      * Test attribute "visibility"
      */
     public function testPropertyVisibility()

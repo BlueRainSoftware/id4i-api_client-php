@@ -58,6 +58,7 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'filename' => 'string',
+        'mime_type' => 'string',
         'visibility' => '\Swagger\Client\Model\Visibility'
     ];
 
@@ -68,6 +69,7 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'filename' => null,
+        'mime_type' => null,
         'visibility' => null
     ];
 
@@ -99,6 +101,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'filename' => 'filename',
+        'mime_type' => 'mimeType',
         'visibility' => 'visibility'
     ];
 
@@ -109,6 +112,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'filename' => 'setFilename',
+        'mime_type' => 'setMimeType',
         'visibility' => 'setVisibility'
     ];
 
@@ -119,6 +123,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'filename' => 'getFilename',
+        'mime_type' => 'getMimeType',
         'visibility' => 'getVisibility'
     ];
 
@@ -183,6 +188,7 @@ class Document implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['mime_type'] = isset($data['mime_type']) ? $data['mime_type'] : null;
         $this->container['visibility'] = isset($data['visibility']) ? $data['visibility'] : null;
     }
 
@@ -224,13 +230,37 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets filename
      *
-     * @param string $filename filename
+     * @param string $filename File Name
      *
      * @return $this
      */
     public function setFilename($filename)
     {
         $this->container['filename'] = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Gets mime_type
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->container['mime_type'];
+    }
+
+    /**
+     * Sets mime_type
+     *
+     * @param string $mime_type Mime Type
+     *
+     * @return $this
+     */
+    public function setMimeType($mime_type)
+    {
+        $this->container['mime_type'] = $mime_type;
 
         return $this;
     }

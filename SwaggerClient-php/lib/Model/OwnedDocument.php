@@ -58,6 +58,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'filename' => 'string',
+        'mime_type' => 'string',
         'owner_organization_id' => 'int',
         'visibility' => '\Swagger\Client\Model\Visibility'
     ];
@@ -69,6 +70,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'filename' => null,
+        'mime_type' => null,
         'owner_organization_id' => 'int64',
         'visibility' => null
     ];
@@ -101,6 +103,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'filename' => 'filename',
+        'mime_type' => 'mimeType',
         'owner_organization_id' => 'ownerOrganizationId',
         'visibility' => 'visibility'
     ];
@@ -112,6 +115,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'filename' => 'setFilename',
+        'mime_type' => 'setMimeType',
         'owner_organization_id' => 'setOwnerOrganizationId',
         'visibility' => 'setVisibility'
     ];
@@ -123,6 +127,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'filename' => 'getFilename',
+        'mime_type' => 'getMimeType',
         'owner_organization_id' => 'getOwnerOrganizationId',
         'visibility' => 'getVisibility'
     ];
@@ -188,6 +193,7 @@ class OwnedDocument implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['mime_type'] = isset($data['mime_type']) ? $data['mime_type'] : null;
         $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
         $this->container['visibility'] = isset($data['visibility']) ? $data['visibility'] : null;
     }
@@ -230,13 +236,37 @@ class OwnedDocument implements ModelInterface, ArrayAccess
     /**
      * Sets filename
      *
-     * @param string $filename filename
+     * @param string $filename File Name
      *
      * @return $this
      */
     public function setFilename($filename)
     {
         $this->container['filename'] = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Gets mime_type
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->container['mime_type'];
+    }
+
+    /**
+     * Sets mime_type
+     *
+     * @param string $mime_type Mime Type
+     *
+     * @return $this
+     */
+    public function setMimeType($mime_type)
+    {
+        $this->container['mime_type'] = $mime_type;
 
         return $this;
     }
