@@ -72,16 +72,6 @@ class StorageApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createDocument
-     *
-     * Create an empty document for an id4n.
-     *
-     */
-    public function testCreateDocument()
-    {
-    }
-
-    /**
      * Test case for deleteDocument
      *
      * Delete a document.
@@ -182,22 +172,12 @@ class StorageApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateDocument
+     * Test case for updateDocumentMetadata
      *
      * Update a document.
      *
      */
-    public function testUpdateDocument()
-    {
-    }
-
-    /**
-     * Test case for writeDocument
-     *
-     * Write document contents.
-     *
-     */
-    public function testWriteDocument()
+    public function testUpdateDocumentMetadata()
     {
     }
 

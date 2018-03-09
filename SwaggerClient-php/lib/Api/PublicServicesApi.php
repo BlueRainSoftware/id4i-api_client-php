@@ -341,7 +341,7 @@ class PublicServicesApi
             );
         }
 
-        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}';
+        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1482,7 +1482,7 @@ class PublicServicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\File
+     * @return string
      */
     public function readPublicDocument($organization_id, $id4n, $file_name)
     {
@@ -1501,11 +1501,11 @@ class PublicServicesApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\File, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
@@ -1557,7 +1557,7 @@ class PublicServicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\File',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1659,7 +1659,7 @@ class PublicServicesApi
      */
     public function readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
@@ -1730,7 +1730,7 @@ class PublicServicesApi
             );
         }
 
-        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content';
+        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

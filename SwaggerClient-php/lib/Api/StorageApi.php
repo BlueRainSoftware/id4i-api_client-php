@@ -83,387 +83,6 @@ class StorageApi
     }
 
     /**
-     * Operation createDocument
-     *
-     * Create an empty document for an id4n
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  \Swagger\Client\Model\Document $document document (required)
-     * @param  string $mime_type mimeType (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Document
-     */
-    public function createDocument($organization_id, $id4n, $document, $mime_type = null)
-    {
-        list($response) = $this->createDocumentWithHttpInfo($organization_id, $id4n, $document, $mime_type);
-        return $response;
-    }
-
-    /**
-     * Operation createDocumentWithHttpInfo
-     *
-     * Create an empty document for an id4n
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  \Swagger\Client\Model\Document $document document (required)
-     * @param  string $mime_type mimeType (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createDocumentWithHttpInfo($organization_id, $id4n, $document, $mime_type = null)
-    {
-        $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->createDocumentRequest($organization_id, $id4n, $document, $mime_type);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\Document',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createDocumentAsync
-     *
-     * Create an empty document for an id4n
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  \Swagger\Client\Model\Document $document document (required)
-     * @param  string $mime_type mimeType (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createDocumentAsync($organization_id, $id4n, $document, $mime_type = null)
-    {
-        return $this->createDocumentAsyncWithHttpInfo($organization_id, $id4n, $document, $mime_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createDocumentAsyncWithHttpInfo
-     *
-     * Create an empty document for an id4n
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  \Swagger\Client\Model\Document $document document (required)
-     * @param  string $mime_type mimeType (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createDocumentAsyncWithHttpInfo($organization_id, $id4n, $document, $mime_type = null)
-    {
-        $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->createDocumentRequest($organization_id, $id4n, $document, $mime_type);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createDocument'
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  \Swagger\Client\Model\Document $document document (required)
-     * @param  string $mime_type mimeType (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function createDocumentRequest($organization_id, $id4n, $document, $mime_type = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling createDocument'
-            );
-        }
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling createDocument'
-            );
-        }
-        // verify the required parameter 'document' is set
-        if ($document === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $document when calling createDocument'
-            );
-        }
-
-        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($mime_type !== null) {
-            $queryParams['mimeType'] = ObjectSerializer::toQueryValue($mime_type);
-        }
-
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($document)) {
-            $_tempBody = $document;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json;charset=UTF-8']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json;charset=UTF-8'],
-                ['application/xml', 'application/json;charset=UTF-8']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation deleteDocument
      *
      * Delete a document
@@ -1067,7 +686,7 @@ class StorageApi
             );
         }
 
-        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}';
+        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1428,7 +1047,7 @@ class StorageApi
             );
         }
 
-        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}';
+        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2952,7 +2571,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\File
+     * @return string
      */
     public function readDocument($organization_id, $id4n, $file_name)
     {
@@ -2971,11 +2590,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\File, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function readDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
@@ -3027,7 +2646,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\File',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3129,7 +2748,7 @@ class StorageApi
      */
     public function readDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
@@ -3200,7 +2819,7 @@ class StorageApi
             );
         }
 
-        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content';
+        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3655,7 +3274,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\File
+     * @return string
      */
     public function readPublicDocument($organization_id, $id4n, $file_name)
     {
@@ -3674,11 +3293,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\File, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
@@ -3730,7 +3349,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\File',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3832,7 +3451,7 @@ class StorageApi
      */
     public function readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\File';
+        $returnType = 'string';
         $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
@@ -3903,7 +3522,7 @@ class StorageApi
             );
         }
 
-        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content';
+        $resourcePath = '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4006,7 +3625,7 @@ class StorageApi
     }
 
     /**
-     * Operation updateDocument
+     * Operation updateDocumentMetadata
      *
      * Update a document
      *
@@ -4019,14 +3638,14 @@ class StorageApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function updateDocument($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadata($organization_id, $id4n, $file_name, $document)
     {
-        list($response) = $this->updateDocumentWithHttpInfo($organization_id, $id4n, $file_name, $document);
+        list($response) = $this->updateDocumentMetadataWithHttpInfo($organization_id, $id4n, $file_name, $document);
         return $response;
     }
 
     /**
-     * Operation updateDocumentWithHttpInfo
+     * Operation updateDocumentMetadataWithHttpInfo
      *
      * Update a document
      *
@@ -4039,10 +3658,10 @@ class StorageApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateDocumentWithHttpInfo($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataWithHttpInfo($organization_id, $id4n, $file_name, $document)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->updateDocumentRequest($organization_id, $id4n, $file_name, $document);
+        $request = $this->updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4104,7 +3723,7 @@ class StorageApi
     }
 
     /**
-     * Operation updateDocumentAsync
+     * Operation updateDocumentMetadataAsync
      *
      * Update a document
      *
@@ -4116,9 +3735,9 @@ class StorageApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDocumentAsync($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataAsync($organization_id, $id4n, $file_name, $document)
     {
-        return $this->updateDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
+        return $this->updateDocumentMetadataAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4127,7 +3746,7 @@ class StorageApi
     }
 
     /**
-     * Operation updateDocumentAsyncWithHttpInfo
+     * Operation updateDocumentMetadataAsyncWithHttpInfo
      *
      * Update a document
      *
@@ -4139,10 +3758,10 @@ class StorageApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->updateDocumentRequest($organization_id, $id4n, $file_name, $document);
+        $request = $this->updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4182,7 +3801,7 @@ class StorageApi
     }
 
     /**
-     * Create request for operation 'updateDocument'
+     * Create request for operation 'updateDocumentMetadata'
      *
      * @param  int $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
@@ -4192,30 +3811,30 @@ class StorageApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateDocumentRequest($organization_id, $id4n, $file_name, $document)
+    protected function updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling updateDocument'
+                'Missing the required parameter $organization_id when calling updateDocumentMetadata'
             );
         }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling updateDocument'
+                'Missing the required parameter $id4n when calling updateDocumentMetadata'
             );
         }
         // verify the required parameter 'file_name' is set
         if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling updateDocument'
+                'Missing the required parameter $file_name when calling updateDocumentMetadata'
             );
         }
         // verify the required parameter 'document' is set
         if ($document === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $document when calling updateDocument'
+                'Missing the required parameter $document when calling updateDocumentMetadata'
             );
         }
 
@@ -4325,422 +3944,13 @@ class StorageApi
     }
 
     /**
-     * Operation writeDocument
-     *
-     * Write document contents
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
-     * @param  \Swagger\Client\Model\File $body binary data (required)
-     * @param  string $content_type Content-Type (optional)
-     * @param  int $content_length Content-Length (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ResponseEntity
-     */
-    public function writeDocument($organization_id, $id4n, $file_name, $body, $content_type = null, $content_length = null)
-    {
-        list($response) = $this->writeDocumentWithHttpInfo($organization_id, $id4n, $file_name, $body, $content_type, $content_length);
-        return $response;
-    }
-
-    /**
-     * Operation writeDocumentWithHttpInfo
-     *
-     * Write document contents
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
-     * @param  \Swagger\Client\Model\File $body binary data (required)
-     * @param  string $content_type Content-Type (optional)
-     * @param  int $content_length Content-Length (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function writeDocumentWithHttpInfo($organization_id, $id4n, $file_name, $body, $content_type = null, $content_length = null)
-    {
-        $returnType = '\Swagger\Client\Model\ResponseEntity';
-        $request = $this->writeDocumentRequest($organization_id, $id4n, $file_name, $body, $content_type, $content_length);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ResponseEntity',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation writeDocumentAsync
-     *
-     * Write document contents
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
-     * @param  \Swagger\Client\Model\File $body binary data (required)
-     * @param  string $content_type Content-Type (optional)
-     * @param  int $content_length Content-Length (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function writeDocumentAsync($organization_id, $id4n, $file_name, $body, $content_type = null, $content_length = null)
-    {
-        return $this->writeDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name, $body, $content_type, $content_length)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation writeDocumentAsyncWithHttpInfo
-     *
-     * Write document contents
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
-     * @param  \Swagger\Client\Model\File $body binary data (required)
-     * @param  string $content_type Content-Type (optional)
-     * @param  int $content_length Content-Length (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function writeDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name, $body, $content_type = null, $content_length = null)
-    {
-        $returnType = '\Swagger\Client\Model\ResponseEntity';
-        $request = $this->writeDocumentRequest($organization_id, $id4n, $file_name, $body, $content_type, $content_length);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'writeDocument'
-     *
-     * @param  int $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
-     * @param  \Swagger\Client\Model\File $body binary data (required)
-     * @param  string $content_type Content-Type (optional)
-     * @param  int $content_length Content-Length (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function writeDocumentRequest($organization_id, $id4n, $file_name, $body, $content_type = null, $content_length = null)
-    {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling writeDocument'
-            );
-        }
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling writeDocument'
-            );
-        }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling writeDocument'
-            );
-        }
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling writeDocument'
-            );
-        }
-
-        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // header params
-        if ($content_type !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($content_type);
-        }
-        // header params
-        if ($content_length !== null) {
-            $headerParams['Content-Length'] = ObjectSerializer::toHeaderValue($content_length);
-        }
-
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($file_name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json;charset=UTF-8']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json;charset=UTF-8'],
-                ['*/*']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation writeToMicrostorage
      *
      * Write data to microstorage
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body binary data (required)
+     * @param  string $body body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
      *
@@ -4761,7 +3971,7 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body binary data (required)
+     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
      *
@@ -4912,7 +4122,7 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body binary data (required)
+     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
      *
@@ -4936,7 +4146,7 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body binary data (required)
+     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
      *
@@ -4990,7 +4200,7 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body binary data (required)
+     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
      *
