@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getPositionsForOrganization**
-> \Swagger\Client\Model\BillingPosition[] getPositionsForOrganization($organization_id)
+> \Swagger\Client\Model\BillingPosition[] getPositionsForOrganization($organization_id, $from_date, $to_date)
 
 Get billing positions for a given organization
 
@@ -30,9 +30,11 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     $config
 );
 $organization_id = 789; // int | The organization to compute the billing information for
+$from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
+$to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
 
 try {
-    $result = $apiInstance->getPositionsForOrganization($organization_id);
+    $result = $apiInstance->getPositionsForOrganization($organization_id, $from_date, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->getPositionsForOrganization: ', $e->getMessage(), PHP_EOL;
@@ -45,6 +47,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The organization to compute the billing information for |
+ **from_date** | **\DateTime**| Billing start date | [optional]
+ **to_date** | **\DateTime**| Billing end date | [optional]
 
 ### Return type
 
@@ -62,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSumForOrganization**
-> \Swagger\Client\Model\ServiceCosts getSumForOrganization($organization_id)
+> \Swagger\Client\Model\ServiceCosts getSumForOrganization($organization_id, $from_date, $to_date)
 
 Get billing amount of services for a given organization
 
@@ -83,9 +87,11 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     $config
 );
 $organization_id = 789; // int | The organization to compute the billing information for
+$from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
+$to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
 
 try {
-    $result = $apiInstance->getSumForOrganization($organization_id);
+    $result = $apiInstance->getSumForOrganization($organization_id, $from_date, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingApi->getSumForOrganization: ', $e->getMessage(), PHP_EOL;
@@ -98,6 +104,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **int**| The organization to compute the billing information for |
+ **from_date** | **\DateTime**| Billing start date | [optional]
+ **to_date** | **\DateTime**| Billing end date | [optional]
 
 ### Return type
 
