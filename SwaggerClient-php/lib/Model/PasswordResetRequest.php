@@ -189,6 +189,9 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['username'] === null) {
+            $invalidProperties[] = "'username' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,6 +204,9 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['username'] === null) {
+            return false;
+        }
         return true;
     }
 

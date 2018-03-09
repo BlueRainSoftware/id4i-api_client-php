@@ -78,9 +78,9 @@ class CompleteUserRegistrationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "verification_token"
+     * Test attribute "password"
      */
-    public function testPropertyVerificationToken()
+    public function testPropertyPassword()
     {
     }
 
@@ -92,9 +92,9 @@ class CompleteUserRegistrationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "verification_token"
      */
-    public function testPropertyPassword()
+    public function testPropertyVerificationToken()
     {
     }
 }

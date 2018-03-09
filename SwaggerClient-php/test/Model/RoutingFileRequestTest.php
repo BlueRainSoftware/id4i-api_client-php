@@ -78,16 +78,16 @@ class RoutingFileRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "routing"
+     * Test attribute "organization_id"
      */
-    public function testPropertyRouting()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "routing"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyRouting()
     {
     }
 }
