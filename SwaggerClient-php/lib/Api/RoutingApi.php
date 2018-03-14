@@ -387,12 +387,12 @@ class RoutingApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json;charset=UTF-8'],
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
             );
         }
 
@@ -718,12 +718,12 @@ class RoutingApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json;charset=UTF-8'],
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
             );
         }
 
@@ -1034,12 +1034,12 @@ class RoutingApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json;charset=UTF-8'],
-                ['application/xml', 'application/json;charset=UTF-8']
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
             );
         }
 
