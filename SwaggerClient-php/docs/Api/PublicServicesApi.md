@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **go**
-> \Swagger\Client\Model\ApiError go($guid)
+> go($guid)
 
 Forward
 
@@ -90,8 +90,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
 $guid = "guid_example"; // string | guid
 
 try {
-    $result = $apiInstance->go($guid);
-    print_r($result);
+    $apiInstance->go($guid);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->go: ', $e->getMessage(), PHP_EOL;
 }
@@ -106,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 

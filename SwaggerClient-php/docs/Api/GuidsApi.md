@@ -1,22 +1,22 @@
-# Swagger\Client\GUIDsApi
+# Swagger\Client\GuidsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addGuidAlias**](GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**addGuidAlias1**](GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
-[**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
-[**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**getId4n**](GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+[**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**setGuid**](GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid1**](GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 # **addGuidAlias**
-> \Swagger\Client\Model\ApiError addGuidAlias($id4n, $alias_type, $alias)
+> addGuidAlias($id4n, $alias_type, $alias)
 
 Add alias for GUIDs
 
@@ -32,7 +32,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -43,10 +43,9 @@ $alias_type = "alias_type_example"; // string | Alias type, see the correspondin
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
 
 try {
-    $result = $apiInstance->addGuidAlias($id4n, $alias_type, $alias);
-    print_r($result);
+    $apiInstance->addGuidAlias($id4n, $alias_type, $alias);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->addGuidAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->addGuidAlias: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,64 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **addGuidAlias1**
-> \Swagger\Client\Model\ApiError addGuidAlias1($id4n, $alias_type)
-
-Remove aliases from GUIDs
-
-Remove the alias of the given type
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | The GUID to operate on
-$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
-
-try {
-    $result = $apiInstance->addGuidAlias1($id4n, $alias_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->addGuidAlias1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on |
- **alias_type** | **string**| Alias type, see the corresponding API model |
-
-### Return type
-
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -148,7 +90,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -160,7 +102,7 @@ try {
     $result = $apiInstance->createGuid($create_guid_info);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->createGuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->createGuid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -201,7 +143,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +155,7 @@ try {
     $result = $apiInstance->getGuid($id4n);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->getGuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->getGuid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -256,7 +198,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -268,7 +210,7 @@ try {
     $result = $apiInstance->getGuidAliases($id4n);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->getGuidAliases: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->getGuidAliases: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -281,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string,string]**](../Model/map.md)
+**map[string,string]**
 
 ### Authorization
 
@@ -309,7 +251,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -323,7 +265,7 @@ try {
     $result = $apiInstance->getGuidsWithoutCollection($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->getGuidsWithoutCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->getGuidsWithoutCollection: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -368,7 +310,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -380,7 +322,7 @@ try {
     $result = $apiInstance->getId4n($id4n);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->getId4n: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->getId4n: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -394,6 +336,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Id4nPresentation**](../Model/Id4nPresentation.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **removeGuidAlias**
+> removeGuidAlias($id4n, $alias_type)
+
+Remove aliases from GUIDs
+
+Remove the alias of the given type
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4n = "id4n_example"; // string | The GUID to operate on
+$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
+
+try {
+    $apiInstance->removeGuidAlias($id4n, $alias_type);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->removeGuidAlias: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID to operate on |
+ **alias_type** | **string**| Alias type, see the corresponding API model |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -423,7 +421,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -436,7 +434,7 @@ try {
     $result = $apiInstance->setGuid($id4n, $request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->setGuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->setGuid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -480,7 +478,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\GUIDsApi(
+$apiInstance = new Swagger\Client\Api\GuidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -493,7 +491,7 @@ try {
     $result = $apiInstance->setGuid1($id4n, $request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GUIDsApi->setGuid1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->setGuid1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

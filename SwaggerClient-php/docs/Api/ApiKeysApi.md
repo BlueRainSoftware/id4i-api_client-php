@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **addApiKeyPrivilege**
-> \Swagger\Client\Model\ApiError addApiKeyPrivilege($key, $add_api_key_privilege_request)
+> addApiKeyPrivilege($key, $add_api_key_privilege_request)
 
 Add privilege
 
@@ -43,8 +43,7 @@ $key = "key_example"; // string | key
 $add_api_key_privilege_request = new \Swagger\Client\Model\AddApiKeyPrivilegeRequest(); // \Swagger\Client\Model\AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 
 try {
-    $result = $apiInstance->addApiKeyPrivilege($key, $add_api_key_privilege_request);
-    print_r($result);
+    $apiInstance->addApiKeyPrivilege($key, $add_api_key_privilege_request);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
 }
@@ -60,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -74,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addApiKeyPrivilegeForId4ns**
-> \Swagger\Client\Model\ApiError addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
+> addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Add ID4ns of a privilege
 
@@ -99,8 +98,7 @@ $privilege = "privilege_example"; // string | privilege
 $id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 
 try {
-    $result = $apiInstance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
-    print_r($result);
+    $apiInstance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
@@ -117,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -186,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteApiKey**
-> \Swagger\Client\Model\ApiError deleteApiKey($key)
+> deleteApiKey($key)
 
 Delete API key
 
@@ -211,8 +209,7 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
 $key = "key_example"; // string | The API key to delete.
 
 try {
-    $result = $apiInstance->deleteApiKey($key);
-    print_r($result);
+    $apiInstance->deleteApiKey($key);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->deleteApiKey: ', $e->getMessage(), PHP_EOL;
 }
@@ -227,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -532,7 +529,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeApiKeyPrivilege**
-> \Swagger\Client\Model\ApiError removeApiKeyPrivilege($key, $remove_api_key_privilege_request)
+> removeApiKeyPrivilege($key, $remove_api_key_privilege_request)
 
 Remove privilege
 
@@ -556,8 +553,7 @@ $key = "key_example"; // string | key
 $remove_api_key_privilege_request = new \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest(); // \Swagger\Client\Model\RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
 
 try {
-    $result = $apiInstance->removeApiKeyPrivilege($key, $remove_api_key_privilege_request);
-    print_r($result);
+    $apiInstance->removeApiKeyPrivilege($key, $remove_api_key_privilege_request);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
 }
@@ -573,7 +569,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -587,7 +583,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeApiKeyPrivilegeForId4ns**
-> \Swagger\Client\Model\ApiError removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
+> removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Remove id4ns of a privilege
 
@@ -612,8 +608,7 @@ $privilege = "privilege_example"; // string | privilege
 $id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 
 try {
-    $result = $apiInstance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
-    print_r($result);
+    $apiInstance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
@@ -630,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -644,7 +639,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateApiKey**
-> \Swagger\Client\Model\ApiError updateApiKey($key, $api_key_change)
+> updateApiKey($key, $api_key_change)
 
 Update API keys
 
@@ -670,8 +665,7 @@ $key = "key_example"; // string | The API key to be updated.
 $api_key_change = new \Swagger\Client\Model\ApiKeyChangeRequest(); // \Swagger\Client\Model\ApiKeyChangeRequest | The new values to apply.
 
 try {
-    $result = $apiInstance->updateApiKey($key, $api_key_change);
-    print_r($result);
+    $apiInstance->updateApiKey($key, $api_key_change);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->updateApiKey: ', $e->getMessage(), PHP_EOL;
 }
@@ -687,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 

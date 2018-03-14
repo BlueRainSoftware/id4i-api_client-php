@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **addUserRoles**
-> \Swagger\Client\Model\ApiError addUserRoles($organization_id, $username, $change_role_request)
+> addUserRoles($organization_id, $username, $change_role_request)
 
 Add role(s) to user
 
@@ -52,8 +52,7 @@ $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
-    print_r($result);
+    $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -70,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -139,7 +138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganization**
-> \Swagger\Client\Model\ApiError deleteOrganization($organization_id)
+> deleteOrganization($organization_id)
 
 Delete organization
 
@@ -162,8 +161,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | The id of the organization to be deleted.
 
 try {
-    $result = $apiInstance->deleteOrganization($organization_id);
-    print_r($result);
+    $apiInstance->deleteOrganization($organization_id);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganization: ', $e->getMessage(), PHP_EOL;
 }
@@ -178,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -192,7 +190,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganizationBillingAddress**
-> \Swagger\Client\Model\ApiError deleteOrganizationBillingAddress($organization_id)
+> deleteOrganizationBillingAddress($organization_id)
 
 Remove billing address
 
@@ -215,8 +213,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | organizationId
 
 try {
-    $result = $apiInstance->deleteOrganizationBillingAddress($organization_id);
-    print_r($result);
+    $apiInstance->deleteOrganizationBillingAddress($organization_id);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
 }
@@ -231,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -245,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOrganizationLogo**
-> \Swagger\Client\Model\ApiError deleteOrganizationLogo($organization_id)
+> deleteOrganizationLogo($organization_id)
 
 Delete organization logo
 
@@ -268,8 +265,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 $organization_id = 789; // int | The id of the organization where the logo should be deleted.
 
 try {
-    $result = $apiInstance->deleteOrganizationLogo($organization_id);
-    print_r($result);
+    $apiInstance->deleteOrganizationLogo($organization_id);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->deleteOrganizationLogo: ', $e->getMessage(), PHP_EOL;
 }
@@ -284,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -758,7 +754,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUsers**
-> \Swagger\Client\Model\ApiError inviteUsers($organization_id, $invitation_list)
+> inviteUsers($organization_id, $invitation_list)
 
 Invite Users
 
@@ -782,8 +778,7 @@ $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 
 try {
-    $result = $apiInstance->inviteUsers($organization_id, $invitation_list);
-    print_r($result);
+    $apiInstance->inviteUsers($organization_id, $invitation_list);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
 }
@@ -799,7 +794,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -868,7 +863,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserRoles**
-> \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request)
+> removeUserRoles($organization_id, $username, $change_role_request)
 
 Remove role(s) from user
 
@@ -893,8 +888,7 @@ $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
-    print_r($result);
+    $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -911,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 

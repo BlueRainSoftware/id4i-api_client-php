@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **addUserRoles**
-> \Swagger\Client\Model\ApiError addUserRoles($organization_id, $username, $change_role_request)
+> addUserRoles($organization_id, $username, $change_role_request)
 
 Add role(s) to user
 
@@ -48,8 +48,7 @@ $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $result = $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
-    print_r($result);
+    $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -66,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -80,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **completeRegistration**
-> \Swagger\Client\Model\ApiError completeRegistration($complete_registration)
+> completeRegistration($complete_registration)
 
 Complete registration
 
@@ -99,8 +98,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 $complete_registration = new \Swagger\Client\Model\CompleteUserRegistrationRequest(); // \Swagger\Client\Model\CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
 
 try {
-    $result = $apiInstance->completeRegistration($complete_registration);
-    print_r($result);
+    $apiInstance->completeRegistration($complete_registration);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->completeRegistration: ', $e->getMessage(), PHP_EOL;
 }
@@ -115,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -473,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUsers**
-> \Swagger\Client\Model\ApiError inviteUsers($organization_id, $invitation_list)
+> inviteUsers($organization_id, $invitation_list)
 
 Invite Users
 
@@ -497,8 +495,7 @@ $organization_id = 789; // int | organizationId
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 
 try {
-    $result = $apiInstance->inviteUsers($organization_id, $invitation_list);
-    print_r($result);
+    $apiInstance->inviteUsers($organization_id, $invitation_list);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
 }
@@ -514,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -684,7 +681,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserRoles**
-> \Swagger\Client\Model\ApiError removeUserRoles($organization_id, $username, $change_role_request)
+> removeUserRoles($organization_id, $username, $change_role_request)
 
 Remove role(s) from user
 
@@ -709,8 +706,7 @@ $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $result = $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
-    print_r($result);
+    $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -727,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -839,7 +835,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **verifyUserRegistration**
-> \Swagger\Client\Model\ApiError verifyUserRegistration($token)
+> verifyUserRegistration($token)
 
 Verify registration
 
@@ -858,8 +854,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 $token = new \Swagger\Client\Model\RegistrationVerificationTokenPresentation(); // \Swagger\Client\Model\RegistrationVerificationTokenPresentation | The token for user verification.
 
 try {
-    $result = $apiInstance->verifyUserRegistration($token);
-    print_r($result);
+    $apiInstance->verifyUserRegistration($token);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->verifyUserRegistration: ', $e->getMessage(), PHP_EOL;
 }
@@ -874,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 

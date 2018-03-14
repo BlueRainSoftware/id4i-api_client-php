@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRoutingFile**
-> \Swagger\Client\Model\ApiError updateRoutingFile($rfr, $id4n)
+> updateRoutingFile($rfr, $id4n)
 
 Store routing file
 
@@ -150,8 +150,7 @@ $rfr = new \Swagger\Client\Model\RoutingFileRequest(); // \Swagger\Client\Model\
 $id4n = "id4n_example"; // string | id4n
 
 try {
-    $result = $apiInstance->updateRoutingFile($rfr, $id4n);
-    print_r($result);
+    $apiInstance->updateRoutingFile($rfr, $id4n);
 } catch (Exception $e) {
     echo 'Exception when calling RoutingApi->updateRoutingFile: ', $e->getMessage(), PHP_EOL;
 }
@@ -167,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
