@@ -4,82 +4,19 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
-[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
 [**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
 [**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
-[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
-[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
-[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
-
-# **createDocument**
-> \Swagger\Client\Model\Document createDocument($organization_id, $id4n, $document, $mime_type)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$document = new \Swagger\Client\Model\Document(); // \Swagger\Client\Model\Document | document
-$mime_type = "mime_type_example"; // string | mimeType
-
-try {
-    $result = $apiInstance->createDocument($organization_id, $id4n, $document, $mime_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->createDocument: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **document** | [**\Swagger\Client\Model\Document**](../Model/Document.md)| document |
- **mime_type** | **string**| mimeType | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\Document**](../Model/Document.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDocument**
 > \Swagger\Client\Model\ResponseEntity deleteDocument($organization_id, $id4n, $file_name)
@@ -133,8 +70,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -190,8 +127,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -247,8 +184,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -306,8 +243,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -367,8 +304,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -428,8 +365,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -489,13 +426,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readDocument**
-> \Swagger\Client\Model\File readDocument($organization_id, $id4n, $file_name)
+> string readDocument($organization_id, $id4n, $file_name)
 
 Read document contents
 
@@ -538,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\File**](../Model/File.md)
+**string**
 
 ### Authorization
 
@@ -546,8 +483,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -601,13 +538,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readPublicDocument**
-> \Swagger\Client\Model\File readPublicDocument($organization_id, $id4n, $file_name)
+> string readPublicDocument($organization_id, $id4n, $file_name)
 
 Read document contents
 
@@ -650,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\File**](../Model/File.md)
+**string**
 
 ### Authorization
 
@@ -658,13 +595,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateDocument**
-> \Swagger\Client\Model\Document updateDocument($organization_id, $id4n, $file_name, $document)
+# **updateDocumentMetadata**
+> \Swagger\Client\Model\Document updateDocumentMetadata($organization_id, $id4n, $file_name, $document)
 
 Update a document
 
@@ -690,10 +627,10 @@ $file_name = "file_name_example"; // string | fileName
 $document = new \Swagger\Client\Model\DocumentUpdate(); // \Swagger\Client\Model\DocumentUpdate | document
 
 try {
-    $result = $apiInstance->updateDocument($organization_id, $id4n, $file_name, $document);
+    $result = $apiInstance->updateDocumentMetadata($organization_id, $id4n, $file_name, $document);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageApi->updateDocument: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageApi->updateDocumentMetadata: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -717,71 +654,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **writeDocument**
-> \Swagger\Client\Model\ResponseEntity writeDocument($organization_id, $id4n, $file_name, $body, $content_type, $content_length)
-
-Write document contents
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\StorageApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = 789; // int | organizationId
-$id4n = "id4n_example"; // string | id4n
-$file_name = "file_name_example"; // string | fileName
-$body = new \Swagger\Client\Model\File(); // \Swagger\Client\Model\File | binary data
-$content_type = "content_type_example"; // string | Content-Type
-$content_length = 789; // int | Content-Length
-
-try {
-    $result = $apiInstance->writeDocument($organization_id, $id4n, $file_name, $body, $content_type, $content_length);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StorageApi->writeDocument: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
- **id4n** | **string**| id4n |
- **file_name** | **string**| fileName |
- **body** | [**\Swagger\Client\Model\File**](../Model/File.md)| binary data |
- **content_type** | **string**| Content-Type | [optional]
- **content_length** | **int**| Content-Length | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -808,7 +682,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
 );
 $organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$body = "body_example"; // string | binary data
+$body = "body_example"; // string | 
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
 
@@ -827,7 +701,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **body** | **string**| binary data |
+ **body** | **string**|  |
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]
 
@@ -842,7 +716,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 
 # **addElementsToCollection**
-> \Swagger\Client\Model\ApiError addElementsToCollection($id4n, $list_of_guids)
+> addElementsToCollection($id4n, $list_of_guids)
 
 Add elements to collection
 
@@ -63,8 +63,7 @@ $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->addElementsToCollection($id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->addElementsToCollection($id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -80,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -88,13 +87,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addElementsToLabelledCollection**
-> \Swagger\Client\Model\ApiError addElementsToLabelledCollection($collection_id4n, $list_of_guids)
+> addElementsToLabelledCollection($collection_id4n, $list_of_guids)
 
 Add elements to labelled collection
 
@@ -118,8 +117,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->addElementsToLabelledCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->addElementsToLabelledCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToLabelledCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -135,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -143,13 +141,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addElementsToLogisticCollection**
-> \Swagger\Client\Model\ApiError addElementsToLogisticCollection($collection_id4n, $list_of_guids)
+> addElementsToLogisticCollection($collection_id4n, $list_of_guids)
 
 Add elements to logistic collection
 
@@ -173,8 +171,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->addElementsToLogisticCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->addElementsToLogisticCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToLogisticCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -190,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -198,13 +195,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addElementsToRoutingCollection**
-> \Swagger\Client\Model\ApiError addElementsToRoutingCollection($collection_id4n, $list_of_guids)
+> addElementsToRoutingCollection($collection_id4n, $list_of_guids)
 
 Add element to routing collection
 
@@ -228,8 +225,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->addElementsToRoutingCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->addElementsToRoutingCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->addElementsToRoutingCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -245,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -253,8 +249,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -306,8 +302,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -359,8 +355,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -412,13 +408,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCollection**
-> \Swagger\Client\Model\ApiError deleteCollection($id4n)
+> deleteCollection($id4n)
 
 Delete collection
 
@@ -441,8 +437,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 
 try {
-    $result = $apiInstance->deleteCollection($id4n);
-    print_r($result);
+    $apiInstance->deleteCollection($id4n);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -457,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -465,13 +460,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteLabelledCollection**
-> \Swagger\Client\Model\ApiError deleteLabelledCollection($id4n)
+> deleteLabelledCollection($id4n)
 
 Delete labelled collection
 
@@ -494,8 +489,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 
 try {
-    $result = $apiInstance->deleteLabelledCollection($id4n);
-    print_r($result);
+    $apiInstance->deleteLabelledCollection($id4n);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteLabelledCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -510,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -518,8 +512,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -571,13 +565,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteRoutingCollection**
-> \Swagger\Client\Model\ApiError deleteRoutingCollection($id4n)
+> deleteRoutingCollection($id4n)
 
 Delete routing collection
 
@@ -600,8 +594,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 
 try {
-    $result = $apiInstance->deleteRoutingCollection($id4n);
-    print_r($result);
+    $apiInstance->deleteRoutingCollection($id4n);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->deleteRoutingCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -616,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -624,8 +617,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -677,8 +670,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -730,8 +723,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -783,8 +776,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -836,8 +829,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -901,8 +894,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -958,8 +951,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1015,8 +1008,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1072,8 +1065,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1129,13 +1122,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeElementsFromCollection**
-> \Swagger\Client\Model\ApiError removeElementsFromCollection($id4n, $list_of_guids)
+> removeElementsFromCollection($id4n, $list_of_guids)
 
 Remove elements from collection
 
@@ -1159,8 +1152,7 @@ $id4n = "id4n_example"; // string | id4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->removeElementsFromCollection($id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->removeElementsFromCollection($id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -1176,7 +1168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1184,13 +1176,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeElementsFromLabelledCollection**
-> \Swagger\Client\Model\ApiError removeElementsFromLabelledCollection($collection_id4n, $list_of_guids)
+> removeElementsFromLabelledCollection($collection_id4n, $list_of_guids)
 
 Remove elements from labelled collection
 
@@ -1214,8 +1206,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->removeElementsFromLabelledCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->removeElementsFromLabelledCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromLabelledCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -1231,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1239,13 +1230,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeElementsFromLogisticCollection**
-> \Swagger\Client\Model\ApiError removeElementsFromLogisticCollection($collection_id4n, $list_of_guids)
+> removeElementsFromLogisticCollection($collection_id4n, $list_of_guids)
 
 Remove elements from logistic collection
 
@@ -1269,8 +1260,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->removeElementsFromLogisticCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->removeElementsFromLogisticCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromLogisticCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -1286,7 +1276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1294,13 +1284,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeElementsFromRoutingCollection**
-> \Swagger\Client\Model\ApiError removeElementsFromRoutingCollection($collection_id4n, $list_of_guids)
+> removeElementsFromRoutingCollection($collection_id4n, $list_of_guids)
 
 Remove elements from routing collection
 
@@ -1324,8 +1314,7 @@ $collection_id4n = "collection_id4n_example"; // string | collectionId4n
 $list_of_guids = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | listOfGuids
 
 try {
-    $result = $apiInstance->removeElementsFromRoutingCollection($collection_id4n, $list_of_guids);
-    print_r($result);
+    $apiInstance->removeElementsFromRoutingCollection($collection_id4n, $list_of_guids);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->removeElementsFromRoutingCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -1341,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiError**](../Model/ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1349,8 +1338,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1406,8 +1395,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1463,8 +1452,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1520,8 +1509,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1575,8 +1564,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1632,8 +1621,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1689,8 +1678,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1746,8 +1735,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1803,8 +1792,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

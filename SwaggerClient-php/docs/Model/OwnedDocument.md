@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filename** | **string** |  | [optional] 
+**filename** | **string** | File Name | [optional] 
+**mime_type** | **string** | Mime Type | [optional] 
 **owner_organization_id** | **int** | The organization&#39;s id which owns the document | [optional] 
 **visibility** | [**\Swagger\Client\Model\Visibility**](Visibility.md) | Visibility configuration | [optional] 
 
