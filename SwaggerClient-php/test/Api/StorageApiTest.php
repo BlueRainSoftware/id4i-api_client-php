@@ -72,6 +72,16 @@ class StorageApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createDocument
+     *
+     * Create an empty document for an id4n.
+     *
+     */
+    public function testCreateDocument()
+    {
+    }
+
+    /**
      * Test case for deleteDocument
      *
      * Delete a document.
