@@ -207,7 +207,7 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**readDocument**](docs/Api/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**readFromMicrostorage**](docs/Api/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 *StorageApi* | [**readPublicDocument**](docs/Api/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-*StorageApi* | [**updateDocumentMetadata**](docs/Api/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+*StorageApi* | [**updateDocumentMetadata**](docs/Api/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**writeToMicrostorage**](docs/Api/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *WhoIsApi* | [**resolveWhoIsEntry**](docs/Api/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 

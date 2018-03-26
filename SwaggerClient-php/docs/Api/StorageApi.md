@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writeToMicrostorage**
-> object writeToMicrostorage($organization, $id4n, $body, $content_type, $content_length)
+> object writeToMicrostorage($organization, $id4n, $content_type, $content_length, $body)
 
 Write data to microstorage
 
@@ -742,12 +742,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
 );
 $organization = 789; // int | organization
 $id4n = "id4n_example"; // string | id4n
-$body = "body_example"; // string | 
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
+$body = "B"; // string | body
 
 try {
-    $result = $apiInstance->writeToMicrostorage($organization, $id4n, $body, $content_type, $content_length);
+    $result = $apiInstance->writeToMicrostorage($organization, $id4n, $content_type, $content_length, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->writeToMicrostorage: ', $e->getMessage(), PHP_EOL;
@@ -761,9 +761,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **int**| organization |
  **id4n** | **string**| id4n |
- **body** | **string**|  |
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]
+ **body** | **string**| body | [optional]
 
 ### Return type
 

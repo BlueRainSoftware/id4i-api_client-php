@@ -4212,7 +4212,7 @@ class StorageApi
             );
         }
 
-        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}';
+        $resourcePath = '/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4324,17 +4324,17 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function writeToMicrostorage($organization, $id4n, $body, $content_type = null, $content_length = null)
+    public function writeToMicrostorage($organization, $id4n, $content_type = null, $content_length = null, $body = null)
     {
-        list($response) = $this->writeToMicrostorageWithHttpInfo($organization, $id4n, $body, $content_type, $content_length);
+        list($response) = $this->writeToMicrostorageWithHttpInfo($organization, $id4n, $content_type, $content_length, $body);
         return $response;
     }
 
@@ -4345,18 +4345,18 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function writeToMicrostorageWithHttpInfo($organization, $id4n, $body, $content_type = null, $content_length = null)
+    public function writeToMicrostorageWithHttpInfo($organization, $id4n, $content_type = null, $content_length = null, $body = null)
     {
         $returnType = 'object';
-        $request = $this->writeToMicrostorageRequest($organization, $id4n, $body, $content_type, $content_length);
+        $request = $this->writeToMicrostorageRequest($organization, $id4n, $content_type, $content_length, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4496,16 +4496,16 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function writeToMicrostorageAsync($organization, $id4n, $body, $content_type = null, $content_length = null)
+    public function writeToMicrostorageAsync($organization, $id4n, $content_type = null, $content_length = null, $body = null)
     {
-        return $this->writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $body, $content_type, $content_length)
+        return $this->writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $content_type, $content_length, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4520,17 +4520,17 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $body, $content_type = null, $content_length = null)
+    public function writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $content_type = null, $content_length = null, $body = null)
     {
         $returnType = 'object';
-        $request = $this->writeToMicrostorageRequest($organization, $id4n, $body, $content_type, $content_length);
+        $request = $this->writeToMicrostorageRequest($organization, $id4n, $content_type, $content_length, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4574,14 +4574,14 @@ class StorageApi
      *
      * @param  int $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $body (required)
      * @param  string $content_type Content-Type (optional)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function writeToMicrostorageRequest($organization, $id4n, $body, $content_type = null, $content_length = null)
+    protected function writeToMicrostorageRequest($organization, $id4n, $content_type = null, $content_length = null, $body = null)
     {
         // verify the required parameter 'organization' is set
         if ($organization === null) {
@@ -4593,12 +4593,6 @@ class StorageApi
         if ($id4n === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id4n when calling writeToMicrostorage'
-            );
-        }
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling writeToMicrostorage'
             );
         }
 
