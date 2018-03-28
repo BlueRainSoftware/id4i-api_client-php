@@ -85,16 +85,16 @@ class GuidTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id4n"
+     * Test attribute "holder_organization_id"
      */
-    public function testPropertyId4n()
+    public function testPropertyHolderOrganizationId()
     {
     }
 
     /**
-     * Test attribute "next_scan_ownership"
+     * Test attribute "id4n"
      */
-    public function testPropertyNextScanOwnership()
+    public function testPropertyId4n()
     {
     }
 

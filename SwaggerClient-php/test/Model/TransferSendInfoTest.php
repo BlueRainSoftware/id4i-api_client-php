@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidCollectionTest
+ * TransferSendInfoTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * GuidCollectionTest Class Doc Comment
+ * TransferSendInfoTest Class Doc Comment
  *
  * @category    Class */
-// * @description GuidCollection
+// * @description TransferSendInfo
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GuidCollectionTest extends \PHPUnit_Framework_TestCase
+class TransferSendInfoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,9 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GuidCollection"
+     * Test "TransferSendInfo"
      */
-    public function testGuidCollection()
-    {
-    }
-
-    /**
-     * Test attribute "created_timestamp"
-     */
-    public function testPropertyCreatedTimestamp()
+    public function testTransferSendInfo()
     {
     }
 
@@ -92,16 +85,16 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id4n"
+     * Test attribute "keep_ownership"
      */
-    public function testPropertyId4n()
+    public function testPropertyKeepOwnership()
     {
     }
 
     /**
-     * Test attribute "label"
+     * Test attribute "next_scan_ownership"
      */
-    public function testPropertyLabel()
+    public function testPropertyNextScanOwnership()
     {
     }
 
@@ -113,9 +106,9 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "recipient_organization_ids"
      */
-    public function testPropertyType()
+    public function testPropertyRecipientOrganizationIds()
     {
     }
 }

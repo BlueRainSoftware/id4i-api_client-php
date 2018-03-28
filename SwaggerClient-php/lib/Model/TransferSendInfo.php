@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidCollection
+ * TransferSendInfo
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * GuidCollection Class Doc Comment
+ * TransferSendInfo Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GuidCollection implements ModelInterface, ArrayAccess
+class TransferSendInfo implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GuidCollection implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GuidCollection';
+    protected static $swaggerModelName = 'TransferSendInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created_timestamp' => 'int',
         'holder_organization_id' => 'int',
-        'id4n' => 'string',
-        'label' => 'string',
+        'keep_ownership' => 'bool',
+        'next_scan_ownership' => 'bool',
         'owner_organization_id' => 'int',
-        'type' => 'string'
+        'recipient_organization_ids' => 'int[]'
     ];
 
     /**
@@ -71,12 +70,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'created_timestamp' => 'int64',
         'holder_organization_id' => 'int64',
-        'id4n' => null,
-        'label' => null,
+        'keep_ownership' => null,
+        'next_scan_ownership' => null,
         'owner_organization_id' => 'int64',
-        'type' => null
+        'recipient_organization_ids' => 'int64'
     ];
 
     /**
@@ -106,12 +104,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'created_timestamp' => 'createdTimestamp',
         'holder_organization_id' => 'holderOrganizationId',
-        'id4n' => 'id4n',
-        'label' => 'label',
+        'keep_ownership' => 'keepOwnership',
+        'next_scan_ownership' => 'nextScanOwnership',
         'owner_organization_id' => 'ownerOrganizationId',
-        'type' => 'type'
+        'recipient_organization_ids' => 'recipientOrganizationIds'
     ];
 
     /**
@@ -120,12 +117,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'created_timestamp' => 'setCreatedTimestamp',
         'holder_organization_id' => 'setHolderOrganizationId',
-        'id4n' => 'setId4n',
-        'label' => 'setLabel',
+        'keep_ownership' => 'setKeepOwnership',
+        'next_scan_ownership' => 'setNextScanOwnership',
         'owner_organization_id' => 'setOwnerOrganizationId',
-        'type' => 'setType'
+        'recipient_organization_ids' => 'setRecipientOrganizationIds'
     ];
 
     /**
@@ -134,12 +130,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'created_timestamp' => 'getCreatedTimestamp',
         'holder_organization_id' => 'getHolderOrganizationId',
-        'id4n' => 'getId4n',
-        'label' => 'getLabel',
+        'keep_ownership' => 'getKeepOwnership',
+        'next_scan_ownership' => 'getNextScanOwnership',
         'owner_organization_id' => 'getOwnerOrganizationId',
-        'type' => 'getType'
+        'recipient_organization_ids' => 'getRecipientOrganizationIds'
     ];
 
     /**
@@ -183,25 +178,8 @@ class GuidCollection implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_ROUTING_COLLECTION = 'ROUTING_COLLECTION';
-    const TYPE_LOGISTIC_COLLECTION = 'LOGISTIC_COLLECTION';
-    const TYPE_LABELLED_COLLECTION = 'LABELLED_COLLECTION';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_ROUTING_COLLECTION,
-            self::TYPE_LOGISTIC_COLLECTION,
-            self::TYPE_LABELLED_COLLECTION,
-        ];
-    }
     
 
     /**
@@ -219,12 +197,11 @@ class GuidCollection implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['created_timestamp'] = isset($data['created_timestamp']) ? $data['created_timestamp'] : null;
         $this->container['holder_organization_id'] = isset($data['holder_organization_id']) ? $data['holder_organization_id'] : null;
-        $this->container['id4n'] = isset($data['id4n']) ? $data['id4n'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
+        $this->container['keep_ownership'] = isset($data['keep_ownership']) ? $data['keep_ownership'] : null;
+        $this->container['next_scan_ownership'] = isset($data['next_scan_ownership']) ? $data['next_scan_ownership'] : null;
         $this->container['owner_organization_id'] = isset($data['owner_organization_id']) ? $data['owner_organization_id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['recipient_organization_ids'] = isset($data['recipient_organization_ids']) ? $data['recipient_organization_ids'] : null;
     }
 
     /**
@@ -236,22 +213,15 @@ class GuidCollection implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['label']) && (strlen($this->container['label']) > 128)) {
-            $invalidProperties[] = "invalid value for 'label', the character length must be smaller than or equal to 128.";
+        if ($this->container['keep_ownership'] === null) {
+            $invalidProperties[] = "'keep_ownership' can't be null";
         }
-
-        if (!is_null($this->container['label']) && (strlen($this->container['label']) < 5)) {
-            $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 5.";
+        if ($this->container['next_scan_ownership'] === null) {
+            $invalidProperties[] = "'next_scan_ownership' can't be null";
         }
-
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['recipient_organization_ids'] === null) {
+            $invalidProperties[] = "'recipient_organization_ids' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -264,43 +234,18 @@ class GuidCollection implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['label']) > 128) {
+        if ($this->container['keep_ownership'] === null) {
             return false;
         }
-        if (strlen($this->container['label']) < 5) {
+        if ($this->container['next_scan_ownership'] === null) {
             return false;
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
+        if ($this->container['recipient_organization_ids'] === null) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets created_timestamp
-     *
-     * @return int
-     */
-    public function getCreatedTimestamp()
-    {
-        return $this->container['created_timestamp'];
-    }
-
-    /**
-     * Sets created_timestamp
-     *
-     * @param int $created_timestamp The UTC unix timestamp of when this collection has been created
-     *
-     * @return $this
-     */
-    public function setCreatedTimestamp($created_timestamp)
-    {
-        $this->container['created_timestamp'] = $created_timestamp;
-
-        return $this;
-    }
 
     /**
      * Gets holder_organization_id
@@ -315,7 +260,7 @@ class GuidCollection implements ModelInterface, ArrayAccess
     /**
      * Sets holder_organization_id
      *
-     * @param int $holder_organization_id The UTC unix timestamp of when this collection has been created
+     * @param int $holder_organization_id The current holder of the object
      *
      * @return $this
      */
@@ -327,56 +272,49 @@ class GuidCollection implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets id4n
+     * Gets keep_ownership
      *
-     * @return string
+     * @return bool
      */
-    public function getId4n()
+    public function getKeepOwnership()
     {
-        return $this->container['id4n'];
+        return $this->container['keep_ownership'];
     }
 
     /**
-     * Sets id4n
+     * Sets keep_ownership
      *
-     * @param string $id4n The ID
+     * @param bool $keep_ownership Keep the public ownership while transferring the object
      *
      * @return $this
      */
-    public function setId4n($id4n)
+    public function setKeepOwnership($keep_ownership)
     {
-        $this->container['id4n'] = $id4n;
+        $this->container['keep_ownership'] = $keep_ownership;
 
         return $this;
     }
 
     /**
-     * Gets label
+     * Gets next_scan_ownership
      *
-     * @return string
+     * @return bool
      */
-    public function getLabel()
+    public function getNextScanOwnership()
     {
-        return $this->container['label'];
+        return $this->container['next_scan_ownership'];
     }
 
     /**
-     * Sets label
+     * Sets next_scan_ownership
      *
-     * @param string $label label
+     * @param bool $next_scan_ownership Allow anyone which scans or knows the ID4N to obtain this object
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setNextScanOwnership($next_scan_ownership)
     {
-        if (!is_null($label) && (strlen($label) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling GuidCollection., must be smaller than or equal to 128.');
-        }
-        if (!is_null($label) && (strlen($label) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling GuidCollection., must be bigger than or equal to 5.');
-        }
-
-        $this->container['label'] = $label;
+        $this->container['next_scan_ownership'] = $next_scan_ownership;
 
         return $this;
     }
@@ -394,7 +332,7 @@ class GuidCollection implements ModelInterface, ArrayAccess
     /**
      * Sets owner_organization_id
      *
-     * @param int $owner_organization_id The UTC unix timestamp of when this collection has been created
+     * @param int $owner_organization_id The current publicly visible owner of the object
      *
      * @return $this
      */
@@ -406,34 +344,25 @@ class GuidCollection implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets type
+     * Gets recipient_organization_ids
      *
-     * @return string
+     * @return int[]
      */
-    public function getType()
+    public function getRecipientOrganizationIds()
     {
-        return $this->container['type'];
+        return $this->container['recipient_organization_ids'];
     }
 
     /**
-     * Sets type
+     * Sets recipient_organization_ids
      *
-     * @param string $type type
+     * @param int[] $recipient_organization_ids Allow only these organizations to obtain this object
      *
      * @return $this
      */
-    public function setType($type)
+    public function setRecipientOrganizationIds($recipient_organization_ids)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['recipient_organization_ids'] = $recipient_organization_ids;
 
         return $this;
     }

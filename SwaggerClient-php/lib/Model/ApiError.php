@@ -212,6 +212,7 @@ class ApiError implements ModelInterface, ArrayAccess
     const CODE_INVALID_URI_TEMPLATE_VARIABLE = 'ERR_INVALID_URI_TEMPLATE_VARIABLE';
     const CODE_MODULE_NOT_ACTIVE = 'ERR_MODULE_NOT_ACTIVE';
     const CODE_INSECURE_PASSWORD = 'ERR_INSECURE_PASSWORD';
+    const CODE_TRANSFER_DENIED = 'ERR_TRANSFER_DENIED';
     
 
     
@@ -262,6 +263,7 @@ class ApiError implements ModelInterface, ArrayAccess
             self::CODE_INVALID_URI_TEMPLATE_VARIABLE,
             self::CODE_MODULE_NOT_ACTIVE,
             self::CODE_INSECURE_PASSWORD,
+            self::CODE_TRANSFER_DENIED,
         ];
     }
     

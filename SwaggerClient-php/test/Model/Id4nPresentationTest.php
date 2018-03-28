@@ -85,6 +85,13 @@ class Id4nPresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "holder_organization_id"
+     */
+    public function testPropertyHolderOrganizationId()
+    {
+    }
+
+    /**
      * Test attribute "id4n"
      */
     public function testPropertyId4n()
@@ -99,9 +106,9 @@ class Id4nPresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "next_scan_ownership"
+     * Test attribute "owner_organization_id"
      */
-    public function testPropertyNextScanOwnership()
+    public function testPropertyOwnerOrganizationId()
     {
     }
 
