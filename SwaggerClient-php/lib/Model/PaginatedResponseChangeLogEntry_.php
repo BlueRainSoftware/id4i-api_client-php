@@ -1,6 +1,6 @@
 <?php
 /**
- * SimpleMessageResponse
+ * PaginatedResponseChangeLogEntry_
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SimpleMessageResponse Class Doc Comment
+ * PaginatedResponseChangeLogEntry_ Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SimpleMessageResponse implements ModelInterface, ArrayAccess
+class PaginatedResponseChangeLogEntry_ implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SimpleMessageResponse';
+    protected static $swaggerModelName = 'PaginatedResponse«ChangeLogEntry»';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'message' => 'string'
+        'elements' => '\Swagger\Client\Model\ChangeLogEntry[]',
+        'limit' => 'int',
+        'offset' => 'int',
+        'total' => 'int'
     ];
 
     /**
@@ -66,7 +69,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'message' => null
+        'elements' => null,
+        'limit' => 'int32',
+        'offset' => 'int32',
+        'total' => 'int32'
     ];
 
     /**
@@ -96,7 +102,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'elements' => 'elements',
+        'limit' => 'limit',
+        'offset' => 'offset',
+        'total' => 'total'
     ];
 
     /**
@@ -105,7 +114,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'elements' => 'setElements',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -114,7 +126,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'elements' => 'getElements',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -177,7 +192,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['elements'] = isset($data['elements']) ? $data['elements'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -189,8 +207,14 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['elements'] === null) {
+            $invalidProperties[] = "'elements' can't be null";
+        }
+        if ($this->container['limit'] === null) {
+            $invalidProperties[] = "'limit' can't be null";
+        }
+        if ($this->container['offset'] === null) {
+            $invalidProperties[] = "'offset' can't be null";
         }
         return $invalidProperties;
     }
@@ -204,7 +228,13 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['message'] === null) {
+        if ($this->container['elements'] === null) {
+            return false;
+        }
+        if ($this->container['limit'] === null) {
+            return false;
+        }
+        if ($this->container['offset'] === null) {
             return false;
         }
         return true;
@@ -212,25 +242,97 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets message
+     * Gets elements
      *
-     * @return string
+     * @return \Swagger\Client\Model\ChangeLogEntry[]
      */
-    public function getMessage()
+    public function getElements()
     {
-        return $this->container['message'];
+        return $this->container['elements'];
     }
 
     /**
-     * Sets message
+     * Sets elements
      *
-     * @param string $message message
+     * @param \Swagger\Client\Model\ChangeLogEntry[] $elements elements
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setElements($elements)
     {
-        $this->container['message'] = $message;
+        $this->container['elements'] = $elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int $limit The number of returned elements
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int $offset Starting with the n-th element
+     *
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int $total The total number of elements
+     *
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

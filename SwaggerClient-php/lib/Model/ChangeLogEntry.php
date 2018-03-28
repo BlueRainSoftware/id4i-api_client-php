@@ -1,6 +1,6 @@
 <?php
 /**
- * SimpleMessageResponse
+ * ChangeLogEntry
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SimpleMessageResponse Class Doc Comment
+ * ChangeLogEntry Class Doc Comment
  *
  * @category Class
+ * @description A changelog entry
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SimpleMessageResponse implements ModelInterface, ArrayAccess
+class ChangeLogEntry implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SimpleMessageResponse';
+    protected static $swaggerModelName = 'ChangeLogEntry';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +58,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'message' => 'string'
+        'id' => 'string',
+        'message' => 'string',
+        'message_properties' => 'map[string,object]',
+        'timestamp' => 'int'
     ];
 
     /**
@@ -66,7 +70,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'message' => null
+        'id' => null,
+        'message' => null,
+        'message_properties' => null,
+        'timestamp' => 'int64'
     ];
 
     /**
@@ -96,7 +103,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'id' => 'id',
+        'message' => 'message',
+        'message_properties' => 'messageProperties',
+        'timestamp' => 'timestamp'
     ];
 
     /**
@@ -105,7 +115,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'id' => 'setId',
+        'message' => 'setMessage',
+        'message_properties' => 'setMessageProperties',
+        'timestamp' => 'setTimestamp'
     ];
 
     /**
@@ -114,7 +127,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'id' => 'getId',
+        'message' => 'getMessage',
+        'message_properties' => 'getMessageProperties',
+        'timestamp' => 'getTimestamp'
     ];
 
     /**
@@ -177,7 +193,10 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['message_properties'] = isset($data['message_properties']) ? $data['message_properties'] : null;
+        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
     }
 
     /**
@@ -189,9 +208,6 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -204,12 +220,33 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['message'] === null) {
-            return false;
-        }
         return true;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id The unique id of the changelog entry
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets message
@@ -224,13 +261,61 @@ class SimpleMessageResponse implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message The message as template or rendered as plain text
      *
      * @return $this
      */
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_properties
+     *
+     * @return map[string,object]
+     */
+    public function getMessageProperties()
+    {
+        return $this->container['message_properties'];
+    }
+
+    /**
+     * Sets message_properties
+     *
+     * @param map[string,object] $message_properties The values of the properties in the message. May be nested as object with a value field
+     *
+     * @return $this
+     */
+    public function setMessageProperties($message_properties)
+    {
+        $this->container['message_properties'] = $message_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets timestamp
+     *
+     * @return int
+     */
+    public function getTimestamp()
+    {
+        return $this->container['timestamp'];
+    }
+
+    /**
+     * Sets timestamp
+     *
+     * @param int $timestamp The UTC unix timestamp when this change occurred
+     *
+     * @return $this
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->container['timestamp'] = $timestamp;
 
         return $this;
     }
