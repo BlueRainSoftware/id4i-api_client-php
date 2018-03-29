@@ -5,6 +5,7 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getWebRoutes**](PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -58,6 +59,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Document**](../Model/Document.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getWebRoutes**
+> \Swagger\Client\Model\Route[] getWebRoutes($id4n)
+
+Retrieve all public routes for a GUID
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\PublicServicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4n = "id4n_example"; // string | id4n
+
+try {
+    $result = $apiInstance->getWebRoutes($id4n);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PublicServicesApi->getWebRoutes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n |
+
+### Return type
+
+[**\Swagger\Client\Model\Route[]**](../Model/Route.md)
 
 ### Authorization
 
