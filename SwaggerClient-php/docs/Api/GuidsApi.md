@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**setGuid**](GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**setGuid1**](GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 # **addGuidAlias**
@@ -404,8 +404,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setGuid**
-> object setGuid($id4n, $request)
+# **updateGuid**
+> object updateGuid($id4n, $request)
 
 Change GUID information.
 
@@ -431,10 +431,10 @@ $id4n = "id4n_example"; // string | The GUID number
 $request = new \Swagger\Client\Model\Guid(); // \Swagger\Client\Model\Guid | request
 
 try {
-    $result = $apiInstance->setGuid($id4n, $request);
+    $result = $apiInstance->updateGuid($id4n, $request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->setGuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->updateGuid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -461,8 +461,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **setGuid1**
-> object setGuid1($id4n, $request)
+# **updateGuid1**
+> object updateGuid1($id4n, $request)
 
 Change GUID information.
 
@@ -488,10 +488,10 @@ $id4n = "id4n_example"; // string | The GUID number
 $request = new \Swagger\Client\Model\Guid(); // \Swagger\Client\Model\Guid | request
 
 try {
-    $result = $apiInstance->setGuid1($id4n, $request);
+    $result = $apiInstance->updateGuid1($id4n, $request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->setGuid1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GuidsApi->updateGuid1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
