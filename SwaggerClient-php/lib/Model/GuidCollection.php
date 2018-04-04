@@ -315,7 +315,7 @@ class GuidCollection implements ModelInterface, ArrayAccess
     /**
      * Sets holder_organization_id
      *
-     * @param int $holder_organization_id The UTC unix timestamp of when this collection has been created
+     * @param int $holder_organization_id Organization ID of the GUID holder
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class GuidCollection implements ModelInterface, ArrayAccess
     /**
      * Sets owner_organization_id
      *
-     * @param int $owner_organization_id The UTC unix timestamp of when this collection has been created
+     * @param int $owner_organization_id Organization ID of the GUID owner
      *
      * @return $this
      */

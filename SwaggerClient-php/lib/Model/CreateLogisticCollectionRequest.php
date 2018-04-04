@@ -205,8 +205,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'label', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['label']) && (strlen($this->container['label']) < 1)) {
-            $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['label']) && (strlen($this->container['label']) < 5)) {
+            $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 5.";
         }
 
         if ($this->container['length'] === null) {
@@ -238,7 +238,7 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         if (strlen($this->container['label']) > 128) {
             return false;
         }
-        if (strlen($this->container['label']) < 1) {
+        if (strlen($this->container['label']) < 5) {
             return false;
         }
         if ($this->container['length'] === null) {
@@ -279,8 +279,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         if (!is_null($label) && (strlen($label) > 128)) {
             throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be smaller than or equal to 128.');
         }
-        if (!is_null($label) && (strlen($label) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be bigger than or equal to 1.');
+        if (!is_null($label) && (strlen($label) < 5)) {
+            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be bigger than or equal to 5.');
         }
 
         $this->container['label'] = $label;
