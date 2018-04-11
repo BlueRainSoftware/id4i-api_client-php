@@ -113,6 +113,13 @@ class GuidCollectionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "physical_state"
+     */
+    public function testPropertyPhysicalState()
+    {
+    }
+
+    /**
      * Test attribute "type"
      */
     public function testPropertyType()

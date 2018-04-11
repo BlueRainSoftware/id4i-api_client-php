@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **holder_organization_id** | **int** | Organization ID of the GUID holder | [optional] 
 **id4n** | **string** | The ID | [optional] 
 **owner_organization_id** | **int** | Organization ID of the GUID owner | [optional] 
+**physical_state** | **string** | Physical attachment state of the GUID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
