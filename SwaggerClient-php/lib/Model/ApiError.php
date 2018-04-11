@@ -58,7 +58,6 @@ class ApiError implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'error_id' => 'string',
         'error_list' => '\Swagger\Client\Model\ApiError[]',
         'message' => 'string'
     ];
@@ -70,7 +69,6 @@ class ApiError implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
-        'error_id' => null,
         'error_list' => null,
         'message' => null
     ];
@@ -103,7 +101,6 @@ class ApiError implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'error_id' => 'errorId',
         'error_list' => 'errorList',
         'message' => 'message'
     ];
@@ -115,7 +112,6 @@ class ApiError implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-        'error_id' => 'setErrorId',
         'error_list' => 'setErrorList',
         'message' => 'setMessage'
     ];
@@ -127,7 +123,6 @@ class ApiError implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-        'error_id' => 'getErrorId',
         'error_list' => 'getErrorList',
         'message' => 'getMessage'
     ];
@@ -286,7 +281,6 @@ class ApiError implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['error_id'] = isset($data['error_id']) ? $data['error_id'] : null;
         $this->container['error_list'] = isset($data['error_list']) ? $data['error_list'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
@@ -300,6 +294,9 @@ class ApiError implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
         $allowedValues = $this->getCodeAllowableValues();
         if (!in_array($this->container['code'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -308,6 +305,12 @@ class ApiError implements ModelInterface, ArrayAccess
             );
         }
 
+        if ($this->container['error_list'] === null) {
+            $invalidProperties[] = "'error_list' can't be null";
+        }
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -320,8 +323,17 @@ class ApiError implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['code'] === null) {
+            return false;
+        }
         $allowedValues = $this->getCodeAllowableValues();
         if (!in_array($this->container['code'], $allowedValues)) {
+            return false;
+        }
+        if ($this->container['error_list'] === null) {
+            return false;
+        }
+        if ($this->container['message'] === null) {
             return false;
         }
         return true;
@@ -348,7 +360,7 @@ class ApiError implements ModelInterface, ArrayAccess
     public function setCode($code)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (!is_null($code) && !in_array($code, $allowedValues)) {
+        if (!in_array($code, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'code', must be one of '%s'",
@@ -357,30 +369,6 @@ class ApiError implements ModelInterface, ArrayAccess
             );
         }
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_id
-     *
-     * @return string
-     */
-    public function getErrorId()
-    {
-        return $this->container['error_id'];
-    }
-
-    /**
-     * Sets error_id
-     *
-     * @param string $error_id error_id
-     *
-     * @return $this
-     */
-    public function setErrorId($error_id)
-    {
-        $this->container['error_id'] = $error_id;
 
         return $this;
     }

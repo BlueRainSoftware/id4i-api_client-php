@@ -85,13 +85,6 @@ class ApiErrorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "error_id"
-     */
-    public function testPropertyErrorId()
-    {
-    }
-
-    /**
      * Test attribute "error_list"
      */
     public function testPropertyErrorList()
