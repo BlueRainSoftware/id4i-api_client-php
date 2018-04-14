@@ -57,8 +57,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization_id' => 'int',
-        'routing' => '\Swagger\Client\Model\RoutingFile'
+        'routing' => '\Swagger\Client\Model\RoutingFile',
+        'organization_id' => 'int'
     ];
 
     /**
@@ -67,8 +67,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'organization_id' => 'int64',
-        'routing' => null
+        'routing' => null,
+        'organization_id' => 'int64'
     ];
 
     /**
@@ -98,8 +98,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'organization_id' => 'organizationId',
-        'routing' => 'routing'
+        'routing' => 'routing',
+        'organization_id' => 'organizationId'
     ];
 
     /**
@@ -108,8 +108,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'organization_id' => 'setOrganizationId',
-        'routing' => 'setRouting'
+        'routing' => 'setRouting',
+        'organization_id' => 'setOrganizationId'
     ];
 
     /**
@@ -118,8 +118,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'organization_id' => 'getOrganizationId',
-        'routing' => 'getRouting'
+        'routing' => 'getRouting',
+        'organization_id' => 'getOrganizationId'
     ];
 
     /**
@@ -182,8 +182,8 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
+        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
     }
 
     /**
@@ -218,30 +218,6 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets organization_id
-     *
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->container['organization_id'];
-    }
-
-    /**
-     * Sets organization_id
-     *
-     * @param int $organization_id organization_id
-     *
-     * @return $this
-     */
-    public function setOrganizationId($organization_id)
-    {
-        $this->container['organization_id'] = $organization_id;
-
-        return $this;
-    }
-
-    /**
      * Gets routing
      *
      * @return \Swagger\Client\Model\RoutingFile
@@ -261,6 +237,30 @@ class RoutingFileRequest implements ModelInterface, ArrayAccess
     public function setRouting($routing)
     {
         $this->container['routing'] = $routing;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_id
+     *
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->container['organization_id'];
+    }
+
+    /**
+     * Sets organization_id
+     *
+     * @param int $organization_id organization_id
+     *
+     * @return $this
+     */
+    public function setOrganizationId($organization_id)
+    {
+        $this->container['organization_id'] = $organization_id;
 
         return $this;
     }

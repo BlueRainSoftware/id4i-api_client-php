@@ -85,16 +85,16 @@ class ApiKeyCreationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "organization_id"
+     * Test attribute "secret"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertySecret()
     {
     }
 
     /**
-     * Test attribute "secret"
+     * Test attribute "organization_id"
      */
-    public function testPropertySecret()
+    public function testPropertyOrganizationId()
     {
     }
 }

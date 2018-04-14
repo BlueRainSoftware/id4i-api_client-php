@@ -200,7 +200,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$username_prefix = "username_prefix_example"; // string | Find users starting with this prefix.
+$username_prefix = "username_prefix_example"; // string | 
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -217,7 +217,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username_prefix** | **string**| Find users starting with this prefix. |
+ **username_prefix** | **string**|  | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 

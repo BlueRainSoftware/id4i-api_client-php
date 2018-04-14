@@ -57,9 +57,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'password' => 'string',
+        'verification_token' => 'string',
         'username' => 'string',
-        'verification_token' => 'string'
+        'password' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'password' => null,
+        'verification_token' => null,
         'username' => null,
-        'verification_token' => null
+        'password' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'password' => 'password',
+        'verification_token' => 'verificationToken',
         'username' => 'username',
-        'verification_token' => 'verificationToken'
+        'password' => 'password'
     ];
 
     /**
@@ -111,9 +111,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'password' => 'setPassword',
+        'verification_token' => 'setVerificationToken',
         'username' => 'setUsername',
-        'verification_token' => 'setVerificationToken'
+        'password' => 'setPassword'
     ];
 
     /**
@@ -122,9 +122,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'password' => 'getPassword',
+        'verification_token' => 'getVerificationToken',
         'username' => 'getUsername',
-        'verification_token' => 'getVerificationToken'
+        'password' => 'getPassword'
     ];
 
     /**
@@ -187,9 +187,9 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['verification_token'] = isset($data['verification_token']) ? $data['verification_token'] : null;
+        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -200,6 +200,16 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['verification_token'] === null) {
+            $invalidProperties[] = "'verification_token' can't be null";
+        }
+        if ($this->container['username'] === null) {
+            $invalidProperties[] = "'username' can't be null";
+        }
+        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
+            $invalidProperties[] = "invalid value for 'username', must be conform to the pattern /[a-zA-Z0-9_.-]{6,50}/.";
+        }
 
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
@@ -212,16 +222,6 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'password', the character length must be bigger than or equal to 8.";
         }
 
-        if ($this->container['username'] === null) {
-            $invalidProperties[] = "'username' can't be null";
-        }
-        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
-            $invalidProperties[] = "invalid value for 'username', must be conform to the pattern /[a-zA-Z0-9_.-]{6,50}/.";
-        }
-
-        if ($this->container['verification_token'] === null) {
-            $invalidProperties[] = "'verification_token' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -234,6 +234,15 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['verification_token'] === null) {
+            return false;
+        }
+        if ($this->container['username'] === null) {
+            return false;
+        }
+        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
+            return false;
+        }
         if ($this->container['password'] === null) {
             return false;
         }
@@ -243,46 +252,30 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
         if (strlen($this->container['password']) < 8) {
             return false;
         }
-        if ($this->container['username'] === null) {
-            return false;
-        }
-        if (!preg_match("/[a-zA-Z0-9_.-]{6,50}/", $this->container['username'])) {
-            return false;
-        }
-        if ($this->container['verification_token'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets password
+     * Gets verification_token
      *
      * @return string
      */
-    public function getPassword()
+    public function getVerificationToken()
     {
-        return $this->container['password'];
+        return $this->container['verification_token'];
     }
 
     /**
-     * Sets password
+     * Sets verification_token
      *
-     * @param string $password password
+     * @param string $verification_token verification_token
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setVerificationToken($verification_token)
     {
-        if ((strlen($password) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be smaller than or equal to 99.');
-        }
-        if ((strlen($password) < 8)) {
-            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be bigger than or equal to 8.');
-        }
-
-        $this->container['password'] = $password;
+        $this->container['verification_token'] = $verification_token;
 
         return $this;
     }
@@ -317,25 +310,32 @@ class CompleteUserRegistrationRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets verification_token
+     * Gets password
      *
      * @return string
      */
-    public function getVerificationToken()
+    public function getPassword()
     {
-        return $this->container['verification_token'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets verification_token
+     * Sets password
      *
-     * @param string $verification_token verification_token
+     * @param string $password password
      *
      * @return $this
      */
-    public function setVerificationToken($verification_token)
+    public function setPassword($password)
     {
-        $this->container['verification_token'] = $verification_token;
+        if ((strlen($password) > 99)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be smaller than or equal to 99.');
+        }
+        if ((strlen($password) < 8)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling CompleteUserRegistrationRequest., must be bigger than or equal to 8.');
+        }
+
+        $this->container['password'] = $password;
 
         return $this;
     }

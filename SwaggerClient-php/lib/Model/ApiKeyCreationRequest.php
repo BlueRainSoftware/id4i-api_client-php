@@ -58,8 +58,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'label' => 'string',
-        'organization_id' => 'int',
-        'secret' => 'string'
+        'secret' => 'string',
+        'organization_id' => 'int'
     ];
 
     /**
@@ -69,8 +69,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'label' => null,
-        'organization_id' => 'int64',
-        'secret' => null
+        'secret' => null,
+        'organization_id' => 'int64'
     ];
 
     /**
@@ -101,8 +101,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'label' => 'label',
-        'organization_id' => 'organizationId',
-        'secret' => 'secret'
+        'secret' => 'secret',
+        'organization_id' => 'organizationId'
     ];
 
     /**
@@ -112,8 +112,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'label' => 'setLabel',
-        'organization_id' => 'setOrganizationId',
-        'secret' => 'setSecret'
+        'secret' => 'setSecret',
+        'organization_id' => 'setOrganizationId'
     ];
 
     /**
@@ -123,8 +123,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'label' => 'getLabel',
-        'organization_id' => 'getOrganizationId',
-        'secret' => 'getSecret'
+        'secret' => 'getSecret',
+        'organization_id' => 'getOrganizationId'
     ];
 
     /**
@@ -188,8 +188,8 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
         $this->container['secret'] = isset($data['secret']) ? $data['secret'] : null;
+        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
     }
 
     /**
@@ -212,9 +212,6 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 5.";
         }
 
-        if ($this->container['organization_id'] === null) {
-            $invalidProperties[] = "'organization_id' can't be null";
-        }
         if ($this->container['secret'] === null) {
             $invalidProperties[] = "'secret' can't be null";
         }
@@ -226,6 +223,9 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'secret', the character length must be bigger than or equal to 10.";
         }
 
+        if ($this->container['organization_id'] === null) {
+            $invalidProperties[] = "'organization_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -247,9 +247,6 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
         if (strlen($this->container['label']) < 5) {
             return false;
         }
-        if ($this->container['organization_id'] === null) {
-            return false;
-        }
         if ($this->container['secret'] === null) {
             return false;
         }
@@ -257,6 +254,9 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
             return false;
         }
         if (strlen($this->container['secret']) < 10) {
+            return false;
+        }
+        if ($this->container['organization_id'] === null) {
             return false;
         }
         return true;
@@ -295,30 +295,6 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets organization_id
-     *
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->container['organization_id'];
-    }
-
-    /**
-     * Sets organization_id
-     *
-     * @param int $organization_id organization_id
-     *
-     * @return $this
-     */
-    public function setOrganizationId($organization_id)
-    {
-        $this->container['organization_id'] = $organization_id;
-
-        return $this;
-    }
-
-    /**
      * Gets secret
      *
      * @return string
@@ -345,6 +321,30 @@ class ApiKeyCreationRequest implements ModelInterface, ArrayAccess
         }
 
         $this->container['secret'] = $secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization_id
+     *
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->container['organization_id'];
+    }
+
+    /**
+     * Sets organization_id
+     *
+     * @param int $organization_id organization_id
+     *
+     * @return $this
+     */
+    public function setOrganizationId($organization_id)
+    {
+        $this->container['organization_id'] = $organization_id;
 
         return $this;
     }

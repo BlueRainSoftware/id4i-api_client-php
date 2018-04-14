@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **string** |  | [optional] 
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **message** | **string** |  | [optional] 
 **username** | **string** |  | [optional] 
 

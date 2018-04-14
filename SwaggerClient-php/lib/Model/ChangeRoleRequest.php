@@ -189,9 +189,6 @@ class ChangeRoleRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['roles'] === null) {
-            $invalidProperties[] = "'roles' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -204,9 +201,6 @@ class ChangeRoleRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['roles'] === null) {
-            return false;
-        }
         return true;
     }
 

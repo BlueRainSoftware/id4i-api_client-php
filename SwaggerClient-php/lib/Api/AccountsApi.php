@@ -1037,7 +1037,7 @@ class AccountsApi
      *
      * Find users
      *
-     * @param  string $username_prefix Find users starting with this prefix. (required)
+     * @param  string $username_prefix username_prefix (optional)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
      *
@@ -1045,7 +1045,7 @@ class AccountsApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedUserPresentationResponse
      */
-    public function findUsers($username_prefix, $offset = null, $limit = null)
+    public function findUsers($username_prefix = null, $offset = null, $limit = null)
     {
         list($response) = $this->findUsersWithHttpInfo($username_prefix, $offset, $limit);
         return $response;
@@ -1056,7 +1056,7 @@ class AccountsApi
      *
      * Find users
      *
-     * @param  string $username_prefix Find users starting with this prefix. (required)
+     * @param  string $username_prefix (optional)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
      *
@@ -1064,7 +1064,7 @@ class AccountsApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedUserPresentationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function findUsersWithHttpInfo($username_prefix, $offset = null, $limit = null)
+    public function findUsersWithHttpInfo($username_prefix = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
         $request = $this->findUsersRequest($username_prefix, $offset, $limit);
@@ -1189,14 +1189,14 @@ class AccountsApi
      *
      * Find users
      *
-     * @param  string $username_prefix Find users starting with this prefix. (required)
+     * @param  string $username_prefix (optional)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findUsersAsync($username_prefix, $offset = null, $limit = null)
+    public function findUsersAsync($username_prefix = null, $offset = null, $limit = null)
     {
         return $this->findUsersAsyncWithHttpInfo($username_prefix, $offset, $limit)
             ->then(
@@ -1211,14 +1211,14 @@ class AccountsApi
      *
      * Find users
      *
-     * @param  string $username_prefix Find users starting with this prefix. (required)
+     * @param  string $username_prefix (optional)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findUsersAsyncWithHttpInfo($username_prefix, $offset = null, $limit = null)
+    public function findUsersAsyncWithHttpInfo($username_prefix = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
         $request = $this->findUsersRequest($username_prefix, $offset, $limit);
@@ -1263,25 +1263,15 @@ class AccountsApi
     /**
      * Create request for operation 'findUsers'
      *
-     * @param  string $username_prefix Find users starting with this prefix. (required)
+     * @param  string $username_prefix (optional)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findUsersRequest($username_prefix, $offset = null, $limit = null)
+    protected function findUsersRequest($username_prefix = null, $offset = null, $limit = null)
     {
-        // verify the required parameter 'username_prefix' is set
-        if ($username_prefix === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $username_prefix when calling findUsers'
-            );
-        }
-        if (!preg_match("/[a-zA-Z0-9_.-]{2,50}/", $username_prefix)) {
-            throw new \InvalidArgumentException("invalid value for \"username_prefix\" when calling AccountsApi.findUsers, must conform to the pattern /[a-zA-Z0-9_.-]{2,50}/.");
-        }
-
 
         $resourcePath = '/api/v1/users';
         $formParams = [];

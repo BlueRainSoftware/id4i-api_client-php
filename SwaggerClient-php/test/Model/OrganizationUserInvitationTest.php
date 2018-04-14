@@ -85,16 +85,16 @@ class OrganizationUserInvitationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "roles"
+     * Test attribute "user_name"
      */
-    public function testPropertyRoles()
+    public function testPropertyUserName()
     {
     }
 
     /**
-     * Test attribute "user_name"
+     * Test attribute "roles"
      */
-    public function testPropertyUserName()
+    public function testPropertyRoles()
     {
     }
 }
