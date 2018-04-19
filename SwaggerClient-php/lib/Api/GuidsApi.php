@@ -644,7 +644,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/history';
+        $resourcePath = '/api/v1/history/{id4n}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2625,7 +2625,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/history';
+        $resourcePath = '/api/v1/history/{id4n}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2986,7 +2986,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/history/{organizationId}';
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4301,7 +4301,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility';
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}/{sequence}/visibility';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
