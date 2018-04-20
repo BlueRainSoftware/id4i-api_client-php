@@ -162,8 +162,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**listHistory**](docs/Api/GuidsApi.md#listhistory) | **GET** /api/v1/history/{id4n} | List history
 *GuidsApi* | [**listHistoryOfOrganization**](docs/Api/GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *GuidsApi* | [**removeGuidAlias**](docs/Api/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*GuidsApi* | [**updateGuid**](docs/Api/GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**updateGuid1**](docs/Api/GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**updateGuid**](docs/Api/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *GuidsApi* | [**updateHistoryItemVisibility**](docs/Api/GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i

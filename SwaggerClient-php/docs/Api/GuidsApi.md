@@ -14,8 +14,7 @@ Method | HTTP request | Description
 [**listHistory**](GuidsApi.md#listHistory) | **GET** /api/v1/history/{id4n} | List history
 [**listHistoryOfOrganization**](GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 [**updateHistoryItemVisibility**](GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
@@ -619,63 +618,6 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->updateGuid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID number |
- **request** | [**\Swagger\Client\Model\Guid**](../Model/Guid.md)| request |
-
-### Return type
-
-**object**
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateGuid1**
-> object updateGuid1($id4n, $request)
-
-Change GUID information.
-
-Allows ownership transfer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GuidsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | The GUID number
-$request = new \Swagger\Client\Model\Guid(); // \Swagger\Client\Model\Guid | request
-
-try {
-    $result = $apiInstance->updateGuid1($id4n, $request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->updateGuid1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

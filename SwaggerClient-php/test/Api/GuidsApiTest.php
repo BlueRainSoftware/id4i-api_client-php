@@ -182,16 +182,6 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateGuid1
-     *
-     * Change GUID information..
-     *
-     */
-    public function testUpdateGuid1()
-    {
-    }
-
-    /**
      * Test case for updateHistoryItemVisibility
      *
      * Set history item visibility.
