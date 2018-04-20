@@ -153,17 +153,19 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateLogisticCollection**](docs/Api/CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**updateRoutingCollection**](docs/Api/CollectionsApi.md#updateroutingcollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 *GuidsApi* | [**addGuidAlias**](docs/Api/GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-*GuidsApi* | [**addHistoryItem**](docs/Api/GuidsApi.md#addhistoryitem) | **POST** /api/v1/history/{id4n} | Add history item
 *GuidsApi* | [**createGuid**](docs/Api/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**getGuid**](docs/Api/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**getGuidAliases**](docs/Api/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/Api/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**getId4n**](docs/Api/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-*GuidsApi* | [**listHistory**](docs/Api/GuidsApi.md#listhistory) | **GET** /api/v1/history/{id4n} | List history
-*GuidsApi* | [**listHistoryOfOrganization**](docs/Api/GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *GuidsApi* | [**removeGuidAlias**](docs/Api/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GuidsApi* | [**updateGuid**](docs/Api/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**updateHistoryItemVisibility**](docs/Api/GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
+*HistoryApi* | [**addItem**](docs/Api/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
+*HistoryApi* | [**callList**](docs/Api/HistoryApi.md#calllist) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
+*HistoryApi* | [**listAll**](docs/Api/HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
+*HistoryApi* | [**retrieveItem**](docs/Api/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*HistoryApi* | [**updateItem**](docs/Api/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
+*HistoryApi* | [**updateItemVisibility**](docs/Api/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -249,6 +251,7 @@ Class | Method | HTTP request | Description
  - [GuidAlias](docs/Model/GuidAlias.md)
  - [GuidCollection](docs/Model/GuidCollection.md)
  - [HistoryItem](docs/Model/HistoryItem.md)
+ - [HistoryItemUpdate](docs/Model/HistoryItemUpdate.md)
  - [Id4n](docs/Model/Id4n.md)
  - [Id4nPresentation](docs/Model/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Model/Id4nPresentationPaginatedResponse.md)

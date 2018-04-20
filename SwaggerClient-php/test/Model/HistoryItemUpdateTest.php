@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyPrivilegeInfoTest
+ * HistoryItemUpdateTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ApiKeyPrivilegeInfoTest Class Doc Comment
+ * HistoryItemUpdateTest Class Doc Comment
  *
  * @category    Class */
-// * @description ApiKeyPrivilegeInfo
+// * @description GUID history item update (diff patch)
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyPrivilegeInfoTest extends \PHPUnit_Framework_TestCase
+class HistoryItemUpdateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,23 @@ class ApiKeyPrivilegeInfoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ApiKeyPrivilegeInfo"
+     * Test "HistoryItemUpdate"
      */
-    public function testApiKeyPrivilegeInfo()
+    public function testHistoryItemUpdate()
     {
     }
 
     /**
-     * Test attribute "allows_billable_operations"
+     * Test attribute "organization_id"
      */
-    public function testPropertyAllowsBillableOperations()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "help_text"
+     * Test attribute "visibility"
      */
-    public function testPropertyHelpText()
-    {
-    }
-
-    /**
-     * Test attribute "id4n_associated"
-     */
-    public function testPropertyId4nAssociated()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
+    public function testPropertyVisibility()
     {
     }
 }

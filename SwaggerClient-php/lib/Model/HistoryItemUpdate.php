@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyPrivilegeInfo
+ * HistoryItemUpdate
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ApiKeyPrivilegeInfo Class Doc Comment
+ * HistoryItemUpdate Class Doc Comment
  *
  * @category Class
+ * @description GUID history item update (diff patch)
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
+class HistoryItemUpdate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiKeyPrivilegeInfo';
+    protected static $swaggerModelName = 'HistoryItemUpdate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +58,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'allows_billable_operations' => 'bool',
-        'help_text' => 'string',
-        'id4n_associated' => 'bool',
-        'name' => 'string'
+        'organization_id' => 'int',
+        'visibility' => '\Swagger\Client\Model\Visibility'
     ];
 
     /**
@@ -69,10 +68,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'allows_billable_operations' => null,
-        'help_text' => null,
-        'id4n_associated' => null,
-        'name' => null
+        'organization_id' => 'int64',
+        'visibility' => null
     ];
 
     /**
@@ -102,10 +99,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'allows_billable_operations' => 'allowsBillableOperations',
-        'help_text' => 'helpText',
-        'id4n_associated' => 'id4nAssociated',
-        'name' => 'name'
+        'organization_id' => 'organizationId',
+        'visibility' => 'visibility'
     ];
 
     /**
@@ -114,10 +109,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'allows_billable_operations' => 'setAllowsBillableOperations',
-        'help_text' => 'setHelpText',
-        'id4n_associated' => 'setId4nAssociated',
-        'name' => 'setName'
+        'organization_id' => 'setOrganizationId',
+        'visibility' => 'setVisibility'
     ];
 
     /**
@@ -126,10 +119,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'allows_billable_operations' => 'getAllowsBillableOperations',
-        'help_text' => 'getHelpText',
-        'id4n_associated' => 'getId4nAssociated',
-        'name' => 'getName'
+        'organization_id' => 'getOrganizationId',
+        'visibility' => 'getVisibility'
     ];
 
     /**
@@ -192,10 +183,8 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['allows_billable_operations'] = isset($data['allows_billable_operations']) ? $data['allows_billable_operations'] : null;
-        $this->container['help_text'] = isset($data['help_text']) ? $data['help_text'] : null;
-        $this->container['id4n_associated'] = isset($data['id4n_associated']) ? $data['id4n_associated'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['visibility'] = isset($data['visibility']) ? $data['visibility'] : null;
     }
 
     /**
@@ -207,12 +196,6 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id4n_associated'] === null) {
-            $invalidProperties[] = "'id4n_associated' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -225,108 +208,54 @@ class ApiKeyPrivilegeInfo implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id4n_associated'] === null) {
-            return false;
-        }
-        if ($this->container['name'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets allows_billable_operations
+     * Gets organization_id
      *
-     * @return bool
+     * @return int
      */
-    public function getAllowsBillableOperations()
+    public function getOrganizationId()
     {
-        return $this->container['allows_billable_operations'];
+        return $this->container['organization_id'];
     }
 
     /**
-     * Sets allows_billable_operations
+     * Sets organization_id
      *
-     * @param bool $allows_billable_operations allows_billable_operations
+     * @param int $organization_id New organization id displayed for this item. If given, must match the holder of GUID and the organization the history item is found under.
      *
      * @return $this
      */
-    public function setAllowsBillableOperations($allows_billable_operations)
+    public function setOrganizationId($organization_id)
     {
-        $this->container['allows_billable_operations'] = $allows_billable_operations;
+        $this->container['organization_id'] = $organization_id;
 
         return $this;
     }
 
     /**
-     * Gets help_text
+     * Gets visibility
      *
-     * @return string
+     * @return \Swagger\Client\Model\Visibility
      */
-    public function getHelpText()
+    public function getVisibility()
     {
-        return $this->container['help_text'];
+        return $this->container['visibility'];
     }
 
     /**
-     * Sets help_text
+     * Sets visibility
      *
-     * @param string $help_text help_text
+     * @param \Swagger\Client\Model\Visibility $visibility History item visibility restrictions
      *
      * @return $this
      */
-    public function setHelpText($help_text)
+    public function setVisibility($visibility)
     {
-        $this->container['help_text'] = $help_text;
-
-        return $this;
-    }
-
-    /**
-     * Gets id4n_associated
-     *
-     * @return bool
-     */
-    public function getId4nAssociated()
-    {
-        return $this->container['id4n_associated'];
-    }
-
-    /**
-     * Sets id4n_associated
-     *
-     * @param bool $id4n_associated id4n_associated
-     *
-     * @return $this
-     */
-    public function setId4nAssociated($id4n_associated)
-    {
-        $this->container['id4n_associated'] = $id4n_associated;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
+        $this->container['visibility'] = $visibility;
 
         return $this;
     }

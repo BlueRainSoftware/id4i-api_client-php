@@ -5,17 +5,13 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**addHistoryItem**](GuidsApi.md#addHistoryItem) | **POST** /api/v1/history/{id4n} | Add history item
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**listHistory**](GuidsApi.md#listHistory) | **GET** /api/v1/history/{id4n} | List history
-[**listHistoryOfOrganization**](GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
-[**updateHistoryItemVisibility**](GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
 # **addGuidAlias**
@@ -60,62 +56,6 @@ Name | Type | Description  | Notes
  **id4n** | **string**| The GUID to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **addHistoryItem**
-> addHistoryItem($id4n, $history_item)
-
-Add history item
-
-Add a new history item
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GuidsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | GUID to retrieve the history for
-$history_item = new \Swagger\Client\Model\HistoryItem(); // \Swagger\Client\Model\HistoryItem | The history item to publish
-
-try {
-    $apiInstance->addHistoryItem($id4n, $history_item);
-} catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->addHistoryItem: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| GUID to retrieve the history for |
- **history_item** | [**\Swagger\Client\Model\HistoryItem**](../Model/HistoryItem.md)| The history item to publish |
 
 ### Return type
 
@@ -407,130 +347,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **listHistory**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse listHistory($id4n, $include_private, $offset, $limit)
-
-List history
-
-Lists the history of a GUID
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GuidsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | GUID to retrieve the history for
-$include_private = true; // bool | Also return private history entries
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listHistory($id4n, $include_private, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->listHistory: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| GUID to retrieve the history for |
- **include_private** | **bool**| Also return private history entries | [optional] [default to true]
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **listHistoryOfOrganization**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse listHistoryOfOrganization($id4n, $organization_id, $include_private, $offset, $limit)
-
-List history
-
-Lists the history of a GUID
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GuidsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
-$include_private = true; // bool | Also return private history entries
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listHistoryOfOrganization($id4n, $organization_id, $include_private, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->listHistoryOfOrganization: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
- **include_private** | **bool**| Also return private history entries | [optional] [default to true]
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **removeGuidAlias**
 > removeGuidAlias($id4n, $alias_type)
 
@@ -632,65 +448,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateHistoryItemVisibility**
-> \Swagger\Client\Model\HistoryItem updateHistoryItemVisibility($id4n, $organization_id, $sequence, $visibility)
-
-Set history item visibility
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\GuidsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
-$sequence = 56; // int | sequence
-$visibility = new \Swagger\Client\Model\Visibility(); // \Swagger\Client\Model\Visibility | History item visibility restrictions
-
-try {
-    $result = $apiInstance->updateHistoryItemVisibility($id4n, $organization_id, $sequence, $visibility);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GuidsApi->updateHistoryItemVisibility: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
- **sequence** | **int**| sequence |
- **visibility** | [**\Swagger\Client\Model\Visibility**](../Model/Visibility.md)| History item visibility restrictions |
-
-### Return type
-
-[**\Swagger\Client\Model\HistoryItem**](../Model/HistoryItem.md)
 
 ### Authorization
 

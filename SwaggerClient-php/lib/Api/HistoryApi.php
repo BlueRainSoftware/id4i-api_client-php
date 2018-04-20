@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidsApi
+ * HistoryApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * GuidsApi Class Doc Comment
+ * HistoryApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GuidsApi
+class HistoryApi
 {
     /**
      * @var ClientInterface
@@ -83,40 +83,38 @@ class GuidsApi
     }
 
     /**
-     * Operation addGuidAlias
+     * Operation addItem
      *
-     * Add alias for GUIDs
+     * Add history item
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addGuidAlias($id4n, $alias_type, $alias)
+    public function addItem($id4n, $history_item)
     {
-        $this->addGuidAliasWithHttpInfo($id4n, $alias_type, $alias);
+        $this->addItemWithHttpInfo($id4n, $history_item);
     }
 
     /**
-     * Operation addGuidAliasWithHttpInfo
+     * Operation addItemWithHttpInfo
      *
-     * Add alias for GUIDs
+     * Add history item
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addGuidAliasWithHttpInfo($id4n, $alias_type, $alias)
+    public function addItemWithHttpInfo($id4n, $history_item)
     {
         $returnType = '';
-        $request = $this->addGuidAliasRequest($id4n, $alias_type, $alias);
+        $request = $this->addItemRequest($id4n, $history_item);
 
         try {
             $options = $this->createHttpClientOption();
@@ -228,20 +226,19 @@ class GuidsApi
     }
 
     /**
-     * Operation addGuidAliasAsync
+     * Operation addItemAsync
      *
-     * Add alias for GUIDs
+     * Add history item
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addGuidAliasAsync($id4n, $alias_type, $alias)
+    public function addItemAsync($id4n, $history_item)
     {
-        return $this->addGuidAliasAsyncWithHttpInfo($id4n, $alias_type, $alias)
+        return $this->addItemAsyncWithHttpInfo($id4n, $history_item)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,21 +247,20 @@ class GuidsApi
     }
 
     /**
-     * Operation addGuidAliasAsyncWithHttpInfo
+     * Operation addItemAsyncWithHttpInfo
      *
-     * Add alias for GUIDs
+     * Add history item
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addGuidAliasAsyncWithHttpInfo($id4n, $alias_type, $alias)
+    public function addItemAsyncWithHttpInfo($id4n, $history_item)
     {
         $returnType = '';
-        $request = $this->addGuidAliasRequest($id4n, $alias_type, $alias);
+        $request = $this->addItemRequest($id4n, $history_item);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -290,37 +286,30 @@ class GuidsApi
     }
 
     /**
-     * Create request for operation 'addGuidAlias'
+     * Create request for operation 'addItem'
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
-     * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addGuidAliasRequest($id4n, $alias_type, $alias)
+    protected function addItemRequest($id4n, $history_item)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling addGuidAlias'
+                'Missing the required parameter $id4n when calling addItem'
             );
         }
-        // verify the required parameter 'alias_type' is set
-        if ($alias_type === null) {
+        // verify the required parameter 'history_item' is set
+        if ($history_item === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $alias_type when calling addGuidAlias'
-            );
-        }
-        // verify the required parameter 'alias' is set
-        if ($alias === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $alias when calling addGuidAlias'
+                'Missing the required parameter $history_item when calling addItem'
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/alias/{aliasType}';
+        $resourcePath = '/api/v1/history/{id4n}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -336,19 +325,11 @@ class GuidsApi
                 $resourcePath
             );
         }
-        // path params
-        if ($alias_type !== null) {
-            $resourcePath = str_replace(
-                '{' . 'aliasType' . '}',
-                ObjectSerializer::toPathValue($alias_type),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
-        if (isset($alias)) {
-            $_tempBody = $alias;
+        if (isset($history_item)) {
+            $_tempBody = $history_item;
         }
 
         if ($multipart) {
@@ -418,37 +399,45 @@ class GuidsApi
     }
 
     /**
-     * Operation createGuid
+     * Operation callList
      *
-     * Create GUID(s)
+     * List history
      *
-     * @param  \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ListOfId4ns
+     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function createGuid($create_guid_info)
+    public function callList($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        list($response) = $this->createGuidWithHttpInfo($create_guid_info);
+        list($response) = $this->callListWithHttpInfo($id4n, $organization_id, $include_private, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation createGuidWithHttpInfo
+     * Operation callListWithHttpInfo
      *
-     * Create GUID(s)
+     * List history
      *
-     * @param  \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ListOfId4ns, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createGuidWithHttpInfo($create_guid_info)
+    public function callListWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\ListOfId4ns';
-        $request = $this->createGuidRequest($create_guid_info);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -499,341 +488,7 @@ class GuidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ListOfId4ns',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createGuidAsync
-     *
-     * Create GUID(s)
-     *
-     * @param  \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createGuidAsync($create_guid_info)
-    {
-        return $this->createGuidAsyncWithHttpInfo($create_guid_info)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createGuidAsyncWithHttpInfo
-     *
-     * Create GUID(s)
-     *
-     * @param  \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createGuidAsyncWithHttpInfo($create_guid_info)
-    {
-        $returnType = '\Swagger\Client\Model\ListOfId4ns';
-        $request = $this->createGuidRequest($create_guid_info);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createGuid'
-     *
-     * @param  \Swagger\Client\Model\CreateGuidRequest $create_guid_info createGUIDInfo (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function createGuidRequest($create_guid_info)
-    {
-        // verify the required parameter 'create_guid_info' is set
-        if ($create_guid_info === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $create_guid_info when calling createGuid'
-            );
-        }
-
-        $resourcePath = '/api/v1/guids';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($create_guid_info)) {
-            $_tempBody = $create_guid_info;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json'],
-                ['application/xml', 'application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getGuid
-     *
-     * Retrieve GUID information
-     *
-     * @param  string $id4n The GUID number (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Guid
-     */
-    public function getGuid($id4n)
-    {
-        list($response) = $this->getGuidWithHttpInfo($id4n);
-        return $response;
-    }
-
-    /**
-     * Operation getGuidWithHttpInfo
-     *
-     * Retrieve GUID information
-     *
-     * @param  string $id4n The GUID number (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Guid, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getGuidWithHttpInfo($id4n)
-    {
-        $returnType = '\Swagger\Client\Model\Guid';
-        $request = $this->getGuidRequest($id4n);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\Guid',
+                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -900,18 +555,22 @@ class GuidsApi
     }
 
     /**
-     * Operation getGuidAsync
+     * Operation callListAsync
      *
-     * Retrieve GUID information
+     * List history
      *
-     * @param  string $id4n The GUID number (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGuidAsync($id4n)
+    public function callListAsync($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        return $this->getGuidAsyncWithHttpInfo($id4n)
+        return $this->callListAsyncWithHttpInfo($id4n, $organization_id, $include_private, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -920,19 +579,23 @@ class GuidsApi
     }
 
     /**
-     * Operation getGuidAsyncWithHttpInfo
+     * Operation callListAsyncWithHttpInfo
      *
-     * Retrieve GUID information
+     * List history
      *
-     * @param  string $id4n The GUID number (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGuidAsyncWithHttpInfo($id4n)
+    public function callListAsyncWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\Guid';
-        $request = $this->getGuidRequest($id4n);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -972,679 +635,33 @@ class GuidsApi
     }
 
     /**
-     * Create request for operation 'getGuid'
+     * Create request for operation 'callList'
      *
-     * @param  string $id4n The GUID number (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getGuidRequest($id4n)
+    protected function callListRequest($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling getGuid'
+                'Missing the required parameter $id4n when calling callList'
             );
         }
-
-        $resourcePath = '/api/v1/guids/{id4n}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json'],
-                ['application/xml', 'application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getGuidAliases
-     *
-     * Get all aliases for the given GUID
-     *
-     * @param  string $id4n The GUID to operate on (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return map[string,string]
-     */
-    public function getGuidAliases($id4n)
-    {
-        list($response) = $this->getGuidAliasesWithHttpInfo($id4n);
-        return $response;
-    }
-
-    /**
-     * Operation getGuidAliasesWithHttpInfo
-     *
-     * Get all aliases for the given GUID
-     *
-     * @param  string $id4n The GUID to operate on (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of map[string,string], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getGuidAliasesWithHttpInfo($id4n)
-    {
-        $returnType = 'map[string,string]';
-        $request = $this->getGuidAliasesRequest($id4n);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'map[string,string]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getGuidAliasesAsync
-     *
-     * Get all aliases for the given GUID
-     *
-     * @param  string $id4n The GUID to operate on (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGuidAliasesAsync($id4n)
-    {
-        return $this->getGuidAliasesAsyncWithHttpInfo($id4n)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getGuidAliasesAsyncWithHttpInfo
-     *
-     * Get all aliases for the given GUID
-     *
-     * @param  string $id4n The GUID to operate on (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGuidAliasesAsyncWithHttpInfo($id4n)
-    {
-        $returnType = 'map[string,string]';
-        $request = $this->getGuidAliasesRequest($id4n);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getGuidAliases'
-     *
-     * @param  string $id4n The GUID to operate on (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function getGuidAliasesRequest($id4n)
-    {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling getGuidAliases'
-            );
-        }
-
-        $resourcePath = '/api/v1/guids/{id4n}/alias';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/xml', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/xml', 'application/json'],
-                ['application/xml', 'application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getGuidsWithoutCollection
-     *
-     * Retrieve GUIDs not in any collection
-     *
-     * @param  int $organization_id Organization to search GUIDs for (required). (required)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedResponseGuid_
-     */
-    public function getGuidsWithoutCollection($organization_id, $offset = null, $limit = null)
-    {
-        list($response) = $this->getGuidsWithoutCollectionWithHttpInfo($organization_id, $offset, $limit);
-        return $response;
-    }
-
-    /**
-     * Operation getGuidsWithoutCollectionWithHttpInfo
-     *
-     * Retrieve GUIDs not in any collection
-     *
-     * @param  int $organization_id Organization to search GUIDs for (required). (required)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedResponseGuid_, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getGuidsWithoutCollectionWithHttpInfo($organization_id, $offset = null, $limit = null)
-    {
-        $returnType = '\Swagger\Client\Model\PaginatedResponseGuid_';
-        $request = $this->getGuidsWithoutCollectionRequest($organization_id, $offset, $limit);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedResponseGuid_',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getGuidsWithoutCollectionAsync
-     *
-     * Retrieve GUIDs not in any collection
-     *
-     * @param  int $organization_id Organization to search GUIDs for (required). (required)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGuidsWithoutCollectionAsync($organization_id, $offset = null, $limit = null)
-    {
-        return $this->getGuidsWithoutCollectionAsyncWithHttpInfo($organization_id, $offset, $limit)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getGuidsWithoutCollectionAsyncWithHttpInfo
-     *
-     * Retrieve GUIDs not in any collection
-     *
-     * @param  int $organization_id Organization to search GUIDs for (required). (required)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGuidsWithoutCollectionAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
-    {
-        $returnType = '\Swagger\Client\Model\PaginatedResponseGuid_';
-        $request = $this->getGuidsWithoutCollectionRequest($organization_id, $offset, $limit);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getGuidsWithoutCollection'
-     *
-     * @param  int $organization_id Organization to search GUIDs for (required). (required)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function getGuidsWithoutCollectionRequest($organization_id, $offset = null, $limit = null)
-    {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling getGuidsWithoutCollection'
+                'Missing the required parameter $organization_id when calling callList'
             );
         }
 
-        $resourcePath = '/api/v1/guids/withoutCollection';
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1652,8 +669,8 @@ class GuidsApi
         $multipart = false;
 
         // query params
-        if ($organization_id !== null) {
-            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        if ($include_private !== null) {
+            $queryParams['includePrivate'] = ObjectSerializer::toQueryValue($include_private);
         }
         // query params
         if ($offset !== null) {
@@ -1664,6 +681,22 @@ class GuidsApi
             $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -1735,37 +768,43 @@ class GuidsApi
     }
 
     /**
-     * Operation getId4n
+     * Operation listAll
      *
-     * Retrieve ID4n information
+     * List history
      *
-     * @param  string $id4n The ID to resolve to (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Id4nPresentation
+     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function getId4n($id4n)
+    public function listAll($id4n, $include_private = 'true', $offset = null, $limit = null)
     {
-        list($response) = $this->getId4nWithHttpInfo($id4n);
+        list($response) = $this->listAllWithHttpInfo($id4n, $include_private, $offset, $limit);
         return $response;
     }
 
     /**
-     * Operation getId4nWithHttpInfo
+     * Operation listAllWithHttpInfo
      *
-     * Retrieve ID4n information
+     * List history
      *
-     * @param  string $id4n The ID to resolve to (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Id4nPresentation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getId4nWithHttpInfo($id4n)
+    public function listAllWithHttpInfo($id4n, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\Id4nPresentation';
-        $request = $this->getId4nRequest($id4n);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->listAllRequest($id4n, $include_private, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1816,7 +855,7 @@ class GuidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Id4nPresentation',
+                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1883,18 +922,21 @@ class GuidsApi
     }
 
     /**
-     * Operation getId4nAsync
+     * Operation listAllAsync
      *
-     * Retrieve ID4n information
+     * List history
      *
-     * @param  string $id4n The ID to resolve to (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getId4nAsync($id4n)
+    public function listAllAsync($id4n, $include_private = 'true', $offset = null, $limit = null)
     {
-        return $this->getId4nAsyncWithHttpInfo($id4n)
+        return $this->listAllAsyncWithHttpInfo($id4n, $include_private, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1903,19 +945,22 @@ class GuidsApi
     }
 
     /**
-     * Operation getId4nAsyncWithHttpInfo
+     * Operation listAllAsyncWithHttpInfo
      *
-     * Retrieve ID4n information
+     * List history
      *
-     * @param  string $id4n The ID to resolve to (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getId4nAsyncWithHttpInfo($id4n)
+    public function listAllAsyncWithHttpInfo($id4n, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\Id4nPresentation';
-        $request = $this->getId4nRequest($id4n);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->listAllRequest($id4n, $include_private, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1955,29 +1000,44 @@ class GuidsApi
     }
 
     /**
-     * Create request for operation 'getId4n'
+     * Create request for operation 'listAll'
      *
-     * @param  string $id4n The ID to resolve to (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  bool $include_private Also return private history entries (optional, default to true)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getId4nRequest($id4n)
+    protected function listAllRequest($id4n, $include_private = 'true', $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling getId4n'
+                'Missing the required parameter $id4n when calling listAll'
             );
         }
 
-        $resourcePath = '/api/v1/id4ns/{id4n}';
+        $resourcePath = '/api/v1/history/{id4n}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($include_private !== null) {
+            $queryParams['includePrivate'] = ObjectSerializer::toQueryValue($include_private);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        }
 
         // path params
         if ($id4n !== null) {
@@ -2058,38 +1118,41 @@ class GuidsApi
     }
 
     /**
-     * Operation removeGuidAlias
+     * Operation retrieveItem
      *
-     * Remove aliases from GUIDs
+     * List history
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function removeGuidAlias($id4n, $alias_type)
+    public function retrieveItem($id4n, $organization_id, $sequence_id)
     {
-        $this->removeGuidAliasWithHttpInfo($id4n, $alias_type);
+        list($response) = $this->retrieveItemWithHttpInfo($id4n, $organization_id, $sequence_id);
+        return $response;
     }
 
     /**
-     * Operation removeGuidAliasWithHttpInfo
+     * Operation retrieveItemWithHttpInfo
      *
-     * Remove aliases from GUIDs
+     * List history
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeGuidAliasWithHttpInfo($id4n, $alias_type)
+    public function retrieveItemWithHttpInfo($id4n, $organization_id, $sequence_id)
     {
-        $returnType = '';
-        $request = $this->removeGuidAliasRequest($id4n, $alias_type);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->retrieveItemRequest($id4n, $organization_id, $sequence_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2119,14 +1182,28 @@ class GuidsApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 400:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2155,6 +1232,30 @@ class GuidsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 405:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -2169,19 +1270,20 @@ class GuidsApi
     }
 
     /**
-     * Operation removeGuidAliasAsync
+     * Operation retrieveItemAsync
      *
-     * Remove aliases from GUIDs
+     * List history
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeGuidAliasAsync($id4n, $alias_type)
+    public function retrieveItemAsync($id4n, $organization_id, $sequence_id)
     {
-        return $this->removeGuidAliasAsyncWithHttpInfo($id4n, $alias_type)
+        return $this->retrieveItemAsyncWithHttpInfo($id4n, $organization_id, $sequence_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2190,26 +1292,41 @@ class GuidsApi
     }
 
     /**
-     * Operation removeGuidAliasAsyncWithHttpInfo
+     * Operation retrieveItemAsyncWithHttpInfo
      *
-     * Remove aliases from GUIDs
+     * List history
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeGuidAliasAsyncWithHttpInfo($id4n, $alias_type)
+    public function retrieveItemAsyncWithHttpInfo($id4n, $organization_id, $sequence_id)
     {
-        $returnType = '';
-        $request = $this->removeGuidAliasRequest($id4n, $alias_type);
+        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $request = $this->retrieveItemRequest($id4n, $organization_id, $sequence_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2229,30 +1346,37 @@ class GuidsApi
     }
 
     /**
-     * Create request for operation 'removeGuidAlias'
+     * Create request for operation 'retrieveItem'
      *
-     * @param  string $id4n The GUID to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function removeGuidAliasRequest($id4n, $alias_type)
+    protected function retrieveItemRequest($id4n, $organization_id, $sequence_id)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling removeGuidAlias'
+                'Missing the required parameter $id4n when calling retrieveItem'
             );
         }
-        // verify the required parameter 'alias_type' is set
-        if ($alias_type === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $alias_type when calling removeGuidAlias'
+                'Missing the required parameter $organization_id when calling retrieveItem'
+            );
+        }
+        // verify the required parameter 'sequence_id' is set
+        if ($sequence_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sequence_id when calling retrieveItem'
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/alias/{aliasType}';
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}/{sequenceId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2269,10 +1393,18 @@ class GuidsApi
             );
         }
         // path params
-        if ($alias_type !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'aliasType' . '}',
-                ObjectSerializer::toPathValue($alias_type),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sequence_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sequenceId' . '}',
+                ObjectSerializer::toPathValue($sequence_id),
                 $resourcePath
             );
         }
@@ -2339,7 +1471,7 @@ class GuidsApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'DELETE',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2347,39 +1479,43 @@ class GuidsApi
     }
 
     /**
-     * Operation updateGuid
+     * Operation updateItem
      *
-     * Change GUID information.
+     * Update history item
      *
-     * @param  string $id4n The GUID number (required)
-     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\HistoryItemUpdate $update update (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Swagger\Client\Model\HistoryItem
      */
-    public function updateGuid($id4n, $request)
+    public function updateItem($id4n, $organization_id, $sequence_id, $update)
     {
-        list($response) = $this->updateGuidWithHttpInfo($id4n, $request);
+        list($response) = $this->updateItemWithHttpInfo($id4n, $organization_id, $sequence_id, $update);
         return $response;
     }
 
     /**
-     * Operation updateGuidWithHttpInfo
+     * Operation updateItemWithHttpInfo
      *
-     * Change GUID information.
+     * Update history item
      *
-     * @param  string $id4n The GUID number (required)
-     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\HistoryItemUpdate $update update (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\HistoryItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateGuidWithHttpInfo($id4n, $request)
+    public function updateItemWithHttpInfo($id4n, $organization_id, $sequence_id, $update)
     {
-        $returnType = 'object';
-        $request = $this->updateGuidRequest($id4n, $request);
+        $returnType = '\Swagger\Client\Model\HistoryItem';
+        $request = $this->updateItemRequest($id4n, $organization_id, $sequence_id, $update);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2430,7 +1566,7 @@ class GuidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Swagger\Client\Model\HistoryItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2441,19 +1577,21 @@ class GuidsApi
     }
 
     /**
-     * Operation updateGuidAsync
+     * Operation updateItemAsync
      *
-     * Change GUID information.
+     * Update history item
      *
-     * @param  string $id4n The GUID number (required)
-     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\HistoryItemUpdate $update update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGuidAsync($id4n, $request)
+    public function updateItemAsync($id4n, $organization_id, $sequence_id, $update)
     {
-        return $this->updateGuidAsyncWithHttpInfo($id4n, $request)
+        return $this->updateItemAsyncWithHttpInfo($id4n, $organization_id, $sequence_id, $update)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2462,20 +1600,22 @@ class GuidsApi
     }
 
     /**
-     * Operation updateGuidAsyncWithHttpInfo
+     * Operation updateItemAsyncWithHttpInfo
      *
-     * Change GUID information.
+     * Update history item
      *
-     * @param  string $id4n The GUID number (required)
-     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\HistoryItemUpdate $update update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGuidAsyncWithHttpInfo($id4n, $request)
+    public function updateItemAsyncWithHttpInfo($id4n, $organization_id, $sequence_id, $update)
     {
-        $returnType = 'object';
-        $request = $this->updateGuidRequest($id4n, $request);
+        $returnType = '\Swagger\Client\Model\HistoryItem';
+        $request = $this->updateItemRequest($id4n, $organization_id, $sequence_id, $update);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2515,30 +1655,44 @@ class GuidsApi
     }
 
     /**
-     * Create request for operation 'updateGuid'
+     * Create request for operation 'updateItem'
      *
-     * @param  string $id4n The GUID number (required)
-     * @param  \Swagger\Client\Model\Guid $request request (required)
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\HistoryItemUpdate $update update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateGuidRequest($id4n, $request)
+    protected function updateItemRequest($id4n, $organization_id, $sequence_id, $update)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling updateGuid'
+                'Missing the required parameter $id4n when calling updateItem'
             );
         }
-        // verify the required parameter 'request' is set
-        if ($request === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $request when calling updateGuid'
+                'Missing the required parameter $organization_id when calling updateItem'
+            );
+        }
+        // verify the required parameter 'sequence_id' is set
+        if ($sequence_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sequence_id when calling updateItem'
+            );
+        }
+        // verify the required parameter 'update' is set
+        if ($update === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update when calling updateItem'
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}';
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}/{sequenceId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2554,11 +1708,27 @@ class GuidsApi
                 $resourcePath
             );
         }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sequence_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sequenceId' . '}',
+                ObjectSerializer::toPathValue($sequence_id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
-        if (isset($request)) {
-            $_tempBody = $request;
+        if (isset($update)) {
+            $_tempBody = $update;
         }
 
         if ($multipart) {
@@ -2621,6 +1791,397 @@ class GuidsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateItemVisibility
+     *
+     * Set history item visibility
+     *
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\Visibility $visibility History item visibility restrictions (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\HistoryItem
+     */
+    public function updateItemVisibility($id4n, $organization_id, $sequence_id, $visibility)
+    {
+        list($response) = $this->updateItemVisibilityWithHttpInfo($id4n, $organization_id, $sequence_id, $visibility);
+        return $response;
+    }
+
+    /**
+     * Operation updateItemVisibilityWithHttpInfo
+     *
+     * Set history item visibility
+     *
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\Visibility $visibility History item visibility restrictions (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\HistoryItem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateItemVisibilityWithHttpInfo($id4n, $organization_id, $sequence_id, $visibility)
+    {
+        $returnType = '\Swagger\Client\Model\HistoryItem';
+        $request = $this->updateItemVisibilityRequest($id4n, $organization_id, $sequence_id, $visibility);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\HistoryItem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateItemVisibilityAsync
+     *
+     * Set history item visibility
+     *
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\Visibility $visibility History item visibility restrictions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateItemVisibilityAsync($id4n, $organization_id, $sequence_id, $visibility)
+    {
+        return $this->updateItemVisibilityAsyncWithHttpInfo($id4n, $organization_id, $sequence_id, $visibility)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateItemVisibilityAsyncWithHttpInfo
+     *
+     * Set history item visibility
+     *
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\Visibility $visibility History item visibility restrictions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateItemVisibilityAsyncWithHttpInfo($id4n, $organization_id, $sequence_id, $visibility)
+    {
+        $returnType = '\Swagger\Client\Model\HistoryItem';
+        $request = $this->updateItemVisibilityRequest($id4n, $organization_id, $sequence_id, $visibility);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateItemVisibility'
+     *
+     * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  int $organization_id organizationId (required)
+     * @param  int $sequence_id sequenceId (required)
+     * @param  \Swagger\Client\Model\Visibility $visibility History item visibility restrictions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateItemVisibilityRequest($id4n, $organization_id, $sequence_id, $visibility)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling updateItemVisibility'
+            );
+        }
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling updateItemVisibility'
+            );
+        }
+        // verify the required parameter 'sequence_id' is set
+        if ($sequence_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sequence_id when calling updateItemVisibility'
+            );
+        }
+        // verify the required parameter 'visibility' is set
+        if ($visibility === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $visibility when calling updateItemVisibility'
+            );
+        }
+
+        $resourcePath = '/api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sequence_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sequenceId' . '}',
+                ObjectSerializer::toPathValue($sequence_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($visibility)) {
+            $_tempBody = $visibility;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

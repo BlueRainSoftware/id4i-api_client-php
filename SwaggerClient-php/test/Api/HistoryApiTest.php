@@ -1,6 +1,6 @@
 <?php
 /**
- * GuidsApiTest
+ * HistoryApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * GuidsApiTest Class Doc Comment
+ * HistoryApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GuidsApiTest extends \PHPUnit_Framework_TestCase
+class HistoryApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,82 +72,62 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addGuidAlias
+     * Test case for addItem
      *
-     * Add alias for GUIDs.
+     * Add history item.
      *
      */
-    public function testAddGuidAlias()
+    public function testAddItem()
     {
     }
 
     /**
-     * Test case for createGuid
+     * Test case for callList
      *
-     * Create GUID(s).
+     * List history.
      *
      */
-    public function testCreateGuid()
+    public function testCallList()
     {
     }
 
     /**
-     * Test case for getGuid
+     * Test case for listAll
      *
-     * Retrieve GUID information.
+     * List history.
      *
      */
-    public function testGetGuid()
+    public function testListAll()
     {
     }
 
     /**
-     * Test case for getGuidAliases
+     * Test case for retrieveItem
      *
-     * Get all aliases for the given GUID.
+     * List history.
      *
      */
-    public function testGetGuidAliases()
+    public function testRetrieveItem()
     {
     }
 
     /**
-     * Test case for getGuidsWithoutCollection
+     * Test case for updateItem
      *
-     * Retrieve GUIDs not in any collection.
+     * Update history item.
      *
      */
-    public function testGetGuidsWithoutCollection()
+    public function testUpdateItem()
     {
     }
 
     /**
-     * Test case for getId4n
+     * Test case for updateItemVisibility
      *
-     * Retrieve ID4n information.
-     *
-     */
-    public function testGetId4n()
-    {
-    }
-
-    /**
-     * Test case for removeGuidAlias
-     *
-     * Remove aliases from GUIDs.
+     * Set history item visibility.
      *
      */
-    public function testRemoveGuidAlias()
-    {
-    }
-
-    /**
-     * Test case for updateGuid
-     *
-     * Change GUID information..
-     *
-     */
-    public function testUpdateGuid()
+    public function testUpdateItemVisibility()
     {
     }
 }
