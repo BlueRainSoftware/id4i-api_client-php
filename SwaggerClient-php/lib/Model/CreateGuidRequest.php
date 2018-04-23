@@ -220,8 +220,8 @@ class CreateGuidRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'length', must be smaller than or equal to 255.";
         }
 
-        if (($this->container['length'] < 6)) {
-            $invalidProperties[] = "invalid value for 'length', must be bigger than or equal to 6.";
+        if (($this->container['length'] < 7)) {
+            $invalidProperties[] = "invalid value for 'length', must be bigger than or equal to 7.";
         }
 
         if ($this->container['organization_id'] === null) {
@@ -254,7 +254,7 @@ class CreateGuidRequest implements ModelInterface, ArrayAccess
         if ($this->container['length'] > 255) {
             return false;
         }
-        if ($this->container['length'] < 6) {
+        if ($this->container['length'] < 7) {
             return false;
         }
         if ($this->container['organization_id'] === null) {
@@ -319,8 +319,8 @@ class CreateGuidRequest implements ModelInterface, ArrayAccess
         if (($length > 255)) {
             throw new \InvalidArgumentException('invalid value for $length when calling CreateGuidRequest., must be smaller than or equal to 255.');
         }
-        if (($length < 6)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling CreateGuidRequest., must be bigger than or equal to 6.');
+        if (($length < 7)) {
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateGuidRequest., must be bigger than or equal to 7.');
         }
 
         $this->container['length'] = $length;
