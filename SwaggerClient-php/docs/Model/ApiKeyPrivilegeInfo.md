@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allows_billable_operations** | **bool** |  | [optional] 
 **help_text** | **string** |  | [optional] 
 **id4n_associated** | **bool** |  | 
 **name** | **string** |  | 
