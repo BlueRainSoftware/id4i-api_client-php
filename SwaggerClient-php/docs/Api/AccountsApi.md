@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getUserRoles**](AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**isContractRequired**](AccountsApi.md#isContractRequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 [**listAllRoles**](AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
 [**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
@@ -516,6 +517,51 @@ void (empty response body)
 ### Authorization
 
 [Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **isContractRequired**
+> bool isContractRequired()
+
+Tells you whether your company needs to have a contract with BlueRain to be able to sign up
+
+On production systems, users must confirm that their organization has a valid contract for ID4i usage. It is not required on test and sandbox systems.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->isContractRequired();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->isContractRequired: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
