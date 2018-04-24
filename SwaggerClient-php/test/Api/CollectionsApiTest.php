@@ -82,62 +82,12 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for addElementsToLabelledCollection
+     * Test case for createCollection
      *
-     * Add elements to labelled collection.
-     *
-     */
-    public function testAddElementsToLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for addElementsToLogisticCollection
-     *
-     * Add elements to logistic collection.
+     * Create collection.
      *
      */
-    public function testAddElementsToLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for addElementsToRoutingCollection
-     *
-     * Add element to routing collection.
-     *
-     */
-    public function testAddElementsToRoutingCollection()
-    {
-    }
-
-    /**
-     * Test case for createLabelledCollection
-     *
-     * Create labelled collection.
-     *
-     */
-    public function testCreateLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for createLogisticCollection
-     *
-     * Create logistic collection.
-     *
-     */
-    public function testCreateLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for createRoutingCollection
-     *
-     * Create routing collecton.
-     *
-     */
-    public function testCreateRoutingCollection()
+    public function testCreateCollection()
     {
     }
 
@@ -152,72 +102,12 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteLabelledCollection
-     *
-     * Delete labelled collection.
-     *
-     */
-    public function testDeleteLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for deleteLogisticCollection
-     *
-     * Delete logistic collection.
-     *
-     */
-    public function testDeleteLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for deleteRoutingCollection
-     *
-     * Delete routing collection.
-     *
-     */
-    public function testDeleteRoutingCollection()
-    {
-    }
-
-    /**
      * Test case for findCollection
      *
      * Find collection.
      *
      */
     public function testFindCollection()
-    {
-    }
-
-    /**
-     * Test case for findLabelledCollection
-     *
-     * Find labelled collection.
-     *
-     */
-    public function testFindLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for findLogisticCollection
-     *
-     * Find logistic collection.
-     *
-     */
-    public function testFindLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for findRoutingCollection
-     *
-     * Find routing collection.
-     *
-     */
-    public function testFindRoutingCollection()
     {
     }
 
@@ -242,36 +132,6 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for listElementsOfLabelledCollection
-     *
-     * List contents of the collection.
-     *
-     */
-    public function testListElementsOfLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for listElementsOfLogisticCollection
-     *
-     * List contents of the collection.
-     *
-     */
-    public function testListElementsOfLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for listElementsOfRoutingCollection
-     *
-     * List contents of the collection.
-     *
-     */
-    public function testListElementsOfRoutingCollection()
-    {
-    }
-
-    /**
      * Test case for removeElementsFromCollection
      *
      * Remove elements from collection.
@@ -282,72 +142,12 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for removeElementsFromLabelledCollection
-     *
-     * Remove elements from labelled collection.
-     *
-     */
-    public function testRemoveElementsFromLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementsFromLogisticCollection
-     *
-     * Remove elements from logistic collection.
-     *
-     */
-    public function testRemoveElementsFromLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for removeElementsFromRoutingCollection
-     *
-     * Remove elements from routing collection.
-     *
-     */
-    public function testRemoveElementsFromRoutingCollection()
-    {
-    }
-
-    /**
      * Test case for updateCollection
      *
      * Update collection.
      *
      */
     public function testUpdateCollection()
-    {
-    }
-
-    /**
-     * Test case for updateLabelledCollection
-     *
-     * Update labelled collection.
-     *
-     */
-    public function testUpdateLabelledCollection()
-    {
-    }
-
-    /**
-     * Test case for updateLogisticCollection
-     *
-     * Update logistic collection.
-     *
-     */
-    public function testUpdateLogisticCollection()
-    {
-    }
-
-    /**
-     * Test case for updateRoutingCollection
-     *
-     * Update routing collection.
-     *
-     */
-    public function testUpdateRoutingCollection()
     {
     }
 }

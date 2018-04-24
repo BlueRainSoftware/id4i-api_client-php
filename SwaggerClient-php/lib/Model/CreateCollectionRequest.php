@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateLogisticCollectionRequest
+ * CreateCollectionRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CreateLogisticCollectionRequest Class Doc Comment
+ * CreateCollectionRequest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
+class CreateCollectionRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateLogisticCollectionRequest';
+    protected static $swaggerModelName = 'CreateCollectionRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'label' => 'string',
         'length' => 'int',
-        'organization_id' => 'int'
+        'organization_id' => 'int',
+        'type' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'label' => null,
         'length' => 'int32',
-        'organization_id' => 'int64'
+        'organization_id' => 'int64',
+        'type' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'label' => 'label',
         'length' => 'length',
-        'organization_id' => 'organizationId'
+        'organization_id' => 'organizationId',
+        'type' => 'type'
     ];
 
     /**
@@ -113,7 +116,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'label' => 'setLabel',
         'length' => 'setLength',
-        'organization_id' => 'setOrganizationId'
+        'organization_id' => 'setOrganizationId',
+        'type' => 'setType'
     ];
 
     /**
@@ -124,7 +128,8 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'label' => 'getLabel',
         'length' => 'getLength',
-        'organization_id' => 'getOrganizationId'
+        'organization_id' => 'getOrganizationId',
+        'type' => 'getType'
     ];
 
     /**
@@ -168,8 +173,25 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const TYPE_ROUTING_COLLECTION = 'ROUTING_COLLECTION';
+    const TYPE_LOGISTIC_COLLECTION = 'LOGISTIC_COLLECTION';
+    const TYPE_LABELLED_COLLECTION = 'LABELLED_COLLECTION';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_ROUTING_COLLECTION,
+            self::TYPE_LOGISTIC_COLLECTION,
+            self::TYPE_LABELLED_COLLECTION,
+        ];
+    }
     
 
     /**
@@ -190,6 +212,7 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -223,6 +246,17 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         if ($this->container['organization_id'] === null) {
             $invalidProperties[] = "'organization_id' can't be null";
         }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($this->container['type'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -253,6 +287,13 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
         if ($this->container['organization_id'] === null) {
             return false;
         }
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($this->container['type'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -277,10 +318,10 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     public function setLabel($label)
     {
         if (!is_null($label) && (strlen($label) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be smaller than or equal to 128.');
+            throw new \InvalidArgumentException('invalid length for $label when calling CreateCollectionRequest., must be smaller than or equal to 128.');
         }
         if (!is_null($label) && (strlen($label) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling CreateLogisticCollectionRequest., must be bigger than or equal to 5.');
+            throw new \InvalidArgumentException('invalid length for $label when calling CreateCollectionRequest., must be bigger than or equal to 5.');
         }
 
         $this->container['label'] = $label;
@@ -309,10 +350,10 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     {
 
         if (($length > 255)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling CreateLogisticCollectionRequest., must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateCollectionRequest., must be smaller than or equal to 255.');
         }
         if (($length < 6)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling CreateLogisticCollectionRequest., must be bigger than or equal to 6.');
+            throw new \InvalidArgumentException('invalid value for $length when calling CreateCollectionRequest., must be bigger than or equal to 6.');
         }
 
         $this->container['length'] = $length;
@@ -340,6 +381,39 @@ class CreateLogisticCollectionRequest implements ModelInterface, ArrayAccess
     public function setOrganizationId($organization_id)
     {
         $this->container['organization_id'] = $organization_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

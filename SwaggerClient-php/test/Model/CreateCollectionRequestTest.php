@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateRoutingCollectionRequestTest
+ * CreateCollectionRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * CreateRoutingCollectionRequestTest Class Doc Comment
+ * CreateCollectionRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreateRoutingCollectionRequest
+// * @description CreateCollectionRequest
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateRoutingCollectionRequestTest extends \PHPUnit_Framework_TestCase
+class CreateCollectionRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class CreateRoutingCollectionRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateRoutingCollectionRequest"
+     * Test "CreateCollectionRequest"
      */
-    public function testCreateRoutingCollectionRequest()
+    public function testCreateCollectionRequest()
     {
     }
 
@@ -95,6 +95,13 @@ class CreateRoutingCollectionRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "organization_id"
      */
     public function testPropertyOrganizationId()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
     }
 }
