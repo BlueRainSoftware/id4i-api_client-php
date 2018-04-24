@@ -107,7 +107,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**verifyUserRegistration**](docs/Api/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/Api/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *AliasApi* | [**getGuidAliasTypes**](docs/Api/AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-*AliasApi* | [**getGuidAliases**](docs/Api/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**getGuidAliases**](docs/Api/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *AliasApi* | [**removeGuidAlias**](docs/Api/AliasApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**searchByAlias**](docs/Api/AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *ApiKeysApi* | [**addApiKeyPrivilege**](docs/Api/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
@@ -136,7 +136,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**addGuidAlias**](docs/Api/GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *GuidsApi* | [**createGuid**](docs/Api/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**getGuid**](docs/Api/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-*GuidsApi* | [**getGuidAliases**](docs/Api/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*GuidsApi* | [**getGuidAliases**](docs/Api/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/Api/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**getId4n**](docs/Api/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *GuidsApi* | [**removeGuidAlias**](docs/Api/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs

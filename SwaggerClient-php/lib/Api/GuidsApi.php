@@ -1077,7 +1077,7 @@ class GuidsApi
     /**
      * Operation getGuidAliases
      *
-     * Get all aliases for the given GUID
+     * Get all aliases for the given GUID.
      *
      * @param  string $id4n The GUID to operate on (required)
      *
@@ -1094,7 +1094,7 @@ class GuidsApi
     /**
      * Operation getGuidAliasesWithHttpInfo
      *
-     * Get all aliases for the given GUID
+     * Get all aliases for the given GUID.
      *
      * @param  string $id4n The GUID to operate on (required)
      *
@@ -1225,7 +1225,7 @@ class GuidsApi
     /**
      * Operation getGuidAliasesAsync
      *
-     * Get all aliases for the given GUID
+     * Get all aliases for the given GUID.
      *
      * @param  string $id4n The GUID to operate on (required)
      *
@@ -1245,7 +1245,7 @@ class GuidsApi
     /**
      * Operation getGuidAliasesAsyncWithHttpInfo
      *
-     * Get all aliases for the given GUID
+     * Get all aliases for the given GUID.
      *
      * @param  string $id4n The GUID to operate on (required)
      *

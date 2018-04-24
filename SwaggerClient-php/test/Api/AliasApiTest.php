@@ -94,7 +94,7 @@ class AliasApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getGuidAliases
      *
-     * Get all aliases for the given GUID.
+     * Get all aliases for the given GUID..
      *
      */
     public function testGetGuidAliases()
