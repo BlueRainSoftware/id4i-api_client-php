@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created_by** | **string** |  | 
 **key** | **string** | The api key identifier | 
 **label** | **string** | The label / name of the api key | 
-**organization_id** | **int** | The organization id this api key belongs to | 
+**organization_id** | **string** | The organization namespace this api key belongs to | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

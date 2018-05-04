@@ -95,7 +95,7 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_guid_info = new \Swagger\Client\Model\CreateGuidRequest(); // \Swagger\Client\Model\CreateGuidRequest | createGUIDInfo
+$create_guid_info = new \Swagger\Client\Model\CreateGuidRequest(); // \Swagger\Client\Model\CreateGuidRequest | GUID creation model
 
 try {
     $result = $apiInstance->createGuid($create_guid_info);
@@ -110,7 +110,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_guid_info** | [**\Swagger\Client\Model\CreateGuidRequest**](../Model/CreateGuidRequest.md)| createGUIDInfo |
+ **create_guid_info** | [**\Swagger\Client\Model\CreateGuidRequest**](../Model/CreateGuidRequest.md)| GUID creation model |
 
 ### Return type
 
@@ -256,7 +256,7 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | Organization to search GUIDs for (required).
+$organization_id = "organization_id_example"; // string | The namespace of the organization to search GUIDs for
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -273,7 +273,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| Organization to search GUIDs for (required). |
+ **organization_id** | **string**| The namespace of the organization to search GUIDs for |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 

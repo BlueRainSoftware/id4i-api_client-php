@@ -148,7 +148,7 @@ $apiInstance = new Swagger\Client\Api\RoutingApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 
 try {
     $result = $apiInstance->getRoutingFile($id4n, $organization_id);
@@ -164,7 +164,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **organization_id** | **int**| organizationId | [optional]
+ **organization_id** | **string**| organizationId | [optional]
 
 ### Return type
 

@@ -249,7 +249,7 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
@@ -269,7 +269,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
  **type** | **string**| Filter by this type | [optional]

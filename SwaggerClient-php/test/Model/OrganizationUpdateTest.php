@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentUpdateTest
+ * OrganizationUpdateTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * DocumentUpdateTest Class Doc Comment
+ * OrganizationUpdateTest Class Doc Comment
  *
  * @category    Class */
-// * @description DocumentUpdate
+// * @description An organization
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentUpdateTest extends \PHPUnit_Framework_TestCase
+class OrganizationUpdateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,23 @@ class DocumentUpdateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "DocumentUpdate"
+     * Test "OrganizationUpdate"
      */
-    public function testDocumentUpdate()
+    public function testOrganizationUpdate()
     {
     }
 
     /**
-     * Test attribute "filename"
+     * Test attribute "name"
      */
-    public function testPropertyFilename()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "mime_type"
+     * Test attribute "namespace"
      */
-    public function testPropertyMimeType()
-    {
-    }
-
-    /**
-     * Test attribute "visibility"
-     */
-    public function testPropertyVisibility()
+    public function testPropertyNamespace()
     {
     }
 }

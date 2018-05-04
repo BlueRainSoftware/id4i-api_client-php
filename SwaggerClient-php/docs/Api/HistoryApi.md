@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addItem**](HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
 [**callList**](HistoryApi.md#callList) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**listAll**](HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
-[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 [**updateItem**](HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 [**updateItemVisibility**](HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 
@@ -73,7 +73,7 @@ void (empty response body)
 
 List history
 
-Lists the history of a GUID
+Lists the history of a GUID of the specified organization
 
 ### Example
 ```php
@@ -92,7 +92,7 @@ $apiInstance = new Swagger\Client\Api\HistoryApi(
     $config
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $include_private = true; // bool | Also return private history entries
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -111,7 +111,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **include_private** | **bool**| Also return private history entries | [optional] [default to true]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -195,9 +195,7 @@ Name | Type | Description  | Notes
 # **retrieveItem**
 > \Swagger\Client\Model\PaginatedHistoryItemResponse retrieveItem($id4n, $organization_id, $sequence_id)
 
-List history
-
-Lists the history of a GUID
+Get history item
 
 ### Example
 ```php
@@ -216,7 +214,7 @@ $apiInstance = new Swagger\Client\Api\HistoryApi(
     $config
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $sequence_id = 56; // int | sequenceId
 
 try {
@@ -233,7 +231,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **sequence_id** | **int**| sequenceId |
 
 ### Return type
@@ -273,7 +271,7 @@ $apiInstance = new Swagger\Client\Api\HistoryApi(
     $config
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $sequence_id = 56; // int | sequenceId
 $update = new \Swagger\Client\Model\HistoryItemUpdate(); // \Swagger\Client\Model\HistoryItemUpdate | update
 
@@ -291,7 +289,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **sequence_id** | **int**| sequenceId |
  **update** | [**\Swagger\Client\Model\HistoryItemUpdate**](../Model/HistoryItemUpdate.md)| update |
 
@@ -332,7 +330,7 @@ $apiInstance = new Swagger\Client\Api\HistoryApi(
     $config
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $sequence_id = 56; // int | sequenceId
 $visibility = new \Swagger\Client\Model\Visibility(); // \Swagger\Client\Model\Visibility | History item visibility restrictions
 
@@ -350,7 +348,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **sequence_id** | **int**| sequenceId |
  **visibility** | [**\Swagger\Client\Model\Visibility**](../Model/Visibility.md)| History item visibility restrictions |
 

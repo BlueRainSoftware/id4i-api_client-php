@@ -1,6 +1,6 @@
 <?php
 /**
- * Organization
+ * OrganizationUpdate
  *
  * PHP version 5
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Organization Class Doc Comment
+ * OrganizationUpdate Class Doc Comment
  *
  * @category Class
  * @description An organization
@@ -41,7 +41,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Organization implements ModelInterface, ArrayAccess
+class OrganizationUpdate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Organization implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Organization';
+    protected static $swaggerModelName = 'OrganizationUpdate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,6 @@ class Organization implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'logo_url' => 'string',
         'name' => 'string',
         'namespace' => 'string'
     ];
@@ -70,8 +68,6 @@ class Organization implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'logo_url' => null,
         'name' => null,
         'namespace' => null
     ];
@@ -103,8 +99,6 @@ class Organization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'logo_url' => 'logoURL',
         'name' => 'name',
         'namespace' => 'namespace'
     ];
@@ -115,8 +109,6 @@ class Organization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'logo_url' => 'setLogoUrl',
         'name' => 'setName',
         'namespace' => 'setNamespace'
     ];
@@ -127,8 +119,6 @@ class Organization implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'logo_url' => 'getLogoUrl',
         'name' => 'getName',
         'namespace' => 'getNamespace'
     ];
@@ -193,8 +183,6 @@ class Organization implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['namespace'] = isset($data['namespace']) ? $data['namespace'] : null;
     }
@@ -208,25 +196,19 @@ class Organization implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((strlen($this->container['name']) > 254)) {
+        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 254)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 254.";
         }
 
-        if ((strlen($this->container['name']) < 3)) {
+        if (!is_null($this->container['name']) && (strlen($this->container['name']) < 3)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 3.";
         }
 
-        if ($this->container['namespace'] === null) {
-            $invalidProperties[] = "'namespace' can't be null";
-        }
-        if ((strlen($this->container['namespace']) > 255)) {
+        if (!is_null($this->container['namespace']) && (strlen($this->container['namespace']) > 255)) {
             $invalidProperties[] = "invalid value for 'namespace', the character length must be smaller than or equal to 255.";
         }
 
-        if ((strlen($this->container['namespace']) < 3)) {
+        if (!is_null($this->container['namespace']) && (strlen($this->container['namespace']) < 3)) {
             $invalidProperties[] = "invalid value for 'namespace', the character length must be bigger than or equal to 3.";
         }
 
@@ -242,16 +224,10 @@ class Organization implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
-            return false;
-        }
         if (strlen($this->container['name']) > 254) {
             return false;
         }
         if (strlen($this->container['name']) < 3) {
-            return false;
-        }
-        if ($this->container['namespace'] === null) {
             return false;
         }
         if (strlen($this->container['namespace']) > 255) {
@@ -263,54 +239,6 @@ class Organization implements ModelInterface, ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id The id of the organization ( Deprecated: Use namespace instead. )
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets logo_url
-     *
-     * @return string
-     */
-    public function getLogoUrl()
-    {
-        return $this->container['logo_url'];
-    }
-
-    /**
-     * Sets logo_url
-     *
-     * @param string $logo_url URL to a logo of the organization
-     *
-     * @return $this
-     */
-    public function setLogoUrl($logo_url)
-    {
-        $this->container['logo_url'] = $logo_url;
-
-        return $this;
-    }
 
     /**
      * Gets name
@@ -331,11 +259,11 @@ class Organization implements ModelInterface, ArrayAccess
      */
     public function setName($name)
     {
-        if ((strlen($name) > 254)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Organization., must be smaller than or equal to 254.');
+        if (!is_null($name) && (strlen($name) > 254)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling OrganizationUpdate., must be smaller than or equal to 254.');
         }
-        if ((strlen($name) < 3)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Organization., must be bigger than or equal to 3.');
+        if (!is_null($name) && (strlen($name) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling OrganizationUpdate., must be bigger than or equal to 3.');
         }
 
         $this->container['name'] = $name;
@@ -362,11 +290,11 @@ class Organization implements ModelInterface, ArrayAccess
      */
     public function setNamespace($namespace)
     {
-        if ((strlen($namespace) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $namespace when calling Organization., must be smaller than or equal to 255.');
+        if (!is_null($namespace) && (strlen($namespace) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $namespace when calling OrganizationUpdate., must be smaller than or equal to 255.');
         }
-        if ((strlen($namespace) < 3)) {
-            throw new \InvalidArgumentException('invalid length for $namespace when calling Organization., must be bigger than or equal to 3.');
+        if (!is_null($namespace) && (strlen($namespace) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $namespace when calling OrganizationUpdate., must be bigger than or equal to 3.');
         }
 
         $this->container['namespace'] = $namespace;
