@@ -44,7 +44,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
@@ -60,7 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -260,7 +260,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -277,7 +277,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -374,7 +374,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -392,7 +392,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -435,7 +435,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -452,7 +452,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -492,7 +492,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization where users should be invited
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 
 try {
@@ -507,7 +507,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization where users should be invited |
  **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
 
 ### Return type
@@ -747,7 +747,7 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
@@ -763,7 +763,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 

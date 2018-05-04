@@ -30,7 +30,7 @@ $apiInstance = new Swagger\Client\Api\AuditingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | Organization-ID of change log entries to be listed
+$organization_id = "organization_id_example"; // string | The namespace identifying the organization whose change log entries are to be listed
 $message_mime_type = "text/mustache"; // string | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache'
 $from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | From date time as UTC Date-Time format
 $to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | To date time as UTC Date-Time format
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| Organization-ID of change log entries to be listed |
+ **organization_id** | **string**| The namespace identifying the organization whose change log entries are to be listed |
  **message_mime_type** | **string**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; | [optional] [default to text/mustache]
  **from_date** | **\DateTime**| From date time as UTC Date-Time format | [optional]
  **to_date** | **\DateTime**| To date time as UTC Date-Time format | [optional]

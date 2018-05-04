@@ -29,7 +29,7 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The organization to compute the billing information for
+$organization_id = "organization_id_example"; // string | The organization to compute the billing information for
 $from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
 $to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The organization to compute the billing information for |
+ **organization_id** | **string**| The organization to compute the billing information for |
  **from_date** | **\DateTime**| Billing start date | [optional]
  **to_date** | **\DateTime**| Billing end date | [optional]
 
@@ -86,7 +86,7 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The organization to compute the billing information for
+$organization_id = "organization_id_example"; // string | The organization to compute the billing information for
 $from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
 $to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
 
@@ -103,7 +103,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The organization to compute the billing information for |
+ **organization_id** | **string**| The organization to compute the billing information for |
  **from_date** | **\DateTime**| Billing start date | [optional]
  **to_date** | **\DateTime**| Billing end date | [optional]
 

@@ -42,7 +42,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $content = "/path/to/file.txt"; // \SplFileObject | content
 
@@ -59,7 +59,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **content** | **\SplFileObject**| content |
 
@@ -99,7 +99,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -116,7 +116,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -156,7 +156,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -173,7 +173,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -213,7 +213,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -230,7 +230,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -332,7 +332,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -350,7 +350,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **organization_id** | **int**| organizationId | [optional]
+ **organization_id** | **string**| organizationId | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -392,7 +392,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -410,7 +410,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -453,7 +453,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -471,7 +471,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -512,7 +512,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -529,7 +529,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -569,7 +569,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 789; // int | organization
+$organization = "organization_example"; // string | organization
 $id4n = "id4n_example"; // string | id4n
 
 try {
@@ -585,7 +585,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
+ **organization** | **string**| organization |
  **id4n** | **string**| id4n |
 
 ### Return type
@@ -624,7 +624,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -641,7 +641,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -681,7 +681,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 $document = new \Swagger\Client\Model\DocumentUpdate(); // \Swagger\Client\Model\DocumentUpdate | document
@@ -699,7 +699,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
  **document** | [**\Swagger\Client\Model\DocumentUpdate**](../Model/DocumentUpdate.md)| document |
@@ -740,7 +740,7 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization = 789; // int | organization
+$organization = "organization_example"; // string | organization
 $id4n = "id4n_example"; // string | id4n
 $content_type = "content_type_example"; // string | Content-Type
 $content_length = 789; // int | Content-Length
@@ -759,7 +759,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **int**| organization |
+ **organization** | **string**| organization |
  **id4n** | **string**| id4n |
  **content_type** | **string**| Content-Type | [optional]
  **content_length** | **int**| Content-Length | [optional]

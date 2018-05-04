@@ -374,7 +374,7 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization to search in.
+$organization_id = "organization_id_example"; // string | The namespace of the organization to search in.
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -391,7 +391,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization to search in. |
+ **organization_id** | **string**| The namespace of the organization to search in. | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 

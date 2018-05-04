@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 [**deleteOrganizationLogo**](OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 [**findOrganizationAddress**](OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 [**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -47,7 +47,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
@@ -63,7 +63,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -158,7 +158,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization to be deleted.
+$organization_id = "organization_id_example"; // string | The namespace of the organization to be deleted.
 
 try {
     $apiInstance->deleteOrganization($organization_id);
@@ -172,7 +172,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization to be deleted. |
+ **organization_id** | **string**| The namespace of the organization to be deleted. |
 
 ### Return type
 
@@ -210,7 +210,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 
 try {
     $apiInstance->deleteOrganizationBillingAddress($organization_id);
@@ -224,7 +224,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
 
 ### Return type
 
@@ -262,7 +262,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization where the logo should be deleted.
+$organization_id = "organization_id_example"; // string | The namespace of the organization where the logo should be deleted.
 
 try {
     $apiInstance->deleteOrganizationLogo($organization_id);
@@ -276,7 +276,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization where the logo should be deleted. |
+ **organization_id** | **string**| The namespace of the organization where the logo should be deleted. |
 
 ### Return type
 
@@ -296,7 +296,7 @@ void (empty response body)
 # **findOrganization**
 > \Swagger\Client\Model\Organization findOrganization($organization_id)
 
-Find organization by id
+Find organization by id/namespace
 
 Returns a single organization.
 
@@ -316,7 +316,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization to be retrieved.
+$organization_id = "organization_id_example"; // string | The namespace of the organization to be retrieved.
 
 try {
     $result = $apiInstance->findOrganization($organization_id);
@@ -331,7 +331,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization to be retrieved. |
+ **organization_id** | **string**| The namespace of the organization to be retrieved. |
 
 ### Return type
 
@@ -369,7 +369,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 
 try {
     $result = $apiInstance->findOrganizationAddress($organization_id);
@@ -384,7 +384,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
 
 ### Return type
 
@@ -422,7 +422,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 
 try {
     $result = $apiInstance->findOrganizationBillingAddress($organization_id);
@@ -437,7 +437,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
 
 ### Return type
 
@@ -477,7 +477,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
@@ -497,7 +497,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
  **type** | **string**| Filter by this type | [optional]
@@ -542,7 +542,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -559,7 +559,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -656,7 +656,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -674,7 +674,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -717,7 +717,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -734,7 +734,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -774,7 +774,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization where users should be invited
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 
 try {
@@ -789,7 +789,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization where users should be invited |
  **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
 
 ### Return type
@@ -883,7 +883,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
 $change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
@@ -899,7 +899,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
  **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -941,7 +941,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization where the logo should be updated.
+$organization_id = "organization_id_example"; // string | The namespace of the organization where the logo should be updated.
 $file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
 
 try {
@@ -957,7 +957,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization where the logo should be updated. |
+ **organization_id** | **string**| The namespace of the organization where the logo should be updated. |
  **file** | **\SplFileObject**| An image containing the new logo. |
 
 ### Return type
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganization**
-> \Swagger\Client\Model\Organization updateOrganization($organization_id, $organization)
+> \Swagger\Client\Model\Organization updateOrganization($organization_id, $organization_update)
 
 Update organization
 
@@ -996,11 +996,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | The id of the organization to be updated.
-$organization = new \Swagger\Client\Model\Organization(); // \Swagger\Client\Model\Organization | Updated organization object
+$organization_id = "organization_id_example"; // string | The namespace of the organization to be updated.
+$organization_update = new \Swagger\Client\Model\OrganizationUpdate(); // \Swagger\Client\Model\OrganizationUpdate | Updated organization object
 
 try {
-    $result = $apiInstance->updateOrganization($organization_id, $organization);
+    $result = $apiInstance->updateOrganization($organization_id, $organization_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganization: ', $e->getMessage(), PHP_EOL;
@@ -1012,8 +1012,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| The id of the organization to be updated. |
- **organization** | [**\Swagger\Client\Model\Organization**](../Model/Organization.md)| Updated organization object |
+ **organization_id** | **string**| The namespace of the organization to be updated. |
+ **organization_update** | [**\Swagger\Client\Model\OrganizationUpdate**](../Model/OrganizationUpdate.md)| Updated organization object |
 
 ### Return type
 
@@ -1051,7 +1051,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 
 try {
@@ -1067,7 +1067,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
 
 ### Return type
@@ -1106,7 +1106,7 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 
 try {
@@ -1122,7 +1122,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
 
 ### Return type

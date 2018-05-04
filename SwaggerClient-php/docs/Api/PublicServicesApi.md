@@ -37,7 +37,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -54,7 +54,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
@@ -198,7 +198,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
@@ -216,7 +216,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **organization_id** | **int**| organizationId | [optional]
+ **organization_id** | **string**| organizationId | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -258,7 +258,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
@@ -276,7 +276,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
@@ -376,7 +376,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | Organization ID
+$organization_id = "organization_id_example"; // string | Organization ID
 
 try {
     $result = $apiInstance->readOrganizationInfo($organization_id);
@@ -391,7 +391,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| Organization ID |
+ **organization_id** | **string**| Organization ID |
 
 ### Return type
 
@@ -429,7 +429,7 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = 789; // int | organizationId
+$organization_id = "organization_id_example"; // string | organizationId
 $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
@@ -446,7 +446,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **int**| organizationId |
+ **organization_id** | **string**| organizationId |
  **id4n** | **string**| id4n |
  **file_name** | **string**| fileName |
 
