@@ -172,6 +172,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getOrganizationPrivileges
+     *
+     * List my privileges.
+     *
+     */
+    public function testGetOrganizationPrivileges()
+    {
+    }
+
+    /**
      * Test case for getOrganizationsOfUser
      *
      * Retrieve organizations of user.

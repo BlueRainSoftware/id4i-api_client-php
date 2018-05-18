@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**findOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 *OrganizationsApi* | [**getAllCollectionsOfOrganization**](docs/Api/OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *OrganizationsApi* | [**getAllOrganizationRoles**](docs/Api/OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+*OrganizationsApi* | [**getOrganizationPrivileges**](docs/Api/OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 *OrganizationsApi* | [**getOrganizationsOfUser**](docs/Api/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *OrganizationsApi* | [**getUserRoles**](docs/Api/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**getUsersOfOrganization**](docs/Api/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
