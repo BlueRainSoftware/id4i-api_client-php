@@ -72,6 +72,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addPartnerOrganization
+     *
+     * Add partner.
+     *
+     */
+    public function testAddPartnerOrganization()
+    {
+    }
+
+    /**
      * Test case for addUserRoles
      *
      * Add role(s) to user.
@@ -192,6 +202,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getPartnerOrganizations
+     *
+     * Get partners of an organization.
+     *
+     */
+    public function testGetPartnerOrganizations()
+    {
+    }
+
+    /**
      * Test case for getUserRoles
      *
      * Get user roles by username.
@@ -228,6 +248,16 @@ class OrganizationsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testListCountries()
+    {
+    }
+
+    /**
+     * Test case for removePartnerOrganization
+     *
+     * Remove partner.
+     *
+     */
+    public function testRemovePartnerOrganization()
     {
     }
 

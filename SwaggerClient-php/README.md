@@ -149,6 +149,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**updateItemVisibility**](docs/Api/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*OrganizationsApi* | [**addPartnerOrganization**](docs/Api/OrganizationsApi.md#addpartnerorganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 *OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/Api/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/Api/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -161,10 +162,12 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**getAllOrganizationRoles**](docs/Api/OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 *OrganizationsApi* | [**getOrganizationPrivileges**](docs/Api/OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 *OrganizationsApi* | [**getOrganizationsOfUser**](docs/Api/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+*OrganizationsApi* | [**getPartnerOrganizations**](docs/Api/OrganizationsApi.md#getpartnerorganizations) | **GET** /api/v1/organizations/{organizationId}/partner | Get partners of an organization
 *OrganizationsApi* | [**getUserRoles**](docs/Api/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**getUsersOfOrganization**](docs/Api/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *OrganizationsApi* | [**inviteUsers**](docs/Api/OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 *OrganizationsApi* | [**listCountries**](docs/Api/OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
+*OrganizationsApi* | [**removePartnerOrganization**](docs/Api/OrganizationsApi.md#removepartnerorganization) | **DELETE** /api/v1/organizations/{organizationId}/partner | Remove partner
 *OrganizationsApi* | [**removeUserRoles**](docs/Api/OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *OrganizationsApi* | [**setOrganizationLogo**](docs/Api/OrganizationsApi.md#setorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 *OrganizationsApi* | [**updateOrganization**](docs/Api/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
@@ -208,6 +211,7 @@ Class | Method | HTTP request | Description
 
  - [AccountCredentials](docs/Model/AccountCredentials.md)
  - [AddApiKeyPrivilegeRequest](docs/Model/AddApiKeyPrivilegeRequest.md)
+ - [AddPartnerRequest](docs/Model/AddPartnerRequest.md)
  - [ApiError](docs/Model/ApiError.md)
  - [ApiKeyChangeRequest](docs/Model/ApiKeyChangeRequest.md)
  - [ApiKeyCreationRequest](docs/Model/ApiKeyCreationRequest.md)
@@ -265,6 +269,7 @@ Class | Method | HTTP request | Description
  - [PaginatedResponseId4nPresentation_](docs/Model/PaginatedResponseId4nPresentation_.md)
  - [PaginatedResponseOrganization_](docs/Model/PaginatedResponseOrganization_.md)
  - [PaginatedResponseOwnedDocument_](docs/Model/PaginatedResponseOwnedDocument_.md)
+ - [PaginatedResponsePartnerOrganization_](docs/Model/PaginatedResponsePartnerOrganization_.md)
  - [PaginatedResponseRole_](docs/Model/PaginatedResponseRole_.md)
  - [PaginatedResponseString_](docs/Model/PaginatedResponseString_.md)
  - [PaginatedResponseUserPresentation_](docs/Model/PaginatedResponseUserPresentation_.md)
@@ -272,11 +277,13 @@ Class | Method | HTTP request | Description
  - [PaginatedStringResponse](docs/Model/PaginatedStringResponse.md)
  - [PaginatedUserPresentationResponse](docs/Model/PaginatedUserPresentationResponse.md)
  - [PaginatedUserRolesResponse](docs/Model/PaginatedUserRolesResponse.md)
+ - [PartnerOrganization](docs/Model/PartnerOrganization.md)
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/Model/PasswordResetVerificationRequest.md)
  - [PublicImagePresentation](docs/Model/PublicImagePresentation.md)
  - [RegistrationVerificationTokenPresentation](docs/Model/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/Model/RemoveApiKeyPrivilegeRequest.md)
+ - [RemovePartnerRequest](docs/Model/RemovePartnerRequest.md)
  - [ResponseEntity](docs/Model/ResponseEntity.md)
  - [Role](docs/Model/Role.md)
  - [RoleResponse](docs/Model/RoleResponse.md)
