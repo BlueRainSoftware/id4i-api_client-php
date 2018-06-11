@@ -59,7 +59,8 @@ class ApiError implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'error_list' => '\Swagger\Client\Model\ApiError[]',
-        'message' => 'string'
+        'message' => 'string',
+        'error_id' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ApiError implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'code' => null,
         'error_list' => null,
-        'message' => null
+        'message' => null,
+        'error_id' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class ApiError implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'code' => 'code',
         'error_list' => 'errorList',
-        'message' => 'message'
+        'message' => 'message',
+        'error_id' => 'errorId'
     ];
 
     /**
@@ -113,7 +116,8 @@ class ApiError implements ModelInterface, ArrayAccess
     protected static $setters = [
         'code' => 'setCode',
         'error_list' => 'setErrorList',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'error_id' => 'setErrorId'
     ];
 
     /**
@@ -124,7 +128,8 @@ class ApiError implements ModelInterface, ArrayAccess
     protected static $getters = [
         'code' => 'getCode',
         'error_list' => 'getErrorList',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'error_id' => 'getErrorId'
     ];
 
     /**
@@ -291,6 +296,7 @@ class ApiError implements ModelInterface, ArrayAccess
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['error_list'] = isset($data['error_list']) ? $data['error_list'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['error_id'] = isset($data['error_id']) ? $data['error_id'] : null;
     }
 
     /**
@@ -319,6 +325,9 @@ class ApiError implements ModelInterface, ArrayAccess
         if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
         }
+        if ($this->container['error_id'] === null) {
+            $invalidProperties[] = "'error_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -342,6 +351,9 @@ class ApiError implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['message'] === null) {
+            return false;
+        }
+        if ($this->container['error_id'] === null) {
             return false;
         }
         return true;
@@ -425,6 +437,30 @@ class ApiError implements ModelInterface, ArrayAccess
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_id
+     *
+     * @return string
+     */
+    public function getErrorId()
+    {
+        return $this->container['error_id'];
+    }
+
+    /**
+     * Sets error_id
+     *
+     * @param string $error_id error_id
+     *
+     * @return $this
+     */
+    public function setErrorId($error_id)
+    {
+        $this->container['error_id'] = $error_id;
 
         return $this;
     }
