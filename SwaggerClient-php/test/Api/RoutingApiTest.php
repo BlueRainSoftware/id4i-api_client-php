@@ -72,12 +72,12 @@ class RoutingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getAllWebRoutes
+     * Test case for getAllRoutes
      *
-     * Retrieve all web routes.
+     * Retrieve all routes of a GUID (or ID4N).
      *
      */
-    public function testGetAllWebRoutes()
+    public function testGetAllRoutes()
     {
     }
 

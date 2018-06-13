@@ -5,7 +5,7 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**getWebRoutes**](PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+[**getRoutes**](PublicServicesApi.md#getRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getWebRoutes**
-> \Swagger\Client\Model\Route[] getWebRoutes($id4n)
+# **getRoutes**
+> \Swagger\Client\Model\Route[] getRoutes($id4n, $type, $interpolate)
 
 Retrieve all public routes for a GUID
 
@@ -95,12 +95,14 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
+$type = "web"; // string | type
+$interpolate = true; // bool | interpolate
 
 try {
-    $result = $apiInstance->getWebRoutes($id4n);
+    $result = $apiInstance->getRoutes($id4n, $type, $interpolate);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublicServicesApi->getWebRoutes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PublicServicesApi->getRoutes: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -110,6 +112,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
+ **type** | **string**| type | [default to web]
+ **interpolate** | **bool**| interpolate | [optional] [default to true]
 
 ### Return type
 

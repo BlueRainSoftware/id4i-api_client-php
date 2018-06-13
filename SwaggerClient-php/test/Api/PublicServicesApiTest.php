@@ -82,12 +82,12 @@ class PublicServicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getWebRoutes
+     * Test case for getRoutes
      *
      * Retrieve all public routes for a GUID.
      *
      */
-    public function testGetWebRoutes()
+    public function testGetRoutes()
     {
     }
 

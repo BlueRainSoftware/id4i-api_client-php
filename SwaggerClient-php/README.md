@@ -174,7 +174,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**updateOrganizationAddress**](docs/Api/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/Api/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *PublicServicesApi* | [**getPublicDocument**](docs/Api/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-*PublicServicesApi* | [**getWebRoutes**](docs/Api/PublicServicesApi.md#getwebroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+*PublicServicesApi* | [**getRoutes**](docs/Api/PublicServicesApi.md#getroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 *PublicServicesApi* | [**go**](docs/Api/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**listAllPublicDocuments**](docs/Api/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *PublicServicesApi* | [**listPublicDocuments**](docs/Api/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -183,8 +183,8 @@ Class | Method | HTTP request | Description
 *PublicServicesApi* | [**readPublicDocument**](docs/Api/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/Api/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/Api/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
-*RoutingApi* | [**getAllWebRoutes**](docs/Api/RoutingApi.md#getallwebroutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
-*RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
+*RoutingApi* | [**getAllRoutes**](docs/Api/RoutingApi.md#getallroutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
+*RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**getRoutingFile**](docs/Api/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**updateRoutingFile**](docs/Api/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 *StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
