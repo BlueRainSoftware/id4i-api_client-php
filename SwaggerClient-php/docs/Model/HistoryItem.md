@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**additional_properties** | **map[string,string]** | History items custom additional properties | [optional] 
 **organization_id** | **string** | Originator of the history item | 
 **sequence_id** | **int** | Forms the primary key of the history item together with the GUID and the organizationId | [optional] 
 **timestamp** | **int** | History item timestamp | [optional] 

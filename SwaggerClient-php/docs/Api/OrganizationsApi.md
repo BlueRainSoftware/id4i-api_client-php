@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addPartnerOrganization**](OrganizationsApi.md#addPartnerOrganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 [**addUserRoles**](OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -16,16 +17,74 @@ Method | HTTP request | Description
 [**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 [**getOrganizationPrivileges**](OrganizationsApi.md#getOrganizationPrivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getPartnerOrganizations**](OrganizationsApi.md#getPartnerOrganizations) | **GET** /api/v1/organizations/{organizationId}/partner | Get partners of an organization
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
+[**removePartnerOrganization**](OrganizationsApi.md#removePartnerOrganization) | **DELETE** /api/v1/organizations/{organizationId}/partner | Remove partner
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 
+
+# **addPartnerOrganization**
+> addPartnerOrganization($organization_id, $request)
+
+Add partner
+
+Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | The namespace of the organization
+$request = new \Swagger\Client\Model\AddPartnerRequest(); // \Swagger\Client\Model\AddPartnerRequest | request
+
+try {
+    $apiInstance->addPartnerOrganization($organization_id, $request);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->addPartnerOrganization: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**| The namespace of the organization |
+ **request** | [**\Swagger\Client\Model\AddPartnerRequest**](../Model/AddPartnerRequest.md)| request |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addUserRoles**
 > addUserRoles($organization_id, $username, $change_role_request)
@@ -691,6 +750,65 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getPartnerOrganizations**
+> \Swagger\Client\Model\PaginatedResponsePartnerOrganization_ getPartnerOrganizations($organization_id, $offset, $limit)
+
+Get partners of an organization
+
+Listing partners in a paginated manner.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | The namespace of the organization to query partner organizations
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
+
+try {
+    $result = $apiInstance->getPartnerOrganizations($organization_id, $offset, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->getPartnerOrganizations: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**| The namespace of the organization to query partner organizations |
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\PaginatedResponsePartnerOrganization_**](../Model/PaginatedResponsePartnerOrganization_.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getUserRoles**
 > \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $offset, $limit)
 
@@ -906,6 +1024,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\PaginatedCountryResponse**](../Model/PaginatedCountryResponse.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **removePartnerOrganization**
+> removePartnerOrganization($organization_id, $request)
+
+Remove partner
+
+Removing a partner organization
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\OrganizationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$organization_id = "organization_id_example"; // string | The namespace of the organization
+$request = new \Swagger\Client\Model\RemovePartnerRequest(); // \Swagger\Client\Model\RemovePartnerRequest | request
+
+try {
+    $apiInstance->removePartnerOrganization($organization_id, $request);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganizationsApi->removePartnerOrganization: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **string**| The namespace of the organization |
+ **request** | [**\Swagger\Client\Model\RemovePartnerRequest**](../Model/RemovePartnerRequest.md)| request |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
