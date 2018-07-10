@@ -74,7 +74,7 @@ class AliasApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for addGuidAlias
      *
-     * Add alias for GUIDs.
+     * Add alias for GUID or Collection.
      *
      */
     public function testAddGuidAlias()
@@ -94,7 +94,7 @@ class AliasApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getGuidAliases
      *
-     * Get all aliases for the given GUID..
+     * Get all aliases for the given GUID or Collection..
      *
      */
     public function testGetGuidAliases()
@@ -104,7 +104,7 @@ class AliasApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for removeGuidAlias
      *
-     * Remove aliases from GUIDs.
+     * Remove aliases from GUID or Collection.
      *
      */
     public function testRemoveGuidAlias()

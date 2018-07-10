@@ -85,9 +85,9 @@ class GuidsApi
     /**
      * Operation addGuidAlias
      *
-     * Add alias for GUIDs
+     * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
      *
@@ -103,9 +103,9 @@ class GuidsApi
     /**
      * Operation addGuidAliasWithHttpInfo
      *
-     * Add alias for GUIDs
+     * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
      *
@@ -230,9 +230,9 @@ class GuidsApi
     /**
      * Operation addGuidAliasAsync
      *
-     * Add alias for GUIDs
+     * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
      *
@@ -252,9 +252,9 @@ class GuidsApi
     /**
      * Operation addGuidAliasAsyncWithHttpInfo
      *
-     * Add alias for GUIDs
+     * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
      *
@@ -292,7 +292,7 @@ class GuidsApi
     /**
      * Create request for operation 'addGuidAlias'
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
      *
@@ -320,7 +320,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/alias/{aliasType}';
+        $resourcePath = '/api/v1/id4ns/{id4n}/alias/{aliasType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1077,9 +1077,9 @@ class GuidsApi
     /**
      * Operation getGuidAliases
      *
-     * Get all aliases for the given GUID.
+     * Get all aliases for the given GUID or Collection.
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1094,9 +1094,9 @@ class GuidsApi
     /**
      * Operation getGuidAliasesWithHttpInfo
      *
-     * Get all aliases for the given GUID.
+     * Get all aliases for the given GUID or Collection.
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1225,9 +1225,9 @@ class GuidsApi
     /**
      * Operation getGuidAliasesAsync
      *
-     * Get all aliases for the given GUID.
+     * Get all aliases for the given GUID or Collection.
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1245,9 +1245,9 @@ class GuidsApi
     /**
      * Operation getGuidAliasesAsyncWithHttpInfo
      *
-     * Get all aliases for the given GUID.
+     * Get all aliases for the given GUID or Collection.
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1297,7 +1297,7 @@ class GuidsApi
     /**
      * Create request for operation 'getGuidAliases'
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1311,7 +1311,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/alias';
+        $resourcePath = '/api/v1/id4ns/{id4n}/alias';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2060,9 +2060,9 @@ class GuidsApi
     /**
      * Operation removeGuidAlias
      *
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2077,9 +2077,9 @@ class GuidsApi
     /**
      * Operation removeGuidAliasWithHttpInfo
      *
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -2171,9 +2171,9 @@ class GuidsApi
     /**
      * Operation removeGuidAliasAsync
      *
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      *
      * @throws \InvalidArgumentException
@@ -2192,9 +2192,9 @@ class GuidsApi
     /**
      * Operation removeGuidAliasAsyncWithHttpInfo
      *
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      *
      * @throws \InvalidArgumentException
@@ -2231,7 +2231,7 @@ class GuidsApi
     /**
      * Create request for operation 'removeGuidAlias'
      *
-     * @param  string $id4n The GUID to operate on (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
      *
      * @throws \InvalidArgumentException
@@ -2252,7 +2252,7 @@ class GuidsApi
             );
         }
 
-        $resourcePath = '/api/v1/guids/{id4n}/alias/{aliasType}';
+        $resourcePath = '/api/v1/id4ns/{id4n}/alias/{aliasType}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

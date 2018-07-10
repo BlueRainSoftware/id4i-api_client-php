@@ -4,19 +4,19 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addGuidAlias**](AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**addGuidAlias**](AliasApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**getGuidAliasTypes**](AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-[**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
-[**removeGuidAlias**](AliasApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
+[**removeGuidAlias**](AliasApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**searchByAlias**](AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
 
 # **addGuidAlias**
 > addGuidAlias($id4n, $alias_type, $alias)
 
-Add alias for GUIDs
+Add alias for GUID or Collection
 
-Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
 
 ### Example
 ```php
@@ -34,7 +34,7 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID to operate on
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
 
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on |
+ **id4n** | **string**| The GUID or Collection to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
 
@@ -123,9 +123,9 @@ This endpoint does not need any parameter.
 # **getGuidAliases**
 > map[string,string] getGuidAliases($id4n)
 
-Get all aliases for the given GUID.
+Get all aliases for the given GUID or Collection.
 
-Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
+Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
 
 ### Example
 ```php
@@ -143,7 +143,7 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID to operate on
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 
 try {
     $result = $apiInstance->getGuidAliases($id4n);
@@ -158,7 +158,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on |
+ **id4n** | **string**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 # **removeGuidAlias**
 > removeGuidAlias($id4n, $alias_type)
 
-Remove aliases from GUIDs
+Remove aliases from GUID or Collection
 
 Remove the alias of the given type
 
@@ -198,7 +198,7 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID to operate on
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 
 try {
@@ -213,7 +213,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on |
+ **id4n** | **string**| The GUID or Collection to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
 
 ### Return type
