@@ -162,16 +162,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for isContractRequired
-     *
-     * Tells you whether your company needs to have a contract with BlueRain to be able to sign up.
-     *
-     */
-    public function testIsContractRequired()
-    {
-    }
-
-    /**
      * Test case for listAllRoles
      *
      * List roles.
