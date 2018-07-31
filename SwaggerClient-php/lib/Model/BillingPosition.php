@@ -58,11 +58,11 @@ class BillingPosition implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amount' => 'int',
-        'count' => 'double',
+        'count' => 'float',
         'description' => 'string',
         'service' => 'string',
-        'single_price' => 'double',
-        'sum' => 'double',
+        'single_price' => 'float',
+        'sum' => 'float',
         'unit' => 'string'
     ];
 
@@ -73,11 +73,11 @@ class BillingPosition implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amount' => 'int64',
-        'count' => 'double',
+        'count' => null,
         'description' => null,
         'service' => null,
-        'single_price' => 'double',
-        'sum' => 'double',
+        'single_price' => null,
+        'sum' => null,
         'unit' => null
     ];
 
@@ -310,7 +310,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Gets count
      *
-     * @return double
+     * @return float
      */
     public function getCount()
     {
@@ -320,7 +320,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Sets count
      *
-     * @param double $count count
+     * @param float $count count
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Gets single_price
      *
-     * @return double
+     * @return float
      */
     public function getSinglePrice()
     {
@@ -392,7 +392,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Sets single_price
      *
-     * @param double $single_price single_price
+     * @param float $single_price single_price
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Gets sum
      *
-     * @return double
+     * @return float
      */
     public function getSum()
     {
@@ -416,7 +416,7 @@ class BillingPosition implements ModelInterface, ArrayAccess
     /**
      * Sets sum
      *
-     * @param double $sum sum
+     * @param float $sum sum
      *
      * @return $this
      */

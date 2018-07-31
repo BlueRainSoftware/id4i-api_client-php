@@ -57,7 +57,7 @@ class ServiceCosts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'listing' => 'map[string,double]'
+        'listing' => 'map[string,float]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ServiceCosts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'listing' => 'double'
+        'listing' => null
     ];
 
     /**
@@ -214,7 +214,7 @@ class ServiceCosts implements ModelInterface, ArrayAccess
     /**
      * Gets listing
      *
-     * @return map[string,double]
+     * @return map[string,float]
      */
     public function getListing()
     {
@@ -224,7 +224,7 @@ class ServiceCosts implements ModelInterface, ArrayAccess
     /**
      * Sets listing
      *
-     * @param map[string,double] $listing listing
+     * @param map[string,float] $listing listing
      *
      * @return $this
      */
