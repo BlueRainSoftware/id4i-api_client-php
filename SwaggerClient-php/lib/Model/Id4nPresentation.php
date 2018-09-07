@@ -321,7 +321,7 @@ class Id4nPresentation implements ModelInterface, ArrayAccess
     /**
      * Sets holder_organization_id
      *
-     * @param string $holder_organization_id ${Id4nPresentation.Guid.holderOrganizationId}
+     * @param string $holder_organization_id Organization namespace of the holder of the ID
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class Id4nPresentation implements ModelInterface, ArrayAccess
     /**
      * Sets owner_organization_id
      *
-     * @param string $owner_organization_id ${Id4nPresentation.Guid.ownerOrganizationId}
+     * @param string $owner_organization_id Organization namespace of the ID owner
      *
      * @return $this
      */
