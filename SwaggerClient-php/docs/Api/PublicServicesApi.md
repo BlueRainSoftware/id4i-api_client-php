@@ -4,14 +4,13 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**getRoutes**](PublicServicesApi.md#getRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
-[**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
-[**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**listPublicHistory**](PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
 [**readOrganizationInfo**](PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
-[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 [**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
@@ -19,7 +18,7 @@ Method | HTTP request | Description
 # **getPublicDocument**
 > \Swagger\Client\Model\Document getPublicDocument($organization_id, $id4n, $file_name)
 
-Retrieve a document (meta-data only, no content)
+Retrieve a public document (meta-data only, no content)
 
 ### Example
 ```php
@@ -179,11 +178,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllPublicDocuments**
-> \Swagger\Client\Model\PaginatedOwnedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
 
-List organization specific documents
+List public documents
 
-Listing documents of an id4n owned by a specified organization
+Listing all public documents of an id4n
 
 ### Example
 ```php
@@ -203,11 +202,12 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
 );
 $id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$owner = "owner_example"; // string | Filter by owner organization
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllPublicDocuments($id4n, $organization_id, $offset, $limit);
+    $result = $apiInstance->listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->listAllPublicDocuments: ', $e->getMessage(), PHP_EOL;
@@ -221,67 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\PaginatedOwnedDocumentResponse**](../Model/PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **listPublicDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listPublicDocuments($organization_id, $id4n, $offset, $limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: Authorization
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\PublicServicesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$organization_id = "organization_id_example"; // string | organizationId
-$id4n = "id4n_example"; // string | id4n
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
-
-try {
-    $result = $apiInstance->listPublicDocuments($organization_id, $id4n, $offset, $limit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PublicServicesApi->listPublicDocuments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **string**| organizationId |
- **id4n** | **string**| id4n |
+ **owner** | **string**| Filter by owner organization | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 
@@ -415,7 +355,7 @@ Name | Type | Description  | Notes
 # **readPublicDocument**
 > string readPublicDocument($organization_id, $id4n, $file_name)
 
-Read document contents
+Read public document contents
 
 ### Example
 ```php
