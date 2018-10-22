@@ -84,7 +84,7 @@ class HistoryApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for callList
      *
-     * List history.
+     * DEPRECATED - List history.
      *
      */
     public function testCallList()
@@ -92,12 +92,12 @@ class HistoryApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for listAll
+     * Test case for filteredList
      *
      * List history.
      *
      */
-    public function testListAll()
+    public function testFilteredList()
     {
     }
 

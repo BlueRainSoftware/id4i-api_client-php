@@ -141,8 +141,8 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**removeGuidAlias**](docs/Api/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *GuidsApi* | [**updateGuid**](docs/Api/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *HistoryApi* | [**addItem**](docs/Api/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
-*HistoryApi* | [**callList**](docs/Api/HistoryApi.md#calllist) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
-*HistoryApi* | [**listAll**](docs/Api/HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
+*HistoryApi* | [**callList**](docs/Api/HistoryApi.md#calllist) | **GET** /api/v1/history/{id4n}/{organizationId} | DEPRECATED - List history
+*HistoryApi* | [**filteredList**](docs/Api/HistoryApi.md#filteredlist) | **GET** /api/v1/history/{id4n} | List history
 *HistoryApi* | [**retrieveItem**](docs/Api/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 *HistoryApi* | [**updateItem**](docs/Api/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/Api/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
