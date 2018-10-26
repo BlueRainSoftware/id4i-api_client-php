@@ -83,11 +83,4 @@ class OrganizationUpdateTest extends \PHPUnit_Framework_TestCase
     public function testPropertyName()
     {
     }
-
-    /**
-     * Test attribute "namespace"
-     */
-    public function testPropertyNamespace()
-    {
-    }
 }
