@@ -92,6 +92,16 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getCollections
+     *
+     * Retrieve collections of an ID.
+     *
+     */
+    public function testGetCollections()
+    {
+    }
+
+    /**
      * Test case for getGuid
      *
      * Retrieve GUID information.
