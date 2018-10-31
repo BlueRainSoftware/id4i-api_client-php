@@ -5,8 +5,8 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addItem**](HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
-[**callList**](HistoryApi.md#callList) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
-[**listAll**](HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
+[**callList**](HistoryApi.md#callList) | **GET** /api/v1/history/{id4n}/{organizationId} | DEPRECATED - List history
+[**filteredList**](HistoryApi.md#filteredList) | **GET** /api/v1/history/{id4n} | List history
 [**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 [**updateItem**](HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 [**updateItemVisibility**](HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
@@ -71,9 +71,9 @@ void (empty response body)
 # **callList**
 > \Swagger\Client\Model\PaginatedHistoryItemResponse callList($id4n, $organization_id, $include_private, $offset, $limit)
 
-List history
+DEPRECATED - List history
 
-Lists the history of a GUID of the specified organization
+DEPRECATED - please use filteredList with organization parameter to achieve the same functionality
 
 ### Example
 ```php
@@ -131,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **listAll**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse listAll($id4n, $include_private, $offset, $limit)
+# **filteredList**
+> \Swagger\Client\Model\PaginatedHistoryItemResponse filteredList($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit)
 
 List history
 
@@ -156,14 +156,19 @@ $apiInstance = new Swagger\Client\Api\HistoryApi(
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
 $include_private = true; // bool | Also return private history entries
+$organization = "organization_example"; // string | Show only entries created by one of the given organizations. This parameter can be used multiple times.
+$type = array("type_example"); // string[] | Show only entries matching one of the given history item types. This parameter can be used multiple times.
+$qualifier = array("qualifier_example"); // string[] | Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
+$from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | From date time as UTC Date-Time format
+$to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | To date time as UTC Date-Time format
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAll($id4n, $include_private, $offset, $limit);
+    $result = $apiInstance->filteredList($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HistoryApi->listAll: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HistoryApi->filteredList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -174,6 +179,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
  **include_private** | **bool**| Also return private history entries | [optional] [default to true]
+ **organization** | **string**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional]
+ **type** | [**string[]**](../Model/string.md)| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional]
+ **qualifier** | [**string[]**](../Model/string.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional]
+ **from_date** | **\DateTime**| From date time as UTC Date-Time format | [optional]
+ **to_date** | **\DateTime**| To date time as UTC Date-Time format | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
 

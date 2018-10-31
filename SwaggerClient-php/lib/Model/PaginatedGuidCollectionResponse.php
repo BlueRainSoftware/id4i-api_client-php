@@ -1,6 +1,6 @@
 <?php
 /**
- * VisibilityUpdate
+ * PaginatedGuidCollectionResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * VisibilityUpdate Class Doc Comment
+ * PaginatedGuidCollectionResponse Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VisibilityUpdate implements ModelInterface, ArrayAccess
+class PaginatedGuidCollectionResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'VisibilityUpdate';
+    protected static $swaggerModelName = 'PaginatedGuidCollectionResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'public' => 'bool',
-        'shared_with_organization_ids' => 'string[]'
+        'elements' => '\Swagger\Client\Model\GuidCollection[]',
+        'limit' => 'int',
+        'offset' => 'int',
+        'total' => 'int'
     ];
 
     /**
@@ -67,8 +69,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'public' => null,
-        'shared_with_organization_ids' => null
+        'elements' => null,
+        'limit' => 'int32',
+        'offset' => 'int32',
+        'total' => 'int32'
     ];
 
     /**
@@ -98,8 +102,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'public' => 'public',
-        'shared_with_organization_ids' => 'sharedWithOrganizationIds'
+        'elements' => 'elements',
+        'limit' => 'limit',
+        'offset' => 'offset',
+        'total' => 'total'
     ];
 
     /**
@@ -108,8 +114,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'public' => 'setPublic',
-        'shared_with_organization_ids' => 'setSharedWithOrganizationIds'
+        'elements' => 'setElements',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -118,8 +126,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'public' => 'getPublic',
-        'shared_with_organization_ids' => 'getSharedWithOrganizationIds'
+        'elements' => 'getElements',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -182,8 +192,10 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['public'] = isset($data['public']) ? $data['public'] : null;
-        $this->container['shared_with_organization_ids'] = isset($data['shared_with_organization_ids']) ? $data['shared_with_organization_ids'] : null;
+        $this->container['elements'] = isset($data['elements']) ? $data['elements'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -195,6 +207,15 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['elements'] === null) {
+            $invalidProperties[] = "'elements' can't be null";
+        }
+        if ($this->container['limit'] === null) {
+            $invalidProperties[] = "'limit' can't be null";
+        }
+        if ($this->container['offset'] === null) {
+            $invalidProperties[] = "'offset' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -207,54 +228,111 @@ class VisibilityUpdate implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['elements'] === null) {
+            return false;
+        }
+        if ($this->container['limit'] === null) {
+            return false;
+        }
+        if ($this->container['offset'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets public
+     * Gets elements
      *
-     * @return bool
+     * @return \Swagger\Client\Model\GuidCollection[]
      */
-    public function getPublic()
+    public function getElements()
     {
-        return $this->container['public'];
+        return $this->container['elements'];
     }
 
     /**
-     * Sets public
+     * Sets elements
      *
-     * @param bool $public Document is publicly readable (if ID4N is owned by the same organization)
+     * @param \Swagger\Client\Model\GuidCollection[] $elements elements
      *
      * @return $this
      */
-    public function setPublic($public)
+    public function setElements($elements)
     {
-        $this->container['public'] = $public;
+        $this->container['elements'] = $elements;
 
         return $this;
     }
 
     /**
-     * Gets shared_with_organization_ids
+     * Gets limit
      *
-     * @return string[]
+     * @return int
      */
-    public function getSharedWithOrganizationIds()
+    public function getLimit()
     {
-        return $this->container['shared_with_organization_ids'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets shared_with_organization_ids
+     * Sets limit
      *
-     * @param string[] $shared_with_organization_ids Document is readable by these organizations (independend of ID4N ownership)
+     * @param int $limit The number of returned elements
      *
      * @return $this
      */
-    public function setSharedWithOrganizationIds($shared_with_organization_ids)
+    public function setLimit($limit)
     {
-        $this->container['shared_with_organization_ids'] = $shared_with_organization_ids;
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int $offset Starting with the n-th element
+     *
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int $total The total number of elements
+     *
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

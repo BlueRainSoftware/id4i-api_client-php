@@ -1,6 +1,6 @@
 <?php
 /**
- * PublicImagePresentationTest
+ * PaginatedGuidCollectionResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * PublicImagePresentationTest Class Doc Comment
+ * PaginatedGuidCollectionResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description PublicImagePresentation
+// * @description PaginatedGuidCollectionResponse
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PublicImagePresentationTest extends \PHPUnit_Framework_TestCase
+class PaginatedGuidCollectionResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,37 @@ class PublicImagePresentationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PublicImagePresentation"
+     * Test "PaginatedGuidCollectionResponse"
      */
-    public function testPublicImagePresentation()
+    public function testPaginatedGuidCollectionResponse()
     {
     }
 
     /**
-     * Test attribute "uri"
+     * Test attribute "elements"
      */
-    public function testPropertyUri()
+    public function testPropertyElements()
+    {
+    }
+
+    /**
+     * Test attribute "limit"
+     */
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
     {
     }
 }
