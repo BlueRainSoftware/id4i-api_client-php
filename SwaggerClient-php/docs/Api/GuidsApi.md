@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGuidsWithoutCollection**
-> \Swagger\Client\Model\PaginatedResponseGuid_ getGuidsWithoutCollection($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfGuid getGuidsWithoutCollection($organization_id, $offset, $limit)
 
 Retrieve GUIDs not in any collection
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedResponseGuid_**](../Model/PaginatedResponseGuid_.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuid**](../Model/PaginatedResponseOfGuid.md)
 
 ### Authorization
 

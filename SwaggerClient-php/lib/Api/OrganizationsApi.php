@@ -4227,7 +4227,7 @@ class OrganizationsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedResponsePartnerOrganization_
+     * @return \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization
      */
     public function getPartnerOrganizations($organization_id, $offset = null, $limit = null)
     {
@@ -4246,11 +4246,11 @@ class OrganizationsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedResponsePartnerOrganization_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPartnerOrganizationsWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedResponsePartnerOrganization_';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization';
         $request = $this->getPartnerOrganizationsRequest($organization_id, $offset, $limit);
 
         try {
@@ -4302,7 +4302,7 @@ class OrganizationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedResponsePartnerOrganization_',
+                        '\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4404,7 +4404,7 @@ class OrganizationsApi
      */
     public function getPartnerOrganizationsAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedResponsePartnerOrganization_';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization';
         $request = $this->getPartnerOrganizationsRequest($organization_id, $offset, $limit);
 
         return $this->client

@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPartnerOrganizations**
-> \Swagger\Client\Model\PaginatedResponsePartnerOrganization_ getPartnerOrganizations($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization getPartnerOrganizations($organization_id, $offset, $limit)
 
 Get partners of an organization
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedResponsePartnerOrganization_**](../Model/PaginatedResponsePartnerOrganization_.md)
+[**\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization**](../Model/PaginatedResponseOfPartnerOrganization.md)
 
 ### Authorization
 
