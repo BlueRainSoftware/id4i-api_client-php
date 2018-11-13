@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDocument**
-> \Swagger\Client\Model\ResponseEntity deleteDocument($organization_id, $id4n, $file_name)
+> deleteDocument($organization_id, $id4n, $file_name)
 
 Delete a document
 
@@ -103,8 +103,7 @@ $id4n = "id4n_example"; // string | id4n
 $file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->deleteDocument($organization_id, $id4n, $file_name);
-    print_r($result);
+    $apiInstance->deleteDocument($organization_id, $id4n, $file_name);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->deleteDocument: ', $e->getMessage(), PHP_EOL;
 }
@@ -121,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ResponseEntity**](../Model/ResponseEntity.md)
+void (empty response body)
 
 ### Authorization
 

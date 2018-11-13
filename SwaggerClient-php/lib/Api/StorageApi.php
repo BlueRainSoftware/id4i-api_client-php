@@ -467,12 +467,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ResponseEntity
+     * @return void
      */
     public function deleteDocument($organization_id, $id4n, $file_name)
     {
-        list($response) = $this->deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name);
-        return $response;
+        $this->deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name);
     }
 
     /**
@@ -486,11 +485,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\ResponseEntity';
+        $returnType = '';
         $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
@@ -521,32 +520,10 @@ class StorageApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ResponseEntity',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -628,28 +605,14 @@ class StorageApi
      */
     public function deleteDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
-        $returnType = '\Swagger\Client\Model\ResponseEntity';
+        $returnType = '';
         $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
