@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **addUserRoles**
-> addUserRoles($organization_id, $username, $change_role_request)
+> addUserRoles($change_role_request, $organization_id, $username)
 
 Add role(s) to user
 
@@ -43,12 +43,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
+    $apiInstance->addUserRoles($change_role_request, $organization_id, $username);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -59,9 +59,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findUsers**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse findUsers($username_prefix, $offset, $limit)
+> \Swagger\Client\Model\PaginatedUserPresentationResponse findUsers($username_prefix, $limit, $offset)
 
 Find users
 
@@ -200,12 +200,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$username_prefix = "username_prefix_example"; // string | 
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$username_prefix = "\"a.v\""; // string | Find users starting with this prefix.
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->findUsers($username_prefix, $offset, $limit);
+    $result = $apiInstance->findUsers($username_prefix, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->findUsers: ', $e->getMessage(), PHP_EOL;
@@ -217,9 +217,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username_prefix** | **string**|  | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
+ **username_prefix** | **string**| Find users starting with this prefix. |
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllOrganizationRoles**
-> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $limit, $offset)
 
 List users and their roles
 
@@ -260,11 +260,11 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | organizationId
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->getAllOrganizationRoles($organization_id, $offset, $limit);
+    $result = $apiInstance->getAllOrganizationRoles($organization_id, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
@@ -277,8 +277,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| organizationId |
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrganizationsOfUser**
-> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($role, $offset, $limit)
+> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($limit, $offset, $role)
 
 Retrieve organizations of user
 
@@ -316,12 +316,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 $role = "role_example"; // string | role
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getOrganizationsOfUser($role, $offset, $limit);
+    $result = $apiInstance->getOrganizationsOfUser($limit, $offset, $role);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
@@ -333,9 +333,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **role** | **string**| role | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **role** | **string**| role | [optional]
 
 ### Return type
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRoles**
-> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $offset, $limit)
+> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $limit, $offset)
 
 Get user roles by username
 
@@ -375,11 +375,11 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->getUserRoles($organization_id, $username, $offset, $limit);
+    $result = $apiInstance->getUserRoles($organization_id, $username, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -393,8 +393,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsersOfOrganization**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $limit, $offset)
 
 Find users in organization
 
@@ -435,11 +435,11 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | organizationId
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->getUsersOfOrganization($organization_id, $offset, $limit);
+    $result = $apiInstance->getUsersOfOrganization($organization_id, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -452,8 +452,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| organizationId |
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUsers**
-> inviteUsers($organization_id, $invitation_list)
+> inviteUsers($invitation_list, $organization_id)
 
 Invite Users
 
@@ -491,11 +491,11 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organization_id = "organization_id_example"; // string | The namespace of the organization where users should be invited
 $invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
+$organization_id = "organization_id_example"; // string | The namespace of the organization where users should be invited
 
 try {
-    $apiInstance->inviteUsers($organization_id, $invitation_list);
+    $apiInstance->inviteUsers($invitation_list, $organization_id);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
 }
@@ -506,8 +506,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **string**| The namespace of the organization where users should be invited |
  **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
+ **organization_id** | **string**| The namespace of the organization where users should be invited |
 
 ### Return type
 
@@ -525,7 +525,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllRoles**
-> \Swagger\Client\Model\RoleResponse listAllRoles($privilege, $offset, $limit)
+> \Swagger\Client\Model\RoleResponse listAllRoles($limit, $offset, $privilege)
 
 List roles
 
@@ -547,12 +547,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 $privilege = "privilege_example"; // string | If specified the roles will be filtered containing that privilege.
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllRoles($privilege, $offset, $limit);
+    $result = $apiInstance->listAllRoles($limit, $offset, $privilege);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->listAllRoles: ', $e->getMessage(), PHP_EOL;
@@ -564,9 +564,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **privilege** | **string**| If specified the roles will be filtered containing that privilege. | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **privilege** | **string**| If specified the roles will be filtered containing that privilege. | [optional]
 
 ### Return type
 
@@ -681,7 +681,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserRoles**
-> removeUserRoles($organization_id, $username, $change_role_request)
+> removeUserRoles($change_role_request, $organization_id, $username)
 
 Remove role(s) from user
 
@@ -701,12 +701,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
+    $apiInstance->removeUserRoles($change_role_request, $organization_id, $username);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -717,9 +717,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 

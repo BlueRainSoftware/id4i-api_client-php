@@ -72,7 +72,7 @@ class ApiError implements ModelInterface, ArrayAccess
         'code' => null,
         'error_list' => null,
         'message' => null,
-        'error_id' => null
+        'error_id' => 'uuid'
     ];
 
     /**

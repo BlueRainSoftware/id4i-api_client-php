@@ -87,17 +87,17 @@ class StorageApi
      *
      * Create an empty document for an id4n
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  \SplFileObject $content content (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function createDocument($organization_id, $id4n, $content)
+    public function createDocument($content, $id4n, $organization_id)
     {
-        list($response) = $this->createDocumentWithHttpInfo($organization_id, $id4n, $content);
+        list($response) = $this->createDocumentWithHttpInfo($content, $id4n, $organization_id);
         return $response;
     }
 
@@ -106,18 +106,18 @@ class StorageApi
      *
      * Create an empty document for an id4n
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  \SplFileObject $content content (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDocumentWithHttpInfo($organization_id, $id4n, $content)
+    public function createDocumentWithHttpInfo($content, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->createDocumentRequest($organization_id, $id4n, $content);
+        $request = $this->createDocumentRequest($content, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -255,16 +255,16 @@ class StorageApi
      *
      * Create an empty document for an id4n
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  \SplFileObject $content content (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDocumentAsync($organization_id, $id4n, $content)
+    public function createDocumentAsync($content, $id4n, $organization_id)
     {
-        return $this->createDocumentAsyncWithHttpInfo($organization_id, $id4n, $content)
+        return $this->createDocumentAsyncWithHttpInfo($content, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,17 +277,17 @@ class StorageApi
      *
      * Create an empty document for an id4n
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  \SplFileObject $content content (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDocumentAsyncWithHttpInfo($organization_id, $id4n, $content)
+    public function createDocumentAsyncWithHttpInfo($content, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->createDocumentRequest($organization_id, $id4n, $content);
+        $request = $this->createDocumentRequest($content, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,19 +329,19 @@ class StorageApi
     /**
      * Create request for operation 'createDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  \SplFileObject $content content (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createDocumentRequest($organization_id, $id4n, $content)
+    protected function createDocumentRequest($content, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'content' is set
+        if ($content === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling createDocument'
+                'Missing the required parameter $content when calling createDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -350,10 +350,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling createDocument'
             );
         }
-        // verify the required parameter 'content' is set
-        if ($content === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $content when calling createDocument'
+                'Missing the required parameter $organization_id when calling createDocument'
             );
         }
 
@@ -366,18 +366,18 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id4n !== null) {
             $resourcePath = str_replace(
                 '{' . 'id4n' . '}',
                 ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -461,17 +461,17 @@ class StorageApi
      *
      * Delete a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteDocument($organization_id, $id4n, $file_name)
+    public function deleteDocument($file_name, $id4n, $organization_id)
     {
-        $this->deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name);
+        $this->deleteDocumentWithHttpInfo($file_name, $id4n, $organization_id);
     }
 
     /**
@@ -479,18 +479,18 @@ class StorageApi
      *
      * Delete a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDocumentWithHttpInfo($organization_id, $id4n, $file_name)
+    public function deleteDocumentWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '';
-        $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->deleteDocumentRequest($file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -574,16 +574,16 @@ class StorageApi
      *
      * Delete a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentAsync($organization_id, $id4n, $file_name)
+    public function deleteDocumentAsync($file_name, $id4n, $organization_id)
     {
-        return $this->deleteDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+        return $this->deleteDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -596,17 +596,17 @@ class StorageApi
      *
      * Delete a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+    public function deleteDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '';
-        $request = $this->deleteDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->deleteDocumentRequest($file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -634,19 +634,19 @@ class StorageApi
     /**
      * Create request for operation 'deleteDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteDocumentRequest($organization_id, $id4n, $file_name)
+    protected function deleteDocumentRequest($file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling deleteDocument'
+                'Missing the required parameter $file_name when calling deleteDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -655,10 +655,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling deleteDocument'
             );
         }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling deleteDocument'
+                'Missing the required parameter $organization_id when calling deleteDocument'
             );
         }
 
@@ -671,10 +671,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -687,10 +687,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -769,17 +769,17 @@ class StorageApi
      *
      * Retrieve a document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function getDocument($organization_id, $id4n, $file_name)
+    public function getDocument($file_name, $id4n, $organization_id)
     {
-        list($response) = $this->getDocumentWithHttpInfo($organization_id, $id4n, $file_name);
+        list($response) = $this->getDocumentWithHttpInfo($file_name, $id4n, $organization_id);
         return $response;
     }
 
@@ -788,18 +788,18 @@ class StorageApi
      *
      * Retrieve a document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentWithHttpInfo($organization_id, $id4n, $file_name)
+    public function getDocumentWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->getDocumentRequest($file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -921,16 +921,16 @@ class StorageApi
      *
      * Retrieve a document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsync($organization_id, $id4n, $file_name)
+    public function getDocumentAsync($file_name, $id4n, $organization_id)
     {
-        return $this->getDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+        return $this->getDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -943,17 +943,17 @@ class StorageApi
      *
      * Retrieve a document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+    public function getDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->getDocumentRequest($file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -995,19 +995,19 @@ class StorageApi
     /**
      * Create request for operation 'getDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDocumentRequest($organization_id, $id4n, $file_name)
+    protected function getDocumentRequest($file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling getDocument'
+                'Missing the required parameter $file_name when calling getDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -1016,10 +1016,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling getDocument'
             );
         }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling getDocument'
+                'Missing the required parameter $organization_id when calling getDocument'
             );
         }
 
@@ -1032,10 +1032,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -1048,10 +1048,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -1130,17 +1130,17 @@ class StorageApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function getPublicDocument($organization_id, $id4n, $file_name)
+    public function getPublicDocument($file_name, $id4n, $organization_id)
     {
-        list($response) = $this->getPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name);
+        list($response) = $this->getPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id);
         return $response;
     }
 
@@ -1149,18 +1149,18 @@ class StorageApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
+    public function getPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getPublicDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->getPublicDocumentRequest($file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1282,16 +1282,16 @@ class StorageApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicDocumentAsync($organization_id, $id4n, $file_name)
+    public function getPublicDocumentAsync($file_name, $id4n, $organization_id)
     {
-        return $this->getPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+        return $this->getPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1304,17 +1304,17 @@ class StorageApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+    public function getPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getPublicDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->getPublicDocumentRequest($file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1356,19 +1356,19 @@ class StorageApi
     /**
      * Create request for operation 'getPublicDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPublicDocumentRequest($organization_id, $id4n, $file_name)
+    protected function getPublicDocumentRequest($file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling getPublicDocument'
+                'Missing the required parameter $file_name when calling getPublicDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -1377,10 +1377,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling getPublicDocument'
             );
         }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling getPublicDocument'
+                'Missing the required parameter $organization_id when calling getPublicDocument'
             );
         }
 
@@ -1393,10 +1393,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -1409,10 +1409,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -1492,17 +1492,17 @@ class StorageApi
      * List documents
      *
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedDocumentResponse
      */
-    public function listAllDocuments($id4n, $owner = null, $offset = null, $limit = null)
+    public function listAllDocuments($id4n, $limit = null, $offset = null, $owner = null)
     {
-        list($response) = $this->listAllDocumentsWithHttpInfo($id4n, $owner, $offset, $limit);
+        list($response) = $this->listAllDocumentsWithHttpInfo($id4n, $limit, $offset, $owner);
         return $response;
     }
 
@@ -1512,18 +1512,18 @@ class StorageApi
      * List documents
      *
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllDocumentsWithHttpInfo($id4n, $owner = null, $offset = null, $limit = null)
+    public function listAllDocumentsWithHttpInfo($id4n, $limit = null, $offset = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllDocumentsRequest($id4n, $owner, $offset, $limit);
+        $request = $this->listAllDocumentsRequest($id4n, $limit, $offset, $owner);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1646,16 +1646,16 @@ class StorageApi
      * List documents
      *
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllDocumentsAsync($id4n, $owner = null, $offset = null, $limit = null)
+    public function listAllDocumentsAsync($id4n, $limit = null, $offset = null, $owner = null)
     {
-        return $this->listAllDocumentsAsyncWithHttpInfo($id4n, $owner, $offset, $limit)
+        return $this->listAllDocumentsAsyncWithHttpInfo($id4n, $limit, $offset, $owner)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1669,17 +1669,17 @@ class StorageApi
      * List documents
      *
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllDocumentsAsyncWithHttpInfo($id4n, $owner = null, $offset = null, $limit = null)
+    public function listAllDocumentsAsyncWithHttpInfo($id4n, $limit = null, $offset = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllDocumentsRequest($id4n, $owner, $offset, $limit);
+        $request = $this->listAllDocumentsRequest($id4n, $limit, $offset, $owner);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1722,14 +1722,14 @@ class StorageApi
      * Create request for operation 'listAllDocuments'
      *
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAllDocumentsRequest($id4n, $owner = null, $offset = null, $limit = null)
+    protected function listAllDocumentsRequest($id4n, $limit = null, $offset = null, $owner = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -1737,6 +1737,13 @@ class StorageApi
                 'Missing the required parameter $id4n when calling listAllDocuments'
             );
         }
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listAllDocuments, must be smaller than or equal to 1000.');
+        }
+        if ($limit !== null && $limit < 0) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listAllDocuments, must be bigger than or equal to 0.');
+        }
+
 
         $resourcePath = '/api/v1/documents/{id4n}';
         $formParams = [];
@@ -1746,16 +1753,16 @@ class StorageApi
         $multipart = false;
 
         // query params
-        if ($owner !== null) {
-            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        if ($owner !== null) {
+            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
         }
 
         // path params
@@ -1842,18 +1849,18 @@ class StorageApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedDocumentResponse
      */
-    public function listAllPublicDocuments($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
+    public function listAllPublicDocuments($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
     {
-        list($response) = $this->listAllPublicDocumentsWithHttpInfo($id4n, $organization_id, $owner, $offset, $limit);
+        list($response) = $this->listAllPublicDocumentsWithHttpInfo($id4n, $limit, $offset, $organization_id, $owner);
         return $response;
     }
 
@@ -1863,19 +1870,19 @@ class StorageApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllPublicDocumentsWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
+    public function listAllPublicDocumentsWithHttpInfo($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
+        $request = $this->listAllPublicDocumentsRequest($id4n, $limit, $offset, $organization_id, $owner);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1998,17 +2005,17 @@ class StorageApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPublicDocumentsAsync($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
+    public function listAllPublicDocumentsAsync($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
     {
-        return $this->listAllPublicDocumentsAsyncWithHttpInfo($id4n, $organization_id, $owner, $offset, $limit)
+        return $this->listAllPublicDocumentsAsyncWithHttpInfo($id4n, $limit, $offset, $organization_id, $owner)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2022,18 +2029,18 @@ class StorageApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPublicDocumentsAsyncWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
+    public function listAllPublicDocumentsAsyncWithHttpInfo($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
+        $request = $this->listAllPublicDocumentsRequest($id4n, $limit, $offset, $organization_id, $owner);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2076,15 +2083,15 @@ class StorageApi
      * Create request for operation 'listAllPublicDocuments'
      *
      * @param  string $id4n id4n (required)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAllPublicDocumentsRequest($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
+    protected function listAllPublicDocumentsRequest($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -2092,6 +2099,13 @@ class StorageApi
                 'Missing the required parameter $id4n when calling listAllPublicDocuments'
             );
         }
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listAllPublicDocuments, must be smaller than or equal to 1000.');
+        }
+        if ($limit !== null && $limit < 0) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listAllPublicDocuments, must be bigger than or equal to 0.');
+        }
+
 
         $resourcePath = '/api/v1/public/documents/{id4n}';
         $formParams = [];
@@ -2101,20 +2115,20 @@ class StorageApi
         $multipart = false;
 
         // query params
-        if ($organization_id !== null) {
-            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
-        }
-        // query params
-        if ($owner !== null) {
-            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+        // query params
+        if ($owner !== null) {
+            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
         }
 
         // path params
@@ -2200,19 +2214,19 @@ class StorageApi
      *
      * List organization specific documents
      *
-     * @param  string $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $organization_id organizationId (required)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedDocumentResponse
      */
-    public function listDocuments($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
+    public function listDocuments($id4n, $organization_id, $limit = null, $offset = null, $owner = null)
     {
-        list($response) = $this->listDocumentsWithHttpInfo($organization_id, $id4n, $owner, $offset, $limit);
+        list($response) = $this->listDocumentsWithHttpInfo($id4n, $organization_id, $limit, $offset, $owner);
         return $response;
     }
 
@@ -2221,20 +2235,20 @@ class StorageApi
      *
      * List organization specific documents
      *
-     * @param  string $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $organization_id organizationId (required)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listDocumentsWithHttpInfo($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
+    public function listDocumentsWithHttpInfo($id4n, $organization_id, $limit = null, $offset = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listDocumentsRequest($organization_id, $id4n, $owner, $offset, $limit);
+        $request = $this->listDocumentsRequest($id4n, $organization_id, $limit, $offset, $owner);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2356,18 +2370,18 @@ class StorageApi
      *
      * List organization specific documents
      *
-     * @param  string $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $organization_id organizationId (required)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listDocumentsAsync($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
+    public function listDocumentsAsync($id4n, $organization_id, $limit = null, $offset = null, $owner = null)
     {
-        return $this->listDocumentsAsyncWithHttpInfo($organization_id, $id4n, $owner, $offset, $limit)
+        return $this->listDocumentsAsyncWithHttpInfo($id4n, $organization_id, $limit, $offset, $owner)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2380,19 +2394,19 @@ class StorageApi
      *
      * List organization specific documents
      *
-     * @param  string $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $organization_id organizationId (required)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listDocumentsAsyncWithHttpInfo($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
+    public function listDocumentsAsyncWithHttpInfo($id4n, $organization_id, $limit = null, $offset = null, $owner = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listDocumentsRequest($organization_id, $id4n, $owner, $offset, $limit);
+        $request = $this->listDocumentsRequest($id4n, $organization_id, $limit, $offset, $owner);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2434,29 +2448,36 @@ class StorageApi
     /**
      * Create request for operation 'listDocuments'
      *
-     * @param  string $organization_id organizationId (required)
      * @param  string $id4n id4n (required)
-     * @param  string $owner Filter by owner organization (optional)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $organization_id organizationId (required)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  string $owner Filter by owner organization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listDocumentsRequest($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
+    protected function listDocumentsRequest($id4n, $organization_id, $limit = null, $offset = null, $owner = null)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling listDocuments'
-            );
-        }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id4n when calling listDocuments'
             );
         }
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling listDocuments'
+            );
+        }
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listDocuments, must be smaller than or equal to 1000.');
+        }
+        if ($limit !== null && $limit < 0) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling StorageApi.listDocuments, must be bigger than or equal to 0.');
+        }
+
 
         $resourcePath = '/api/v1/documents/{id4n}/{organizationId}';
         $formParams = [];
@@ -2466,31 +2487,31 @@ class StorageApi
         $multipart = false;
 
         // query params
-        if ($owner !== null) {
-            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        if ($owner !== null) {
+            $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
         }
 
-        // path params
-        if ($organization_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
-                $resourcePath
-            );
-        }
         // path params
         if ($id4n !== null) {
             $resourcePath = str_replace(
                 '{' . 'id4n' . '}',
                 ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -2569,17 +2590,17 @@ class StorageApi
      *
      * Read document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function readDocument($organization_id, $id4n, $file_name)
+    public function readDocument($file_name, $id4n, $organization_id)
     {
-        list($response) = $this->readDocumentWithHttpInfo($organization_id, $id4n, $file_name);
+        list($response) = $this->readDocumentWithHttpInfo($file_name, $id4n, $organization_id);
         return $response;
     }
 
@@ -2588,18 +2609,18 @@ class StorageApi
      *
      * Read document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function readDocumentWithHttpInfo($organization_id, $id4n, $file_name)
+    public function readDocumentWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = 'string';
-        $request = $this->readDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->readDocumentRequest($file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2721,16 +2742,16 @@ class StorageApi
      *
      * Read document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readDocumentAsync($organization_id, $id4n, $file_name)
+    public function readDocumentAsync($file_name, $id4n, $organization_id)
     {
-        return $this->readDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+        return $this->readDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2743,17 +2764,17 @@ class StorageApi
      *
      * Read document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+    public function readDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = 'string';
-        $request = $this->readDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->readDocumentRequest($file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2795,19 +2816,19 @@ class StorageApi
     /**
      * Create request for operation 'readDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function readDocumentRequest($organization_id, $id4n, $file_name)
+    protected function readDocumentRequest($file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling readDocument'
+                'Missing the required parameter $file_name when calling readDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -2816,10 +2837,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling readDocument'
             );
         }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling readDocument'
+                'Missing the required parameter $organization_id when calling readDocument'
             );
         }
 
@@ -2832,10 +2853,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -2848,10 +2869,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -2930,16 +2951,16 @@ class StorageApi
      *
      * Read data from microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
+     * @param  string $organization organization (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function readFromMicrostorage($organization, $id4n)
+    public function readFromMicrostorage($id4n, $organization)
     {
-        list($response) = $this->readFromMicrostorageWithHttpInfo($organization, $id4n);
+        list($response) = $this->readFromMicrostorageWithHttpInfo($id4n, $organization);
         return $response;
     }
 
@@ -2948,17 +2969,17 @@ class StorageApi
      *
      * Read data from microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
+     * @param  string $organization organization (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function readFromMicrostorageWithHttpInfo($organization, $id4n)
+    public function readFromMicrostorageWithHttpInfo($id4n, $organization)
     {
         $returnType = 'string';
-        $request = $this->readFromMicrostorageRequest($organization, $id4n);
+        $request = $this->readFromMicrostorageRequest($id4n, $organization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3080,15 +3101,15 @@ class StorageApi
      *
      * Read data from microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
+     * @param  string $organization organization (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readFromMicrostorageAsync($organization, $id4n)
+    public function readFromMicrostorageAsync($id4n, $organization)
     {
-        return $this->readFromMicrostorageAsyncWithHttpInfo($organization, $id4n)
+        return $this->readFromMicrostorageAsyncWithHttpInfo($id4n, $organization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3101,16 +3122,16 @@ class StorageApi
      *
      * Read data from microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
+     * @param  string $organization organization (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readFromMicrostorageAsyncWithHttpInfo($organization, $id4n)
+    public function readFromMicrostorageAsyncWithHttpInfo($id4n, $organization)
     {
         $returnType = 'string';
-        $request = $this->readFromMicrostorageRequest($organization, $id4n);
+        $request = $this->readFromMicrostorageRequest($id4n, $organization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3152,24 +3173,24 @@ class StorageApi
     /**
      * Create request for operation 'readFromMicrostorage'
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
+     * @param  string $organization organization (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function readFromMicrostorageRequest($organization, $id4n)
+    protected function readFromMicrostorageRequest($id4n, $organization)
     {
-        // verify the required parameter 'organization' is set
-        if ($organization === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling readFromMicrostorage'
-            );
-        }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id4n when calling readFromMicrostorage'
+            );
+        }
+        // verify the required parameter 'organization' is set
+        if ($organization === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization when calling readFromMicrostorage'
             );
         }
 
@@ -3182,18 +3203,18 @@ class StorageApi
 
 
         // path params
-        if ($organization !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organization' . '}',
-                ObjectSerializer::toPathValue($organization),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id4n !== null) {
             $resourcePath = str_replace(
                 '{' . 'id4n' . '}',
                 ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organization' . '}',
+                ObjectSerializer::toPathValue($organization),
                 $resourcePath
             );
         }
@@ -3272,17 +3293,17 @@ class StorageApi
      *
      * Read public document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function readPublicDocument($organization_id, $id4n, $file_name)
+    public function readPublicDocument($file_name, $id4n, $organization_id)
     {
-        list($response) = $this->readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name);
+        list($response) = $this->readPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id);
         return $response;
     }
 
@@ -3291,18 +3312,18 @@ class StorageApi
      *
      * Read public document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
+    public function readPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = 'string';
-        $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->readPublicDocumentRequest($file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3424,16 +3445,16 @@ class StorageApi
      *
      * Read public document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readPublicDocumentAsync($organization_id, $id4n, $file_name)
+    public function readPublicDocumentAsync($file_name, $id4n, $organization_id)
     {
-        return $this->readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+        return $this->readPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3446,17 +3467,17 @@ class StorageApi
      *
      * Read public document contents
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
+    public function readPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
     {
         $returnType = 'string';
-        $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
+        $request = $this->readPublicDocumentRequest($file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3498,19 +3519,19 @@ class StorageApi
     /**
      * Create request for operation 'readPublicDocument'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
      * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function readPublicDocumentRequest($organization_id, $id4n, $file_name)
+    protected function readPublicDocumentRequest($file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling readPublicDocument'
+                'Missing the required parameter $file_name when calling readPublicDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -3519,10 +3540,10 @@ class StorageApi
                 'Missing the required parameter $id4n when calling readPublicDocument'
             );
         }
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling readPublicDocument'
+                'Missing the required parameter $organization_id when calling readPublicDocument'
             );
         }
 
@@ -3535,10 +3556,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -3551,10 +3572,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -3633,18 +3654,18 @@ class StorageApi
      *
      * Update a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
      * @param  \Swagger\Client\Model\DocumentUpdate $document document (required)
+     * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function updateDocumentMetadata($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadata($document, $file_name, $id4n, $organization_id)
     {
-        list($response) = $this->updateDocumentMetadataWithHttpInfo($organization_id, $id4n, $file_name, $document);
+        list($response) = $this->updateDocumentMetadataWithHttpInfo($document, $file_name, $id4n, $organization_id);
         return $response;
     }
 
@@ -3653,19 +3674,19 @@ class StorageApi
      *
      * Update a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
      * @param  \Swagger\Client\Model\DocumentUpdate $document document (required)
+     * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateDocumentMetadataWithHttpInfo($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataWithHttpInfo($document, $file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document);
+        $request = $this->updateDocumentMetadataRequest($document, $file_name, $id4n, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3731,17 +3752,17 @@ class StorageApi
      *
      * Update a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
      * @param  \Swagger\Client\Model\DocumentUpdate $document document (required)
+     * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDocumentMetadataAsync($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataAsync($document, $file_name, $id4n, $organization_id)
     {
-        return $this->updateDocumentMetadataAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
+        return $this->updateDocumentMetadataAsyncWithHttpInfo($document, $file_name, $id4n, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3754,18 +3775,18 @@ class StorageApi
      *
      * Update a document
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
      * @param  \Swagger\Client\Model\DocumentUpdate $document document (required)
+     * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDocumentMetadataAsyncWithHttpInfo($organization_id, $id4n, $file_name, $document)
+    public function updateDocumentMetadataAsyncWithHttpInfo($document, $file_name, $id4n, $organization_id)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document);
+        $request = $this->updateDocumentMetadataRequest($document, $file_name, $id4n, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3807,26 +3828,20 @@ class StorageApi
     /**
      * Create request for operation 'updateDocumentMetadata'
      *
-     * @param  string $organization_id organizationId (required)
-     * @param  string $id4n id4n (required)
-     * @param  string $file_name fileName (required)
      * @param  \Swagger\Client\Model\DocumentUpdate $document document (required)
+     * @param  string $file_name fileName (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $organization_id organizationId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateDocumentMetadataRequest($organization_id, $id4n, $file_name, $document)
+    protected function updateDocumentMetadataRequest($document, $file_name, $id4n, $organization_id)
     {
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'document' is set
+        if ($document === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling updateDocumentMetadata'
-            );
-        }
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling updateDocumentMetadata'
+                'Missing the required parameter $document when calling updateDocumentMetadata'
             );
         }
         // verify the required parameter 'file_name' is set
@@ -3835,10 +3850,16 @@ class StorageApi
                 'Missing the required parameter $file_name when calling updateDocumentMetadata'
             );
         }
-        // verify the required parameter 'document' is set
-        if ($document === null) {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $document when calling updateDocumentMetadata'
+                'Missing the required parameter $id4n when calling updateDocumentMetadata'
+            );
+        }
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling updateDocumentMetadata'
             );
         }
 
@@ -3851,10 +3872,10 @@ class StorageApi
 
 
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -3867,10 +3888,10 @@ class StorageApi
             );
         }
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -3952,19 +3973,19 @@ class StorageApi
      *
      * Write data to microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $content_type Content-Type (optional)
+     * @param  string $organization organization (required)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $content_type Content-Type (optional)
      * @param  string $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function writeToMicrostorage($organization, $id4n, $content_type = null, $content_length = null, $body = null)
+    public function writeToMicrostorage($id4n, $organization, $content_length = null, $content_type = null, $body = null)
     {
-        list($response) = $this->writeToMicrostorageWithHttpInfo($organization, $id4n, $content_type, $content_length, $body);
+        list($response) = $this->writeToMicrostorageWithHttpInfo($id4n, $organization, $content_length, $content_type, $body);
         return $response;
     }
 
@@ -3973,20 +3994,20 @@ class StorageApi
      *
      * Write data to microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $content_type Content-Type (optional)
+     * @param  string $organization organization (required)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $content_type Content-Type (optional)
      * @param  string $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function writeToMicrostorageWithHttpInfo($organization, $id4n, $content_type = null, $content_length = null, $body = null)
+    public function writeToMicrostorageWithHttpInfo($id4n, $organization, $content_length = null, $content_type = null, $body = null)
     {
         $returnType = 'object';
-        $request = $this->writeToMicrostorageRequest($organization, $id4n, $content_type, $content_length, $body);
+        $request = $this->writeToMicrostorageRequest($id4n, $organization, $content_length, $content_type, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4124,18 +4145,18 @@ class StorageApi
      *
      * Write data to microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $content_type Content-Type (optional)
+     * @param  string $organization organization (required)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $content_type Content-Type (optional)
      * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function writeToMicrostorageAsync($organization, $id4n, $content_type = null, $content_length = null, $body = null)
+    public function writeToMicrostorageAsync($id4n, $organization, $content_length = null, $content_type = null, $body = null)
     {
-        return $this->writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $content_type, $content_length, $body)
+        return $this->writeToMicrostorageAsyncWithHttpInfo($id4n, $organization, $content_length, $content_type, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4148,19 +4169,19 @@ class StorageApi
      *
      * Write data to microstorage
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $content_type Content-Type (optional)
+     * @param  string $organization organization (required)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $content_type Content-Type (optional)
      * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function writeToMicrostorageAsyncWithHttpInfo($organization, $id4n, $content_type = null, $content_length = null, $body = null)
+    public function writeToMicrostorageAsyncWithHttpInfo($id4n, $organization, $content_length = null, $content_type = null, $body = null)
     {
         $returnType = 'object';
-        $request = $this->writeToMicrostorageRequest($organization, $id4n, $content_type, $content_length, $body);
+        $request = $this->writeToMicrostorageRequest($id4n, $organization, $content_length, $content_type, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4202,27 +4223,27 @@ class StorageApi
     /**
      * Create request for operation 'writeToMicrostorage'
      *
-     * @param  string $organization organization (required)
      * @param  string $id4n id4n (required)
-     * @param  string $content_type Content-Type (optional)
+     * @param  string $organization organization (required)
      * @param  int $content_length Content-Length (optional)
+     * @param  string $content_type Content-Type (optional)
      * @param  string $body body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function writeToMicrostorageRequest($organization, $id4n, $content_type = null, $content_length = null, $body = null)
+    protected function writeToMicrostorageRequest($id4n, $organization, $content_length = null, $content_type = null, $body = null)
     {
-        // verify the required parameter 'organization' is set
-        if ($organization === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling writeToMicrostorage'
-            );
-        }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id4n when calling writeToMicrostorage'
+            );
+        }
+        // verify the required parameter 'organization' is set
+        if ($organization === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization when calling writeToMicrostorage'
             );
         }
 
@@ -4234,27 +4255,27 @@ class StorageApi
         $multipart = false;
 
         // header params
-        if ($content_type !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($content_type);
-        }
-        // header params
         if ($content_length !== null) {
             $headerParams['Content-Length'] = ObjectSerializer::toHeaderValue($content_length);
         }
-
-        // path params
-        if ($organization !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organization' . '}',
-                ObjectSerializer::toPathValue($organization),
-                $resourcePath
-            );
+        // header params
+        if ($content_type !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($content_type);
         }
+
         // path params
         if ($id4n !== null) {
             $resourcePath = str_replace(
                 '{' . 'id4n' . '}',
                 ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($organization !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organization' . '}',
+                ObjectSerializer::toPathValue($organization),
                 $resourcePath
             );
         }

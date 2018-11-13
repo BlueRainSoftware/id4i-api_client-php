@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **addGuidAlias**
-> addGuidAlias($id4n, $alias_type, $alias)
+> addGuidAlias($alias, $alias_type, $id4n)
 
 Add alias for GUID or Collection
 
@@ -38,12 +38,12 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID or Collection to operate on
-$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
+$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 
 try {
-    $apiInstance->addGuidAlias($id4n, $alias_type, $alias);
+    $apiInstance->addGuidAlias($alias, $alias_type, $id4n);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->addGuidAlias: ', $e->getMessage(), PHP_EOL;
 }
@@ -54,9 +54,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on |
- **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
+ **alias_type** | **string**| Alias type, see the corresponding API model |
+ **id4n** | **string**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCollections**
-> \Swagger\Client\Model\PaginatedGuidCollectionResponse getCollections($id4n, $organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedGuidCollectionResponse getCollections($id4n, $limit, $offset, $organization_id)
 
 Retrieve collections of an ID
 
@@ -152,12 +152,12 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     $config
 );
 $id4n = "id4n_example"; // string | The ID which the collections should contain
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 $organization_id = "organization_id_example"; // string | The organization holding the collections.
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getCollections($id4n, $organization_id, $offset, $limit);
+    $result = $apiInstance->getCollections($id4n, $limit, $offset, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->getCollections: ', $e->getMessage(), PHP_EOL;
@@ -170,9 +170,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The ID which the collections should contain |
- **organization_id** | **string**| The organization holding the collections. | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **organization_id** | **string**| The organization holding the collections. | [optional]
 
 ### Return type
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGuidsWithoutCollection**
-> \Swagger\Client\Model\PaginatedResponseOfGuid getGuidsWithoutCollection($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfGuid getGuidsWithoutCollection($organization_id, $limit, $offset)
 
 Retrieve GUIDs not in any collection
 
@@ -319,11 +319,11 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization to search GUIDs for
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->getGuidsWithoutCollection($organization_id, $offset, $limit);
+    $result = $apiInstance->getGuidsWithoutCollection($organization_id, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->getGuidsWithoutCollection: ', $e->getMessage(), PHP_EOL;
@@ -336,8 +336,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization to search GUIDs for |
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeGuidAlias**
-> removeGuidAlias($id4n, $alias_type)
+> removeGuidAlias($alias_type, $id4n)
 
 Remove aliases from GUID or Collection
 
@@ -432,11 +432,11 @@ $apiInstance = new Swagger\Client\Api\GuidsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 
 try {
-    $apiInstance->removeGuidAlias($id4n, $alias_type);
+    $apiInstance->removeGuidAlias($alias_type, $id4n);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->removeGuidAlias: ', $e->getMessage(), PHP_EOL;
 }
@@ -447,8 +447,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
+ **id4n** | **string**| The GUID or Collection to operate on |
 
 ### Return type
 

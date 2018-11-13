@@ -87,17 +87,17 @@ class AliasApi
      *
      * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addGuidAlias($id4n, $alias_type, $alias)
+    public function addGuidAlias($alias, $alias_type, $id4n)
     {
-        $this->addGuidAliasWithHttpInfo($id4n, $alias_type, $alias);
+        $this->addGuidAliasWithHttpInfo($alias, $alias_type, $id4n);
     }
 
     /**
@@ -105,18 +105,18 @@ class AliasApi
      *
      * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addGuidAliasWithHttpInfo($id4n, $alias_type, $alias)
+    public function addGuidAliasWithHttpInfo($alias, $alias_type, $id4n)
     {
         $returnType = '';
-        $request = $this->addGuidAliasRequest($id4n, $alias_type, $alias);
+        $request = $this->addGuidAliasRequest($alias, $alias_type, $id4n);
 
         try {
             $options = $this->createHttpClientOption();
@@ -232,16 +232,16 @@ class AliasApi
      *
      * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addGuidAliasAsync($id4n, $alias_type, $alias)
+    public function addGuidAliasAsync($alias, $alias_type, $id4n)
     {
-        return $this->addGuidAliasAsyncWithHttpInfo($id4n, $alias_type, $alias)
+        return $this->addGuidAliasAsyncWithHttpInfo($alias, $alias_type, $id4n)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -254,17 +254,17 @@ class AliasApi
      *
      * Add alias for GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addGuidAliasAsyncWithHttpInfo($id4n, $alias_type, $alias)
+    public function addGuidAliasAsyncWithHttpInfo($alias, $alias_type, $id4n)
     {
         $returnType = '';
-        $request = $this->addGuidAliasRequest($id4n, $alias_type, $alias);
+        $request = $this->addGuidAliasRequest($alias, $alias_type, $id4n);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -292,19 +292,19 @@ class AliasApi
     /**
      * Create request for operation 'addGuidAlias'
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
-     * @param  string $alias_type Alias type, see the corresponding API model (required)
      * @param  \Swagger\Client\Model\GuidAlias $alias The alias to add or update (required)
+     * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addGuidAliasRequest($id4n, $alias_type, $alias)
+    protected function addGuidAliasRequest($alias, $alias_type, $id4n)
     {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
+        // verify the required parameter 'alias' is set
+        if ($alias === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling addGuidAlias'
+                'Missing the required parameter $alias when calling addGuidAlias'
             );
         }
         // verify the required parameter 'alias_type' is set
@@ -313,10 +313,10 @@ class AliasApi
                 'Missing the required parameter $alias_type when calling addGuidAlias'
             );
         }
-        // verify the required parameter 'alias' is set
-        if ($alias === null) {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $alias when calling addGuidAlias'
+                'Missing the required parameter $id4n when calling addGuidAlias'
             );
         }
 
@@ -329,18 +329,18 @@ class AliasApi
 
 
         // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-        // path params
         if ($alias_type !== null) {
             $resourcePath = str_replace(
                 '{' . 'aliasType' . '}',
                 ObjectSerializer::toPathValue($alias_type),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
                 $resourcePath
             );
         }
@@ -1049,16 +1049,16 @@ class AliasApi
      *
      * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function removeGuidAlias($id4n, $alias_type)
+    public function removeGuidAlias($alias_type, $id4n)
     {
-        $this->removeGuidAliasWithHttpInfo($id4n, $alias_type);
+        $this->removeGuidAliasWithHttpInfo($alias_type, $id4n);
     }
 
     /**
@@ -1066,17 +1066,17 @@ class AliasApi
      *
      * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeGuidAliasWithHttpInfo($id4n, $alias_type)
+    public function removeGuidAliasWithHttpInfo($alias_type, $id4n)
     {
         $returnType = '';
-        $request = $this->removeGuidAliasRequest($id4n, $alias_type);
+        $request = $this->removeGuidAliasRequest($alias_type, $id4n);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1160,15 +1160,15 @@ class AliasApi
      *
      * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeGuidAliasAsync($id4n, $alias_type)
+    public function removeGuidAliasAsync($alias_type, $id4n)
     {
-        return $this->removeGuidAliasAsyncWithHttpInfo($id4n, $alias_type)
+        return $this->removeGuidAliasAsyncWithHttpInfo($alias_type, $id4n)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1181,16 +1181,16 @@ class AliasApi
      *
      * Remove aliases from GUID or Collection
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeGuidAliasAsyncWithHttpInfo($id4n, $alias_type)
+    public function removeGuidAliasAsyncWithHttpInfo($alias_type, $id4n)
     {
         $returnType = '';
-        $request = $this->removeGuidAliasRequest($id4n, $alias_type);
+        $request = $this->removeGuidAliasRequest($alias_type, $id4n);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1218,24 +1218,24 @@ class AliasApi
     /**
      * Create request for operation 'removeGuidAlias'
      *
-     * @param  string $id4n The GUID or Collection to operate on (required)
      * @param  string $alias_type Alias type, see the corresponding API model (required)
+     * @param  string $id4n The GUID or Collection to operate on (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function removeGuidAliasRequest($id4n, $alias_type)
+    protected function removeGuidAliasRequest($alias_type, $id4n)
     {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling removeGuidAlias'
-            );
-        }
         // verify the required parameter 'alias_type' is set
         if ($alias_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $alias_type when calling removeGuidAlias'
+            );
+        }
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling removeGuidAlias'
             );
         }
 
@@ -1248,18 +1248,18 @@ class AliasApi
 
 
         // path params
-        if ($id4n !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id4n' . '}',
-                ObjectSerializer::toPathValue($id4n),
-                $resourcePath
-            );
-        }
-        // path params
         if ($alias_type !== null) {
             $resourcePath = str_replace(
                 '{' . 'aliasType' . '}',
                 ObjectSerializer::toPathValue($alias_type),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
                 $resourcePath
             );
         }
@@ -1340,16 +1340,16 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedGuidResponse
      */
-    public function searchByAlias($alias, $alias_type, $offset = null, $limit = null)
+    public function searchByAlias($alias, $alias_type, $limit = null, $offset = null)
     {
-        list($response) = $this->searchByAliasWithHttpInfo($alias, $alias_type, $offset, $limit);
+        list($response) = $this->searchByAliasWithHttpInfo($alias, $alias_type, $limit, $offset);
         return $response;
     }
 
@@ -1360,17 +1360,17 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedGuidResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByAliasWithHttpInfo($alias, $alias_type, $offset = null, $limit = null)
+    public function searchByAliasWithHttpInfo($alias, $alias_type, $limit = null, $offset = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
-        $request = $this->searchByAliasRequest($alias, $alias_type, $offset, $limit);
+        $request = $this->searchByAliasRequest($alias, $alias_type, $limit, $offset);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1494,15 +1494,15 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByAliasAsync($alias, $alias_type, $offset = null, $limit = null)
+    public function searchByAliasAsync($alias, $alias_type, $limit = null, $offset = null)
     {
-        return $this->searchByAliasAsyncWithHttpInfo($alias, $alias_type, $offset, $limit)
+        return $this->searchByAliasAsyncWithHttpInfo($alias, $alias_type, $limit, $offset)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1517,16 +1517,16 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByAliasAsyncWithHttpInfo($alias, $alias_type, $offset = null, $limit = null)
+    public function searchByAliasAsyncWithHttpInfo($alias, $alias_type, $limit = null, $offset = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
-        $request = $this->searchByAliasRequest($alias, $alias_type, $offset, $limit);
+        $request = $this->searchByAliasRequest($alias, $alias_type, $limit, $offset);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1570,13 +1570,13 @@ class AliasApi
      *
      * @param  string $alias The alias to search for (required)
      * @param  string $alias_type Alias type type to search for (required)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  int $offset Start with the n-th element (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByAliasRequest($alias, $alias_type, $offset = null, $limit = null)
+    protected function searchByAliasRequest($alias, $alias_type, $limit = null, $offset = null)
     {
         // verify the required parameter 'alias' is set
         if ($alias === null) {
@@ -1590,6 +1590,13 @@ class AliasApi
                 'Missing the required parameter $alias_type when calling searchByAlias'
             );
         }
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling AliasApi.searchByAlias, must be smaller than or equal to 1000.');
+        }
+        if ($limit !== null && $limit < 0) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling AliasApi.searchByAlias, must be bigger than or equal to 0.');
+        }
+
 
         $resourcePath = '/api/v1/search/guids';
         $formParams = [];
@@ -1607,12 +1614,12 @@ class AliasApi
             $queryParams['aliasType'] = ObjectSerializer::toQueryValue($alias_type);
         }
         // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // query params
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
 
 

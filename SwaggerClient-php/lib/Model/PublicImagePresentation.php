@@ -189,9 +189,6 @@ class PublicImagePresentation implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['uri'] === null) {
-            $invalidProperties[] = "'uri' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -204,9 +201,6 @@ class PublicImagePresentation implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['uri'] === null) {
-            return false;
-        }
         return true;
     }
 

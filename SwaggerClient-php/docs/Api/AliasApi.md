@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **addGuidAlias**
-> addGuidAlias($id4n, $alias_type, $alias)
+> addGuidAlias($alias, $alias_type, $id4n)
 
 Add alias for GUID or Collection
 
@@ -34,12 +34,12 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID or Collection to operate on
-$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
 $alias = new \Swagger\Client\Model\GuidAlias(); // \Swagger\Client\Model\GuidAlias | The alias to add or update
+$alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 
 try {
-    $apiInstance->addGuidAlias($id4n, $alias_type, $alias);
+    $apiInstance->addGuidAlias($alias, $alias_type, $id4n);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->addGuidAlias: ', $e->getMessage(), PHP_EOL;
 }
@@ -50,9 +50,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on |
- **alias_type** | **string**| Alias type, see the corresponding API model |
  **alias** | [**\Swagger\Client\Model\GuidAlias**](../Model/GuidAlias.md)| The alias to add or update |
+ **alias_type** | **string**| Alias type, see the corresponding API model |
+ **id4n** | **string**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeGuidAlias**
-> removeGuidAlias($id4n, $alias_type)
+> removeGuidAlias($alias_type, $id4n)
 
 Remove aliases from GUID or Collection
 
@@ -198,11 +198,11 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 $alias_type = "alias_type_example"; // string | Alias type, see the corresponding API model
+$id4n = "id4n_example"; // string | The GUID or Collection to operate on
 
 try {
-    $apiInstance->removeGuidAlias($id4n, $alias_type);
+    $apiInstance->removeGuidAlias($alias_type, $id4n);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->removeGuidAlias: ', $e->getMessage(), PHP_EOL;
 }
@@ -213,8 +213,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on |
  **alias_type** | **string**| Alias type, see the corresponding API model |
+ **id4n** | **string**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -232,7 +232,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByAlias**
-> \Swagger\Client\Model\PaginatedGuidResponse searchByAlias($alias, $alias_type, $offset, $limit)
+> \Swagger\Client\Model\PaginatedGuidResponse searchByAlias($alias, $alias_type, $limit, $offset)
 
 Search for GUIDs by alias
 
@@ -254,11 +254,11 @@ $apiInstance = new Swagger\Client\Api\AliasApi(
 );
 $alias = "alias_example"; // string | The alias to search for
 $alias_type = "alias_type_example"; // string | Alias type type to search for
-$offset = 56; // int | Start with the n-th element
-$limit = 56; // int | The maximum count of returned elements
+$limit = 100; // int | The maximum count of returned elements
+$offset = 0; // int | Start with the n-th element
 
 try {
-    $result = $apiInstance->searchByAlias($alias, $alias_type, $offset, $limit);
+    $result = $apiInstance->searchByAlias($alias, $alias_type, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AliasApi->searchByAlias: ', $e->getMessage(), PHP_EOL;
@@ -272,8 +272,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **string**| The alias to search for |
  **alias_type** | **string**| Alias type type to search for |
- **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
 
 ### Return type
 

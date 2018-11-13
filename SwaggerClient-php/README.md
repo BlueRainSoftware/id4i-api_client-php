@@ -69,12 +69,12 @@ $apiInstance = new Swagger\Client\Api\AccountsApi(
 new GuzzleHttp\Client(),
 $config
 );
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-$apiInstance->addUserRoles($organization_id, $username, $change_role_request);
+$apiInstance->addUserRoles($change_role_request, $organization_id, $username);
 } catch (Exception $e) {
 echo 'Exception when calling AccountsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }

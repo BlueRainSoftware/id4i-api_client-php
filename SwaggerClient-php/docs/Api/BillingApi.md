@@ -30,8 +30,8 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The organization to compute the billing information for
-$from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
-$to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
+$from_date = new \DateTime("\"2018-06-05\""); // \DateTime | Billing start date
+$to_date = new \DateTime("\"2018-06-06\""); // \DateTime | Billing end date
 
 try {
     $result = $apiInstance->getPositionsForOrganization($organization_id, $from_date, $to_date);
@@ -87,8 +87,8 @@ $apiInstance = new Swagger\Client\Api\BillingApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The organization to compute the billing information for
-$from_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing start date
-$to_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Billing end date
+$from_date = new \DateTime("\"2018-06-05\""); // \DateTime | Billing start date
+$to_date = new \DateTime("\"2018-06-06\""); // \DateTime | Billing end date
 
 try {
     $result = $apiInstance->getSumForOrganization($organization_id, $from_date, $to_date);
