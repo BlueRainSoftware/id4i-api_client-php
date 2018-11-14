@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $label, $label_prefix, $limit, $offset, $type)
+> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -250,14 +250,14 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
+$type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
-$type = "type_example"; // string | Filter by this type
 
 try {
-    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $label, $label_prefix, $limit, $offset, $type);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -270,11 +270,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization |
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
+ **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
  **label_prefix** | **string**| Filter by this label prefix | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
- **type** | **string**| Filter by this type | [optional]
 
 ### Return type
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listElementsOfCollection**
-> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfCollection($id4n, $limit, $offset)
+> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfCollection($id4n, $offset, $limit)
 
 List contents of the collection
 
@@ -313,11 +313,11 @@ $apiInstance = new Swagger\Client\Api\CollectionsApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listElementsOfCollection($id4n, $limit, $offset);
+    $result = $apiInstance->listElementsOfCollection($id4n, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfCollection: ', $e->getMessage(), PHP_EOL;
@@ -330,8 +330,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 

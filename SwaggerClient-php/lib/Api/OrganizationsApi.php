@@ -403,17 +403,17 @@ class OrganizationsApi
      *
      * Add role(s) to user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addUserRoles($change_role_request, $organization_id, $username)
+    public function addUserRoles($organization_id, $username, $change_role_request)
     {
-        $this->addUserRolesWithHttpInfo($change_role_request, $organization_id, $username);
+        $this->addUserRolesWithHttpInfo($organization_id, $username, $change_role_request);
     }
 
     /**
@@ -421,18 +421,18 @@ class OrganizationsApi
      *
      * Add role(s) to user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserRolesWithHttpInfo($change_role_request, $organization_id, $username)
+    public function addUserRolesWithHttpInfo($organization_id, $username, $change_role_request)
     {
         $returnType = '';
-        $request = $this->addUserRolesRequest($change_role_request, $organization_id, $username);
+        $request = $this->addUserRolesRequest($organization_id, $username, $change_role_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -548,16 +548,16 @@ class OrganizationsApi
      *
      * Add role(s) to user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addUserRolesAsync($change_role_request, $organization_id, $username)
+    public function addUserRolesAsync($organization_id, $username, $change_role_request)
     {
-        return $this->addUserRolesAsyncWithHttpInfo($change_role_request, $organization_id, $username)
+        return $this->addUserRolesAsyncWithHttpInfo($organization_id, $username, $change_role_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -570,17 +570,17 @@ class OrganizationsApi
      *
      * Add role(s) to user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addUserRolesAsyncWithHttpInfo($change_role_request, $organization_id, $username)
+    public function addUserRolesAsyncWithHttpInfo($organization_id, $username, $change_role_request)
     {
         $returnType = '';
-        $request = $this->addUserRolesRequest($change_role_request, $organization_id, $username);
+        $request = $this->addUserRolesRequest($organization_id, $username, $change_role_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -608,21 +608,15 @@ class OrganizationsApi
     /**
      * Create request for operation 'addUserRoles'
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addUserRolesRequest($change_role_request, $organization_id, $username)
+    protected function addUserRolesRequest($organization_id, $username, $change_role_request)
     {
-        // verify the required parameter 'change_role_request' is set
-        if ($change_role_request === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $change_role_request when calling addUserRoles'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
@@ -633,6 +627,12 @@ class OrganizationsApi
         if ($username === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $username when calling addUserRoles'
+            );
+        }
+        // verify the required parameter 'change_role_request' is set
+        if ($change_role_request === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $change_role_request when calling addUserRoles'
             );
         }
 
@@ -2852,19 +2852,19 @@ class OrganizationsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedGuidCollection
      */
-    public function getAllCollectionsOfOrganization($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganization($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix);
         return $response;
     }
 
@@ -2874,20 +2874,20 @@ class OrganizationsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3010,18 +3010,18 @@ class OrganizationsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsync($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationAsync($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $label, $label_prefix, $limit, $offset, $type)
+        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3035,19 +3035,19 @@ class OrganizationsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3090,16 +3090,16 @@ class OrganizationsApi
      * Create request for operation 'getAllCollectionsOfOrganization'
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllCollectionsOfOrganizationRequest($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    protected function getAllCollectionsOfOrganizationRequest($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -3107,18 +3107,11 @@ class OrganizationsApi
                 'Missing the required parameter $organization_id when calling getAllCollectionsOfOrganization'
             );
         }
-        if ($label_prefix !== null && strlen($label_prefix) > 2147483647) {
-            throw new \InvalidArgumentException('invalid length for "$label_prefix" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 2147483647.');
+        if ($label_prefix !== null && $label_prefix > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 2147483647.');
         }
-        if ($label_prefix !== null && strlen($label_prefix) < 1) {
-            throw new \InvalidArgumentException('invalid length for "$label_prefix" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 1.');
-        }
-
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 0.');
+        if ($label_prefix !== null && $label_prefix < 1) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling OrganizationsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 1.');
         }
 
 
@@ -3130,24 +3123,24 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($label !== null) {
-            $queryParams['label'] = ObjectSerializer::toQueryValue($label);
-        }
-        // query params
-        if ($label_prefix !== null) {
-            $queryParams['labelPrefix'] = ObjectSerializer::toQueryValue($label_prefix);
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
         // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // query params
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($label !== null) {
+            $queryParams['label'] = ObjectSerializer::toQueryValue($label);
+        }
+        // query params
+        if ($label_prefix !== null) {
+            $queryParams['labelPrefix'] = ObjectSerializer::toQueryValue($label_prefix);
         }
 
         // path params
@@ -3234,16 +3227,16 @@ class OrganizationsApi
      * List users and their roles
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedUserRolesResponse
      */
-    public function getAllOrganizationRoles($organization_id, $limit = null, $offset = null)
+    public function getAllOrganizationRoles($organization_id, $offset = null, $limit = null)
     {
-        list($response) = $this->getAllOrganizationRolesWithHttpInfo($organization_id, $limit, $offset);
+        list($response) = $this->getAllOrganizationRolesWithHttpInfo($organization_id, $offset, $limit);
         return $response;
     }
 
@@ -3253,17 +3246,17 @@ class OrganizationsApi
      * List users and their roles
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedUserRolesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllOrganizationRolesWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getAllOrganizationRolesWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserRolesResponse';
-        $request = $this->getAllOrganizationRolesRequest($organization_id, $limit, $offset);
+        $request = $this->getAllOrganizationRolesRequest($organization_id, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3386,15 +3379,15 @@ class OrganizationsApi
      * List users and their roles
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllOrganizationRolesAsync($organization_id, $limit = null, $offset = null)
+    public function getAllOrganizationRolesAsync($organization_id, $offset = null, $limit = null)
     {
-        return $this->getAllOrganizationRolesAsyncWithHttpInfo($organization_id, $limit, $offset)
+        return $this->getAllOrganizationRolesAsyncWithHttpInfo($organization_id, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3408,16 +3401,16 @@ class OrganizationsApi
      * List users and their roles
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllOrganizationRolesAsyncWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getAllOrganizationRolesAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserRolesResponse';
-        $request = $this->getAllOrganizationRolesRequest($organization_id, $limit, $offset);
+        $request = $this->getAllOrganizationRolesRequest($organization_id, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3460,13 +3453,13 @@ class OrganizationsApi
      * Create request for operation 'getAllOrganizationRoles'
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllOrganizationRolesRequest($organization_id, $limit = null, $offset = null)
+    protected function getAllOrganizationRolesRequest($organization_id, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -3474,13 +3467,6 @@ class OrganizationsApi
                 'Missing the required parameter $organization_id when calling getAllOrganizationRoles'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getAllOrganizationRoles, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getAllOrganizationRoles, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/organizations/{organizationId}/roles';
         $formParams = [];
@@ -3490,12 +3476,12 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -3904,17 +3890,17 @@ class OrganizationsApi
      *
      * Retrieve organizations of user
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $role role (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedOrganizationResponse
      */
-    public function getOrganizationsOfUser($limit = null, $offset = null, $role = null)
+    public function getOrganizationsOfUser($role = null, $offset = null, $limit = null)
     {
-        list($response) = $this->getOrganizationsOfUserWithHttpInfo($limit, $offset, $role);
+        list($response) = $this->getOrganizationsOfUserWithHttpInfo($role, $offset, $limit);
         return $response;
     }
 
@@ -3923,18 +3909,18 @@ class OrganizationsApi
      *
      * Retrieve organizations of user
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $role role (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedOrganizationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationsOfUserWithHttpInfo($limit = null, $offset = null, $role = null)
+    public function getOrganizationsOfUserWithHttpInfo($role = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedOrganizationResponse';
-        $request = $this->getOrganizationsOfUserRequest($limit, $offset, $role);
+        $request = $this->getOrganizationsOfUserRequest($role, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4056,16 +4042,16 @@ class OrganizationsApi
      *
      * Retrieve organizations of user
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $role role (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationsOfUserAsync($limit = null, $offset = null, $role = null)
+    public function getOrganizationsOfUserAsync($role = null, $offset = null, $limit = null)
     {
-        return $this->getOrganizationsOfUserAsyncWithHttpInfo($limit, $offset, $role)
+        return $this->getOrganizationsOfUserAsyncWithHttpInfo($role, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4078,17 +4064,17 @@ class OrganizationsApi
      *
      * Retrieve organizations of user
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $role role (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationsOfUserAsyncWithHttpInfo($limit = null, $offset = null, $role = null)
+    public function getOrganizationsOfUserAsyncWithHttpInfo($role = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedOrganizationResponse';
-        $request = $this->getOrganizationsOfUserRequest($limit, $offset, $role);
+        $request = $this->getOrganizationsOfUserRequest($role, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4130,22 +4116,15 @@ class OrganizationsApi
     /**
      * Create request for operation 'getOrganizationsOfUser'
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $role role (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrganizationsOfUserRequest($limit = null, $offset = null, $role = null)
+    protected function getOrganizationsOfUserRequest($role = null, $offset = null, $limit = null)
     {
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getOrganizationsOfUser, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getOrganizationsOfUser, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/user/organizations';
         $formParams = [];
@@ -4155,16 +4134,16 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        if ($role !== null) {
+            $queryParams['role'] = ObjectSerializer::toQueryValue($role);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($role !== null) {
-            $queryParams['role'] = ObjectSerializer::toQueryValue($role);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
 
@@ -4243,16 +4222,16 @@ class OrganizationsApi
      * Get partners of an organization
      *
      * @param  string $organization_id The namespace of the organization to query partner organizations (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization
      */
-    public function getPartnerOrganizations($organization_id, $limit = null, $offset = null)
+    public function getPartnerOrganizations($organization_id, $offset = null, $limit = null)
     {
-        list($response) = $this->getPartnerOrganizationsWithHttpInfo($organization_id, $limit, $offset);
+        list($response) = $this->getPartnerOrganizationsWithHttpInfo($organization_id, $offset, $limit);
         return $response;
     }
 
@@ -4262,17 +4241,17 @@ class OrganizationsApi
      * Get partners of an organization
      *
      * @param  string $organization_id The namespace of the organization to query partner organizations (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPartnerOrganizationsWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getPartnerOrganizationsWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization';
-        $request = $this->getPartnerOrganizationsRequest($organization_id, $limit, $offset);
+        $request = $this->getPartnerOrganizationsRequest($organization_id, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4395,15 +4374,15 @@ class OrganizationsApi
      * Get partners of an organization
      *
      * @param  string $organization_id The namespace of the organization to query partner organizations (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPartnerOrganizationsAsync($organization_id, $limit = null, $offset = null)
+    public function getPartnerOrganizationsAsync($organization_id, $offset = null, $limit = null)
     {
-        return $this->getPartnerOrganizationsAsyncWithHttpInfo($organization_id, $limit, $offset)
+        return $this->getPartnerOrganizationsAsyncWithHttpInfo($organization_id, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4417,16 +4396,16 @@ class OrganizationsApi
      * Get partners of an organization
      *
      * @param  string $organization_id The namespace of the organization to query partner organizations (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPartnerOrganizationsAsyncWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getPartnerOrganizationsAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization';
-        $request = $this->getPartnerOrganizationsRequest($organization_id, $limit, $offset);
+        $request = $this->getPartnerOrganizationsRequest($organization_id, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4469,13 +4448,13 @@ class OrganizationsApi
      * Create request for operation 'getPartnerOrganizations'
      *
      * @param  string $organization_id The namespace of the organization to query partner organizations (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPartnerOrganizationsRequest($organization_id, $limit = null, $offset = null)
+    protected function getPartnerOrganizationsRequest($organization_id, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -4483,13 +4462,6 @@ class OrganizationsApi
                 'Missing the required parameter $organization_id when calling getPartnerOrganizations'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getPartnerOrganizations, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getPartnerOrganizations, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/organizations/{organizationId}/partner';
         $formParams = [];
@@ -4499,12 +4471,12 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -4592,16 +4564,16 @@ class OrganizationsApi
      *
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedStringResponse
      */
-    public function getUserRoles($organization_id, $username, $limit = null, $offset = null)
+    public function getUserRoles($organization_id, $username, $offset = null, $limit = null)
     {
-        list($response) = $this->getUserRolesWithHttpInfo($organization_id, $username, $limit, $offset);
+        list($response) = $this->getUserRolesWithHttpInfo($organization_id, $username, $offset, $limit);
         return $response;
     }
 
@@ -4612,17 +4584,17 @@ class OrganizationsApi
      *
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedStringResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserRolesWithHttpInfo($organization_id, $username, $limit = null, $offset = null)
+    public function getUserRolesWithHttpInfo($organization_id, $username, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedStringResponse';
-        $request = $this->getUserRolesRequest($organization_id, $username, $limit, $offset);
+        $request = $this->getUserRolesRequest($organization_id, $username, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4746,15 +4718,15 @@ class OrganizationsApi
      *
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserRolesAsync($organization_id, $username, $limit = null, $offset = null)
+    public function getUserRolesAsync($organization_id, $username, $offset = null, $limit = null)
     {
-        return $this->getUserRolesAsyncWithHttpInfo($organization_id, $username, $limit, $offset)
+        return $this->getUserRolesAsyncWithHttpInfo($organization_id, $username, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4769,16 +4741,16 @@ class OrganizationsApi
      *
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserRolesAsyncWithHttpInfo($organization_id, $username, $limit = null, $offset = null)
+    public function getUserRolesAsyncWithHttpInfo($organization_id, $username, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedStringResponse';
-        $request = $this->getUserRolesRequest($organization_id, $username, $limit, $offset);
+        $request = $this->getUserRolesRequest($organization_id, $username, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4822,13 +4794,13 @@ class OrganizationsApi
      *
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getUserRolesRequest($organization_id, $username, $limit = null, $offset = null)
+    protected function getUserRolesRequest($organization_id, $username, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -4842,13 +4814,6 @@ class OrganizationsApi
                 'Missing the required parameter $username when calling getUserRoles'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getUserRoles, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getUserRoles, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/organizations/{organizationId}/users/{username}/roles';
         $formParams = [];
@@ -4858,12 +4823,12 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -4958,16 +4923,16 @@ class OrganizationsApi
      * Find users in organization
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedUserPresentationResponse
      */
-    public function getUsersOfOrganization($organization_id, $limit = null, $offset = null)
+    public function getUsersOfOrganization($organization_id, $offset = null, $limit = null)
     {
-        list($response) = $this->getUsersOfOrganizationWithHttpInfo($organization_id, $limit, $offset);
+        list($response) = $this->getUsersOfOrganizationWithHttpInfo($organization_id, $offset, $limit);
         return $response;
     }
 
@@ -4977,17 +4942,17 @@ class OrganizationsApi
      * Find users in organization
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedUserPresentationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersOfOrganizationWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getUsersOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
-        $request = $this->getUsersOfOrganizationRequest($organization_id, $limit, $offset);
+        $request = $this->getUsersOfOrganizationRequest($organization_id, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5110,15 +5075,15 @@ class OrganizationsApi
      * Find users in organization
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersOfOrganizationAsync($organization_id, $limit = null, $offset = null)
+    public function getUsersOfOrganizationAsync($organization_id, $offset = null, $limit = null)
     {
-        return $this->getUsersOfOrganizationAsyncWithHttpInfo($organization_id, $limit, $offset)
+        return $this->getUsersOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5132,16 +5097,16 @@ class OrganizationsApi
      * Find users in organization
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersOfOrganizationAsyncWithHttpInfo($organization_id, $limit = null, $offset = null)
+    public function getUsersOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
-        $request = $this->getUsersOfOrganizationRequest($organization_id, $limit, $offset);
+        $request = $this->getUsersOfOrganizationRequest($organization_id, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5184,13 +5149,13 @@ class OrganizationsApi
      * Create request for operation 'getUsersOfOrganization'
      *
      * @param  string $organization_id organizationId (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getUsersOfOrganizationRequest($organization_id, $limit = null, $offset = null)
+    protected function getUsersOfOrganizationRequest($organization_id, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -5198,13 +5163,6 @@ class OrganizationsApi
                 'Missing the required parameter $organization_id when calling getUsersOfOrganization'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getUsersOfOrganization, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.getUsersOfOrganization, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/organizations/{organizationId}/users';
         $formParams = [];
@@ -5214,12 +5172,12 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -5305,16 +5263,16 @@ class OrganizationsApi
      *
      * Invite Users
      *
-     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      * @param  string $organization_id The namespace of the organization where users should be invited (required)
+     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function inviteUsers($invitation_list, $organization_id)
+    public function inviteUsers($organization_id, $invitation_list)
     {
-        $this->inviteUsersWithHttpInfo($invitation_list, $organization_id);
+        $this->inviteUsersWithHttpInfo($organization_id, $invitation_list);
     }
 
     /**
@@ -5322,17 +5280,17 @@ class OrganizationsApi
      *
      * Invite Users
      *
-     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      * @param  string $organization_id The namespace of the organization where users should be invited (required)
+     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function inviteUsersWithHttpInfo($invitation_list, $organization_id)
+    public function inviteUsersWithHttpInfo($organization_id, $invitation_list)
     {
         $returnType = '';
-        $request = $this->inviteUsersRequest($invitation_list, $organization_id);
+        $request = $this->inviteUsersRequest($organization_id, $invitation_list);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5448,15 +5406,15 @@ class OrganizationsApi
      *
      * Invite Users
      *
-     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      * @param  string $organization_id The namespace of the organization where users should be invited (required)
+     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function inviteUsersAsync($invitation_list, $organization_id)
+    public function inviteUsersAsync($organization_id, $invitation_list)
     {
-        return $this->inviteUsersAsyncWithHttpInfo($invitation_list, $organization_id)
+        return $this->inviteUsersAsyncWithHttpInfo($organization_id, $invitation_list)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5469,16 +5427,16 @@ class OrganizationsApi
      *
      * Invite Users
      *
-     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      * @param  string $organization_id The namespace of the organization where users should be invited (required)
+     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function inviteUsersAsyncWithHttpInfo($invitation_list, $organization_id)
+    public function inviteUsersAsyncWithHttpInfo($organization_id, $invitation_list)
     {
         $returnType = '';
-        $request = $this->inviteUsersRequest($invitation_list, $organization_id);
+        $request = $this->inviteUsersRequest($organization_id, $invitation_list);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5506,24 +5464,24 @@ class OrganizationsApi
     /**
      * Create request for operation 'inviteUsers'
      *
-     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      * @param  string $organization_id The namespace of the organization where users should be invited (required)
+     * @param  \Swagger\Client\Model\OrganizationUserInvitationListRequest $invitation_list invitationList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function inviteUsersRequest($invitation_list, $organization_id)
+    protected function inviteUsersRequest($organization_id, $invitation_list)
     {
-        // verify the required parameter 'invitation_list' is set
-        if ($invitation_list === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $invitation_list when calling inviteUsers'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $organization_id when calling inviteUsers'
+            );
+        }
+        // verify the required parameter 'invitation_list' is set
+        if ($invitation_list === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $invitation_list when calling inviteUsers'
             );
         }
 
@@ -5621,16 +5579,16 @@ class OrganizationsApi
      *
      * List countries
      *
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedCountryResponse
      */
-    public function listCountries($limit = null, $offset = null)
+    public function listCountries($offset = null, $limit = null)
     {
-        list($response) = $this->listCountriesWithHttpInfo($limit, $offset);
+        list($response) = $this->listCountriesWithHttpInfo($offset, $limit);
         return $response;
     }
 
@@ -5639,17 +5597,17 @@ class OrganizationsApi
      *
      * List countries
      *
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedCountryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCountriesWithHttpInfo($limit = null, $offset = null)
+    public function listCountriesWithHttpInfo($offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedCountryResponse';
-        $request = $this->listCountriesRequest($limit, $offset);
+        $request = $this->listCountriesRequest($offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5771,15 +5729,15 @@ class OrganizationsApi
      *
      * List countries
      *
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCountriesAsync($limit = null, $offset = null)
+    public function listCountriesAsync($offset = null, $limit = null)
     {
-        return $this->listCountriesAsyncWithHttpInfo($limit, $offset)
+        return $this->listCountriesAsyncWithHttpInfo($offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5792,16 +5750,16 @@ class OrganizationsApi
      *
      * List countries
      *
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCountriesAsyncWithHttpInfo($limit = null, $offset = null)
+    public function listCountriesAsyncWithHttpInfo($offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedCountryResponse';
-        $request = $this->listCountriesRequest($limit, $offset);
+        $request = $this->listCountriesRequest($offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5843,21 +5801,14 @@ class OrganizationsApi
     /**
      * Create request for operation 'listCountries'
      *
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listCountriesRequest($limit = null, $offset = null)
+    protected function listCountriesRequest($offset = null, $limit = null)
     {
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.listCountries, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrganizationsApi.listCountries, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/countries';
         $formParams = [];
@@ -5867,12 +5818,12 @@ class OrganizationsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
 
@@ -6234,17 +6185,17 @@ class OrganizationsApi
      *
      * Remove role(s) from user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function removeUserRoles($change_role_request, $organization_id, $username)
+    public function removeUserRoles($organization_id, $username, $change_role_request)
     {
-        $this->removeUserRolesWithHttpInfo($change_role_request, $organization_id, $username);
+        $this->removeUserRolesWithHttpInfo($organization_id, $username, $change_role_request);
     }
 
     /**
@@ -6252,18 +6203,18 @@ class OrganizationsApi
      *
      * Remove role(s) from user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserRolesWithHttpInfo($change_role_request, $organization_id, $username)
+    public function removeUserRolesWithHttpInfo($organization_id, $username, $change_role_request)
     {
         $returnType = '';
-        $request = $this->removeUserRolesRequest($change_role_request, $organization_id, $username);
+        $request = $this->removeUserRolesRequest($organization_id, $username, $change_role_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6347,16 +6298,16 @@ class OrganizationsApi
      *
      * Remove role(s) from user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeUserRolesAsync($change_role_request, $organization_id, $username)
+    public function removeUserRolesAsync($organization_id, $username, $change_role_request)
     {
-        return $this->removeUserRolesAsyncWithHttpInfo($change_role_request, $organization_id, $username)
+        return $this->removeUserRolesAsyncWithHttpInfo($organization_id, $username, $change_role_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6369,17 +6320,17 @@ class OrganizationsApi
      *
      * Remove role(s) from user
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeUserRolesAsyncWithHttpInfo($change_role_request, $organization_id, $username)
+    public function removeUserRolesAsyncWithHttpInfo($organization_id, $username, $change_role_request)
     {
         $returnType = '';
-        $request = $this->removeUserRolesRequest($change_role_request, $organization_id, $username);
+        $request = $this->removeUserRolesRequest($organization_id, $username, $change_role_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6407,21 +6358,15 @@ class OrganizationsApi
     /**
      * Create request for operation 'removeUserRoles'
      *
-     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      * @param  string $organization_id The namespace of the organization (required)
      * @param  string $username username (required)
+     * @param  \Swagger\Client\Model\ChangeRoleRequest $change_role_request changeRoleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function removeUserRolesRequest($change_role_request, $organization_id, $username)
+    protected function removeUserRolesRequest($organization_id, $username, $change_role_request)
     {
-        // verify the required parameter 'change_role_request' is set
-        if ($change_role_request === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $change_role_request when calling removeUserRoles'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
@@ -6432,6 +6377,12 @@ class OrganizationsApi
         if ($username === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $username when calling removeUserRoles'
+            );
+        }
+        // verify the required parameter 'change_role_request' is set
+        if ($change_role_request === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $change_role_request when calling removeUserRoles'
             );
         }
 
@@ -6537,16 +6488,16 @@ class OrganizationsApi
      *
      * Update organization logo
      *
-     * @param  \SplFileObject $file An image containing the new logo. (required)
      * @param  string $organization_id The namespace of the organization where the logo should be updated. (required)
+     * @param  \SplFileObject $file An image containing the new logo. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PublicImagePresentation
      */
-    public function setOrganizationLogo($file, $organization_id)
+    public function setOrganizationLogo($organization_id, $file)
     {
-        list($response) = $this->setOrganizationLogoWithHttpInfo($file, $organization_id);
+        list($response) = $this->setOrganizationLogoWithHttpInfo($organization_id, $file);
         return $response;
     }
 
@@ -6555,17 +6506,17 @@ class OrganizationsApi
      *
      * Update organization logo
      *
-     * @param  \SplFileObject $file An image containing the new logo. (required)
      * @param  string $organization_id The namespace of the organization where the logo should be updated. (required)
+     * @param  \SplFileObject $file An image containing the new logo. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PublicImagePresentation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setOrganizationLogoWithHttpInfo($file, $organization_id)
+    public function setOrganizationLogoWithHttpInfo($organization_id, $file)
     {
         $returnType = '\Swagger\Client\Model\PublicImagePresentation';
-        $request = $this->setOrganizationLogoRequest($file, $organization_id);
+        $request = $this->setOrganizationLogoRequest($organization_id, $file);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6703,15 +6654,15 @@ class OrganizationsApi
      *
      * Update organization logo
      *
-     * @param  \SplFileObject $file An image containing the new logo. (required)
      * @param  string $organization_id The namespace of the organization where the logo should be updated. (required)
+     * @param  \SplFileObject $file An image containing the new logo. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setOrganizationLogoAsync($file, $organization_id)
+    public function setOrganizationLogoAsync($organization_id, $file)
     {
-        return $this->setOrganizationLogoAsyncWithHttpInfo($file, $organization_id)
+        return $this->setOrganizationLogoAsyncWithHttpInfo($organization_id, $file)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6724,16 +6675,16 @@ class OrganizationsApi
      *
      * Update organization logo
      *
-     * @param  \SplFileObject $file An image containing the new logo. (required)
      * @param  string $organization_id The namespace of the organization where the logo should be updated. (required)
+     * @param  \SplFileObject $file An image containing the new logo. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setOrganizationLogoAsyncWithHttpInfo($file, $organization_id)
+    public function setOrganizationLogoAsyncWithHttpInfo($organization_id, $file)
     {
         $returnType = '\Swagger\Client\Model\PublicImagePresentation';
-        $request = $this->setOrganizationLogoRequest($file, $organization_id);
+        $request = $this->setOrganizationLogoRequest($organization_id, $file);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6775,24 +6726,24 @@ class OrganizationsApi
     /**
      * Create request for operation 'setOrganizationLogo'
      *
-     * @param  \SplFileObject $file An image containing the new logo. (required)
      * @param  string $organization_id The namespace of the organization where the logo should be updated. (required)
+     * @param  \SplFileObject $file An image containing the new logo. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setOrganizationLogoRequest($file, $organization_id)
+    protected function setOrganizationLogoRequest($organization_id, $file)
     {
-        // verify the required parameter 'file' is set
-        if ($file === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $file when calling setOrganizationLogo'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $organization_id when calling setOrganizationLogo'
+            );
+        }
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling setOrganizationLogo'
             );
         }
 
@@ -7245,16 +7196,16 @@ class OrganizationsApi
      *
      * Store address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\OrganizationAddress
      */
-    public function updateOrganizationAddress($address_resource, $organization_id)
+    public function updateOrganizationAddress($organization_id, $address_resource)
     {
-        list($response) = $this->updateOrganizationAddressWithHttpInfo($address_resource, $organization_id);
+        list($response) = $this->updateOrganizationAddressWithHttpInfo($organization_id, $address_resource);
         return $response;
     }
 
@@ -7263,17 +7214,17 @@ class OrganizationsApi
      *
      * Store address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\OrganizationAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateOrganizationAddressWithHttpInfo($address_resource, $organization_id)
+    public function updateOrganizationAddressWithHttpInfo($organization_id, $address_resource)
     {
         $returnType = '\Swagger\Client\Model\OrganizationAddress';
-        $request = $this->updateOrganizationAddressRequest($address_resource, $organization_id);
+        $request = $this->updateOrganizationAddressRequest($organization_id, $address_resource);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7411,15 +7362,15 @@ class OrganizationsApi
      *
      * Store address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrganizationAddressAsync($address_resource, $organization_id)
+    public function updateOrganizationAddressAsync($organization_id, $address_resource)
     {
-        return $this->updateOrganizationAddressAsyncWithHttpInfo($address_resource, $organization_id)
+        return $this->updateOrganizationAddressAsyncWithHttpInfo($organization_id, $address_resource)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7432,16 +7383,16 @@ class OrganizationsApi
      *
      * Store address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrganizationAddressAsyncWithHttpInfo($address_resource, $organization_id)
+    public function updateOrganizationAddressAsyncWithHttpInfo($organization_id, $address_resource)
     {
         $returnType = '\Swagger\Client\Model\OrganizationAddress';
-        $request = $this->updateOrganizationAddressRequest($address_resource, $organization_id);
+        $request = $this->updateOrganizationAddressRequest($organization_id, $address_resource);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7483,24 +7434,24 @@ class OrganizationsApi
     /**
      * Create request for operation 'updateOrganizationAddress'
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateOrganizationAddressRequest($address_resource, $organization_id)
+    protected function updateOrganizationAddressRequest($organization_id, $address_resource)
     {
-        // verify the required parameter 'address_resource' is set
-        if ($address_resource === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $address_resource when calling updateOrganizationAddress'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $organization_id when calling updateOrganizationAddress'
+            );
+        }
+        // verify the required parameter 'address_resource' is set
+        if ($address_resource === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address_resource when calling updateOrganizationAddress'
             );
         }
 
@@ -7598,16 +7549,16 @@ class OrganizationsApi
      *
      * Store billing address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\OrganizationAddress
      */
-    public function updateOrganizationBillingAddress($address_resource, $organization_id)
+    public function updateOrganizationBillingAddress($organization_id, $address_resource)
     {
-        list($response) = $this->updateOrganizationBillingAddressWithHttpInfo($address_resource, $organization_id);
+        list($response) = $this->updateOrganizationBillingAddressWithHttpInfo($organization_id, $address_resource);
         return $response;
     }
 
@@ -7616,17 +7567,17 @@ class OrganizationsApi
      *
      * Store billing address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\OrganizationAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateOrganizationBillingAddressWithHttpInfo($address_resource, $organization_id)
+    public function updateOrganizationBillingAddressWithHttpInfo($organization_id, $address_resource)
     {
         $returnType = '\Swagger\Client\Model\OrganizationAddress';
-        $request = $this->updateOrganizationBillingAddressRequest($address_resource, $organization_id);
+        $request = $this->updateOrganizationBillingAddressRequest($organization_id, $address_resource);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7764,15 +7715,15 @@ class OrganizationsApi
      *
      * Store billing address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrganizationBillingAddressAsync($address_resource, $organization_id)
+    public function updateOrganizationBillingAddressAsync($organization_id, $address_resource)
     {
-        return $this->updateOrganizationBillingAddressAsyncWithHttpInfo($address_resource, $organization_id)
+        return $this->updateOrganizationBillingAddressAsyncWithHttpInfo($organization_id, $address_resource)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7785,16 +7736,16 @@ class OrganizationsApi
      *
      * Store billing address
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrganizationBillingAddressAsyncWithHttpInfo($address_resource, $organization_id)
+    public function updateOrganizationBillingAddressAsyncWithHttpInfo($organization_id, $address_resource)
     {
         $returnType = '\Swagger\Client\Model\OrganizationAddress';
-        $request = $this->updateOrganizationBillingAddressRequest($address_resource, $organization_id);
+        $request = $this->updateOrganizationBillingAddressRequest($organization_id, $address_resource);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7836,24 +7787,24 @@ class OrganizationsApi
     /**
      * Create request for operation 'updateOrganizationBillingAddress'
      *
-     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      * @param  string $organization_id organizationId (required)
+     * @param  \Swagger\Client\Model\OrganizationAddress $address_resource addressResource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateOrganizationBillingAddressRequest($address_resource, $organization_id)
+    protected function updateOrganizationBillingAddressRequest($organization_id, $address_resource)
     {
-        // verify the required parameter 'address_resource' is set
-        if ($address_resource === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $address_resource when calling updateOrganizationBillingAddress'
-            );
-        }
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $organization_id when calling updateOrganizationBillingAddress'
+            );
+        }
+        // verify the required parameter 'address_resource' is set
+        if ($address_resource === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address_resource when calling updateOrganizationBillingAddress'
             );
         }
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **getPublicDocument**
-> \Swagger\Client\Model\Document getPublicDocument($file_name, $id4n, $organization_id)
+> \Swagger\Client\Model\Document getPublicDocument($organization_id, $id4n, $file_name)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -36,12 +36,12 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->getPublicDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->getPublicDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->getPublicDocument: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +53,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -178,7 +178,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllPublicDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $limit, $offset, $organization_id, $owner)
+> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
 
 List public documents
 
@@ -201,13 +201,13 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
 $organization_id = "organization_id_example"; // string | organizationId
 $owner = "owner_example"; // string | Filter by owner organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllPublicDocuments($id4n, $limit, $offset, $organization_id, $owner);
+    $result = $apiInstance->listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->listAllPublicDocuments: ', $e->getMessage(), PHP_EOL;
@@ -220,10 +220,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **organization_id** | **string**| organizationId | [optional]
  **owner** | **string**| Filter by owner organization | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPublicHistory**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse listPublicHistory($id4n, $limit, $offset)
+> \Swagger\Client\Model\PaginatedHistoryItemResponse listPublicHistory($id4n, $offset, $limit)
 
 Shows the public history of the given GUID
 
@@ -264,11 +264,11 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     $config
 );
 $id4n = "id4n_example"; // string | GUID to retrieve the history for
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listPublicHistory($id4n, $limit, $offset);
+    $result = $apiInstance->listPublicHistory($id4n, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->listPublicHistory: ', $e->getMessage(), PHP_EOL;
@@ -281,8 +281,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readPublicDocument**
-> string readPublicDocument($file_name, $id4n, $organization_id)
+> string readPublicDocument($organization_id, $id4n, $file_name)
 
 Read public document contents
 
@@ -373,12 +373,12 @@ $apiInstance = new Swagger\Client\Api\PublicServicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->readPublicDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->readPublicDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicServicesApi->readPublicDocument: ', $e->getMessage(), PHP_EOL;
@@ -390,9 +390,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 

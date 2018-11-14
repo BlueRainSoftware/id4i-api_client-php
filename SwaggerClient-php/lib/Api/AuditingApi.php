@@ -88,19 +88,19 @@ class AuditingApi
      * List change log entries of an organization
      *
      * @param  string $organization_id The namespace identifying the organization whose change log entries are to be listed (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $message_mime_type The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; (optional, default to text/mustache)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedChangeLogEntryResponse
      */
-    public function listOrganizationChangeLog($organization_id, $from_date = null, $limit = null, $message_mime_type = 'text/mustache', $offset = null, $to_date = null)
+    public function listOrganizationChangeLog($organization_id, $message_mime_type = 'text/mustache', $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        list($response) = $this->listOrganizationChangeLogWithHttpInfo($organization_id, $from_date, $limit, $message_mime_type, $offset, $to_date);
+        list($response) = $this->listOrganizationChangeLogWithHttpInfo($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit);
         return $response;
     }
 
@@ -110,20 +110,20 @@ class AuditingApi
      * List change log entries of an organization
      *
      * @param  string $organization_id The namespace identifying the organization whose change log entries are to be listed (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $message_mime_type The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; (optional, default to text/mustache)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedChangeLogEntryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listOrganizationChangeLogWithHttpInfo($organization_id, $from_date = null, $limit = null, $message_mime_type = 'text/mustache', $offset = null, $to_date = null)
+    public function listOrganizationChangeLogWithHttpInfo($organization_id, $message_mime_type = 'text/mustache', $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedChangeLogEntryResponse';
-        $request = $this->listOrganizationChangeLogRequest($organization_id, $from_date, $limit, $message_mime_type, $offset, $to_date);
+        $request = $this->listOrganizationChangeLogRequest($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -246,18 +246,18 @@ class AuditingApi
      * List change log entries of an organization
      *
      * @param  string $organization_id The namespace identifying the organization whose change log entries are to be listed (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $message_mime_type The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; (optional, default to text/mustache)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listOrganizationChangeLogAsync($organization_id, $from_date = null, $limit = null, $message_mime_type = 'text/mustache', $offset = null, $to_date = null)
+    public function listOrganizationChangeLogAsync($organization_id, $message_mime_type = 'text/mustache', $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        return $this->listOrganizationChangeLogAsyncWithHttpInfo($organization_id, $from_date, $limit, $message_mime_type, $offset, $to_date)
+        return $this->listOrganizationChangeLogAsyncWithHttpInfo($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -271,19 +271,19 @@ class AuditingApi
      * List change log entries of an organization
      *
      * @param  string $organization_id The namespace identifying the organization whose change log entries are to be listed (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $message_mime_type The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; (optional, default to text/mustache)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listOrganizationChangeLogAsyncWithHttpInfo($organization_id, $from_date = null, $limit = null, $message_mime_type = 'text/mustache', $offset = null, $to_date = null)
+    public function listOrganizationChangeLogAsyncWithHttpInfo($organization_id, $message_mime_type = 'text/mustache', $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedChangeLogEntryResponse';
-        $request = $this->listOrganizationChangeLogRequest($organization_id, $from_date, $limit, $message_mime_type, $offset, $to_date);
+        $request = $this->listOrganizationChangeLogRequest($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -326,16 +326,16 @@ class AuditingApi
      * Create request for operation 'listOrganizationChangeLog'
      *
      * @param  string $organization_id The namespace identifying the organization whose change log entries are to be listed (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  string $message_mime_type The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39; (optional, default to text/mustache)
-     * @param  int $offset Start with the n-th element (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listOrganizationChangeLogRequest($organization_id, $from_date = null, $limit = null, $message_mime_type = 'text/mustache', $offset = null, $to_date = null)
+    protected function listOrganizationChangeLogRequest($organization_id, $message_mime_type = 'text/mustache', $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -343,13 +343,6 @@ class AuditingApi
                 'Missing the required parameter $organization_id when calling listOrganizationChangeLog'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling AuditingApi.listOrganizationChangeLog, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling AuditingApi.listOrganizationChangeLog, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/changelog/organization/{organizationId}/';
         $formParams = [];
@@ -359,24 +352,24 @@ class AuditingApi
         $multipart = false;
 
         // query params
+        if ($message_mime_type !== null) {
+            $queryParams['messageMimeType'] = ObjectSerializer::toQueryValue($message_mime_type);
+        }
+        // query params
         if ($from_date !== null) {
             $queryParams['fromDate'] = ObjectSerializer::toQueryValue($from_date);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
-        if ($message_mime_type !== null) {
-            $queryParams['messageMimeType'] = ObjectSerializer::toQueryValue($message_mime_type);
+        if ($to_date !== null) {
+            $queryParams['toDate'] = ObjectSerializer::toQueryValue($to_date);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($to_date !== null) {
-            $queryParams['toDate'] = ObjectSerializer::toQueryValue($to_date);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params

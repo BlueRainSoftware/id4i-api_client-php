@@ -1331,19 +1331,19 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedGuidCollection
      */
-    public function getAllCollectionsOfOrganization($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganization($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix);
         return $response;
     }
 
@@ -1353,20 +1353,20 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1489,18 +1489,18 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsync($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationAsync($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $label, $label_prefix, $limit, $offset, $type)
+        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1514,19 +1514,19 @@ class CollectionsApi
      * Get collections of organization
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $label, $label_prefix, $limit, $offset, $type);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1569,16 +1569,16 @@ class CollectionsApi
      * Create request for operation 'getAllCollectionsOfOrganization'
      *
      * @param  string $organization_id The namespace of the organization (required)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
-     * @param  string $type Filter by this type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllCollectionsOfOrganizationRequest($organization_id, $label = null, $label_prefix = null, $limit = null, $offset = null, $type = null)
+    protected function getAllCollectionsOfOrganizationRequest($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1586,18 +1586,11 @@ class CollectionsApi
                 'Missing the required parameter $organization_id when calling getAllCollectionsOfOrganization'
             );
         }
-        if ($label_prefix !== null && strlen($label_prefix) > 2147483647) {
-            throw new \InvalidArgumentException('invalid length for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 2147483647.');
+        if ($label_prefix !== null && $label_prefix > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 2147483647.');
         }
-        if ($label_prefix !== null && strlen($label_prefix) < 1) {
-            throw new \InvalidArgumentException('invalid length for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 1.');
-        }
-
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling CollectionsApi.getAllCollectionsOfOrganization, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling CollectionsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 0.');
+        if ($label_prefix !== null && $label_prefix < 1) {
+            throw new \InvalidArgumentException('invalid value for "$label_prefix" when calling CollectionsApi.getAllCollectionsOfOrganization, must be bigger than or equal to 1.');
         }
 
 
@@ -1609,24 +1602,24 @@ class CollectionsApi
         $multipart = false;
 
         // query params
-        if ($label !== null) {
-            $queryParams['label'] = ObjectSerializer::toQueryValue($label);
-        }
-        // query params
-        if ($label_prefix !== null) {
-            $queryParams['labelPrefix'] = ObjectSerializer::toQueryValue($label_prefix);
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
         // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // query params
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($label !== null) {
+            $queryParams['label'] = ObjectSerializer::toQueryValue($label);
+        }
+        // query params
+        if ($label_prefix !== null) {
+            $queryParams['labelPrefix'] = ObjectSerializer::toQueryValue($label_prefix);
         }
 
         // path params
@@ -1713,16 +1706,16 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedGuidResponse
      */
-    public function listElementsOfCollection($id4n, $limit = null, $offset = null)
+    public function listElementsOfCollection($id4n, $offset = null, $limit = null)
     {
-        list($response) = $this->listElementsOfCollectionWithHttpInfo($id4n, $limit, $offset);
+        list($response) = $this->listElementsOfCollectionWithHttpInfo($id4n, $offset, $limit);
         return $response;
     }
 
@@ -1732,17 +1725,17 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedGuidResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listElementsOfCollectionWithHttpInfo($id4n, $limit = null, $offset = null)
+    public function listElementsOfCollectionWithHttpInfo($id4n, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
-        $request = $this->listElementsOfCollectionRequest($id4n, $limit, $offset);
+        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1865,15 +1858,15 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listElementsOfCollectionAsync($id4n, $limit = null, $offset = null)
+    public function listElementsOfCollectionAsync($id4n, $offset = null, $limit = null)
     {
-        return $this->listElementsOfCollectionAsyncWithHttpInfo($id4n, $limit, $offset)
+        return $this->listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1887,16 +1880,16 @@ class CollectionsApi
      * List contents of the collection
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listElementsOfCollectionAsyncWithHttpInfo($id4n, $limit = null, $offset = null)
+    public function listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
-        $request = $this->listElementsOfCollectionRequest($id4n, $limit, $offset);
+        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1939,13 +1932,13 @@ class CollectionsApi
      * Create request for operation 'listElementsOfCollection'
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listElementsOfCollectionRequest($id4n, $limit = null, $offset = null)
+    protected function listElementsOfCollectionRequest($id4n, $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -1953,13 +1946,6 @@ class CollectionsApi
                 'Missing the required parameter $id4n when calling listElementsOfCollection'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling CollectionsApi.listElementsOfCollection, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling CollectionsApi.listElementsOfCollection, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/collections/{id4n}/elements';
         $formParams = [];
@@ -1969,12 +1955,12 @@ class CollectionsApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params

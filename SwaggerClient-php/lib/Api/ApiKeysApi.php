@@ -87,16 +87,16 @@ class ApiKeysApi
      *
      * Add privilege
      *
-     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      * @param  string $key key (required)
+     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addApiKeyPrivilege($add_api_key_privilege_request, $key)
+    public function addApiKeyPrivilege($key, $add_api_key_privilege_request)
     {
-        $this->addApiKeyPrivilegeWithHttpInfo($add_api_key_privilege_request, $key);
+        $this->addApiKeyPrivilegeWithHttpInfo($key, $add_api_key_privilege_request);
     }
 
     /**
@@ -104,17 +104,17 @@ class ApiKeysApi
      *
      * Add privilege
      *
-     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      * @param  string $key key (required)
+     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addApiKeyPrivilegeWithHttpInfo($add_api_key_privilege_request, $key)
+    public function addApiKeyPrivilegeWithHttpInfo($key, $add_api_key_privilege_request)
     {
         $returnType = '';
-        $request = $this->addApiKeyPrivilegeRequest($add_api_key_privilege_request, $key);
+        $request = $this->addApiKeyPrivilegeRequest($key, $add_api_key_privilege_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -230,15 +230,15 @@ class ApiKeysApi
      *
      * Add privilege
      *
-     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      * @param  string $key key (required)
+     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addApiKeyPrivilegeAsync($add_api_key_privilege_request, $key)
+    public function addApiKeyPrivilegeAsync($key, $add_api_key_privilege_request)
     {
-        return $this->addApiKeyPrivilegeAsyncWithHttpInfo($add_api_key_privilege_request, $key)
+        return $this->addApiKeyPrivilegeAsyncWithHttpInfo($key, $add_api_key_privilege_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,16 +251,16 @@ class ApiKeysApi
      *
      * Add privilege
      *
-     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      * @param  string $key key (required)
+     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addApiKeyPrivilegeAsyncWithHttpInfo($add_api_key_privilege_request, $key)
+    public function addApiKeyPrivilegeAsyncWithHttpInfo($key, $add_api_key_privilege_request)
     {
         $returnType = '';
-        $request = $this->addApiKeyPrivilegeRequest($add_api_key_privilege_request, $key);
+        $request = $this->addApiKeyPrivilegeRequest($key, $add_api_key_privilege_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -288,24 +288,24 @@ class ApiKeysApi
     /**
      * Create request for operation 'addApiKeyPrivilege'
      *
-     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      * @param  string $key key (required)
+     * @param  \Swagger\Client\Model\AddApiKeyPrivilegeRequest $add_api_key_privilege_request addApiKeyPrivilegeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addApiKeyPrivilegeRequest($add_api_key_privilege_request, $key)
+    protected function addApiKeyPrivilegeRequest($key, $add_api_key_privilege_request)
     {
-        // verify the required parameter 'add_api_key_privilege_request' is set
-        if ($add_api_key_privilege_request === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $add_api_key_privilege_request when calling addApiKeyPrivilege'
-            );
-        }
         // verify the required parameter 'key' is set
         if ($key === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $key when calling addApiKeyPrivilege'
+            );
+        }
+        // verify the required parameter 'add_api_key_privilege_request' is set
+        if ($add_api_key_privilege_request === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $add_api_key_privilege_request when calling addApiKeyPrivilege'
             );
         }
 
@@ -403,17 +403,17 @@ class ApiKeysApi
      *
      * Add ID4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addApiKeyPrivilegeForId4ns($id4ns, $key, $privilege)
+    public function addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
     {
-        $this->addApiKeyPrivilegeForId4nsWithHttpInfo($id4ns, $key, $privilege);
+        $this->addApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns);
     }
 
     /**
@@ -421,18 +421,18 @@ class ApiKeysApi
      *
      * Add ID4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addApiKeyPrivilegeForId4nsWithHttpInfo($id4ns, $key, $privilege)
+    public function addApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns)
     {
         $returnType = '';
-        $request = $this->addApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege);
+        $request = $this->addApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns);
 
         try {
             $options = $this->createHttpClientOption();
@@ -548,16 +548,16 @@ class ApiKeysApi
      *
      * Add ID4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addApiKeyPrivilegeForId4nsAsync($id4ns, $key, $privilege)
+    public function addApiKeyPrivilegeForId4nsAsync($key, $privilege, $id4ns)
     {
-        return $this->addApiKeyPrivilegeForId4nsAsyncWithHttpInfo($id4ns, $key, $privilege)
+        return $this->addApiKeyPrivilegeForId4nsAsyncWithHttpInfo($key, $privilege, $id4ns)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -570,17 +570,17 @@ class ApiKeysApi
      *
      * Add ID4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addApiKeyPrivilegeForId4nsAsyncWithHttpInfo($id4ns, $key, $privilege)
+    public function addApiKeyPrivilegeForId4nsAsyncWithHttpInfo($key, $privilege, $id4ns)
     {
         $returnType = '';
-        $request = $this->addApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege);
+        $request = $this->addApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -608,21 +608,15 @@ class ApiKeysApi
     /**
      * Create request for operation 'addApiKeyPrivilegeForId4ns'
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege)
+    protected function addApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns)
     {
-        // verify the required parameter 'id4ns' is set
-        if ($id4ns === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4ns when calling addApiKeyPrivilegeForId4ns'
-            );
-        }
         // verify the required parameter 'key' is set
         if ($key === null) {
             throw new \InvalidArgumentException(
@@ -633,6 +627,12 @@ class ApiKeysApi
         if ($privilege === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $privilege when calling addApiKeyPrivilegeForId4ns'
+            );
+        }
+        // verify the required parameter 'id4ns' is set
+        if ($id4ns === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4ns when calling addApiKeyPrivilegeForId4ns'
             );
         }
 
@@ -1666,16 +1666,16 @@ class ApiKeysApi
      * List all privileges
      *
      * @param  bool $id4n_concerning id4nConcerning (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse
      */
-    public function listAllApiKeyPrivileges($id4n_concerning = null, $limit = null, $offset = null)
+    public function listAllApiKeyPrivileges($id4n_concerning = null, $offset = null, $limit = null)
     {
-        list($response) = $this->listAllApiKeyPrivilegesWithHttpInfo($id4n_concerning, $limit, $offset);
+        list($response) = $this->listAllApiKeyPrivilegesWithHttpInfo($id4n_concerning, $offset, $limit);
         return $response;
     }
 
@@ -1685,17 +1685,17 @@ class ApiKeysApi
      * List all privileges
      *
      * @param  bool $id4n_concerning id4nConcerning (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllApiKeyPrivilegesWithHttpInfo($id4n_concerning = null, $limit = null, $offset = null)
+    public function listAllApiKeyPrivilegesWithHttpInfo($id4n_concerning = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse';
-        $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $limit, $offset);
+        $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1818,15 +1818,15 @@ class ApiKeysApi
      * List all privileges
      *
      * @param  bool $id4n_concerning id4nConcerning (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllApiKeyPrivilegesAsync($id4n_concerning = null, $limit = null, $offset = null)
+    public function listAllApiKeyPrivilegesAsync($id4n_concerning = null, $offset = null, $limit = null)
     {
-        return $this->listAllApiKeyPrivilegesAsyncWithHttpInfo($id4n_concerning, $limit, $offset)
+        return $this->listAllApiKeyPrivilegesAsyncWithHttpInfo($id4n_concerning, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1840,16 +1840,16 @@ class ApiKeysApi
      * List all privileges
      *
      * @param  bool $id4n_concerning id4nConcerning (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllApiKeyPrivilegesAsyncWithHttpInfo($id4n_concerning = null, $limit = null, $offset = null)
+    public function listAllApiKeyPrivilegesAsyncWithHttpInfo($id4n_concerning = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse';
-        $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $limit, $offset);
+        $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1892,21 +1892,14 @@ class ApiKeysApi
      * Create request for operation 'listAllApiKeyPrivileges'
      *
      * @param  bool $id4n_concerning id4nConcerning (optional)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAllApiKeyPrivilegesRequest($id4n_concerning = null, $limit = null, $offset = null)
+    protected function listAllApiKeyPrivilegesRequest($id4n_concerning = null, $offset = null, $limit = null)
     {
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listAllApiKeyPrivileges, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listAllApiKeyPrivileges, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/apikeys/privileges';
         $formParams = [];
@@ -1920,12 +1913,12 @@ class ApiKeysApi
             $queryParams['id4nConcerning'] = ObjectSerializer::toQueryValue($id4n_concerning);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
 
@@ -2003,17 +1996,17 @@ class ApiKeysApi
      *
      * Find API key by organization
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id The namespace of the organization to search in. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedApiKeyResponse
      */
-    public function listAllApiKeysOfOrganization($limit = null, $offset = null, $organization_id = null)
+    public function listAllApiKeysOfOrganization($organization_id = null, $offset = null, $limit = null)
     {
-        list($response) = $this->listAllApiKeysOfOrganizationWithHttpInfo($limit, $offset, $organization_id);
+        list($response) = $this->listAllApiKeysOfOrganizationWithHttpInfo($organization_id, $offset, $limit);
         return $response;
     }
 
@@ -2022,18 +2015,18 @@ class ApiKeysApi
      *
      * Find API key by organization
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id The namespace of the organization to search in. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedApiKeyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllApiKeysOfOrganizationWithHttpInfo($limit = null, $offset = null, $organization_id = null)
+    public function listAllApiKeysOfOrganizationWithHttpInfo($organization_id = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedApiKeyResponse';
-        $request = $this->listAllApiKeysOfOrganizationRequest($limit, $offset, $organization_id);
+        $request = $this->listAllApiKeysOfOrganizationRequest($organization_id, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2155,16 +2148,16 @@ class ApiKeysApi
      *
      * Find API key by organization
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id The namespace of the organization to search in. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllApiKeysOfOrganizationAsync($limit = null, $offset = null, $organization_id = null)
+    public function listAllApiKeysOfOrganizationAsync($organization_id = null, $offset = null, $limit = null)
     {
-        return $this->listAllApiKeysOfOrganizationAsyncWithHttpInfo($limit, $offset, $organization_id)
+        return $this->listAllApiKeysOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2177,17 +2170,17 @@ class ApiKeysApi
      *
      * Find API key by organization
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id The namespace of the organization to search in. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllApiKeysOfOrganizationAsyncWithHttpInfo($limit = null, $offset = null, $organization_id = null)
+    public function listAllApiKeysOfOrganizationAsyncWithHttpInfo($organization_id = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedApiKeyResponse';
-        $request = $this->listAllApiKeysOfOrganizationRequest($limit, $offset, $organization_id);
+        $request = $this->listAllApiKeysOfOrganizationRequest($organization_id, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2229,22 +2222,15 @@ class ApiKeysApi
     /**
      * Create request for operation 'listAllApiKeysOfOrganization'
      *
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id The namespace of the organization to search in. (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAllApiKeysOfOrganizationRequest($limit = null, $offset = null, $organization_id = null)
+    protected function listAllApiKeysOfOrganizationRequest($organization_id = null, $offset = null, $limit = null)
     {
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listAllApiKeysOfOrganization, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listAllApiKeysOfOrganization, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/apikeys';
         $formParams = [];
@@ -2254,16 +2240,16 @@ class ApiKeysApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
         }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
         // query params
-        if ($organization_id !== null) {
-            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
 
@@ -2342,16 +2328,16 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse
      */
-    public function listApiKeyPrivileges($key, $limit = null, $offset = null)
+    public function listApiKeyPrivileges($key, $offset = null, $limit = null)
     {
-        list($response) = $this->listApiKeyPrivilegesWithHttpInfo($key, $limit, $offset);
+        list($response) = $this->listApiKeyPrivilegesWithHttpInfo($key, $offset, $limit);
         return $response;
     }
 
@@ -2361,17 +2347,17 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listApiKeyPrivilegesWithHttpInfo($key, $limit = null, $offset = null)
+    public function listApiKeyPrivilegesWithHttpInfo($key, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse';
-        $request = $this->listApiKeyPrivilegesRequest($key, $limit, $offset);
+        $request = $this->listApiKeyPrivilegesRequest($key, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2494,15 +2480,15 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listApiKeyPrivilegesAsync($key, $limit = null, $offset = null)
+    public function listApiKeyPrivilegesAsync($key, $offset = null, $limit = null)
     {
-        return $this->listApiKeyPrivilegesAsyncWithHttpInfo($key, $limit, $offset)
+        return $this->listApiKeyPrivilegesAsyncWithHttpInfo($key, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2516,16 +2502,16 @@ class ApiKeysApi
      * List privileges
      *
      * @param  string $key key (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listApiKeyPrivilegesAsyncWithHttpInfo($key, $limit = null, $offset = null)
+    public function listApiKeyPrivilegesAsyncWithHttpInfo($key, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse';
-        $request = $this->listApiKeyPrivilegesRequest($key, $limit, $offset);
+        $request = $this->listApiKeyPrivilegesRequest($key, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2568,13 +2554,13 @@ class ApiKeysApi
      * Create request for operation 'listApiKeyPrivileges'
      *
      * @param  string $key key (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listApiKeyPrivilegesRequest($key, $limit = null, $offset = null)
+    protected function listApiKeyPrivilegesRequest($key, $offset = null, $limit = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
@@ -2582,13 +2568,6 @@ class ApiKeysApi
                 'Missing the required parameter $key when calling listApiKeyPrivileges'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listApiKeyPrivileges, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listApiKeyPrivileges, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/apikeys/{key}/privileges';
         $formParams = [];
@@ -2598,12 +2577,12 @@ class ApiKeysApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -2691,16 +2670,16 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Id4nPresentationPaginatedResponse
      */
-    public function listId4ns($key, $privilege, $limit = null, $offset = null)
+    public function listId4ns($key, $privilege, $offset = null, $limit = null)
     {
-        list($response) = $this->listId4nsWithHttpInfo($key, $privilege, $limit, $offset);
+        list($response) = $this->listId4nsWithHttpInfo($key, $privilege, $offset, $limit);
         return $response;
     }
 
@@ -2711,17 +2690,17 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Id4nPresentationPaginatedResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listId4nsWithHttpInfo($key, $privilege, $limit = null, $offset = null)
+    public function listId4nsWithHttpInfo($key, $privilege, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\Id4nPresentationPaginatedResponse';
-        $request = $this->listId4nsRequest($key, $privilege, $limit, $offset);
+        $request = $this->listId4nsRequest($key, $privilege, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2845,15 +2824,15 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listId4nsAsync($key, $privilege, $limit = null, $offset = null)
+    public function listId4nsAsync($key, $privilege, $offset = null, $limit = null)
     {
-        return $this->listId4nsAsyncWithHttpInfo($key, $privilege, $limit, $offset)
+        return $this->listId4nsAsyncWithHttpInfo($key, $privilege, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2868,16 +2847,16 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listId4nsAsyncWithHttpInfo($key, $privilege, $limit = null, $offset = null)
+    public function listId4nsAsyncWithHttpInfo($key, $privilege, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\Id4nPresentationPaginatedResponse';
-        $request = $this->listId4nsRequest($key, $privilege, $limit, $offset);
+        $request = $this->listId4nsRequest($key, $privilege, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2921,13 +2900,13 @@ class ApiKeysApi
      *
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listId4nsRequest($key, $privilege, $limit = null, $offset = null)
+    protected function listId4nsRequest($key, $privilege, $offset = null, $limit = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null) {
@@ -2941,13 +2920,6 @@ class ApiKeysApi
                 'Missing the required parameter $privilege when calling listId4ns'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listId4ns, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling ApiKeysApi.listId4ns, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns';
         $formParams = [];
@@ -2957,12 +2929,12 @@ class ApiKeysApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -3340,17 +3312,17 @@ class ApiKeysApi
      *
      * Remove id4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function removeApiKeyPrivilegeForId4ns($id4ns, $key, $privilege)
+    public function removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
     {
-        $this->removeApiKeyPrivilegeForId4nsWithHttpInfo($id4ns, $key, $privilege);
+        $this->removeApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns);
     }
 
     /**
@@ -3358,18 +3330,18 @@ class ApiKeysApi
      *
      * Remove id4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeApiKeyPrivilegeForId4nsWithHttpInfo($id4ns, $key, $privilege)
+    public function removeApiKeyPrivilegeForId4nsWithHttpInfo($key, $privilege, $id4ns)
     {
         $returnType = '';
-        $request = $this->removeApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege);
+        $request = $this->removeApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3453,16 +3425,16 @@ class ApiKeysApi
      *
      * Remove id4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeApiKeyPrivilegeForId4nsAsync($id4ns, $key, $privilege)
+    public function removeApiKeyPrivilegeForId4nsAsync($key, $privilege, $id4ns)
     {
-        return $this->removeApiKeyPrivilegeForId4nsAsyncWithHttpInfo($id4ns, $key, $privilege)
+        return $this->removeApiKeyPrivilegeForId4nsAsyncWithHttpInfo($key, $privilege, $id4ns)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3475,17 +3447,17 @@ class ApiKeysApi
      *
      * Remove id4ns of a privilege
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeApiKeyPrivilegeForId4nsAsyncWithHttpInfo($id4ns, $key, $privilege)
+    public function removeApiKeyPrivilegeForId4nsAsyncWithHttpInfo($key, $privilege, $id4ns)
     {
         $returnType = '';
-        $request = $this->removeApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege);
+        $request = $this->removeApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3513,21 +3485,15 @@ class ApiKeysApi
     /**
      * Create request for operation 'removeApiKeyPrivilegeForId4ns'
      *
-     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      * @param  string $key key (required)
      * @param  string $privilege privilege (required)
+     * @param  \Swagger\Client\Model\ListOfId4ns $id4ns id4ns (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function removeApiKeyPrivilegeForId4nsRequest($id4ns, $key, $privilege)
+    protected function removeApiKeyPrivilegeForId4nsRequest($key, $privilege, $id4ns)
     {
-        // verify the required parameter 'id4ns' is set
-        if ($id4ns === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4ns when calling removeApiKeyPrivilegeForId4ns'
-            );
-        }
         // verify the required parameter 'key' is set
         if ($key === null) {
             throw new \InvalidArgumentException(
@@ -3538,6 +3504,12 @@ class ApiKeysApi
         if ($privilege === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $privilege when calling removeApiKeyPrivilegeForId4ns'
+            );
+        }
+        // verify the required parameter 'id4ns' is set
+        if ($id4ns === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4ns when calling removeApiKeyPrivilegeForId4ns'
             );
         }
 
@@ -3643,16 +3615,16 @@ class ApiKeysApi
      *
      * Update API keys
      *
-     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param  string $key The API key to be updated. (required)
+     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateApiKey($api_key_change, $key)
+    public function updateApiKey($key, $api_key_change)
     {
-        $this->updateApiKeyWithHttpInfo($api_key_change, $key);
+        $this->updateApiKeyWithHttpInfo($key, $api_key_change);
     }
 
     /**
@@ -3660,17 +3632,17 @@ class ApiKeysApi
      *
      * Update API keys
      *
-     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param  string $key The API key to be updated. (required)
+     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateApiKeyWithHttpInfo($api_key_change, $key)
+    public function updateApiKeyWithHttpInfo($key, $api_key_change)
     {
         $returnType = '';
-        $request = $this->updateApiKeyRequest($api_key_change, $key);
+        $request = $this->updateApiKeyRequest($key, $api_key_change);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3786,15 +3758,15 @@ class ApiKeysApi
      *
      * Update API keys
      *
-     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param  string $key The API key to be updated. (required)
+     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateApiKeyAsync($api_key_change, $key)
+    public function updateApiKeyAsync($key, $api_key_change)
     {
-        return $this->updateApiKeyAsyncWithHttpInfo($api_key_change, $key)
+        return $this->updateApiKeyAsyncWithHttpInfo($key, $api_key_change)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3807,16 +3779,16 @@ class ApiKeysApi
      *
      * Update API keys
      *
-     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param  string $key The API key to be updated. (required)
+     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateApiKeyAsyncWithHttpInfo($api_key_change, $key)
+    public function updateApiKeyAsyncWithHttpInfo($key, $api_key_change)
     {
         $returnType = '';
-        $request = $this->updateApiKeyRequest($api_key_change, $key);
+        $request = $this->updateApiKeyRequest($key, $api_key_change);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3844,24 +3816,24 @@ class ApiKeysApi
     /**
      * Create request for operation 'updateApiKey'
      *
-     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      * @param  string $key The API key to be updated. (required)
+     * @param  \Swagger\Client\Model\ApiKeyChangeRequest $api_key_change The new values to apply. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateApiKeyRequest($api_key_change, $key)
+    protected function updateApiKeyRequest($key, $api_key_change)
     {
-        // verify the required parameter 'api_key_change' is set
-        if ($api_key_change === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $api_key_change when calling updateApiKey'
-            );
-        }
         // verify the required parameter 'key' is set
         if ($key === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $key when calling updateApiKey'
+            );
+        }
+        // verify the required parameter 'api_key_change' is set
+        if ($api_key_change === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_key_change when calling updateApiKey'
             );
         }
 

@@ -87,7 +87,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addUserRoles**
-> addUserRoles($change_role_request, $organization_id, $username)
+> addUserRoles($organization_id, $username, $change_role_request)
 
 Add role(s) to user
 
@@ -107,12 +107,12 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $apiInstance->addUserRoles($change_role_request, $organization_id, $username);
+    $apiInstance->addUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->addUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -123,9 +123,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $label, $label_prefix, $limit, $offset, $type)
+> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -538,14 +538,14 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
+$type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
-$type = "type_example"; // string | Filter by this type
 
 try {
-    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $label, $label_prefix, $limit, $offset, $type);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -558,11 +558,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization |
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
+ **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
  **label_prefix** | **string**| Filter by this label prefix | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
- **type** | **string**| Filter by this type | [optional]
 
 ### Return type
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllOrganizationRoles**
-> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $limit, $offset)
+> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $offset, $limit)
 
 List users and their roles
 
@@ -603,11 +603,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | organizationId
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getAllOrganizationRoles($organization_id, $limit, $offset);
+    $result = $apiInstance->getAllOrganizationRoles($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getAllOrganizationRoles: ', $e->getMessage(), PHP_EOL;
@@ -620,8 +620,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| organizationId |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrganizationsOfUser**
-> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($limit, $offset, $role)
+> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($role, $offset, $limit)
 
 Retrieve organizations of user
 
@@ -714,12 +714,12 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
 $role = "role_example"; // string | role
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getOrganizationsOfUser($limit, $offset, $role);
+    $result = $apiInstance->getOrganizationsOfUser($role, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getOrganizationsOfUser: ', $e->getMessage(), PHP_EOL;
@@ -731,9 +731,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **role** | **string**| role | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPartnerOrganizations**
-> \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization getPartnerOrganizations($organization_id, $limit, $offset)
+> \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization getPartnerOrganizations($organization_id, $offset, $limit)
 
 Get partners of an organization
 
@@ -774,11 +774,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization to query partner organizations
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getPartnerOrganizations($organization_id, $limit, $offset);
+    $result = $apiInstance->getPartnerOrganizations($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getPartnerOrganizations: ', $e->getMessage(), PHP_EOL;
@@ -791,8 +791,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization to query partner organizations |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRoles**
-> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $limit, $offset)
+> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $offset, $limit)
 
 Get user roles by username
 
@@ -832,11 +832,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
 );
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getUserRoles($organization_id, $username, $limit, $offset);
+    $result = $apiInstance->getUserRoles($organization_id, $username, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUserRoles: ', $e->getMessage(), PHP_EOL;
@@ -850,8 +850,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsersOfOrganization**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $limit, $offset)
+> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $offset, $limit)
 
 Find users in organization
 
@@ -892,11 +892,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     $config
 );
 $organization_id = "organization_id_example"; // string | organizationId
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->getUsersOfOrganization($organization_id, $limit, $offset);
+    $result = $apiInstance->getUsersOfOrganization($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->getUsersOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -909,8 +909,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **string**| organizationId |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUsers**
-> inviteUsers($invitation_list, $organization_id)
+> inviteUsers($organization_id, $invitation_list)
 
 Invite Users
 
@@ -948,11 +948,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 $organization_id = "organization_id_example"; // string | The namespace of the organization where users should be invited
+$invitation_list = new \Swagger\Client\Model\OrganizationUserInvitationListRequest(); // \Swagger\Client\Model\OrganizationUserInvitationListRequest | invitationList
 
 try {
-    $apiInstance->inviteUsers($invitation_list, $organization_id);
+    $apiInstance->inviteUsers($organization_id, $invitation_list);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->inviteUsers: ', $e->getMessage(), PHP_EOL;
 }
@@ -963,8 +963,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
  **organization_id** | **string**| The namespace of the organization where users should be invited |
+ **invitation_list** | [**\Swagger\Client\Model\OrganizationUserInvitationListRequest**](../Model/OrganizationUserInvitationListRequest.md)| invitationList |
 
 ### Return type
 
@@ -982,7 +982,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCountries**
-> \Swagger\Client\Model\PaginatedCountryResponse listCountries($limit, $offset)
+> \Swagger\Client\Model\PaginatedCountryResponse listCountries($offset, $limit)
 
 List countries
 
@@ -1002,11 +1002,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listCountries($limit, $offset);
+    $result = $apiInstance->listCountries($offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->listCountries: ', $e->getMessage(), PHP_EOL;
@@ -1018,8 +1018,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1093,7 +1093,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeUserRoles**
-> removeUserRoles($change_role_request, $organization_id, $username)
+> removeUserRoles($organization_id, $username, $change_role_request)
 
 Remove role(s) from user
 
@@ -1113,12 +1113,12 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 $organization_id = "organization_id_example"; // string | The namespace of the organization
 $username = "username_example"; // string | username
+$change_role_request = new \Swagger\Client\Model\ChangeRoleRequest(); // \Swagger\Client\Model\ChangeRoleRequest | changeRoleRequest
 
 try {
-    $apiInstance->removeUserRoles($change_role_request, $organization_id, $username);
+    $apiInstance->removeUserRoles($organization_id, $username, $change_role_request);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->removeUserRoles: ', $e->getMessage(), PHP_EOL;
 }
@@ -1129,9 +1129,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
  **organization_id** | **string**| The namespace of the organization |
  **username** | **string**| username |
+ **change_role_request** | [**\Swagger\Client\Model\ChangeRoleRequest**](../Model/ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 
@@ -1149,7 +1149,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setOrganizationLogo**
-> \Swagger\Client\Model\PublicImagePresentation setOrganizationLogo($file, $organization_id)
+> \Swagger\Client\Model\PublicImagePresentation setOrganizationLogo($organization_id, $file)
 
 Update organization logo
 
@@ -1171,11 +1171,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
 $organization_id = "organization_id_example"; // string | The namespace of the organization where the logo should be updated.
+$file = "/path/to/file.txt"; // \SplFileObject | An image containing the new logo.
 
 try {
-    $result = $apiInstance->setOrganizationLogo($file, $organization_id);
+    $result = $apiInstance->setOrganizationLogo($organization_id, $file);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->setOrganizationLogo: ', $e->getMessage(), PHP_EOL;
@@ -1187,8 +1187,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **\SplFileObject**| An image containing the new logo. |
  **organization_id** | **string**| The namespace of the organization where the logo should be updated. |
+ **file** | **\SplFileObject**| An image containing the new logo. |
 
 ### Return type
 
@@ -1261,7 +1261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationAddress**
-> \Swagger\Client\Model\OrganizationAddress updateOrganizationAddress($address_resource, $organization_id)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationAddress($organization_id, $address_resource)
 
 Store address
 
@@ -1281,11 +1281,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 $organization_id = "organization_id_example"; // string | organizationId
+$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 
 try {
-    $result = $apiInstance->updateOrganizationAddress($address_resource, $organization_id);
+    $result = $apiInstance->updateOrganizationAddress($organization_id, $address_resource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationAddress: ', $e->getMessage(), PHP_EOL;
@@ -1297,8 +1297,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
  **organization_id** | **string**| organizationId |
+ **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
 
 ### Return type
 
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrganizationBillingAddress**
-> \Swagger\Client\Model\OrganizationAddress updateOrganizationBillingAddress($address_resource, $organization_id)
+> \Swagger\Client\Model\OrganizationAddress updateOrganizationBillingAddress($organization_id, $address_resource)
 
 Store billing address
 
@@ -1336,11 +1336,11 @@ $apiInstance = new Swagger\Client\Api\OrganizationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 $organization_id = "organization_id_example"; // string | organizationId
+$address_resource = new \Swagger\Client\Model\OrganizationAddress(); // \Swagger\Client\Model\OrganizationAddress | addressResource
 
 try {
-    $result = $apiInstance->updateOrganizationBillingAddress($address_resource, $organization_id);
+    $result = $apiInstance->updateOrganizationBillingAddress($organization_id, $address_resource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationsApi->updateOrganizationBillingAddress: ', $e->getMessage(), PHP_EOL;
@@ -1352,8 +1352,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
  **organization_id** | **string**| organizationId |
+ **address_resource** | [**\Swagger\Client\Model\OrganizationAddress**](../Model/OrganizationAddress.md)| addressResource |
 
 ### Return type
 

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **addApiKeyPrivilege**
-> addApiKeyPrivilege($add_api_key_privilege_request, $key)
+> addApiKeyPrivilege($key, $add_api_key_privilege_request)
 
 Add privilege
 
@@ -39,11 +39,11 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$add_api_key_privilege_request = new \Swagger\Client\Model\AddApiKeyPrivilegeRequest(); // \Swagger\Client\Model\AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 $key = "key_example"; // string | key
+$add_api_key_privilege_request = new \Swagger\Client\Model\AddApiKeyPrivilegeRequest(); // \Swagger\Client\Model\AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 
 try {
-    $apiInstance->addApiKeyPrivilege($add_api_key_privilege_request, $key);
+    $apiInstance->addApiKeyPrivilege($key, $add_api_key_privilege_request);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilege: ', $e->getMessage(), PHP_EOL;
 }
@@ -54,8 +54,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **add_api_key_privilege_request** | [**\Swagger\Client\Model\AddApiKeyPrivilegeRequest**](../Model/AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
  **key** | **string**| key |
+ **add_api_key_privilege_request** | [**\Swagger\Client\Model\AddApiKeyPrivilegeRequest**](../Model/AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
 
 ### Return type
 
@@ -73,7 +73,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addApiKeyPrivilegeForId4ns**
-> addApiKeyPrivilegeForId4ns($id4ns, $key, $privilege)
+> addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Add ID4ns of a privilege
 
@@ -93,12 +93,12 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
+$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 
 try {
-    $apiInstance->addApiKeyPrivilegeForId4ns($id4ns, $key, $privilege);
+    $apiInstance->addApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->addApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
@@ -109,9 +109,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
  **key** | **string**| key |
  **privilege** | **string**| privilege |
+ **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
 
 ### Return type
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges($id4n_concerning, $limit, $offset)
+> \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges($id4n_concerning, $offset, $limit)
 
 List all privileges
 
@@ -316,11 +316,11 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     $config
 );
 $id4n_concerning = true; // bool | id4nConcerning
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllApiKeyPrivileges($id4n_concerning, $limit, $offset);
+    $result = $apiInstance->listAllApiKeyPrivileges($id4n_concerning, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listAllApiKeyPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -333,8 +333,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n_concerning** | **bool**| id4nConcerning | [optional]
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeysOfOrganization**
-> \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($limit, $offset, $organization_id)
+> \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($organization_id, $offset, $limit)
 
 Find API key by organization
 
@@ -374,12 +374,12 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
 $organization_id = "organization_id_example"; // string | The namespace of the organization to search in.
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllApiKeysOfOrganization($limit, $offset, $organization_id);
+    $result = $apiInstance->listAllApiKeysOfOrganization($organization_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listAllApiKeysOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -391,9 +391,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **organization_id** | **string**| The namespace of the organization to search in. | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges($key, $limit, $offset)
+> \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges($key, $offset, $limit)
 
 List privileges
 
@@ -432,11 +432,11 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     $config
 );
 $key = "key_example"; // string | key
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listApiKeyPrivileges($key, $limit, $offset);
+    $result = $apiInstance->listApiKeyPrivileges($key, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listApiKeyPrivileges: ', $e->getMessage(), PHP_EOL;
@@ -449,8 +449,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listId4ns**
-> \Swagger\Client\Model\Id4nPresentationPaginatedResponse listId4ns($key, $privilege, $limit, $offset)
+> \Swagger\Client\Model\Id4nPresentationPaginatedResponse listId4ns($key, $privilege, $offset, $limit)
 
 ID4ns of a privilege
 
@@ -492,11 +492,11 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
 );
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listId4ns($key, $privilege, $limit, $offset);
+    $result = $apiInstance->listId4ns($key, $privilege, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->listId4ns: ', $e->getMessage(), PHP_EOL;
@@ -510,8 +510,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key |
  **privilege** | **string**| privilege |
- **limit** | **int**| The maximum count of returned elements | [optional]
  **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -583,7 +583,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeApiKeyPrivilegeForId4ns**
-> removeApiKeyPrivilegeForId4ns($id4ns, $key, $privilege)
+> removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns)
 
 Remove id4ns of a privilege
 
@@ -603,12 +603,12 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 $key = "key_example"; // string | key
 $privilege = "privilege_example"; // string | privilege
+$id4ns = new \Swagger\Client\Model\ListOfId4ns(); // \Swagger\Client\Model\ListOfId4ns | id4ns
 
 try {
-    $apiInstance->removeApiKeyPrivilegeForId4ns($id4ns, $key, $privilege);
+    $apiInstance->removeApiKeyPrivilegeForId4ns($key, $privilege, $id4ns);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->removeApiKeyPrivilegeForId4ns: ', $e->getMessage(), PHP_EOL;
 }
@@ -619,9 +619,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
  **key** | **string**| key |
  **privilege** | **string**| privilege |
+ **id4ns** | [**\Swagger\Client\Model\ListOfId4ns**](../Model/ListOfId4ns.md)| id4ns |
 
 ### Return type
 
@@ -639,7 +639,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateApiKey**
-> updateApiKey($api_key_change, $key)
+> updateApiKey($key, $api_key_change)
 
 Update API keys
 
@@ -661,11 +661,11 @@ $apiInstance = new Swagger\Client\Api\ApiKeysApi(
     new GuzzleHttp\Client(),
     $config
 );
-$api_key_change = new \Swagger\Client\Model\ApiKeyChangeRequest(); // \Swagger\Client\Model\ApiKeyChangeRequest | The new values to apply.
 $key = "key_example"; // string | The API key to be updated.
+$api_key_change = new \Swagger\Client\Model\ApiKeyChangeRequest(); // \Swagger\Client\Model\ApiKeyChangeRequest | The new values to apply.
 
 try {
-    $apiInstance->updateApiKey($api_key_change, $key);
+    $apiInstance->updateApiKey($key, $api_key_change);
 } catch (Exception $e) {
     echo 'Exception when calling ApiKeysApi->updateApiKey: ', $e->getMessage(), PHP_EOL;
 }
@@ -676,8 +676,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key_change** | [**\Swagger\Client\Model\ApiKeyChangeRequest**](../Model/ApiKeyChangeRequest.md)| The new values to apply. |
  **key** | **string**| The API key to be updated. |
+ **api_key_change** | [**\Swagger\Client\Model\ApiKeyChangeRequest**](../Model/ApiKeyChangeRequest.md)| The new values to apply. |
 
 ### Return type
 

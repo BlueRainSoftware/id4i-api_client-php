@@ -89,16 +89,16 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  string $organization_id organizationId (optional)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Route[]
      */
-    public function getAllRoutes($id4n, $type, $interpolate = 'true', $organization_id = null)
+    public function getAllRoutes($id4n, $type, $organization_id = null, $interpolate = 'true')
     {
-        list($response) = $this->getAllRoutesWithHttpInfo($id4n, $type, $interpolate, $organization_id);
+        list($response) = $this->getAllRoutesWithHttpInfo($id4n, $type, $organization_id, $interpolate);
         return $response;
     }
 
@@ -109,17 +109,17 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  string $organization_id organizationId (optional)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Route[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllRoutesWithHttpInfo($id4n, $type, $interpolate = 'true', $organization_id = null)
+    public function getAllRoutesWithHttpInfo($id4n, $type, $organization_id = null, $interpolate = 'true')
     {
         $returnType = '\Swagger\Client\Model\Route[]';
-        $request = $this->getAllRoutesRequest($id4n, $type, $interpolate, $organization_id);
+        $request = $this->getAllRoutesRequest($id4n, $type, $organization_id, $interpolate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -243,15 +243,15 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  string $organization_id organizationId (optional)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllRoutesAsync($id4n, $type, $interpolate = 'true', $organization_id = null)
+    public function getAllRoutesAsync($id4n, $type, $organization_id = null, $interpolate = 'true')
     {
-        return $this->getAllRoutesAsyncWithHttpInfo($id4n, $type, $interpolate, $organization_id)
+        return $this->getAllRoutesAsyncWithHttpInfo($id4n, $type, $organization_id, $interpolate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,16 +266,16 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  string $organization_id organizationId (optional)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllRoutesAsyncWithHttpInfo($id4n, $type, $interpolate = 'true', $organization_id = null)
+    public function getAllRoutesAsyncWithHttpInfo($id4n, $type, $organization_id = null, $interpolate = 'true')
     {
         $returnType = '\Swagger\Client\Model\Route[]';
-        $request = $this->getAllRoutesRequest($id4n, $type, $interpolate, $organization_id);
+        $request = $this->getAllRoutesRequest($id4n, $type, $organization_id, $interpolate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -319,13 +319,13 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  string $organization_id organizationId (optional)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllRoutesRequest($id4n, $type, $interpolate = 'true', $organization_id = null)
+    protected function getAllRoutesRequest($id4n, $type, $organization_id = null, $interpolate = 'true')
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -348,12 +348,12 @@ class RoutingApi
         $multipart = false;
 
         // query params
-        if ($interpolate !== null) {
-            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
-        }
-        // query params
         if ($organization_id !== null) {
             $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+        // query params
+        if ($interpolate !== null) {
+            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
         }
 
         // path params
@@ -449,17 +449,17 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  bool $private_routes privateRoutes (optional, default to true)
      * @param  bool $public_routes publicRoutes (optional, default to true)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Route
      */
-    public function getRoute($id4n, $type, $interpolate = 'true', $private_routes = 'true', $public_routes = 'true')
+    public function getRoute($id4n, $type, $private_routes = 'true', $public_routes = 'true', $interpolate = 'true')
     {
-        list($response) = $this->getRouteWithHttpInfo($id4n, $type, $interpolate, $private_routes, $public_routes);
+        list($response) = $this->getRouteWithHttpInfo($id4n, $type, $private_routes, $public_routes, $interpolate);
         return $response;
     }
 
@@ -470,18 +470,18 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  bool $private_routes privateRoutes (optional, default to true)
      * @param  bool $public_routes publicRoutes (optional, default to true)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Route, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRouteWithHttpInfo($id4n, $type, $interpolate = 'true', $private_routes = 'true', $public_routes = 'true')
+    public function getRouteWithHttpInfo($id4n, $type, $private_routes = 'true', $public_routes = 'true', $interpolate = 'true')
     {
         $returnType = '\Swagger\Client\Model\Route';
-        $request = $this->getRouteRequest($id4n, $type, $interpolate, $private_routes, $public_routes);
+        $request = $this->getRouteRequest($id4n, $type, $private_routes, $public_routes, $interpolate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -605,16 +605,16 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  bool $private_routes privateRoutes (optional, default to true)
      * @param  bool $public_routes publicRoutes (optional, default to true)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRouteAsync($id4n, $type, $interpolate = 'true', $private_routes = 'true', $public_routes = 'true')
+    public function getRouteAsync($id4n, $type, $private_routes = 'true', $public_routes = 'true', $interpolate = 'true')
     {
-        return $this->getRouteAsyncWithHttpInfo($id4n, $type, $interpolate, $private_routes, $public_routes)
+        return $this->getRouteAsyncWithHttpInfo($id4n, $type, $private_routes, $public_routes, $interpolate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -629,17 +629,17 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  bool $private_routes privateRoutes (optional, default to true)
      * @param  bool $public_routes publicRoutes (optional, default to true)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRouteAsyncWithHttpInfo($id4n, $type, $interpolate = 'true', $private_routes = 'true', $public_routes = 'true')
+    public function getRouteAsyncWithHttpInfo($id4n, $type, $private_routes = 'true', $public_routes = 'true', $interpolate = 'true')
     {
         $returnType = '\Swagger\Client\Model\Route';
-        $request = $this->getRouteRequest($id4n, $type, $interpolate, $private_routes, $public_routes);
+        $request = $this->getRouteRequest($id4n, $type, $private_routes, $public_routes, $interpolate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -683,14 +683,14 @@ class RoutingApi
      *
      * @param  string $id4n id4n (required)
      * @param  string $type The type of route you want to have (required)
-     * @param  bool $interpolate interpolate (optional, default to true)
      * @param  bool $private_routes privateRoutes (optional, default to true)
      * @param  bool $public_routes publicRoutes (optional, default to true)
+     * @param  bool $interpolate interpolate (optional, default to true)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRouteRequest($id4n, $type, $interpolate = 'true', $private_routes = 'true', $public_routes = 'true')
+    protected function getRouteRequest($id4n, $type, $private_routes = 'true', $public_routes = 'true', $interpolate = 'true')
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -713,16 +713,16 @@ class RoutingApi
         $multipart = false;
 
         // query params
-        if ($interpolate !== null) {
-            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
-        }
-        // query params
         if ($private_routes !== null) {
             $queryParams['privateRoutes'] = ObjectSerializer::toQueryValue($private_routes);
         }
         // query params
         if ($public_routes !== null) {
             $queryParams['publicRoutes'] = ObjectSerializer::toQueryValue($public_routes);
+        }
+        // query params
+        if ($interpolate !== null) {
+            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
         }
 
         // path params
@@ -1148,16 +1148,16 @@ class RoutingApi
      *
      * Store routing file
      *
-     * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
+     * @param  string $id4n id4n (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateRoutingFile($id4n, $rfr)
+    public function updateRoutingFile($rfr, $id4n)
     {
-        $this->updateRoutingFileWithHttpInfo($id4n, $rfr);
+        $this->updateRoutingFileWithHttpInfo($rfr, $id4n);
     }
 
     /**
@@ -1165,17 +1165,17 @@ class RoutingApi
      *
      * Store routing file
      *
-     * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
+     * @param  string $id4n id4n (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateRoutingFileWithHttpInfo($id4n, $rfr)
+    public function updateRoutingFileWithHttpInfo($rfr, $id4n)
     {
         $returnType = '';
-        $request = $this->updateRoutingFileRequest($id4n, $rfr);
+        $request = $this->updateRoutingFileRequest($rfr, $id4n);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1291,15 +1291,15 @@ class RoutingApi
      *
      * Store routing file
      *
-     * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
+     * @param  string $id4n id4n (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRoutingFileAsync($id4n, $rfr)
+    public function updateRoutingFileAsync($rfr, $id4n)
     {
-        return $this->updateRoutingFileAsyncWithHttpInfo($id4n, $rfr)
+        return $this->updateRoutingFileAsyncWithHttpInfo($rfr, $id4n)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1312,16 +1312,16 @@ class RoutingApi
      *
      * Store routing file
      *
-     * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
+     * @param  string $id4n id4n (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRoutingFileAsyncWithHttpInfo($id4n, $rfr)
+    public function updateRoutingFileAsyncWithHttpInfo($rfr, $id4n)
     {
         $returnType = '';
-        $request = $this->updateRoutingFileRequest($id4n, $rfr);
+        $request = $this->updateRoutingFileRequest($rfr, $id4n);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1349,24 +1349,24 @@ class RoutingApi
     /**
      * Create request for operation 'updateRoutingFile'
      *
-     * @param  string $id4n id4n (required)
      * @param  \Swagger\Client\Model\RoutingFileRequest $rfr rfr (required)
+     * @param  string $id4n id4n (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateRoutingFileRequest($id4n, $rfr)
+    protected function updateRoutingFileRequest($rfr, $id4n)
     {
-        // verify the required parameter 'id4n' is set
-        if ($id4n === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id4n when calling updateRoutingFile'
-            );
-        }
         // verify the required parameter 'rfr' is set
         if ($rfr === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $rfr when calling updateRoutingFile'
+            );
+        }
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling updateRoutingFile'
             );
         }
 

@@ -87,17 +87,17 @@ class PublicServicesApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Document
      */
-    public function getPublicDocument($file_name, $id4n, $organization_id)
+    public function getPublicDocument($organization_id, $id4n, $file_name)
     {
-        list($response) = $this->getPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id);
+        list($response) = $this->getPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name);
         return $response;
     }
 
@@ -106,18 +106,18 @@ class PublicServicesApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id)
+    public function getPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getPublicDocumentRequest($file_name, $id4n, $organization_id);
+        $request = $this->getPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -239,16 +239,16 @@ class PublicServicesApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicDocumentAsync($file_name, $id4n, $organization_id)
+    public function getPublicDocumentAsync($organization_id, $id4n, $file_name)
     {
-        return $this->getPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
+        return $this->getPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -261,17 +261,17 @@ class PublicServicesApi
      *
      * Retrieve a public document (meta-data only, no content)
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
+    public function getPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
         $returnType = '\Swagger\Client\Model\Document';
-        $request = $this->getPublicDocumentRequest($file_name, $id4n, $organization_id);
+        $request = $this->getPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,19 +313,19 @@ class PublicServicesApi
     /**
      * Create request for operation 'getPublicDocument'
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPublicDocumentRequest($file_name, $id4n, $organization_id)
+    protected function getPublicDocumentRequest($organization_id, $id4n, $file_name)
     {
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling getPublicDocument'
+                'Missing the required parameter $organization_id when calling getPublicDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -334,10 +334,10 @@ class PublicServicesApi
                 'Missing the required parameter $id4n when calling getPublicDocument'
             );
         }
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling getPublicDocument'
+                'Missing the required parameter $file_name when calling getPublicDocument'
             );
         }
 
@@ -350,10 +350,10 @@ class PublicServicesApi
 
 
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -366,10 +366,10 @@ class PublicServicesApi
             );
         }
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }
@@ -704,12 +704,12 @@ class PublicServicesApi
         $multipart = false;
 
         // query params
-        if ($interpolate !== null) {
-            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
-        }
-        // query params
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($interpolate !== null) {
+            $queryParams['interpolate'] = ObjectSerializer::toQueryValue($interpolate);
         }
 
         // path params
@@ -1077,18 +1077,18 @@ class PublicServicesApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedDocumentResponse
      */
-    public function listAllPublicDocuments($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
+    public function listAllPublicDocuments($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
-        list($response) = $this->listAllPublicDocumentsWithHttpInfo($id4n, $limit, $offset, $organization_id, $owner);
+        list($response) = $this->listAllPublicDocumentsWithHttpInfo($id4n, $organization_id, $owner, $offset, $limit);
         return $response;
     }
 
@@ -1098,19 +1098,19 @@ class PublicServicesApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllPublicDocumentsWithHttpInfo($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
+    public function listAllPublicDocumentsWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllPublicDocumentsRequest($id4n, $limit, $offset, $organization_id, $owner);
+        $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1233,17 +1233,17 @@ class PublicServicesApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPublicDocumentsAsync($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
+    public function listAllPublicDocumentsAsync($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
-        return $this->listAllPublicDocumentsAsyncWithHttpInfo($id4n, $limit, $offset, $organization_id, $owner)
+        return $this->listAllPublicDocumentsAsyncWithHttpInfo($id4n, $organization_id, $owner, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1257,18 +1257,18 @@ class PublicServicesApi
      * List public documents
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPublicDocumentsAsyncWithHttpInfo($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
+    public function listAllPublicDocumentsAsyncWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
-        $request = $this->listAllPublicDocumentsRequest($id4n, $limit, $offset, $organization_id, $owner);
+        $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1311,15 +1311,15 @@ class PublicServicesApi
      * Create request for operation 'listAllPublicDocuments'
      *
      * @param  string $id4n id4n (required)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization_id organizationId (optional)
      * @param  string $owner Filter by owner organization (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAllPublicDocumentsRequest($id4n, $limit = null, $offset = null, $organization_id = null, $owner = null)
+    protected function listAllPublicDocumentsRequest($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -1327,13 +1327,6 @@ class PublicServicesApi
                 'Missing the required parameter $id4n when calling listAllPublicDocuments'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling PublicServicesApi.listAllPublicDocuments, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling PublicServicesApi.listAllPublicDocuments, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/public/documents/{id4n}';
         $formParams = [];
@@ -1343,20 +1336,20 @@ class PublicServicesApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // query params
         if ($organization_id !== null) {
             $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
         }
         // query params
         if ($owner !== null) {
             $queryParams['owner'] = ObjectSerializer::toQueryValue($owner);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -1443,16 +1436,16 @@ class PublicServicesApi
      * Shows the public history of the given GUID
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function listPublicHistory($id4n, $limit = null, $offset = null)
+    public function listPublicHistory($id4n, $offset = null, $limit = null)
     {
-        list($response) = $this->listPublicHistoryWithHttpInfo($id4n, $limit, $offset);
+        list($response) = $this->listPublicHistoryWithHttpInfo($id4n, $offset, $limit);
         return $response;
     }
 
@@ -1462,17 +1455,17 @@ class PublicServicesApi
      * Shows the public history of the given GUID
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPublicHistoryWithHttpInfo($id4n, $limit = null, $offset = null)
+    public function listPublicHistoryWithHttpInfo($id4n, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->listPublicHistoryRequest($id4n, $limit, $offset);
+        $request = $this->listPublicHistoryRequest($id4n, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1595,15 +1588,15 @@ class PublicServicesApi
      * Shows the public history of the given GUID
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPublicHistoryAsync($id4n, $limit = null, $offset = null)
+    public function listPublicHistoryAsync($id4n, $offset = null, $limit = null)
     {
-        return $this->listPublicHistoryAsyncWithHttpInfo($id4n, $limit, $offset)
+        return $this->listPublicHistoryAsyncWithHttpInfo($id4n, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1617,16 +1610,16 @@ class PublicServicesApi
      * Shows the public history of the given GUID
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPublicHistoryAsyncWithHttpInfo($id4n, $limit = null, $offset = null)
+    public function listPublicHistoryAsyncWithHttpInfo($id4n, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->listPublicHistoryRequest($id4n, $limit, $offset);
+        $request = $this->listPublicHistoryRequest($id4n, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1669,13 +1662,13 @@ class PublicServicesApi
      * Create request for operation 'listPublicHistory'
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listPublicHistoryRequest($id4n, $limit = null, $offset = null)
+    protected function listPublicHistoryRequest($id4n, $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -1683,13 +1676,6 @@ class PublicServicesApi
                 'Missing the required parameter $id4n when calling listPublicHistory'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling PublicServicesApi.listPublicHistory, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling PublicServicesApi.listPublicHistory, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/public/history/{id4n}';
         $formParams = [];
@@ -1699,12 +1685,12 @@ class PublicServicesApi
         $multipart = false;
 
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -2113,17 +2099,17 @@ class PublicServicesApi
      *
      * Read public document contents
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function readPublicDocument($file_name, $id4n, $organization_id)
+    public function readPublicDocument($organization_id, $id4n, $file_name)
     {
-        list($response) = $this->readPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id);
+        list($response) = $this->readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name);
         return $response;
     }
 
@@ -2132,18 +2118,18 @@ class PublicServicesApi
      *
      * Read public document contents
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function readPublicDocumentWithHttpInfo($file_name, $id4n, $organization_id)
+    public function readPublicDocumentWithHttpInfo($organization_id, $id4n, $file_name)
     {
         $returnType = 'string';
-        $request = $this->readPublicDocumentRequest($file_name, $id4n, $organization_id);
+        $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2265,16 +2251,16 @@ class PublicServicesApi
      *
      * Read public document contents
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readPublicDocumentAsync($file_name, $id4n, $organization_id)
+    public function readPublicDocumentAsync($organization_id, $id4n, $file_name)
     {
-        return $this->readPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
+        return $this->readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2287,17 +2273,17 @@ class PublicServicesApi
      *
      * Read public document contents
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function readPublicDocumentAsyncWithHttpInfo($file_name, $id4n, $organization_id)
+    public function readPublicDocumentAsyncWithHttpInfo($organization_id, $id4n, $file_name)
     {
         $returnType = 'string';
-        $request = $this->readPublicDocumentRequest($file_name, $id4n, $organization_id);
+        $request = $this->readPublicDocumentRequest($organization_id, $id4n, $file_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2339,19 +2325,19 @@ class PublicServicesApi
     /**
      * Create request for operation 'readPublicDocument'
      *
-     * @param  string $file_name fileName (required)
-     * @param  string $id4n id4n (required)
      * @param  string $organization_id organizationId (required)
+     * @param  string $id4n id4n (required)
+     * @param  string $file_name fileName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function readPublicDocumentRequest($file_name, $id4n, $organization_id)
+    protected function readPublicDocumentRequest($organization_id, $id4n, $file_name)
     {
-        // verify the required parameter 'file_name' is set
-        if ($file_name === null) {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file_name when calling readPublicDocument'
+                'Missing the required parameter $organization_id when calling readPublicDocument'
             );
         }
         // verify the required parameter 'id4n' is set
@@ -2360,10 +2346,10 @@ class PublicServicesApi
                 'Missing the required parameter $id4n when calling readPublicDocument'
             );
         }
-        // verify the required parameter 'organization_id' is set
-        if ($organization_id === null) {
+        // verify the required parameter 'file_name' is set
+        if ($file_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization_id when calling readPublicDocument'
+                'Missing the required parameter $file_name when calling readPublicDocument'
             );
         }
 
@@ -2376,10 +2362,10 @@ class PublicServicesApi
 
 
         // path params
-        if ($file_name !== null) {
+        if ($organization_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'fileName' . '}',
-                ObjectSerializer::toPathValue($file_name),
+                '{' . 'organizationId' . '}',
+                ObjectSerializer::toPathValue($organization_id),
                 $resourcePath
             );
         }
@@ -2392,10 +2378,10 @@ class PublicServicesApi
             );
         }
         // path params
-        if ($organization_id !== null) {
+        if ($file_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'organizationId' . '}',
-                ObjectSerializer::toPathValue($organization_id),
+                '{' . 'fileName' . '}',
+                ObjectSerializer::toPathValue($file_name),
                 $resourcePath
             );
         }

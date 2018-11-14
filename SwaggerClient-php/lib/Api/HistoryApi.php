@@ -87,16 +87,16 @@ class HistoryApi
      *
      * Add history item
      *
-     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addItem($history_item, $id4n)
+    public function addItem($id4n, $history_item)
     {
-        $this->addItemWithHttpInfo($history_item, $id4n);
+        $this->addItemWithHttpInfo($id4n, $history_item);
     }
 
     /**
@@ -104,17 +104,17 @@ class HistoryApi
      *
      * Add history item
      *
-     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addItemWithHttpInfo($history_item, $id4n)
+    public function addItemWithHttpInfo($id4n, $history_item)
     {
         $returnType = '';
-        $request = $this->addItemRequest($history_item, $id4n);
+        $request = $this->addItemRequest($id4n, $history_item);
 
         try {
             $options = $this->createHttpClientOption();
@@ -230,15 +230,15 @@ class HistoryApi
      *
      * Add history item
      *
-     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addItemAsync($history_item, $id4n)
+    public function addItemAsync($id4n, $history_item)
     {
-        return $this->addItemAsyncWithHttpInfo($history_item, $id4n)
+        return $this->addItemAsyncWithHttpInfo($id4n, $history_item)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,16 +251,16 @@ class HistoryApi
      *
      * Add history item
      *
-     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addItemAsyncWithHttpInfo($history_item, $id4n)
+    public function addItemAsyncWithHttpInfo($id4n, $history_item)
     {
         $returnType = '';
-        $request = $this->addItemRequest($history_item, $id4n);
+        $request = $this->addItemRequest($id4n, $history_item);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -288,24 +288,24 @@ class HistoryApi
     /**
      * Create request for operation 'addItem'
      *
-     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      * @param  string $id4n GUID to retrieve the history for (required)
+     * @param  \Swagger\Client\Model\HistoryItem $history_item The history item to publish (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addItemRequest($history_item, $id4n)
+    protected function addItemRequest($id4n, $history_item)
     {
-        // verify the required parameter 'history_item' is set
-        if ($history_item === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $history_item when calling addItem'
-            );
-        }
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id4n when calling addItem'
+            );
+        }
+        // verify the required parameter 'history_item' is set
+        if ($history_item === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $history_item when calling addItem'
             );
         }
 
@@ -406,16 +406,16 @@ class HistoryApi
      * @param  string $id4n GUID to retrieve the history for (required)
      * @param  string $organization_id organizationId (required)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function callList($id4n, $organization_id, $include_private = 'true', $limit = null, $offset = null)
+    public function callList($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        list($response) = $this->callListWithHttpInfo($id4n, $organization_id, $include_private, $limit, $offset);
+        list($response) = $this->callListWithHttpInfo($id4n, $organization_id, $include_private, $offset, $limit);
         return $response;
     }
 
@@ -427,17 +427,17 @@ class HistoryApi
      * @param  string $id4n GUID to retrieve the history for (required)
      * @param  string $organization_id organizationId (required)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function callListWithHttpInfo($id4n, $organization_id, $include_private = 'true', $limit = null, $offset = null)
+    public function callListWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->callListRequest($id4n, $organization_id, $include_private, $limit, $offset);
+        $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -562,15 +562,15 @@ class HistoryApi
      * @param  string $id4n GUID to retrieve the history for (required)
      * @param  string $organization_id organizationId (required)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function callListAsync($id4n, $organization_id, $include_private = 'true', $limit = null, $offset = null)
+    public function callListAsync($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        return $this->callListAsyncWithHttpInfo($id4n, $organization_id, $include_private, $limit, $offset)
+        return $this->callListAsyncWithHttpInfo($id4n, $organization_id, $include_private, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -586,16 +586,16 @@ class HistoryApi
      * @param  string $id4n GUID to retrieve the history for (required)
      * @param  string $organization_id organizationId (required)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function callListAsyncWithHttpInfo($id4n, $organization_id, $include_private = 'true', $limit = null, $offset = null)
+    public function callListAsyncWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->callListRequest($id4n, $organization_id, $include_private, $limit, $offset);
+        $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -640,13 +640,13 @@ class HistoryApi
      * @param  string $id4n GUID to retrieve the history for (required)
      * @param  string $organization_id organizationId (required)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
      * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function callListRequest($id4n, $organization_id, $include_private = 'true', $limit = null, $offset = null)
+    protected function callListRequest($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -660,13 +660,6 @@ class HistoryApi
                 'Missing the required parameter $organization_id when calling callList'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling HistoryApi.callList, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling HistoryApi.callList, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/history/{id4n}/{organizationId}';
         $formParams = [];
@@ -680,12 +673,12 @@ class HistoryApi
             $queryParams['includePrivate'] = ObjectSerializer::toQueryValue($include_private);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params
@@ -780,22 +773,22 @@ class HistoryApi
      * List history
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
-     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
      * @param  string[] $type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
+     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
+     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
      */
-    public function filteredList($id4n, $from_date = null, $include_private = 'true', $limit = null, $offset = null, $organization = null, $qualifier = null, $to_date = null, $type = null)
+    public function filteredList($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        list($response) = $this->filteredListWithHttpInfo($id4n, $from_date, $include_private, $limit, $offset, $organization, $qualifier, $to_date, $type);
+        list($response) = $this->filteredListWithHttpInfo($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
         return $response;
     }
 
@@ -805,23 +798,23 @@ class HistoryApi
      * List history
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
-     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
      * @param  string[] $type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
+     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
+     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function filteredListWithHttpInfo($id4n, $from_date = null, $include_private = 'true', $limit = null, $offset = null, $organization = null, $qualifier = null, $to_date = null, $type = null)
+    public function filteredListWithHttpInfo($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->filteredListRequest($id4n, $from_date, $include_private, $limit, $offset, $organization, $qualifier, $to_date, $type);
+        $request = $this->filteredListRequest($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -944,21 +937,21 @@ class HistoryApi
      * List history
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
-     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
      * @param  string[] $type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
+     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
+     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function filteredListAsync($id4n, $from_date = null, $include_private = 'true', $limit = null, $offset = null, $organization = null, $qualifier = null, $to_date = null, $type = null)
+    public function filteredListAsync($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        return $this->filteredListAsyncWithHttpInfo($id4n, $from_date, $include_private, $limit, $offset, $organization, $qualifier, $to_date, $type)
+        return $this->filteredListAsyncWithHttpInfo($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -972,22 +965,22 @@ class HistoryApi
      * List history
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
-     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
      * @param  string[] $type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
+     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
+     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function filteredListAsyncWithHttpInfo($id4n, $from_date = null, $include_private = 'true', $limit = null, $offset = null, $organization = null, $qualifier = null, $to_date = null, $type = null)
+    public function filteredListAsyncWithHttpInfo($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
-        $request = $this->filteredListRequest($id4n, $from_date, $include_private, $limit, $offset, $organization, $qualifier, $to_date, $type);
+        $request = $this->filteredListRequest($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1030,19 +1023,19 @@ class HistoryApi
      * Create request for operation 'filteredList'
      *
      * @param  string $id4n GUID to retrieve the history for (required)
-     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
      * @param  bool $include_private Also return private history entries (optional, default to true)
-     * @param  int $limit The maximum count of returned elements (optional)
-     * @param  int $offset Start with the n-th element (optional)
      * @param  string $organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
-     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
      * @param  string[] $type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
+     * @param  string[] $qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param  \DateTime $from_date From date time as UTC Date-Time format (optional)
+     * @param  \DateTime $to_date To date time as UTC Date-Time format (optional)
+     * @param  int $offset Start with the n-th element (optional)
+     * @param  int $limit The maximum count of returned elements (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function filteredListRequest($id4n, $from_date = null, $include_private = 'true', $limit = null, $offset = null, $organization = null, $qualifier = null, $to_date = null, $type = null)
+    protected function filteredListRequest($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -1050,13 +1043,6 @@ class HistoryApi
                 'Missing the required parameter $id4n when calling filteredList'
             );
         }
-        if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling HistoryApi.filteredList, must be smaller than or equal to 1000.');
-        }
-        if ($limit !== null && $limit < 0) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling HistoryApi.filteredList, must be bigger than or equal to 0.');
-        }
-
 
         $resourcePath = '/api/v1/history/{id4n}';
         $formParams = [];
@@ -1066,24 +1052,19 @@ class HistoryApi
         $multipart = false;
 
         // query params
-        if ($from_date !== null) {
-            $queryParams['fromDate'] = ObjectSerializer::toQueryValue($from_date);
-        }
-        // query params
         if ($include_private !== null) {
             $queryParams['includePrivate'] = ObjectSerializer::toQueryValue($include_private);
         }
         // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
-        }
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // query params
         if ($organization !== null) {
             $queryParams['organization'] = ObjectSerializer::toQueryValue($organization);
+        }
+        // query params
+        if (is_array($type)) {
+            $type = ObjectSerializer::serializeCollection($type, 'multi', true);
+        }
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
         }
         // query params
         if (is_array($qualifier)) {
@@ -1093,15 +1074,20 @@ class HistoryApi
             $queryParams['qualifier'] = ObjectSerializer::toQueryValue($qualifier);
         }
         // query params
+        if ($from_date !== null) {
+            $queryParams['fromDate'] = ObjectSerializer::toQueryValue($from_date);
+        }
+        // query params
         if ($to_date !== null) {
             $queryParams['toDate'] = ObjectSerializer::toQueryValue($to_date);
         }
         // query params
-        if (is_array($type)) {
-            $type = ObjectSerializer::serializeCollection($type, 'multi', true);
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
-        if ($type !== null) {
-            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
         }
 
         // path params

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **createDocument**
-> \Swagger\Client\Model\Document createDocument($content, $id4n, $organization_id)
+> \Swagger\Client\Model\Document createDocument($organization_id, $id4n, $content)
 
 Create an empty document for an id4n
 
@@ -41,12 +41,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$content = "/path/to/file.txt"; // \SplFileObject | content
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$content = "/path/to/file.txt"; // \SplFileObject | content
 
 try {
-    $result = $apiInstance->createDocument($content, $id4n, $organization_id);
+    $result = $apiInstance->createDocument($organization_id, $id4n, $content);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->createDocument: ', $e->getMessage(), PHP_EOL;
@@ -58,9 +58,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content** | **\SplFileObject**| content |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **content** | **\SplFileObject**| content |
 
 ### Return type
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDocument**
-> deleteDocument($file_name, $id4n, $organization_id)
+> deleteDocument($organization_id, $id4n, $file_name)
 
 Delete a document
 
@@ -98,12 +98,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $apiInstance->deleteDocument($file_name, $id4n, $organization_id);
+    $apiInstance->deleteDocument($organization_id, $id4n, $file_name);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->deleteDocument: ', $e->getMessage(), PHP_EOL;
 }
@@ -114,9 +114,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -134,7 +134,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDocument**
-> \Swagger\Client\Model\Document getDocument($file_name, $id4n, $organization_id)
+> \Swagger\Client\Model\Document getDocument($organization_id, $id4n, $file_name)
 
 Retrieve a document (meta-data only, no content)
 
@@ -154,12 +154,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->getDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->getDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->getDocument: ', $e->getMessage(), PHP_EOL;
@@ -171,9 +171,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPublicDocument**
-> \Swagger\Client\Model\Document getPublicDocument($file_name, $id4n, $organization_id)
+> \Swagger\Client\Model\Document getPublicDocument($organization_id, $id4n, $file_name)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -211,12 +211,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->getPublicDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->getPublicDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->getPublicDocument: ', $e->getMessage(), PHP_EOL;
@@ -228,9 +228,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllDocuments($id4n, $limit, $offset, $owner)
+> \Swagger\Client\Model\PaginatedDocumentResponse listAllDocuments($id4n, $owner, $offset, $limit)
 
 List documents
 
@@ -271,12 +271,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
 $owner = "owner_example"; // string | Filter by owner organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllDocuments($id4n, $limit, $offset, $owner);
+    $result = $apiInstance->listAllDocuments($id4n, $owner, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->listAllDocuments: ', $e->getMessage(), PHP_EOL;
@@ -289,9 +289,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **owner** | **string**| Filter by owner organization | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllPublicDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $limit, $offset, $organization_id, $owner)
+> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
 
 List public documents
 
@@ -332,13 +332,13 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     $config
 );
 $id4n = "id4n_example"; // string | id4n
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
 $organization_id = "organization_id_example"; // string | organizationId
 $owner = "owner_example"; // string | Filter by owner organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listAllPublicDocuments($id4n, $limit, $offset, $organization_id, $owner);
+    $result = $apiInstance->listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->listAllPublicDocuments: ', $e->getMessage(), PHP_EOL;
@@ -351,10 +351,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n |
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
  **organization_id** | **string**| organizationId | [optional]
  **owner** | **string**| Filter by owner organization | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listDocuments($id4n, $organization_id, $limit, $offset, $owner)
+> \Swagger\Client\Model\PaginatedDocumentResponse listDocuments($organization_id, $id4n, $owner, $offset, $limit)
 
 List organization specific documents
 
@@ -394,14 +394,14 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
-$limit = 100; // int | The maximum count of returned elements
-$offset = 0; // int | Start with the n-th element
+$id4n = "id4n_example"; // string | id4n
 $owner = "owner_example"; // string | Filter by owner organization
+$offset = 56; // int | Start with the n-th element
+$limit = 56; // int | The maximum count of returned elements
 
 try {
-    $result = $apiInstance->listDocuments($id4n, $organization_id, $limit, $offset, $owner);
+    $result = $apiInstance->listDocuments($organization_id, $id4n, $owner, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->listDocuments: ', $e->getMessage(), PHP_EOL;
@@ -413,11 +413,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
- **limit** | **int**| The maximum count of returned elements | [optional]
- **offset** | **int**| Start with the n-th element | [optional]
+ **id4n** | **string**| id4n |
  **owner** | **string**| Filter by owner organization | [optional]
+ **offset** | **int**| Start with the n-th element | [optional]
+ **limit** | **int**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readDocument**
-> string readDocument($file_name, $id4n, $organization_id)
+> string readDocument($organization_id, $id4n, $file_name)
 
 Read document contents
 
@@ -455,12 +455,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->readDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->readDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->readDocument: ', $e->getMessage(), PHP_EOL;
@@ -472,9 +472,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readFromMicrostorage**
-> string readFromMicrostorage($id4n, $organization)
+> string readFromMicrostorage($organization, $id4n)
 
 Read data from microstorage
 
@@ -512,11 +512,11 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | id4n
 $organization = "organization_example"; // string | organization
+$id4n = "id4n_example"; // string | id4n
 
 try {
-    $result = $apiInstance->readFromMicrostorage($id4n, $organization);
+    $result = $apiInstance->readFromMicrostorage($organization, $id4n);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->readFromMicrostorage: ', $e->getMessage(), PHP_EOL;
@@ -528,8 +528,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
  **organization** | **string**| organization |
+ **id4n** | **string**| id4n |
 
 ### Return type
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readPublicDocument**
-> string readPublicDocument($file_name, $id4n, $organization_id)
+> string readPublicDocument($organization_id, $id4n, $file_name)
 
 Read public document contents
 
@@ -567,12 +567,12 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
 
 try {
-    $result = $apiInstance->readPublicDocument($file_name, $id4n, $organization_id);
+    $result = $apiInstance->readPublicDocument($organization_id, $id4n, $file_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->readPublicDocument: ', $e->getMessage(), PHP_EOL;
@@ -584,9 +584,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
 
 ### Return type
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDocumentMetadata**
-> \Swagger\Client\Model\Document updateDocumentMetadata($document, $file_name, $id4n, $organization_id)
+> \Swagger\Client\Model\Document updateDocumentMetadata($organization_id, $id4n, $file_name, $document)
 
 Update a document
 
@@ -624,13 +624,13 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$document = new \Swagger\Client\Model\DocumentUpdate(); // \Swagger\Client\Model\DocumentUpdate | document
-$file_name = "file_name_example"; // string | fileName
-$id4n = "id4n_example"; // string | id4n
 $organization_id = "organization_id_example"; // string | organizationId
+$id4n = "id4n_example"; // string | id4n
+$file_name = "file_name_example"; // string | fileName
+$document = new \Swagger\Client\Model\DocumentUpdate(); // \Swagger\Client\Model\DocumentUpdate | document
 
 try {
-    $result = $apiInstance->updateDocumentMetadata($document, $file_name, $id4n, $organization_id);
+    $result = $apiInstance->updateDocumentMetadata($organization_id, $id4n, $file_name, $document);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->updateDocumentMetadata: ', $e->getMessage(), PHP_EOL;
@@ -642,10 +642,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**\Swagger\Client\Model\DocumentUpdate**](../Model/DocumentUpdate.md)| document |
- **file_name** | **string**| fileName |
- **id4n** | **string**| id4n |
  **organization_id** | **string**| organizationId |
+ **id4n** | **string**| id4n |
+ **file_name** | **string**| fileName |
+ **document** | [**\Swagger\Client\Model\DocumentUpdate**](../Model/DocumentUpdate.md)| document |
 
 ### Return type
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writeToMicrostorage**
-> object writeToMicrostorage($id4n, $organization, $content_length, $content_type, $body)
+> object writeToMicrostorage($organization, $id4n, $content_type, $content_length, $body)
 
 Write data to microstorage
 
@@ -683,14 +683,14 @@ $apiInstance = new Swagger\Client\Api\StorageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id4n = "id4n_example"; // string | id4n
 $organization = "organization_example"; // string | organization
-$content_length = 789; // int | Content-Length
+$id4n = "id4n_example"; // string | id4n
 $content_type = "content_type_example"; // string | Content-Type
+$content_length = 789; // int | Content-Length
 $body = "B"; // string | body
 
 try {
-    $result = $apiInstance->writeToMicrostorage($id4n, $organization, $content_length, $content_type, $body);
+    $result = $apiInstance->writeToMicrostorage($organization, $id4n, $content_type, $content_length, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageApi->writeToMicrostorage: ', $e->getMessage(), PHP_EOL;
@@ -702,10 +702,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n |
  **organization** | **string**| organization |
- **content_length** | **int**| Content-Length | [optional]
+ **id4n** | **string**| id4n |
  **content_type** | **string**| Content-Type | [optional]
+ **content_length** | **int**| Content-Length | [optional]
  **body** | **string**| body | [optional]
 
 ### Return type
