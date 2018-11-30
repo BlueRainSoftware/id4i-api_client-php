@@ -178,7 +178,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllPublicDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfDocument listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
 
 List public documents
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfDocument**](../Model/PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPublicHistory**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse listPublicHistory($id4n, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfHistoryItem listPublicHistory($id4n, $offset, $limit)
 
 Shows the public history of the given GUID
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfHistoryItem**](../Model/PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 

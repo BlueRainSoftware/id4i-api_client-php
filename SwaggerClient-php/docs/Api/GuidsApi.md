@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCollections**
-> \Swagger\Client\Model\PaginatedGuidCollectionResponse getCollections($id4n, $organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfGuidCollection getCollections($id4n, $organization_id, $offset, $limit)
 
 Retrieve collections of an ID
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedGuidCollectionResponse**](../Model/PaginatedGuidCollectionResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuidCollection**](../Model/PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 

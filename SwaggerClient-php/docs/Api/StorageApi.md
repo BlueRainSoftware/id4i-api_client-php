@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllDocuments($id4n, $owner, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfDocument listAllDocuments($id4n, $owner, $offset, $limit)
 
 List documents
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfDocument**](../Model/PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllPublicDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfDocument listAllPublicDocuments($id4n, $organization_id, $owner, $offset, $limit)
 
 List public documents
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfDocument**](../Model/PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDocuments**
-> \Swagger\Client\Model\PaginatedDocumentResponse listDocuments($organization_id, $id4n, $owner, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfDocument listDocuments($organization_id, $id4n, $owner, $offset, $limit)
 
 List organization specific documents
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedDocumentResponse**](../Model/PaginatedDocumentResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfDocument**](../Model/PaginatedResponseOfDocument.md)
 
 ### Authorization
 

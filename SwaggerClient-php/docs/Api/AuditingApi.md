@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listOrganizationChangeLog**
-> \Swagger\Client\Model\PaginatedChangeLogEntryResponse listOrganizationChangeLog($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfChangeLogEntry listOrganizationChangeLog($organization_id, $message_mime_type, $from_date, $to_date, $offset, $limit)
 
 List change log entries of an organization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedChangeLogEntryResponse**](../Model/PaginatedChangeLogEntryResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfChangeLogEntry**](../Model/PaginatedResponseOfChangeLogEntry.md)
 
 ### Authorization
 

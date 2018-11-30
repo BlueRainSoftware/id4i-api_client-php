@@ -69,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **callList**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse callList($id4n, $organization_id, $include_private, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfHistoryItem callList($id4n, $organization_id, $include_private, $offset, $limit)
 
 DEPRECATED - List history
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfHistoryItem**](../Model/PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **filteredList**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse filteredList($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfHistoryItem filteredList($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit)
 
 List history
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfHistoryItem**](../Model/PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveItem**
-> \Swagger\Client\Model\PaginatedHistoryItemResponse retrieveItem($id4n, $organization_id, $sequence_id)
+> \Swagger\Client\Model\HistoryItem retrieveItem($id4n, $organization_id, $sequence_id)
 
 Get history item
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedHistoryItemResponse**](../Model/PaginatedHistoryItemResponse.md)
+[**\Swagger\Client\Model\HistoryItem**](../Model/HistoryItem.md)
 
 ### Authorization
 

@@ -1339,7 +1339,7 @@ class CollectionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedGuidCollection
+     * @return \Swagger\Client\Model\PaginatedResponseOfGuidCollection
      */
     public function getAllCollectionsOfOrganization($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
@@ -1361,11 +1361,11 @@ class CollectionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedGuidCollection, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuidCollection';
         $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         try {
@@ -1417,7 +1417,7 @@ class CollectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedGuidCollection',
+                        '\Swagger\Client\Model\PaginatedResponseOfGuidCollection',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1525,7 +1525,7 @@ class CollectionsApi
      */
     public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidCollection';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuidCollection';
         $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
 
         return $this->client
@@ -1711,7 +1711,7 @@ class CollectionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedGuidResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfGuid
      */
     public function listElementsOfCollection($id4n, $offset = null, $limit = null)
     {
@@ -1730,11 +1730,11 @@ class CollectionsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedGuidResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfGuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function listElementsOfCollectionWithHttpInfo($id4n, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuid';
         $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
 
         try {
@@ -1786,7 +1786,7 @@ class CollectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedGuidResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfGuid',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1888,7 +1888,7 @@ class CollectionsApi
      */
     public function listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuid';
         $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
 
         return $this->client

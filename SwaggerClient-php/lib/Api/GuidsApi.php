@@ -763,7 +763,7 @@ class GuidsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedGuidCollectionResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfGuidCollection
      */
     public function getCollections($id4n, $organization_id = null, $offset = null, $limit = null)
     {
@@ -783,11 +783,11 @@ class GuidsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedGuidCollectionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCollectionsWithHttpInfo($id4n, $organization_id = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidCollectionResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuidCollection';
         $request = $this->getCollectionsRequest($id4n, $organization_id, $offset, $limit);
 
         try {
@@ -839,7 +839,7 @@ class GuidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedGuidCollectionResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfGuidCollection',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -943,7 +943,7 @@ class GuidsApi
      */
     public function getCollectionsAsyncWithHttpInfo($id4n, $organization_id = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedGuidCollectionResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfGuidCollection';
         $request = $this->getCollectionsRequest($id4n, $organization_id, $offset, $limit);
 
         return $this->client

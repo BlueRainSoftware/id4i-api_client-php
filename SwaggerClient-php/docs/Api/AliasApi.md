@@ -232,7 +232,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchByAlias**
-> \Swagger\Client\Model\PaginatedGuidResponse searchByAlias($alias, $alias_type, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfGuid searchByAlias($alias, $alias_type, $offset, $limit)
 
 Search for GUIDs by alias
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuid**](../Model/PaginatedResponseOfGuid.md)
 
 ### Authorization
 

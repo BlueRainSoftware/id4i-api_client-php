@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
+> \Swagger\Client\Model\PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedGuidCollection**](../Model/PaginatedGuidCollection.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuidCollection**](../Model/PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listElementsOfCollection**
-> \Swagger\Client\Model\PaginatedGuidResponse listElementsOfCollection($id4n, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfGuid listElementsOfCollection($id4n, $offset, $limit)
 
 List contents of the collection
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedGuidResponse**](../Model/PaginatedGuidResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuid**](../Model/PaginatedResponseOfGuid.md)
 
 ### Authorization
 

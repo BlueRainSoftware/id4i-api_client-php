@@ -411,7 +411,7 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfHistoryItem
      */
     public function callList($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
@@ -432,11 +432,11 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfHistoryItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfHistoryItem';
         $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         try {
@@ -488,7 +488,7 @@ class HistoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfHistoryItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -594,7 +594,7 @@ class HistoryApi
      */
     public function callListAsyncWithHttpInfo($id4n, $organization_id, $include_private = 'true', $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfHistoryItem';
         $request = $this->callListRequest($id4n, $organization_id, $include_private, $offset, $limit);
 
         return $this->client
@@ -784,7 +784,7 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfHistoryItem
      */
     public function filteredList($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
@@ -809,11 +809,11 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfHistoryItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function filteredListWithHttpInfo($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfHistoryItem';
         $request = $this->filteredListRequest($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
 
         try {
@@ -865,7 +865,7 @@ class HistoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfHistoryItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class HistoryApi
      */
     public function filteredListAsyncWithHttpInfo($id4n, $include_private = 'true', $organization = null, $type = null, $qualifier = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfHistoryItem';
         $request = $this->filteredListRequest($id4n, $include_private, $organization, $type, $qualifier, $from_date, $to_date, $offset, $limit);
 
         return $this->client
@@ -1179,7 +1179,7 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedHistoryItemResponse
+     * @return \Swagger\Client\Model\HistoryItem
      */
     public function retrieveItem($id4n, $organization_id, $sequence_id)
     {
@@ -1198,11 +1198,11 @@ class HistoryApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedHistoryItemResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\HistoryItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function retrieveItemWithHttpInfo($id4n, $organization_id, $sequence_id)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\HistoryItem';
         $request = $this->retrieveItemRequest($id4n, $organization_id, $sequence_id);
 
         try {
@@ -1254,7 +1254,7 @@ class HistoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedHistoryItemResponse',
+                        '\Swagger\Client\Model\HistoryItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1356,7 +1356,7 @@ class HistoryApi
      */
     public function retrieveItemAsyncWithHttpInfo($id4n, $organization_id, $sequence_id)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedHistoryItemResponse';
+        $returnType = '\Swagger\Client\Model\HistoryItem';
         $request = $this->retrieveItemRequest($id4n, $organization_id, $sequence_id);
 
         return $this->client

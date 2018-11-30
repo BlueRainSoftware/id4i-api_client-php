@@ -1498,7 +1498,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedDocumentResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfDocument
      */
     public function listAllDocuments($id4n, $owner = null, $offset = null, $limit = null)
     {
@@ -1518,11 +1518,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllDocumentsWithHttpInfo($id4n, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listAllDocumentsRequest($id4n, $owner, $offset, $limit);
 
         try {
@@ -1574,7 +1574,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedDocumentResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1678,7 +1678,7 @@ class StorageApi
      */
     public function listAllDocumentsAsyncWithHttpInfo($id4n, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listAllDocumentsRequest($id4n, $owner, $offset, $limit);
 
         return $this->client
@@ -1849,7 +1849,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedDocumentResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfDocument
      */
     public function listAllPublicDocuments($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
@@ -1870,11 +1870,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllPublicDocumentsWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
 
         try {
@@ -1926,7 +1926,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedDocumentResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2032,7 +2032,7 @@ class StorageApi
      */
     public function listAllPublicDocumentsAsyncWithHttpInfo($id4n, $organization_id = null, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listAllPublicDocumentsRequest($id4n, $organization_id, $owner, $offset, $limit);
 
         return $this->client
@@ -2208,7 +2208,7 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedDocumentResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfDocument
      */
     public function listDocuments($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
     {
@@ -2229,11 +2229,11 @@ class StorageApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function listDocumentsWithHttpInfo($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listDocumentsRequest($organization_id, $id4n, $owner, $offset, $limit);
 
         try {
@@ -2285,7 +2285,7 @@ class StorageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedDocumentResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2391,7 +2391,7 @@ class StorageApi
      */
     public function listDocumentsAsyncWithHttpInfo($organization_id, $id4n, $owner = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedDocumentResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfDocument';
         $request = $this->listDocumentsRequest($organization_id, $id4n, $owner, $offset, $limit);
 
         return $this->client

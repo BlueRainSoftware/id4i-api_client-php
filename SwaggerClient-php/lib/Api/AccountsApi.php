@@ -1043,7 +1043,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedUserPresentationResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfUserPresentation
      */
     public function findUsers($username_prefix = null, $offset = null, $limit = null)
     {
@@ -1062,11 +1062,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedUserPresentationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfUserPresentation, HTTP status code, HTTP response headers (array of strings)
      */
     public function findUsersWithHttpInfo($username_prefix = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserPresentation';
         $request = $this->findUsersRequest($username_prefix, $offset, $limit);
 
         try {
@@ -1118,7 +1118,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedUserPresentationResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfUserPresentation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1220,7 +1220,7 @@ class AccountsApi
      */
     public function findUsersAsyncWithHttpInfo($username_prefix = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserPresentation';
         $request = $this->findUsersRequest($username_prefix, $offset, $limit);
 
         return $this->client
@@ -1374,7 +1374,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedUserRolesResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfUserRoles
      */
     public function getAllOrganizationRoles($organization_id, $offset = null, $limit = null)
     {
@@ -1393,11 +1393,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedUserRolesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfUserRoles, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllOrganizationRolesWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserRolesResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserRoles';
         $request = $this->getAllOrganizationRolesRequest($organization_id, $offset, $limit);
 
         try {
@@ -1449,7 +1449,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedUserRolesResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfUserRoles',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1551,7 +1551,7 @@ class AccountsApi
      */
     public function getAllOrganizationRolesAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserRolesResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserRoles';
         $request = $this->getAllOrganizationRolesRequest($organization_id, $offset, $limit);
 
         return $this->client
@@ -1715,7 +1715,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedOrganizationResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfOrganization
      */
     public function getOrganizationsOfUser($role = null, $offset = null, $limit = null)
     {
@@ -1734,11 +1734,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedOrganizationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfOrganization, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationsOfUserWithHttpInfo($role = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedOrganizationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfOrganization';
         $request = $this->getOrganizationsOfUserRequest($role, $offset, $limit);
 
         try {
@@ -1790,7 +1790,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedOrganizationResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfOrganization',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1892,7 +1892,7 @@ class AccountsApi
      */
     public function getOrganizationsOfUserAsyncWithHttpInfo($role = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedOrganizationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfOrganization';
         $request = $this->getOrganizationsOfUserRequest($role, $offset, $limit);
 
         return $this->client
@@ -2047,7 +2047,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedStringResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfstring
      */
     public function getUserRoles($organization_id, $username, $offset = null, $limit = null)
     {
@@ -2067,11 +2067,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedStringResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfstring, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserRolesWithHttpInfo($organization_id, $username, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedStringResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfstring';
         $request = $this->getUserRolesRequest($organization_id, $username, $offset, $limit);
 
         try {
@@ -2123,7 +2123,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedStringResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfstring',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2227,7 +2227,7 @@ class AccountsApi
      */
     public function getUserRolesAsyncWithHttpInfo($organization_id, $username, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedStringResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfstring';
         $request = $this->getUserRolesRequest($organization_id, $username, $offset, $limit);
 
         return $this->client
@@ -2406,7 +2406,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedUserPresentationResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfUserPresentation
      */
     public function getUsersOfOrganization($organization_id, $offset = null, $limit = null)
     {
@@ -2425,11 +2425,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedUserPresentationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfUserPresentation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUsersOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserPresentation';
         $request = $this->getUsersOfOrganizationRequest($organization_id, $offset, $limit);
 
         try {
@@ -2481,7 +2481,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedUserPresentationResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfUserPresentation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2583,7 +2583,7 @@ class AccountsApi
      */
     public function getUsersOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedUserPresentationResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfUserPresentation';
         $request = $this->getUsersOfOrganizationRequest($organization_id, $offset, $limit);
 
         return $this->client
@@ -3063,7 +3063,7 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RoleResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfRole
      */
     public function listAllRoles($privilege = null, $offset = null, $limit = null)
     {
@@ -3082,11 +3082,11 @@ class AccountsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RoleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfRole, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllRolesWithHttpInfo($privilege = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\RoleResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfRole';
         $request = $this->listAllRolesRequest($privilege, $offset, $limit);
 
         try {
@@ -3138,7 +3138,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RoleResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfRole',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3240,7 +3240,7 @@ class AccountsApi
      */
     public function listAllRolesAsyncWithHttpInfo($privilege = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\RoleResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfRole';
         $request = $this->listAllRolesRequest($privilege, $offset, $limit);
 
         return $this->client

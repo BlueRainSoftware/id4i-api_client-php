@@ -1671,7 +1671,7 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo
      */
     public function listAllApiKeyPrivileges($id4n_concerning = null, $offset = null, $limit = null)
     {
@@ -1690,11 +1690,11 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllApiKeyPrivilegesWithHttpInfo($id4n_concerning = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo';
         $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $offset, $limit);
 
         try {
@@ -1746,7 +1746,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1848,7 +1848,7 @@ class ApiKeysApi
      */
     public function listAllApiKeyPrivilegesAsyncWithHttpInfo($id4n_concerning = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo';
         $request = $this->listAllApiKeyPrivilegesRequest($id4n_concerning, $offset, $limit);
 
         return $this->client
@@ -2002,7 +2002,7 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\PaginatedApiKeyResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation
      */
     public function listAllApiKeysOfOrganization($organization_id = null, $offset = null, $limit = null)
     {
@@ -2021,11 +2021,11 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\PaginatedApiKeyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllApiKeysOfOrganizationWithHttpInfo($organization_id = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedApiKeyResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation';
         $request = $this->listAllApiKeysOfOrganizationRequest($organization_id, $offset, $limit);
 
         try {
@@ -2077,7 +2077,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\PaginatedApiKeyResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2179,7 +2179,7 @@ class ApiKeysApi
      */
     public function listAllApiKeysOfOrganizationAsyncWithHttpInfo($organization_id = null, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\PaginatedApiKeyResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation';
         $request = $this->listAllApiKeysOfOrganizationRequest($organization_id, $offset, $limit);
 
         return $this->client
@@ -2333,7 +2333,7 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege
      */
     public function listApiKeyPrivileges($key, $offset = null, $limit = null)
     {
@@ -2352,11 +2352,11 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege, HTTP status code, HTTP response headers (array of strings)
      */
     public function listApiKeyPrivilegesWithHttpInfo($key, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege';
         $request = $this->listApiKeyPrivilegesRequest($key, $offset, $limit);
 
         try {
@@ -2408,7 +2408,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2510,7 +2510,7 @@ class ApiKeysApi
      */
     public function listApiKeyPrivilegesAsyncWithHttpInfo($key, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege';
         $request = $this->listApiKeyPrivilegesRequest($key, $offset, $limit);
 
         return $this->client
@@ -2675,7 +2675,7 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Id4nPresentationPaginatedResponse
+     * @return \Swagger\Client\Model\PaginatedResponseOfId4nPresentation
      */
     public function listId4ns($key, $privilege, $offset = null, $limit = null)
     {
@@ -2695,11 +2695,11 @@ class ApiKeysApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Id4nPresentationPaginatedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PaginatedResponseOfId4nPresentation, HTTP status code, HTTP response headers (array of strings)
      */
     public function listId4nsWithHttpInfo($key, $privilege, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\Id4nPresentationPaginatedResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfId4nPresentation';
         $request = $this->listId4nsRequest($key, $privilege, $offset, $limit);
 
         try {
@@ -2751,7 +2751,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Id4nPresentationPaginatedResponse',
+                        '\Swagger\Client\Model\PaginatedResponseOfId4nPresentation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2855,7 +2855,7 @@ class ApiKeysApi
      */
     public function listId4nsAsyncWithHttpInfo($key, $privilege, $offset = null, $limit = null)
     {
-        $returnType = '\Swagger\Client\Model\Id4nPresentationPaginatedResponse';
+        $returnType = '\Swagger\Client\Model\PaginatedResponseOfId4nPresentation';
         $request = $this->listId4nsRequest($key, $privilege, $offset, $limit);
 
         return $this->client
