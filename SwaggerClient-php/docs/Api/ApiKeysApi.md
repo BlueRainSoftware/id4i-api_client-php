@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges($id4n_concerning, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo listAllApiKeyPrivileges($id4n_concerning, $offset, $limit)
 
 List all privileges
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiKeyPrivilegeInfoResponse**](../Model/ApiKeyPrivilegeInfoResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilegeInfo**](../Model/PaginatedResponseOfApiKeyPrivilegeInfo.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAllApiKeysOfOrganization**
-> \Swagger\Client\Model\PaginatedApiKeyResponse listAllApiKeysOfOrganization($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation listAllApiKeysOfOrganization($organization_id, $offset, $limit)
 
 Find API key by organization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedApiKeyResponse**](../Model/PaginatedApiKeyResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfApiKeyPresentation**](../Model/PaginatedResponseOfApiKeyPresentation.md)
 
 ### Authorization
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listApiKeyPrivileges**
-> \Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges($key, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege listApiKeyPrivileges($key, $offset, $limit)
 
 List privileges
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiKeyPrivilegePaginatedResponse**](../Model/ApiKeyPrivilegePaginatedResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfApiKeyPrivilege**](../Model/PaginatedResponseOfApiKeyPrivilege.md)
 
 ### Authorization
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listId4ns**
-> \Swagger\Client\Model\Id4nPresentationPaginatedResponse listId4ns($key, $privilege, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfId4nPresentation listId4ns($key, $privilege, $offset, $limit)
 
 ID4ns of a privilege
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Id4nPresentationPaginatedResponse**](../Model/Id4nPresentationPaginatedResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfId4nPresentation**](../Model/PaginatedResponseOfId4nPresentation.md)
 
 ### Authorization
 

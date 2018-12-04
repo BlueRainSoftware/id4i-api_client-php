@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Swagger\Client\Model\PaginatedGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
+> \Swagger\Client\Model\PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
 
 Get collections of organization
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedGuidCollection**](../Model/PaginatedGuidCollection.md)
+[**\Swagger\Client\Model\PaginatedResponseOfGuidCollection**](../Model/PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllOrganizationRoles**
-> \Swagger\Client\Model\PaginatedUserRolesResponse getAllOrganizationRoles($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfUserRoles getAllOrganizationRoles($organization_id, $offset, $limit)
 
 List users and their roles
 
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedUserRolesResponse**](../Model/PaginatedUserRolesResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfUserRoles**](../Model/PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrganizationsOfUser**
-> \Swagger\Client\Model\PaginatedOrganizationResponse getOrganizationsOfUser($role, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfOrganization getOrganizationsOfUser($role, $offset, $limit)
 
 Retrieve organizations of user
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedOrganizationResponse**](../Model/PaginatedOrganizationResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfOrganization**](../Model/PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPartnerOrganizations**
-> \Swagger\Client\Model\PaginatedResponsePartnerOrganization_ getPartnerOrganizations($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfPartnerOrganization getPartnerOrganizations($organization_id, $offset, $limit)
 
 Get partners of an organization
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedResponsePartnerOrganization_**](../Model/PaginatedResponsePartnerOrganization_.md)
+[**\Swagger\Client\Model\PaginatedResponseOfPartnerOrganization**](../Model/PaginatedResponseOfPartnerOrganization.md)
 
 ### Authorization
 
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRoles**
-> \Swagger\Client\Model\PaginatedStringResponse getUserRoles($organization_id, $username, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfstring getUserRoles($organization_id, $username, $offset, $limit)
 
 Get user roles by username
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedStringResponse**](../Model/PaginatedStringResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfstring**](../Model/PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsersOfOrganization**
-> \Swagger\Client\Model\PaginatedUserPresentationResponse getUsersOfOrganization($organization_id, $offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfUserPresentation getUsersOfOrganization($organization_id, $offset, $limit)
 
 Find users in organization
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedUserPresentationResponse**](../Model/PaginatedUserPresentationResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfUserPresentation**](../Model/PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -982,7 +982,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCountries**
-> \Swagger\Client\Model\PaginatedCountryResponse listCountries($offset, $limit)
+> \Swagger\Client\Model\PaginatedResponseOfCountry listCountries($offset, $limit)
 
 List countries
 
@@ -1023,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaginatedCountryResponse**](../Model/PaginatedCountryResponse.md)
+[**\Swagger\Client\Model\PaginatedResponseOfCountry**](../Model/PaginatedResponseOfCountry.md)
 
 ### Authorization
 
