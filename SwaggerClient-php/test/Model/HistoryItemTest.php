@@ -92,6 +92,13 @@ class HistoryItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "owner_organization_id"
+     */
+    public function testPropertyOwnerOrganizationId()
+    {
+    }
+
+    /**
      * Test attribute "sequence_id"
      */
     public function testPropertySequenceId()
