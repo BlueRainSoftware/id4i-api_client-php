@@ -148,6 +148,8 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**updateItem**](docs/Api/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/Api/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*MessagingApi* | [**getDefaultQueue**](docs/Api/MessagingApi.md#getdefaultqueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
+*MessagingApi* | [**patchDefaultQueue**](docs/Api/MessagingApi.md#patchdefaultqueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**addPartnerOrganization**](docs/Api/OrganizationsApi.md#addpartnerorganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 *OrganizationsApi* | [**addUserRoles**](docs/Api/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -258,6 +260,8 @@ Class | Method | HTTP request | Description
  - [PasswordResetRequest](docs/Model/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/Model/PasswordResetVerificationRequest.md)
  - [PublicImagePresentation](docs/Model/PublicImagePresentation.md)
+ - [QueuePresentation](docs/Model/QueuePresentation.md)
+ - [QueueUpdateRequest](docs/Model/QueueUpdateRequest.md)
  - [RegistrationVerificationTokenPresentation](docs/Model/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/Model/RemoveApiKeyPrivilegeRequest.md)
  - [RemovePartnerRequest](docs/Model/RemovePartnerRequest.md)
