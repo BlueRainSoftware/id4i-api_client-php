@@ -142,6 +142,16 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for importGS1Codes
+     *
+     * Import GS1/MAPP codes.
+     *
+     */
+    public function testImportGS1Codes()
+    {
+    }
+
+    /**
      * Test case for removeGuidAlias
      *
      * Remove aliases from GUID or Collection.
