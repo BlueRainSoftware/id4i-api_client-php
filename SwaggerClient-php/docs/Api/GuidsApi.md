@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**importGS1Codes**](GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -397,6 +398,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Id4nPresentation**](../Model/Id4nPresentation.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **importGS1Codes**
+> importGS1Codes($import_gs1_codes_request)
+
+Import GS1/MAPP codes
+
+Importing GS1/MAPP codes that contain unique components.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$import_gs1_codes_request = new \Swagger\Client\Model\ImportGS1CodesRequest(); // \Swagger\Client\Model\ImportGS1CodesRequest | The information how the MAPP codes should be imported and the list of MAPP codes
+
+try {
+    $apiInstance->importGS1Codes($import_gs1_codes_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->importGS1Codes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **import_gs1_codes_request** | [**\Swagger\Client\Model\ImportGS1CodesRequest**](../Model/ImportGS1CodesRequest.md)| The information how the MAPP codes should be imported and the list of MAPP codes |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
