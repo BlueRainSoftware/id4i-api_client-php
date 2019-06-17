@@ -1,0 +1,36 @@
+{
+  "name": "bluerainsoftware/id4i-api_client-php",
+  "description": "",
+  "keywords": [
+    "id4i",
+    "iiot",
+    "industry-4",
+    "barcollect"
+  ],
+  "homepage": "https://id4i.de",
+  "license": "MIT",
+  "authors": [
+    {"name": "Thomas Kirschner"},
+    {"name": "Stefan Dangl"},
+    {"name": "Benedikt Hübschen"},
+    {"name": "Wolfgang Werner"},
+  ],
+  "require": {
+    "php": ">=5.5",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "squizlabs/php_codesniffer": "~2.6",
+    "friendsofphp/php-cs-fixer": "~2.12"
+  },
+  "autoload": {
+    "psr-4": { "Bluerain\\ID4iClient\\" : "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Bluerain\\ID4iClient\\" : "test/" }
+  }
+}
