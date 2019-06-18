@@ -13,7 +13,7 @@
     {"name": "Thomas Kirschner"},
     {"name": "Stefan Dangl"},
     {"name": "Benedikt Hübschen"},
-    {"name": "Wolfgang Werner"},
+    {"name": "Wolfgang Werner"}
   ],
   "require": {
     "php": ">=5.5",
@@ -28,9 +28,9 @@
     "friendsofphp/php-cs-fixer": "~2.12"
   },
   "autoload": {
-    "psr-4": { "Bluerain\\ID4iClient\\" : "src/" }
+    "psr-4": { "Bluerain\\ID4iClient\\" : "src" }
   },
   "autoload-dev": {
-    "psr-4": { "Bluerain\\ID4iClient\\" : "test/" }
+    "psr-4": { "Bluerain\\ID4iClient\\" : "test" }
   }
 }
