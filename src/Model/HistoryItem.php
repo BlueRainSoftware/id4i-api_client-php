@@ -198,6 +198,7 @@ class HistoryItem implements ModelInterface, ArrayAccess
     const TYPE_PACKAGED = 'PACKAGED';
     const TYPE_DISPATCHED = 'DISPATCHED';
     const TYPE_RECEIVED = 'RECEIVED';
+    const TYPE_DELIVERY_REFUSED = 'DELIVERY_REFUSED';
     const TYPE_REPROCESSING_STARTED = 'REPROCESSING_STARTED';
     const TYPE_REPROCESSING_STEP_STARTED = 'REPROCESSING_STEP_STARTED';
     const TYPE_REPROCESSING_STEP_CANCELLED = 'REPROCESSING_STEP_CANCELLED';
@@ -238,6 +239,7 @@ class HistoryItem implements ModelInterface, ArrayAccess
             self::TYPE_PACKAGED,
             self::TYPE_DISPATCHED,
             self::TYPE_RECEIVED,
+            self::TYPE_DELIVERY_REFUSED,
             self::TYPE_REPROCESSING_STARTED,
             self::TYPE_REPROCESSING_STEP_STARTED,
             self::TYPE_REPROCESSING_STEP_CANCELLED,
