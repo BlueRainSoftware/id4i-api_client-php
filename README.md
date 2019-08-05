@@ -199,13 +199,14 @@ Class | Method | HTTP request | Description
 *RoutingApi* | [**getRoute**](docs/Api/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**getRoutingFile**](docs/Api/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**updateRoutingFile**](docs/Api/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-*StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
+*StorageApi* | [**createDocument**](docs/Api/StorageApi.md#createdocument) | **POST** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
 *StorageApi* | [**deleteDocument**](docs/Api/StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 *StorageApi* | [**getDocument**](docs/Api/StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 *StorageApi* | [**getPublicDocument**](docs/Api/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 *StorageApi* | [**listAllDocuments**](docs/Api/StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
 *StorageApi* | [**listAllPublicDocuments**](docs/Api/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 *StorageApi* | [**listDocuments**](docs/Api/StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+*StorageApi* | [**putDocument**](docs/Api/StorageApi.md#putdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Put an document for an id4n
 *StorageApi* | [**readDocument**](docs/Api/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**readFromMicrostorage**](docs/Api/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 *StorageApi* | [**readPublicDocument**](docs/Api/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents

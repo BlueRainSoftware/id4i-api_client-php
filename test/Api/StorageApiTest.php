@@ -142,6 +142,16 @@ class StorageApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for putDocument
+     *
+     * Put an document for an id4n.
+     *
+     */
+    public function testPutDocument()
+    {
+    }
+
+    /**
      * Test case for readDocument
      *
      * Read document contents.
