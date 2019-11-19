@@ -92,6 +92,16 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteProperties
+     *
+     * Delete ID4n properties.
+     *
+     */
+    public function testDeleteProperties()
+    {
+    }
+
+    /**
      * Test case for getCollections
      *
      * Retrieve collections of an ID.
@@ -142,12 +152,32 @@ class GuidsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getProperties
+     *
+     * Retrieve ID4n properties.
+     *
+     */
+    public function testGetProperties()
+    {
+    }
+
+    /**
      * Test case for importGS1Codes
      *
      * Import GS1/MAPP codes.
      *
      */
     public function testImportGS1Codes()
+    {
+    }
+
+    /**
+     * Test case for patchProperties
+     *
+     * Patch ID4n properties.
+     *
+     */
+    public function testPatchProperties()
     {
     }
 

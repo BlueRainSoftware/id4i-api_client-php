@@ -102,6 +102,16 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteProperties
+     *
+     * Delete ID4n properties.
+     *
+     */
+    public function testDeleteProperties()
+    {
+    }
+
+    /**
      * Test case for findCollection
      *
      * Find collection.
@@ -122,12 +132,32 @@ class CollectionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getProperties
+     *
+     * Retrieve ID4n properties.
+     *
+     */
+    public function testGetProperties()
+    {
+    }
+
+    /**
      * Test case for listElementsOfCollection
      *
      * List contents of the collection.
      *
      */
     public function testListElementsOfCollection()
+    {
+    }
+
+    /**
+     * Test case for patchProperties
+     *
+     * Patch ID4n properties.
+     *
+     */
+    public function testPatchProperties()
     {
     }
 

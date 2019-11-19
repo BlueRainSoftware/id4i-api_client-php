@@ -6,12 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**deleteProperties**](GuidsApi.md#deleteProperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 [**getCollections**](GuidsApi.md#getCollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**getProperties**](GuidsApi.md#getProperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 [**importGS1Codes**](GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
+[**patchProperties**](GuidsApi.md#patchProperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -117,6 +120,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Bluerain\ID4iClient\Model\ListOfId4ns**](../Model/ListOfId4ns.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteProperties**
+> deleteProperties($id4n, $organization_id, $properties)
+
+Delete ID4n properties
+
+Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4n = "id4n_example"; // string | The id4n
+$organization_id = "organization_id_example"; // string | The organization namespace to work on while deleting the properties.
+$properties = array(new \Bluerain\ID4iClient\Model\string[]()); // string[] | A set of property keys to delete.
+
+try {
+    $apiInstance->deleteProperties($id4n, $organization_id, $properties);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->deleteProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n |
+ **organization_id** | **string**| The organization namespace to work on while deleting the properties. |
+ **properties** | **string[]**| A set of property keys to delete. |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -410,6 +471,63 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getProperties**
+> map[string,string] getProperties($id4n, $organization_id)
+
+Retrieve ID4n properties
+
+List all properties of an id4n.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4n = "id4n_example"; // string | The id4n
+$organization_id = "organization_id_example"; // string | The organization namespace.
+
+try {
+    $result = $apiInstance->getProperties($id4n, $organization_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->getProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n |
+ **organization_id** | **string**| The organization namespace. | [optional]
+
+### Return type
+
+**map[string,string]**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **importGS1Codes**
 > importGS1Codes($import_gs1_codes_request)
 
@@ -448,6 +566,64 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **import_gs1_codes_request** | [**\Bluerain\ID4iClient\Model\ImportGS1CodesRequest**](../Model/ImportGS1CodesRequest.md)| The information how the MAPP codes should be imported and the list of MAPP codes |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **patchProperties**
+> patchProperties($id4n, $organization_id, $properties)
+
+Patch ID4n properties
+
+Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4n = "id4n_example"; // string | The id4n
+$organization_id = "organization_id_example"; // string | The organization namespace to work on while patching the properties.
+$properties = new \stdClass; // object | The properties to update.
+
+try {
+    $apiInstance->patchProperties($id4n, $organization_id, $properties);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->patchProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n |
+ **organization_id** | **string**| The organization namespace to work on while patching the properties. |
+ **properties** | **object**| The properties to update. |
 
 ### Return type
 

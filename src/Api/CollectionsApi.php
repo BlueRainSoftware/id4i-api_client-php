@@ -1003,6 +1003,305 @@ class CollectionsApi
     }
 
     /**
+     * Operation deleteProperties
+     *
+     * Delete ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while deleting the properties. (required)
+     * @param  string[] $properties A set of property keys to delete. (required)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteProperties($id4n, $organization_id, $properties)
+    {
+        $this->deletePropertiesWithHttpInfo($id4n, $organization_id, $properties);
+    }
+
+    /**
+     * Operation deletePropertiesWithHttpInfo
+     *
+     * Delete ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while deleting the properties. (required)
+     * @param  string[] $properties A set of property keys to delete. (required)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deletePropertiesWithHttpInfo($id4n, $organization_id, $properties)
+    {
+        $returnType = '';
+        $request = $this->deletePropertiesRequest($id4n, $organization_id, $properties);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deletePropertiesAsync
+     *
+     * Delete ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while deleting the properties. (required)
+     * @param  string[] $properties A set of property keys to delete. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deletePropertiesAsync($id4n, $organization_id, $properties)
+    {
+        return $this->deletePropertiesAsyncWithHttpInfo($id4n, $organization_id, $properties)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deletePropertiesAsyncWithHttpInfo
+     *
+     * Delete ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while deleting the properties. (required)
+     * @param  string[] $properties A set of property keys to delete. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deletePropertiesAsyncWithHttpInfo($id4n, $organization_id, $properties)
+    {
+        $returnType = '';
+        $request = $this->deletePropertiesRequest($id4n, $organization_id, $properties);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteProperties'
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while deleting the properties. (required)
+     * @param  string[] $properties A set of property keys to delete. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deletePropertiesRequest($id4n, $organization_id, $properties)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling deleteProperties'
+            );
+        }
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling deleteProperties'
+            );
+        }
+        // verify the required parameter 'properties' is set
+        if ($properties === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $properties when calling deleteProperties'
+            );
+        }
+
+        $resourcePath = '/api/v1/id4ns/{id4n}/properties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($properties)) {
+            $_tempBody = $properties;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation findCollection
      *
      * Find collection
@@ -1701,6 +2000,338 @@ class CollectionsApi
     }
 
     /**
+     * Operation getProperties
+     *
+     * Retrieve ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace. (optional)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return map[string,string]
+     */
+    public function getProperties($id4n, $organization_id = null)
+    {
+        list($response) = $this->getPropertiesWithHttpInfo($id4n, $organization_id);
+        return $response;
+    }
+
+    /**
+     * Operation getPropertiesWithHttpInfo
+     *
+     * Retrieve ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace. (optional)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of map[string,string], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPropertiesWithHttpInfo($id4n, $organization_id = null)
+    {
+        $returnType = 'map[string,string]';
+        $request = $this->getPropertiesRequest($id4n, $organization_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'map[string,string]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 405:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Bluerain\ID4iClient\Model\ApiError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getPropertiesAsync
+     *
+     * Retrieve ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPropertiesAsync($id4n, $organization_id = null)
+    {
+        return $this->getPropertiesAsyncWithHttpInfo($id4n, $organization_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getPropertiesAsyncWithHttpInfo
+     *
+     * Retrieve ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPropertiesAsyncWithHttpInfo($id4n, $organization_id = null)
+    {
+        $returnType = 'map[string,string]';
+        $request = $this->getPropertiesRequest($id4n, $organization_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getProperties'
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getPropertiesRequest($id4n, $organization_id = null)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling getProperties'
+            );
+        }
+
+        $resourcePath = '/api/v1/id4ns/{id4n}/properties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listElementsOfCollection
      *
      * List contents of the collection
@@ -2035,6 +2666,265 @@ class CollectionsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation patchProperties
+     *
+     * Patch ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while patching the properties. (required)
+     * @param  object $properties The properties to update. (required)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function patchProperties($id4n, $organization_id, $properties)
+    {
+        $this->patchPropertiesWithHttpInfo($id4n, $organization_id, $properties);
+    }
+
+    /**
+     * Operation patchPropertiesWithHttpInfo
+     *
+     * Patch ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while patching the properties. (required)
+     * @param  object $properties The properties to update. (required)
+     *
+     * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function patchPropertiesWithHttpInfo($id4n, $organization_id, $properties)
+    {
+        $returnType = '';
+        $request = $this->patchPropertiesRequest($id4n, $organization_id, $properties);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation patchPropertiesAsync
+     *
+     * Patch ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while patching the properties. (required)
+     * @param  object $properties The properties to update. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchPropertiesAsync($id4n, $organization_id, $properties)
+    {
+        return $this->patchPropertiesAsyncWithHttpInfo($id4n, $organization_id, $properties)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation patchPropertiesAsyncWithHttpInfo
+     *
+     * Patch ID4n properties
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while patching the properties. (required)
+     * @param  object $properties The properties to update. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchPropertiesAsyncWithHttpInfo($id4n, $organization_id, $properties)
+    {
+        $returnType = '';
+        $request = $this->patchPropertiesRequest($id4n, $organization_id, $properties);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'patchProperties'
+     *
+     * @param  string $id4n The id4n (required)
+     * @param  string $organization_id The organization namespace to work on while patching the properties. (required)
+     * @param  object $properties The properties to update. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function patchPropertiesRequest($id4n, $organization_id, $properties)
+    {
+        // verify the required parameter 'id4n' is set
+        if ($id4n === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id4n when calling patchProperties'
+            );
+        }
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization_id when calling patchProperties'
+            );
+        }
+        // verify the required parameter 'properties' is set
+        if ($properties === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $properties when calling patchProperties'
+            );
+        }
+
+        $resourcePath = '/api/v1/id4ns/{id4n}/properties';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
+        }
+
+        // path params
+        if ($id4n !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id4n' . '}',
+                ObjectSerializer::toPathValue($id4n),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($properties)) {
+            $_tempBody = $properties;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/xml', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/xml', 'application/json'],
+                ['application/xml', 'application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
