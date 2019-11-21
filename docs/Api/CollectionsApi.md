@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCollectionsOfOrganization**
-> \Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix)
+> \Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix, $property)
 
 Get collections of organization
 
@@ -316,9 +316,10 @@ $limit = 56; // int | The maximum count of returned elements
 $type = "type_example"; // string | Filter by this type
 $label = "label_example"; // string | Filter by this label
 $label_prefix = "label_prefix_example"; // string | Filter by this label prefix
+$property = array("property_example"); // string[] | List of i4dn property filter. e.g. \"com.myorga.state:IN:waiting|processing\" or \"com.myorga.orderId:EQ:SAP001\"
 
 try {
-    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix);
+    $result = $apiInstance->getAllCollectionsOfOrganization($organization_id, $offset, $limit, $type, $label, $label_prefix, $property);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->getAllCollectionsOfOrganization: ', $e->getMessage(), PHP_EOL;
@@ -336,6 +337,7 @@ Name | Type | Description  | Notes
  **type** | **string**| Filter by this type | [optional]
  **label** | **string**| Filter by this label | [optional]
  **label_prefix** | **string**| Filter by this label prefix | [optional]
+ **property** | [**string[]**](../Model/string.md)| List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; | [optional]
 
 ### Return type
 
