@@ -14,7 +14,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.7
+- API version: 0.9.8-SNAPSHOT
 - Build package: io.swagger.codegen.languages.PhpClientCodegen
     For more information, please visit [http://bluerain.de](http://bluerain.de)
 
