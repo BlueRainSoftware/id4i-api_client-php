@@ -2857,14 +2857,15 @@ class OrganizationsApi
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
+     * @param  string[] $property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      *
      * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection
      */
-    public function getAllCollectionsOfOrganization($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
+    public function getAllCollectionsOfOrganization($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null, $property = null)
     {
-        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix);
+        list($response) = $this->getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix, $property);
         return $response;
     }
 
@@ -2879,15 +2880,16 @@ class OrganizationsApi
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
+     * @param  string[] $property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      *
      * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
+    public function getAllCollectionsOfOrganizationWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null, $property = null)
     {
         $returnType = '\Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix, $property);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3015,13 +3017,14 @@ class OrganizationsApi
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
+     * @param  string[] $property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsync($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
+    public function getAllCollectionsOfOrganizationAsync($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null, $property = null)
     {
-        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix)
+        return $this->getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset, $limit, $type, $label, $label_prefix, $property)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3040,14 +3043,15 @@ class OrganizationsApi
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
+     * @param  string[] $property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
+    public function getAllCollectionsOfOrganizationAsyncWithHttpInfo($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null, $property = null)
     {
         $returnType = '\Bluerain\ID4iClient\Model\PaginatedResponseOfGuidCollection';
-        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix);
+        $request = $this->getAllCollectionsOfOrganizationRequest($organization_id, $offset, $limit, $type, $label, $label_prefix, $property);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3095,11 +3099,12 @@ class OrganizationsApi
      * @param  string $type Filter by this type (optional)
      * @param  string $label Filter by this label (optional)
      * @param  string $label_prefix Filter by this label prefix (optional)
+     * @param  string[] $property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllCollectionsOfOrganizationRequest($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null)
+    protected function getAllCollectionsOfOrganizationRequest($organization_id, $offset = null, $limit = null, $type = null, $label = null, $label_prefix = null, $property = null)
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -3141,6 +3146,13 @@ class OrganizationsApi
         // query params
         if ($label_prefix !== null) {
             $queryParams['labelPrefix'] = ObjectSerializer::toQueryValue($label_prefix);
+        }
+        // query params
+        if (is_array($property)) {
+            $property = ObjectSerializer::serializeCollection($property, 'multi', true);
+        }
+        if ($property !== null) {
+            $queryParams['property'] = ObjectSerializer::toQueryValue($property);
         }
 
         // path params
