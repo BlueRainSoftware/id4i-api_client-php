@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGuid**
-> \Bluerain\ID4iClient\Model\Guid getGuid($id4n)
+> \Bluerain\ID4iClient\Model\Guid getGuid($id4n, $organization_id)
 
 Retrieve GUID information
 
@@ -273,9 +273,10 @@ $apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
     $config
 );
 $id4n = "id4n_example"; // string | The GUID number
+$organization_id = "organization_id_example"; // string | The organization namespace to resolve.
 
 try {
-    $result = $apiInstance->getGuid($id4n);
+    $result = $apiInstance->getGuid($id4n, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->getGuid: ', $e->getMessage(), PHP_EOL;
@@ -288,6 +289,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number |
+ **organization_id** | **string**| The organization namespace to resolve. | [optional]
 
 ### Return type
 
@@ -417,7 +419,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getId4n**
-> \Bluerain\ID4iClient\Model\Id4nPresentation getId4n($id4n)
+> \Bluerain\ID4iClient\Model\Id4nPresentation getId4n($id4n, $organization_id)
 
 Retrieve ID4n information
 
@@ -440,9 +442,10 @@ $apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
     $config
 );
 $id4n = "id4n_example"; // string | The ID to resolve to
+$organization_id = "organization_id_example"; // string | The organization namespace to resolve.
 
 try {
-    $result = $apiInstance->getId4n($id4n);
+    $result = $apiInstance->getId4n($id4n, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GuidsApi->getId4n: ', $e->getMessage(), PHP_EOL;
@@ -455,6 +458,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The ID to resolve to |
+ **organization_id** | **string**| The organization namespace to resolve. | [optional]
 
 ### Return type
 
