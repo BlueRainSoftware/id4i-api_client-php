@@ -2351,14 +2351,15 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $organization_id The organization namespace. (optional)
      *
      * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Bluerain\ID4iClient\Model\PaginatedResponseOfGuid
      */
-    public function listElementsOfCollection($id4n, $offset = null, $limit = null)
+    public function listElementsOfCollection($id4n, $offset = null, $limit = null, $organization_id = null)
     {
-        list($response) = $this->listElementsOfCollectionWithHttpInfo($id4n, $offset, $limit);
+        list($response) = $this->listElementsOfCollectionWithHttpInfo($id4n, $offset, $limit, $organization_id);
         return $response;
     }
 
@@ -2370,15 +2371,16 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $organization_id The organization namespace. (optional)
      *
      * @throws \Bluerain\ID4iClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Bluerain\ID4iClient\Model\PaginatedResponseOfGuid, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listElementsOfCollectionWithHttpInfo($id4n, $offset = null, $limit = null)
+    public function listElementsOfCollectionWithHttpInfo($id4n, $offset = null, $limit = null, $organization_id = null)
     {
         $returnType = '\Bluerain\ID4iClient\Model\PaginatedResponseOfGuid';
-        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
+        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit, $organization_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2503,13 +2505,14 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $organization_id The organization namespace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listElementsOfCollectionAsync($id4n, $offset = null, $limit = null)
+    public function listElementsOfCollectionAsync($id4n, $offset = null, $limit = null, $organization_id = null)
     {
-        return $this->listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset, $limit)
+        return $this->listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset, $limit, $organization_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2525,14 +2528,15 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $organization_id The organization namespace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset = null, $limit = null)
+    public function listElementsOfCollectionAsyncWithHttpInfo($id4n, $offset = null, $limit = null, $organization_id = null)
     {
         $returnType = '\Bluerain\ID4iClient\Model\PaginatedResponseOfGuid';
-        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit);
+        $request = $this->listElementsOfCollectionRequest($id4n, $offset, $limit, $organization_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2577,11 +2581,12 @@ class CollectionsApi
      * @param  string $id4n id4n (required)
      * @param  int $offset Start with the n-th element (optional)
      * @param  int $limit The maximum count of returned elements (optional)
+     * @param  string $organization_id The organization namespace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listElementsOfCollectionRequest($id4n, $offset = null, $limit = null)
+    protected function listElementsOfCollectionRequest($id4n, $offset = null, $limit = null, $organization_id = null)
     {
         // verify the required parameter 'id4n' is set
         if ($id4n === null) {
@@ -2604,6 +2609,10 @@ class CollectionsApi
         // query params
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        }
+        // query params
+        if ($organization_id !== null) {
+            $queryParams['organizationId'] = ObjectSerializer::toQueryValue($organization_id);
         }
 
         // path params

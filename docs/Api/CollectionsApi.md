@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listElementsOfCollection**
-> \Bluerain\ID4iClient\Model\PaginatedResponseOfGuid listElementsOfCollection($id4n, $offset, $limit)
+> \Bluerain\ID4iClient\Model\PaginatedResponseOfGuid listElementsOfCollection($id4n, $offset, $limit, $organization_id)
 
 List contents of the collection
 
@@ -435,9 +435,10 @@ $apiInstance = new Bluerain\ID4iClient\Api\CollectionsApi(
 $id4n = "id4n_example"; // string | id4n
 $offset = 56; // int | Start with the n-th element
 $limit = 56; // int | The maximum count of returned elements
+$organization_id = "organization_id_example"; // string | The organization namespace.
 
 try {
-    $result = $apiInstance->listElementsOfCollection($id4n, $offset, $limit);
+    $result = $apiInstance->listElementsOfCollection($id4n, $offset, $limit, $organization_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CollectionsApi->listElementsOfCollection: ', $e->getMessage(), PHP_EOL;
@@ -452,6 +453,7 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n |
  **offset** | **int**| Start with the n-th element | [optional]
  **limit** | **int**| The maximum count of returned elements | [optional]
+ **organization_id** | **string**| The organization namespace. | [optional]
 
 ### Return type
 
