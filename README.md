@@ -14,7 +14,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.9-SNAPSHOT
+- API version: 1.0.0-SNAPSHOT
 - Build package: io.swagger.codegen.languages.PhpClientCodegen
     For more information, please visit [http://bluerain.de](http://bluerain.de)
 
@@ -165,6 +165,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**updateItem**](docs/Api/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/Api/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/Api/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*MessagingApi* | [**enqueueCustomMessage**](docs/Api/MessagingApi.md#enqueuecustommessage) | **POST** /api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage | Enqueue a custom message
 *MessagingApi* | [**getDefaultQueue**](docs/Api/MessagingApi.md#getdefaultqueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
 *MessagingApi* | [**patchDefaultQueue**](docs/Api/MessagingApi.md#patchdefaultqueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *MetaInformationApi* | [**applicationInfo**](docs/Api/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
@@ -290,6 +291,7 @@ Class | Method | HTTP request | Description
  - [RoutingFile](docs/Model/RoutingFile.md)
  - [RoutingFileRequest](docs/Model/RoutingFileRequest.md)
  - [RoutingOptions](docs/Model/RoutingOptions.md)
+ - [SendCustomMessage](docs/Model/SendCustomMessage.md)
  - [ServiceCosts](docs/Model/ServiceCosts.md)
  - [SimpleMessageResponse](docs/Model/SimpleMessageResponse.md)
  - [TransferReceiveInfo](docs/Model/TransferReceiveInfo.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * RoutingOptionsTest
+ * SendCustomMessageTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Bluerain\ID4iClient;
 
 /**
- * RoutingOptionsTest Class Doc Comment
+ * SendCustomMessageTest Class Doc Comment
  *
  * @category    Class */
-// * @description RoutingOptions
+// * @description SendCustomMessage
 /**
  * @package     Bluerain\ID4iClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RoutingOptionsTest extends \PHPUnit_Framework_TestCase
+class SendCustomMessageTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,23 @@ class RoutingOptionsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RoutingOptions"
+     * Test "SendCustomMessage"
      */
-    public function testRoutingOptions()
+    public function testSendCustomMessage()
     {
     }
 
     /**
-     * Test attribute "delete_outdated_routes"
+     * Test attribute "data"
      */
-    public function testPropertyDeleteOutdatedRoutes()
+    public function testPropertyData()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
     {
     }
 }
