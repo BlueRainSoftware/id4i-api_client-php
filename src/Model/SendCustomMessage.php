@@ -1,6 +1,6 @@
 <?php
 /**
- * PasswordResetRequest
+ * SendCustomMessage
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Bluerain\ID4iClient\ObjectSerializer;
 
 /**
- * PasswordResetRequest Class Doc Comment
+ * SendCustomMessage Class Doc Comment
  *
  * @category Class
  * @package  Bluerain\ID4iClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PasswordResetRequest implements ModelInterface, ArrayAccess
+class SendCustomMessage implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PasswordResetRequest';
+    protected static $swaggerModelName = 'SendCustomMessage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'username' => 'string'
+        'data' => 'map[string,string]',
+        'name' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'username' => null
+        'data' => null,
+        'name' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'username' => 'username'
+        'data' => 'data',
+        'name' => 'name'
     ];
 
     /**
@@ -105,7 +108,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'username' => 'setUsername'
+        'data' => 'setData',
+        'name' => 'setName'
     ];
 
     /**
@@ -114,7 +118,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'username' => 'getUsername'
+        'data' => 'getData',
+        'name' => 'getName'
     ];
 
     /**
@@ -177,7 +182,8 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -189,9 +195,20 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['username'] === null) {
-            $invalidProperties[] = "'username' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((strlen($this->container['name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
+        }
+
+        if ((strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -204,7 +221,16 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['username'] === null) {
+        if ($this->container['data'] === null) {
+            return false;
+        }
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if (strlen($this->container['name']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['name']) < 1) {
             return false;
         }
         return true;
@@ -212,25 +238,56 @@ class PasswordResetRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets username
+     * Gets data
      *
-     * @return string
+     * @return map[string,string]
      */
-    public function getUsername()
+    public function getData()
     {
-        return $this->container['username'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets username
+     * Sets data
      *
-     * @param string $username username
+     * @param map[string,string] $data Custom data in a map. You may use JSON content
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setData($data)
     {
-        $this->container['username'] = $username;
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name The name of the message (organisation specific)
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        if ((strlen($name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling SendCustomMessage., must be smaller than or equal to 255.');
+        }
+        if ((strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling SendCustomMessage., must be bigger than or equal to 1.');
+        }
+
+        $this->container['name'] = $name;
 
         return $this;
     }

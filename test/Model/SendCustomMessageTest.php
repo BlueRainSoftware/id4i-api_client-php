@@ -1,6 +1,6 @@
 <?php
 /**
- * PaginatedResponseOfApiKeyPresentationTest
+ * SendCustomMessageTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Bluerain\ID4iClient;
 
 /**
- * PaginatedResponseOfApiKeyPresentationTest Class Doc Comment
+ * SendCustomMessageTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaginatedResponseOfApiKeyPresentation
+// * @description SendCustomMessage
 /**
  * @package     Bluerain\ID4iClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaginatedResponseOfApiKeyPresentationTest extends \PHPUnit_Framework_TestCase
+class SendCustomMessageTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,23 @@ class PaginatedResponseOfApiKeyPresentationTest extends \PHPUnit_Framework_TestC
     }
 
     /**
-     * Test "PaginatedResponseOfApiKeyPresentation"
+     * Test "SendCustomMessage"
      */
-    public function testPaginatedResponseOfApiKeyPresentation()
+    public function testSendCustomMessage()
     {
     }
 
     /**
-     * Test attribute "elements"
+     * Test attribute "data"
      */
-    public function testPropertyElements()
+    public function testPropertyData()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "name"
      */
-    public function testPropertyLimit()
-    {
-    }
-
-    /**
-     * Test attribute "offset"
-     */
-    public function testPropertyOffset()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
+    public function testPropertyName()
     {
     }
 }
