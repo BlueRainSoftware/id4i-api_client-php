@@ -1,6 +1,6 @@
 <?php
 /**
- * QueuePresentation
+ * Id4nProperties
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Bluerain\ID4iClient\ObjectSerializer;
 
 /**
- * QueuePresentation Class Doc Comment
+ * Id4nProperties Class Doc Comment
  *
  * @category Class
+ * @description An id4n with its properties
  * @package  Bluerain\ID4iClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class QueuePresentation implements ModelInterface, ArrayAccess
+class Id4nProperties implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class QueuePresentation implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QueuePresentation';
+    protected static $swaggerModelName = 'Id4nProperties';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +58,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'active' => 'bool',
-        'id' => 'string',
-        'waiting_messages' => 'int'
+        'id4n' => 'string',
+        'properties' => 'map[string,string]'
     ];
 
     /**
@@ -68,9 +68,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'active' => null,
-        'id' => null,
-        'waiting_messages' => 'int64'
+        'id4n' => null,
+        'properties' => null
     ];
 
     /**
@@ -100,9 +99,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'active' => 'active',
-        'id' => 'id',
-        'waiting_messages' => 'waitingMessages'
+        'id4n' => 'id4n',
+        'properties' => 'properties'
     ];
 
     /**
@@ -111,9 +109,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'active' => 'setActive',
-        'id' => 'setId',
-        'waiting_messages' => 'setWaitingMessages'
+        'id4n' => 'setId4n',
+        'properties' => 'setProperties'
     ];
 
     /**
@@ -122,9 +119,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'active' => 'getActive',
-        'id' => 'getId',
-        'waiting_messages' => 'getWaitingMessages'
+        'id4n' => 'getId4n',
+        'properties' => 'getProperties'
     ];
 
     /**
@@ -187,9 +183,8 @@ class QueuePresentation implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['waiting_messages'] = isset($data['waiting_messages']) ? $data['waiting_messages'] : null;
+        $this->container['id4n'] = isset($data['id4n']) ? $data['id4n'] : null;
+        $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
     }
 
     /**
@@ -201,12 +196,6 @@ class QueuePresentation implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -223,73 +212,49 @@ class QueuePresentation implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets active
-     *
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool $active active
-     *
-     * @return $this
-     */
-    public function setActive($active)
-    {
-        $this->container['active'] = $active;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets id4n
      *
      * @return string
      */
-    public function getId()
+    public function getId4n()
     {
-        return $this->container['id'];
+        return $this->container['id4n'];
     }
 
     /**
-     * Sets id
+     * Sets id4n
      *
-     * @param string $id id
+     * @param string $id4n The ID4n
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId4n($id4n)
     {
-        $this->container['id'] = $id;
+        $this->container['id4n'] = $id4n;
 
         return $this;
     }
 
     /**
-     * Gets waiting_messages
+     * Gets properties
      *
-     * @return int
+     * @return map[string,string]
      */
-    public function getWaitingMessages()
+    public function getProperties()
     {
-        return $this->container['waiting_messages'];
+        return $this->container['properties'];
     }
 
     /**
-     * Sets waiting_messages
+     * Sets properties
      *
-     * @param int $waiting_messages The count of queued messages
+     * @param map[string,string] $properties The properties of the ID4n
      *
      * @return $this
      */
-    public function setWaitingMessages($waiting_messages)
+    public function setProperties($properties)
     {
-        $this->container['waiting_messages'] = $waiting_messages;
+        $this->container['properties'] = $properties;
 
         return $this;
     }

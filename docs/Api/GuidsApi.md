@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**getMultipleProperties**](GuidsApi.md#getMultipleProperties) | **GET** /api/v1/multiple/id4ns/properties | Get multiple ID4n properties
 [**getProperties**](GuidsApi.md#getProperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 [**importGS1Codes**](GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
 [**patchProperties**](GuidsApi.md#patchProperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
@@ -463,6 +464,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Bluerain\ID4iClient\Model\Id4nPresentation**](../Model/Id4nPresentation.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getMultipleProperties**
+> \Bluerain\ID4iClient\Model\ListOfId4nProperties getMultipleProperties($id4ns, $organization_id)
+
+Get multiple ID4n properties
+
+Get a list of ID4n properties for the specified ID4ns.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Authorization
+$config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Bluerain\ID4iClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Bluerain\ID4iClient\Api\GuidsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id4ns = array("id4ns_example"); // string[] | The list of ID4ns to resolve.
+$organization_id = "organization_id_example"; // string | The organization namespace.
+
+try {
+    $result = $apiInstance->getMultipleProperties($id4ns, $organization_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GuidsApi->getMultipleProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4ns** | [**string[]**](../Model/string.md)| The list of ID4ns to resolve. |
+ **organization_id** | **string**| The organization namespace. | [optional]
+
+### Return type
+
+[**\Bluerain\ID4iClient\Model\ListOfId4nProperties**](../Model/ListOfId4nProperties.md)
 
 ### Authorization
 
